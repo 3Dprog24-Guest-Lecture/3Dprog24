@@ -15,7 +15,7 @@ project ("3Dprog24")
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/includes)
 
 # Add source to this project's executable.
-add_executable (3Dprog24 "3Dprog24.cpp" "3Dprog24.h" "glad.c"  "Shader.h" "Shader.cpp" "stb_image.h")
+add_executable (3Dprog24 "3Dprog24.cpp" "3Dprog24.h" "glad.c"  "Shader.h" "Shader.cpp" "stb_image.h" "Camera.h" "Camera.cpp")
 
 target_link_libraries(3Dprog24 PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/libs/glfw3.lib)
 
