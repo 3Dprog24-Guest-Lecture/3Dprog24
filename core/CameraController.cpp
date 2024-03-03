@@ -9,10 +9,11 @@
 
 void CameraController::HandleMouseMove(Window* window, double xpos, double ypos)
 {
-    if (!mRightMousePressed) return;
-
     float xoffset = mLastX - xpos;
     float yoffset = mLastY - ypos;
+    LOG_INFO("TEST");
+    LOG_INFO(xoffset);
+    //LOG_INFO(yoffset);
 
     mLastX = xpos;
     mLastY = ypos;

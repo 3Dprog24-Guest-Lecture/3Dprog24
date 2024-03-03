@@ -1,6 +1,6 @@
 #include <Camera.h>
 
-CameraActor::Camera(
+CameraActor::CameraActor(
     const std::string& name,
     glm::vec3 position,
     glm::quat rotation,
