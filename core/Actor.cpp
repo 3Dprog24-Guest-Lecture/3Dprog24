@@ -36,33 +36,6 @@ void Actor::RemoveChild(Actor* child)
     }
 }
 
-const Transform& Actor::GetTransform() const 
-{
-    return mTransform;
-}
-
-const glm::mat4 Actor::GetTransformMatrix() const
-{
-    return mTransform.GetTransformMatrix();
-}
-
-glm::mat4 Actor::GetGlobalTransformMatrix() const
-{
-    glm::mat4 globalTransform = mTransform.GetTransformMatrix();
-    const Actor* current = this;
-    while (current->mParent != nullptr) 
-    {
-        globalTransform = current->mParent->GetTransformMatrix() * globalTransform;
-        current = current->mParent;
-    }
-    return globalTransform;
-}
-
-std::vector<Actor*>& Actor::GetChildren()
-{
-    return mChildren;
-}
-
 void Actor::SetTransform(const Transform& transform)
 {
     mTransform = transform;
@@ -128,6 +101,33 @@ void Actor::SetScale(const glm::vec3& scale, Actor::TransformSpace type)
             mTransform.SetScale(scale);
         }
     }
+}
+
+const Transform& Actor::GetTransform() const
+{
+    return mTransform;
+}
+
+const glm::mat4 Actor::GetTransformMatrix() const
+{
+    return mTransform.GetTransformMatrix();
+}
+
+glm::mat4 Actor::GetGlobalTransformMatrix() const
+{
+    glm::mat4 globalTransform = mTransform.GetTransformMatrix();
+    const Actor* current = this;
+    while (current->mParent != nullptr)
+    {
+        globalTransform = current->mParent->GetTransformMatrix() * globalTransform;
+        current = current->mParent;
+    }
+    return globalTransform;
+}
+
+std::vector<Actor*>& Actor::GetChildren()
+{
+    return mChildren;
 }
 
 const glm::vec3& Actor::GetPosition() const

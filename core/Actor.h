@@ -25,6 +25,7 @@ public:
 
     virtual void Update(float dt) {};
 
+    // Scene Graph
     void SetParent(Actor* parent);
     void AddChild(Actor* child);
     void RemoveChild(Actor* child);
