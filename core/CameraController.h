@@ -3,10 +3,17 @@
 #include <Controller.h>
 #include <map>
 
+/**
+ * @class CameraController
+ * @brief Controls camera movement and orientation based on user input.
+ *
+ * CameraController is responsible for handling user inputs. It is designed to work with a
+ * CameraActor to update its transformation based on the input.
+ */
 class CameraController : public IController
 {
 public:
-    CameraController(class Camera* camera) : mCamera(camera) {}
+    CameraController(class CameraActor* camera) : mCamera(camera) {}
 
     virtual void HandleMouseMove(class Window* window, double xpos, double ypos) override;
     virtual void HandleMouseScroll(class Window* window, double xoffset, double yoffset) override;
@@ -21,5 +28,5 @@ private:
     float mouseSensitivity = 0.1f;
 
     std::map<int, bool> mKeyStates;
-    class Camera* mCamera;
+    class CameraActor* mCamera;
 };

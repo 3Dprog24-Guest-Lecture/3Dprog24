@@ -8,7 +8,13 @@
 #include <unordered_map>
 #include <array>
 
-
+/**
+ * @class Material
+ * @brief Manages material properties and textures for rendering.
+ *
+ * @note This class cannot be copied or assigned due to the deletion of the copy
+ * constructor and copy assignment operator, ensuring unique instances for the use of the lightweight pattern.
+ */
 class Material
 {
 public:
@@ -27,7 +33,15 @@ public:
         "material.normalMap", "material.alphaMap"
     };
 
-    // Update the Bind() function when adding new variables
+    /**
+     * @struct MaterialProperties
+     * @brief Holds properties related to the visual appearance of a material.
+     *
+     * This struct encapsulates properties that define the visual characteristics of a material,
+     * including its base color and shininess, i.e (object final color * mColor).
+     * 
+     * @note Update the Bind() function when adding new variables
+     */
     struct MaterialProperties
     {
         glm::vec3 mColor{1.f, 1.f, 1.f};

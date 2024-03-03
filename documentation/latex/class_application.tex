@@ -1,0 +1,90 @@
+\doxysection{Application Class Reference}
+\hypertarget{class_application}{}\label{class_application}\index{Application@{Application}}
+
+
+Represents the main application.  
+
+
+
+
+{\ttfamily \#include $<$Application.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_application_afaeec66a8591b6d88049b260133d13fc}{Application}} (const \mbox{\hyperlink{class_application}{Application}} \&)=delete
+\item 
+\mbox{\hyperlink{class_application_a7b5be0a8e4df05ca7ceb2d3d7d275278}{Application}} (\mbox{\hyperlink{class_application}{Application}} \&\&)=delete
+\item 
+void \mbox{\hyperlink{class_application_a4a6891e12ce5154206150635aa6b816f}{Initialize\+GLFW}} ()
+\item 
+void \mbox{\hyperlink{class_application_a276388f7090c0a2b1c8b16cf033b969d}{Init}} ()
+\item 
+void \mbox{\hyperlink{class_application_a99a2e8e0309cecc9e0c6c224359264fd}{Load\+Content}} ()
+\item 
+int \mbox{\hyperlink{class_application_a02799e64b246a6b6b8fa58477882a4be}{Run}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_application}{Application}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_application_ad21f650f3482f8a3f9a8bf91547783d0}{Get}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the main application. 
+
+This class is responsible for initializing the application, including setting up GLFW, loading content, and running the main application loop. It follows the Singleton pattern to ensure only one instance exists. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_application_afaeec66a8591b6d88049b260133d13fc}\label{class_application_afaeec66a8591b6d88049b260133d13fc} 
+\index{Application@{Application}!Application@{Application}}
+\index{Application@{Application}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{Application()}{Application()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Application\+::\+Application (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_application}{Application}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{class_application_a7b5be0a8e4df05ca7ceb2d3d7d275278}\label{class_application_a7b5be0a8e4df05ca7ceb2d3d7d275278} 
+\index{Application@{Application}!Application@{Application}}
+\index{Application@{Application}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{Application()}{Application()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Application\+::\+Application (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_application}{Application}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_application_ad21f650f3482f8a3f9a8bf91547783d0}\label{class_application_ad21f650f3482f8a3f9a8bf91547783d0} 
+\index{Application@{Application}!Get@{Get}}
+\index{Get@{Get}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{Get()}{Get()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_application}{Application}} \texorpdfstring{$\ast$}{*} Application\+::\+Get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_application_a276388f7090c0a2b1c8b16cf033b969d}\label{class_application_a276388f7090c0a2b1c8b16cf033b969d} 
+\index{Application@{Application}!Init@{Init}}
+\index{Init@{Init}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void Application\+::\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_application_a4a6891e12ce5154206150635aa6b816f}\label{class_application_a4a6891e12ce5154206150635aa6b816f} 
+\index{Application@{Application}!InitializeGLFW@{InitializeGLFW}}
+\index{InitializeGLFW@{InitializeGLFW}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{InitializeGLFW()}{InitializeGLFW()}}
+{\footnotesize\ttfamily void Application\+::\+Initialize\+GLFW (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_application_a99a2e8e0309cecc9e0c6c224359264fd}\label{class_application_a99a2e8e0309cecc9e0c6c224359264fd} 
+\index{Application@{Application}!LoadContent@{LoadContent}}
+\index{LoadContent@{LoadContent}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{LoadContent()}{LoadContent()}}
+{\footnotesize\ttfamily void Application\+::\+Load\+Content (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_application_a02799e64b246a6b6b8fa58477882a4be}\label{class_application_a02799e64b246a6b6b8fa58477882a4be} 
+\index{Application@{Application}!Run@{Run}}
+\index{Run@{Run}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily int Application\+::\+Run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\mbox{\hyperlink{_application_8h}{Application.\+h}}\item 
+core/\mbox{\hyperlink{_application_8cpp}{Application.\+cpp}}\end{DoxyCompactItemize}

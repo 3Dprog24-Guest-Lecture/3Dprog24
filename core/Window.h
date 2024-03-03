@@ -9,6 +9,14 @@
 
 class Scene;
 
+/**
+ * @class Window
+ * @brief Represents a window in the application, managing its lifecycle, events, and rendering context.
+ *
+ * The Window class encapsulates a GLFW window and its associated context. It is responsible for initializing
+ * the window, handling input events through callbacks, and managing the render loop. The class also integrates
+ * with a Scene object to update and render the content within the window.
+ */
 class Window
 {
 public:

@@ -1,5 +1,13 @@
 #pragma once
 
+/**
+ * @interface IRender
+ * @brief Interface for renderable objects.
+ *
+ * Defines a common interface for objects that can be rendered.
+ * This ensures that all renderable objects implement a Draw method,
+ * allowing for consistent rendering across different types of objects.
+ */
 class IRender
 {
 public:

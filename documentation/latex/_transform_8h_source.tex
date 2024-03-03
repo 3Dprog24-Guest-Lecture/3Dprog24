@@ -1,0 +1,117 @@
+\doxysection{Transform.\+h}
+\hypertarget{_transform_8h_source}{}\label{_transform_8h_source}\index{core/Transform.h@{core/Transform.h}}
+\mbox{\hyperlink{_transform_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ GLM\_ENABLE\_EXPERIMENTAL\ }}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <glm/glm.hpp>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <glm/gtc/quaternion.hpp>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <glm/gtx/quaternion.hpp>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <glm/gtx/matrix\_decompose.hpp>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <glm/gtc/matrix\_transform.hpp>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_transform}{Transform}}\ }
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{struct_transform_aa08ca4266efabc768973cdeea51945ab}{Transform}}()}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ :\ mPosition(glm::vec3(0.0f)),\ mRotation(glm::quat(glm::identity<glm::quat>())),\ mScale(glm::vec3(1.0f))\ \{\}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//\ Adders}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_transform_a03125ec100a925eaf8ba6e2447c4a7f4}{AddRotation}}(\textcolor{keyword}{const}\ glm::quat\&\ rot)\ }
+\DoxyCodeLine{00026\ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ mRotation\ =\ mRotation\ *\ rot;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ mRotation\ =\ glm::normalize(mRotation);}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_transform_ada15f00d4ad7bb7dae6d8ab69d8f48e9}{AddYaw}}(\textcolor{keywordtype}{float}\ angleDegrees)\ }
+\DoxyCodeLine{00032\ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ angleRadians\ =\ glm::radians(angleDegrees);}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ glm::quat\ yawRotation\ =\ glm::angleAxis(angleRadians,\ glm::vec3(0.0f,\ 1.0f,\ 0.0f));}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_transform_a03125ec100a925eaf8ba6e2447c4a7f4}{AddRotation}}(yawRotation);}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_transform_aa81fd9aad91ad8b73c345ddbe05fafd4}{AddPitch}}(\textcolor{keywordtype}{float}\ angleDegrees)\ }
+\DoxyCodeLine{00039\ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ angleRadians\ =\ glm::radians(angleDegrees);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ glm::vec3\ rightVector\ =\ glm::rotate(mRotation,\ glm::vec3(1.0f,\ 0.0f,\ 0.0f));}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ glm::quat\ pitchRotation\ =\ glm::angleAxis(angleRadians,\ rightVector);}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_transform_a03125ec100a925eaf8ba6e2447c4a7f4}{AddRotation}}(pitchRotation);}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{comment}{//\ Setters}}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_transform_a362918c3f596854fa0657828ee9364c0}{SetPosition}}(\textcolor{keyword}{const}\ glm::vec3\&\ pos)\ \{\ mPosition\ =\ pos;\ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_transform_acc747e688b427ce447accfd4dba81b24}{SetRotation}}(\textcolor{keyword}{const}\ glm::quat\&\ rot)\ \{\ mRotation\ =\ rot;\ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_transform_af2430e58b3316cd711c42d56365ae84e}{SetScale}}(\textcolor{keyword}{const}\ glm::vec3\&\ scl)\ \{\ mScale\ =\ scl;\ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_transform_ae431e681d582282989a1cd167e9b67f6}{SetRotation}}(\textcolor{keyword}{const}\ glm::vec3\&\ forwardDirection,\ \textcolor{keyword}{const}\ glm::vec3\&\ upDirection\ =\ glm::vec3(0.0f,\ 1.0f,\ 0.0f))}
+\DoxyCodeLine{00052\ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ glm::vec3\ normalizedForward\ =\ glm::normalize(forwardDirection);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ glm::vec3\ defaultForward(0.0f,\ 0.0f,\ -\/1.0f);}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ glm::quat\ newRotation\ =\ glm::rotation(defaultForward,\ normalizedForward);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ mRotation\ =\ newRotation;}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_transform_a7216f4078a8a3588f2fb7a25f0def849}{SetRotationFromPitch}}(\textcolor{keywordtype}{float}\ pitchDegrees)\ }
+\DoxyCodeLine{00060\ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ pitchRadians\ =\ glm::radians(pitchDegrees);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ glm::quat\ pitchRotation\ =\ glm::angleAxis(pitchRadians,\ glm::vec3(1.0f,\ 0.0f,\ 0.0f));}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ mRotation\ =\ pitchRotation;}
+\DoxyCodeLine{00064\ \ \ \ \ \}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_transform_a56847e0ed68a3346f70f24ad49ddf953}{SetRotationFromYaw}}(\textcolor{keywordtype}{float}\ yawDegrees)\ }
+\DoxyCodeLine{00067\ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ yawRadians\ =\ glm::radians(yawDegrees);}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ glm::quat\ yawRotation\ =\ glm::angleAxis(yawRadians,\ glm::vec3(0.0f,\ 1.0f,\ 0.0f));}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ mRotation\ =\ yawRotation;}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_transform_a71d5863878754d2634614e3e479be41b}{SetTransformMatrix}}(\textcolor{keyword}{const}\ glm::mat4\&\ matrix)\ }
+\DoxyCodeLine{00074\ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ glm::vec3\ scale;}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ glm::quat\ rotation;}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ glm::vec3\ translation;}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ glm::vec3\ skew;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ glm::vec4\ perspective;}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ glm::decompose(matrix,\ scale,\ rotation,\ translation,\ skew,\ perspective);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_transform_a362918c3f596854fa0657828ee9364c0}{SetPosition}}(translation);}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_transform_acc747e688b427ce447accfd4dba81b24}{SetRotation}}(rotation);}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_transform_af2430e58b3316cd711c42d56365ae84e}{SetScale}}(scale);}
+\DoxyCodeLine{00086\ \ \ \ \ \}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{comment}{//\ Getters}}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{const}\ glm::vec3\&\ \mbox{\hyperlink{struct_transform_a7352fd5cc768b355a88b6fb059cedb32}{GetPosition}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ mPosition;\ \}}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{const}\ glm::quat\&\ \mbox{\hyperlink{struct_transform_a4f3c7b6c14d9022c50d3fcf7dbef57d5}{GetRotation}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ mRotation;\ \}}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{const}\ glm::vec3\&\ \mbox{\hyperlink{struct_transform_aebbac097d8e8ca298ecccfd1fa6907dd}{GetScale}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ mScale;\ \}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_transform_ad9423c7c5b3e5d09d848feba8431764e}{GetCurrentPitch}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00094\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ glm::vec3\ eulerAngles\ =\ glm::eulerAngles(mRotation);}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ pitch\ =\ eulerAngles.x;}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ glm::degrees(pitch);}
+\DoxyCodeLine{00098\ \ \ \ \ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_transform_a623eb07895af9554b2ff32a1064b1726}{GetCurrentYaw}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00101\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ glm::vec3\ eulerAngles\ =\ glm::eulerAngles(mRotation);}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ yaw\ =\ eulerAngles.y;}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ glm::degrees(yaw);}
+\DoxyCodeLine{00105\ \ \ \ \ \}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ glm::mat4\ \mbox{\hyperlink{struct_transform_a5eb6f03abee5b56a777749c70b276611}{GetTransformMatrix}}()\textcolor{keyword}{\ const\ }}
+\DoxyCodeLine{00108\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ glm::mat4\ scaleMat\ =\ glm::scale(glm::mat4(1.0f),\ mScale);}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ glm::mat4\ rotMat\ =\ glm::toMat4(mRotation);}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ glm::mat4\ translateMat\ =\ glm::translate(glm::mat4(1.0f),\ mPosition);}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ translateMat\ *\ rotMat\ *\ scaleMat;}
+\DoxyCodeLine{00113\ \ \ \ \ \}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00116\ \ \ \ \ glm::vec3\ mPosition;}
+\DoxyCodeLine{00117\ \ \ \ \ glm::quat\ mRotation;}
+\DoxyCodeLine{00118\ \ \ \ \ glm::vec3\ mScale;}
+\DoxyCodeLine{00119\ \};}
+
+\end{DoxyCode}

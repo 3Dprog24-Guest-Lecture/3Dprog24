@@ -8,6 +8,14 @@
 #include <glm/gtx/matrix_decompose.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
+/**
+ * @struct Transform
+ * @brief Represents the position, rotation, and scale of an object in 3D space.
+ *
+ * This struct encapsulates the transformation state of an object, including its
+ * position, rotation (as a quaternion), and scale.
+ * 
+ */
 struct Transform 
 {
     Transform()

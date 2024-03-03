@@ -4,6 +4,13 @@
 #include <Scene.h>
 #include <memory>
 
+/**
+ * @brief Represents the main application.
+ *
+ * This class is responsible for initializing the application,
+ * including setting up GLFW, loading content, and running the main application loop.
+ * It follows the Singleton pattern to ensure only one instance exists.
+ */
 class Application
 {
     public:
@@ -18,7 +25,7 @@ class Application
 
     void LoadContent();
 
-    void Run();
+    int Run();
 
     private:
     Application() = default;

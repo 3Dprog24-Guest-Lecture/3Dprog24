@@ -1,0 +1,62 @@
+\doxysection{Actor.\+h}
+\hypertarget{_actor_8h_source}{}\label{_actor_8h_source}\index{core/Actor.h@{core/Actor.h}}
+\mbox{\hyperlink{_actor_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_transform_8h}{Transform.h}}>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_tag_8h}{Tag.h}}>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_actor}{Actor}}}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{class_actor_a3c153709d0bc28c652f10218ca6de712}{TransformSpace}}\ }
+\DoxyCodeLine{00011\ \ \ \ \ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_actor_a3c153709d0bc28c652f10218ca6de712a509820290d57f333403f490dde7316f4}{Local}},}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_actor_a3c153709d0bc28c652f10218ca6de712a4cc6684df7b4a92b1dec6fce3264fac8}{Global}}}
+\DoxyCodeLine{00014\ \ \ \ \ \};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_actor_af17d22383fdbe2edb46d07cd26c01754}{Actor}}(\textcolor{keyword}{const}\ std::string\&\ name)\ :mTag(name),\ \mbox{\hyperlink{class_actor_a2e23b38fa11b43c4e5cf57d65b8349a4}{mParent}}(nullptr)\ \{\};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_actor_a22f32e3ce430a9f5c6dc9eab2ed7224c}{Actor}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_actor}{Actor}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_actor}{Actor}}\&\ \mbox{\hyperlink{class_actor_a2694d37daf78fdd5c472bbced3f411b5}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_actor}{Actor}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_actor_aa3a169246ab4b9293e238732700fba4d}{Actor}}(\mbox{\hyperlink{class_actor}{Actor}}\&\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_actor}{Actor}}\&\ \mbox{\hyperlink{class_actor_a9be3746bee0b124b6ca67bbaa838288f}{operator=}}(\mbox{\hyperlink{class_actor}{Actor}}\&\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_actor_a94a117a9b8506259f0c987435917617b}{\string~Actor}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_actor_a651fecef34d686452750bc165fcc76ce}{Update}}(\textcolor{keywordtype}{float}\ dt)\ \{\};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//\ Scene\ Graph}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_actor_aba5cc96b0d0097ef4fd67aa155810e2c}{SetParent}}(\mbox{\hyperlink{class_actor}{Actor}}*\ parent);}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_actor_a52786836e705c29df948c268da4b42e2}{AddChild}}(\mbox{\hyperlink{class_actor}{Actor}}*\ child);}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_actor_ae244e4ffa7005b14970d64616b1b717c}{RemoveChild}}(\mbox{\hyperlink{class_actor}{Actor}}*\ child);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//\ Setters}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_actor_ace4af4f181e7f1f19d46b57b2f1cb2c6}{SetTransform}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_transform}{Transform}}\&\ transform);}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_actor_a88c4013859a75cd89933b4d125a309a4}{SetPosition}}(\textcolor{keyword}{const}\ glm::vec3\&\ position,\ \mbox{\hyperlink{class_actor_a3c153709d0bc28c652f10218ca6de712}{Actor::TransformSpace}}\ type\ =\ \mbox{\hyperlink{class_actor_a3c153709d0bc28c652f10218ca6de712a509820290d57f333403f490dde7316f4}{Actor::TransformSpace::Local}});}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_actor_a0ae706ebcff9693c796cc425d2c66056}{SetRotation}}(\textcolor{keyword}{const}\ glm::quat\&\ rotation,\ \mbox{\hyperlink{class_actor_a3c153709d0bc28c652f10218ca6de712}{Actor::TransformSpace}}\ type\ =\ \mbox{\hyperlink{class_actor_a3c153709d0bc28c652f10218ca6de712a509820290d57f333403f490dde7316f4}{Actor::TransformSpace::Local}});}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_actor_af38c9c7d4dc25124cf2e28b65a72761a}{SetScale}}(\textcolor{keyword}{const}\ glm::vec3\&\ scale,\ \mbox{\hyperlink{class_actor_a3c153709d0bc28c652f10218ca6de712}{Actor::TransformSpace}}\ type\ =\ \mbox{\hyperlink{class_actor_a3c153709d0bc28c652f10218ca6de712a509820290d57f333403f490dde7316f4}{Actor::TransformSpace::Local}});}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//\ Getters}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{const}\ glm::vec3\&\ \mbox{\hyperlink{class_actor_af67fca2394dfd7a0c7eed35d9b4df705}{GetPosition}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00041\ \ \ \ \ glm::vec3\ \mbox{\hyperlink{class_actor_a07cc4ee2bc3e908fdfd13e90ae6548f9}{GetGlobalPosition}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{const}\ glm::quat\&\ \mbox{\hyperlink{class_actor_a21b8672438a42af3654c7e25f10a84cd}{GetRotation}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00043\ \ \ \ \ glm::quat\ \mbox{\hyperlink{class_actor_a04bb639f5d5d5d0e2d465e755db31ac9}{GetGlobalRotation}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{const}\ glm::vec3\&\ \mbox{\hyperlink{class_actor_ab0fd1b72111679e277f169c2d7be8c19}{GetScale}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00045\ \ \ \ \ glm::vec3\ \mbox{\hyperlink{class_actor_a6d0ca0091883b69cde02eaf5d10a6f52}{GetGlobalScale}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{const}\ glm::mat4\ \mbox{\hyperlink{class_actor_a60bd82bc2660d32f7418fe8894e7d6e9}{GetTransformMatrix}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00047\ \ \ \ \ glm::mat4\ \mbox{\hyperlink{class_actor_a5f238a412629b47f3a746d44ea271d7e}{GetGlobalTransformMatrix}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_transform}{Transform}}\&\ \mbox{\hyperlink{class_actor_aa14c40bea560b0ca4de10a1cd30434f9}{GetTransform}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00049\ \ \ \ \ std::vector<Actor*>\&\ \mbox{\hyperlink{class_actor_a067c9709390f5185e5a8535785dc2ff8}{GetChildren}}();}
+\DoxyCodeLine{00050\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{class_actor}{Actor}}*\ \mbox{\hyperlink{class_actor_a2e23b38fa11b43c4e5cf57d65b8349a4}{mParent}}\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00052\ \ \ \ \ std::vector<Actor*>\ \mbox{\hyperlink{class_actor_ad59a8d1d6e8407c01883d325884b25ec}{mChildren}};}
+\DoxyCodeLine{00053\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{struct_tag_unique}{TagUnique}}\ mTag;}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{struct_transform}{Transform}}\ mTransform\{\};}
+\DoxyCodeLine{00056\ \};}
+
+\end{DoxyCode}

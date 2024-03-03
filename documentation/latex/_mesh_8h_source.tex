@@ -1,0 +1,55 @@
+\doxysection{Mesh.\+h}
+\hypertarget{_mesh_8h_source}{}\label{_mesh_8h_source}\index{core/Mesh.h@{core/Mesh.h}}
+\mbox{\hyperlink{_mesh_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_renderer_8h}{Renderer.h}}>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_material_8h}{Material.h}}>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_shader_8h}{Shader.h}}>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_vertex_8h}{Vertex.h}}>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <glm/glm.hpp>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_actor_8h}{Actor.h}}>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8h}{Types.h}}>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_mesh}{Mesh}}\ }
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00023\ \ \ \ \ std::vector<Vertex>\ mVertices\{\};}
+\DoxyCodeLine{00024\ \ \ \ \ std::vector<Index>\ mIndices\{\};}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_material}{Material}}*\ mMaterial\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{_types_8h_acd859f04c2bdd8ad6169771d91460ef1}{VAO}}\ mVAO\{\ 0U\ \};}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{_types_8h_af599740a62dda6c7b3d65d10ed0233e7}{VBO}}\ mVBO\{\ 0U\ \};}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{_types_8h_a4104268a49b6a500e29e64279df45774}{EBO}}\ mEBO\{\ 0U\ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ SetupMesh();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_mesh_a9c5c38e06f3a061736ba23b43225e0cc}{Mesh}}(\textcolor{keyword}{const}\ std::string\&\ name,\ std::vector<Vertex>\&\&\ vertices,\ std::vector<Index>\&\&\ indices,\ \mbox{\hyperlink{class_material}{Material}}*\ material);}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_mesh_a5efe4da1a4c0971cfb037bd70304c303}{\string~Mesh}}();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_mesh_abc306ce1c1ead0b16e75b9fe6f2b460c}{Draw}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_shader}{Shader}}*\ shader)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_mesh}{Mesh}}*\ \mbox{\hyperlink{class_mesh_ad6f003a3cdccb2cdc0d16b47679bcfc6}{CreateCube}}(\mbox{\hyperlink{class_material}{Material}}*\ material);}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_mesh}{Mesh}}*\ \mbox{\hyperlink{class_mesh_a2f7d6de50f0a174f6b9f39a862bc6bc4}{Load}}(\textcolor{keyword}{const}\ std::string\&\ path);}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_mesh_aa7b8c5a7a9735577d77de78cd9b96890}{Unload}}(\textcolor{keyword}{const}\ std::string\&\ path);}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_mesh_aaecd162df6bfdd4b34b90145a53a8f97}{ClearCache}}()\ \{\ \mbox{\hyperlink{class_mesh_a25da8a916ea7ec907bc90a89faefbbbd}{mCache}}.clear();\ \};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{static}\ std::unordered\_map<std::string,\ Mesh*>\ \mbox{\hyperlink{class_mesh_a25da8a916ea7ec907bc90a89faefbbbd}{mCache}};}
+\DoxyCodeLine{00045\ \};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_mesh_actor}{MeshActor}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_actor}{Actor}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_render}{IRender}}}
+\DoxyCodeLine{00058\ \{}
+\DoxyCodeLine{00059\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{class_mesh_actor_abf3da0ba75ebc06176e31192bb58aaac}{MeshActor}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \mbox{\hyperlink{class_mesh}{Mesh}}*\ mesh);}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_mesh_actor_a749c390f830beed28d289db92af4cb74}{Draw}}(\textcolor{keyword}{const}\ \textcolor{keyword}{class}\ \mbox{\hyperlink{class_shader}{Shader}}*\ shader\ =\ \textcolor{keyword}{nullptr})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{class_mesh}{Mesh}}*\ \mbox{\hyperlink{class_mesh_actor_ab102d04f498a18ea948c066ef668b720}{mMesh}}\{\ \textcolor{keyword}{nullptr}\ \};}
+\DoxyCodeLine{00063\ \};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{comment}{//\ Can\ eventually\ create\ a\ MeshComponent}}
+\DoxyCodeLine{00066\ \textcolor{comment}{//class\ MeshComponent\ :\ public\ Component,\ public\ IRender}}
+
+\end{DoxyCode}

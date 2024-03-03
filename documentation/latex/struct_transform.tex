@@ -1,0 +1,166 @@
+\doxysection{Transform Struct Reference}
+\hypertarget{struct_transform}{}\label{struct_transform}\index{Transform@{Transform}}
+
+
+Represents the position, rotation, and scale of an object in 3D space.  
+
+
+
+
+{\ttfamily \#include $<$Transform.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_transform_aa08ca4266efabc768973cdeea51945ab}{Transform}} ()
+\item 
+void \mbox{\hyperlink{struct_transform_a03125ec100a925eaf8ba6e2447c4a7f4}{Add\+Rotation}} (const glm\+::quat \&rot)
+\item 
+void \mbox{\hyperlink{struct_transform_ada15f00d4ad7bb7dae6d8ab69d8f48e9}{Add\+Yaw}} (float angle\+Degrees)
+\item 
+void \mbox{\hyperlink{struct_transform_aa81fd9aad91ad8b73c345ddbe05fafd4}{Add\+Pitch}} (float angle\+Degrees)
+\item 
+void \mbox{\hyperlink{struct_transform_a362918c3f596854fa0657828ee9364c0}{Set\+Position}} (const glm\+::vec3 \&pos)
+\item 
+void \mbox{\hyperlink{struct_transform_acc747e688b427ce447accfd4dba81b24}{Set\+Rotation}} (const glm\+::quat \&rot)
+\item 
+void \mbox{\hyperlink{struct_transform_af2430e58b3316cd711c42d56365ae84e}{Set\+Scale}} (const glm\+::vec3 \&scl)
+\item 
+void \mbox{\hyperlink{struct_transform_ae431e681d582282989a1cd167e9b67f6}{Set\+Rotation}} (const glm\+::vec3 \&forward\+Direction, const glm\+::vec3 \&up\+Direction=glm\+::vec3(0.\+0f, 1.\+0f, 0.\+0f))
+\item 
+void \mbox{\hyperlink{struct_transform_a7216f4078a8a3588f2fb7a25f0def849}{Set\+Rotation\+From\+Pitch}} (float pitch\+Degrees)
+\item 
+void \mbox{\hyperlink{struct_transform_a56847e0ed68a3346f70f24ad49ddf953}{Set\+Rotation\+From\+Yaw}} (float yaw\+Degrees)
+\item 
+void \mbox{\hyperlink{struct_transform_a71d5863878754d2634614e3e479be41b}{Set\+Transform\+Matrix}} (const glm\+::mat4 \&matrix)
+\item 
+const glm\+::vec3 \& \mbox{\hyperlink{struct_transform_a7352fd5cc768b355a88b6fb059cedb32}{Get\+Position}} () const
+\item 
+const glm\+::quat \& \mbox{\hyperlink{struct_transform_a4f3c7b6c14d9022c50d3fcf7dbef57d5}{Get\+Rotation}} () const
+\item 
+const glm\+::vec3 \& \mbox{\hyperlink{struct_transform_aebbac097d8e8ca298ecccfd1fa6907dd}{Get\+Scale}} () const
+\item 
+float \mbox{\hyperlink{struct_transform_ad9423c7c5b3e5d09d848feba8431764e}{Get\+Current\+Pitch}} () const
+\item 
+float \mbox{\hyperlink{struct_transform_a623eb07895af9554b2ff32a1064b1726}{Get\+Current\+Yaw}} () const
+\item 
+glm\+::mat4 \mbox{\hyperlink{struct_transform_a5eb6f03abee5b56a777749c70b276611}{Get\+Transform\+Matrix}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the position, rotation, and scale of an object in 3D space. 
+
+This struct encapsulates the transformation state of an object, including its position, rotation (as a quaternion), and scale. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{struct_transform_aa08ca4266efabc768973cdeea51945ab}\label{struct_transform_aa08ca4266efabc768973cdeea51945ab} 
+\index{Transform@{Transform}!Transform@{Transform}}
+\index{Transform@{Transform}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{Transform()}{Transform()}}
+{\footnotesize\ttfamily Transform\+::\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_transform_aa81fd9aad91ad8b73c345ddbe05fafd4}\label{struct_transform_aa81fd9aad91ad8b73c345ddbe05fafd4} 
+\index{Transform@{Transform}!AddPitch@{AddPitch}}
+\index{AddPitch@{AddPitch}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{AddPitch()}{AddPitch()}}
+{\footnotesize\ttfamily void Transform\+::\+Add\+Pitch (\begin{DoxyParamCaption}\item[{float}]{angle\+Degrees }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{struct_transform_a03125ec100a925eaf8ba6e2447c4a7f4}\label{struct_transform_a03125ec100a925eaf8ba6e2447c4a7f4} 
+\index{Transform@{Transform}!AddRotation@{AddRotation}}
+\index{AddRotation@{AddRotation}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{AddRotation()}{AddRotation()}}
+{\footnotesize\ttfamily void Transform\+::\+Add\+Rotation (\begin{DoxyParamCaption}\item[{const glm\+::quat \&}]{rot }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{struct_transform_ada15f00d4ad7bb7dae6d8ab69d8f48e9}\label{struct_transform_ada15f00d4ad7bb7dae6d8ab69d8f48e9} 
+\index{Transform@{Transform}!AddYaw@{AddYaw}}
+\index{AddYaw@{AddYaw}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{AddYaw()}{AddYaw()}}
+{\footnotesize\ttfamily void Transform\+::\+Add\+Yaw (\begin{DoxyParamCaption}\item[{float}]{angle\+Degrees }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{struct_transform_ad9423c7c5b3e5d09d848feba8431764e}\label{struct_transform_ad9423c7c5b3e5d09d848feba8431764e} 
+\index{Transform@{Transform}!GetCurrentPitch@{GetCurrentPitch}}
+\index{GetCurrentPitch@{GetCurrentPitch}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{GetCurrentPitch()}{GetCurrentPitch()}}
+{\footnotesize\ttfamily float Transform\+::\+Get\+Current\+Pitch (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{struct_transform_a623eb07895af9554b2ff32a1064b1726}\label{struct_transform_a623eb07895af9554b2ff32a1064b1726} 
+\index{Transform@{Transform}!GetCurrentYaw@{GetCurrentYaw}}
+\index{GetCurrentYaw@{GetCurrentYaw}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{GetCurrentYaw()}{GetCurrentYaw()}}
+{\footnotesize\ttfamily float Transform\+::\+Get\+Current\+Yaw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{struct_transform_a7352fd5cc768b355a88b6fb059cedb32}\label{struct_transform_a7352fd5cc768b355a88b6fb059cedb32} 
+\index{Transform@{Transform}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}}
+{\footnotesize\ttfamily const glm\+::vec3 \& Transform\+::\+Get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{struct_transform_a4f3c7b6c14d9022c50d3fcf7dbef57d5}\label{struct_transform_a4f3c7b6c14d9022c50d3fcf7dbef57d5} 
+\index{Transform@{Transform}!GetRotation@{GetRotation}}
+\index{GetRotation@{GetRotation}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{GetRotation()}{GetRotation()}}
+{\footnotesize\ttfamily const glm\+::quat \& Transform\+::\+Get\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{struct_transform_aebbac097d8e8ca298ecccfd1fa6907dd}\label{struct_transform_aebbac097d8e8ca298ecccfd1fa6907dd} 
+\index{Transform@{Transform}!GetScale@{GetScale}}
+\index{GetScale@{GetScale}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{GetScale()}{GetScale()}}
+{\footnotesize\ttfamily const glm\+::vec3 \& Transform\+::\+Get\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{struct_transform_a5eb6f03abee5b56a777749c70b276611}\label{struct_transform_a5eb6f03abee5b56a777749c70b276611} 
+\index{Transform@{Transform}!GetTransformMatrix@{GetTransformMatrix}}
+\index{GetTransformMatrix@{GetTransformMatrix}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{GetTransformMatrix()}{GetTransformMatrix()}}
+{\footnotesize\ttfamily glm\+::mat4 Transform\+::\+Get\+Transform\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{struct_transform_a362918c3f596854fa0657828ee9364c0}\label{struct_transform_a362918c3f596854fa0657828ee9364c0} 
+\index{Transform@{Transform}!SetPosition@{SetPosition}}
+\index{SetPosition@{SetPosition}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{SetPosition()}{SetPosition()}}
+{\footnotesize\ttfamily void Transform\+::\+Set\+Position (\begin{DoxyParamCaption}\item[{const glm\+::vec3 \&}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{struct_transform_acc747e688b427ce447accfd4dba81b24}\label{struct_transform_acc747e688b427ce447accfd4dba81b24} 
+\index{Transform@{Transform}!SetRotation@{SetRotation}}
+\index{SetRotation@{SetRotation}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{SetRotation()}{SetRotation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Transform\+::\+Set\+Rotation (\begin{DoxyParamCaption}\item[{const glm\+::quat \&}]{rot }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{struct_transform_ae431e681d582282989a1cd167e9b67f6}\label{struct_transform_ae431e681d582282989a1cd167e9b67f6} 
+\index{Transform@{Transform}!SetRotation@{SetRotation}}
+\index{SetRotation@{SetRotation}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{SetRotation()}{SetRotation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Transform\+::\+Set\+Rotation (\begin{DoxyParamCaption}\item[{const glm\+::vec3 \&}]{forward\+Direction,  }\item[{const glm\+::vec3 \&}]{up\+Direction = {\ttfamily glm\+:\+:vec3(0.0f,~1.0f,~0.0f)} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{struct_transform_a7216f4078a8a3588f2fb7a25f0def849}\label{struct_transform_a7216f4078a8a3588f2fb7a25f0def849} 
+\index{Transform@{Transform}!SetRotationFromPitch@{SetRotationFromPitch}}
+\index{SetRotationFromPitch@{SetRotationFromPitch}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{SetRotationFromPitch()}{SetRotationFromPitch()}}
+{\footnotesize\ttfamily void Transform\+::\+Set\+Rotation\+From\+Pitch (\begin{DoxyParamCaption}\item[{float}]{pitch\+Degrees }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{struct_transform_a56847e0ed68a3346f70f24ad49ddf953}\label{struct_transform_a56847e0ed68a3346f70f24ad49ddf953} 
+\index{Transform@{Transform}!SetRotationFromYaw@{SetRotationFromYaw}}
+\index{SetRotationFromYaw@{SetRotationFromYaw}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{SetRotationFromYaw()}{SetRotationFromYaw()}}
+{\footnotesize\ttfamily void Transform\+::\+Set\+Rotation\+From\+Yaw (\begin{DoxyParamCaption}\item[{float}]{yaw\+Degrees }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{struct_transform_af2430e58b3316cd711c42d56365ae84e}\label{struct_transform_af2430e58b3316cd711c42d56365ae84e} 
+\index{Transform@{Transform}!SetScale@{SetScale}}
+\index{SetScale@{SetScale}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{SetScale()}{SetScale()}}
+{\footnotesize\ttfamily void Transform\+::\+Set\+Scale (\begin{DoxyParamCaption}\item[{const glm\+::vec3 \&}]{scl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{struct_transform_a71d5863878754d2634614e3e479be41b}\label{struct_transform_a71d5863878754d2634614e3e479be41b} 
+\index{Transform@{Transform}!SetTransformMatrix@{SetTransformMatrix}}
+\index{SetTransformMatrix@{SetTransformMatrix}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{SetTransformMatrix()}{SetTransformMatrix()}}
+{\footnotesize\ttfamily void Transform\+::\+Set\+Transform\+Matrix (\begin{DoxyParamCaption}\item[{const glm\+::mat4 \&}]{matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+core/\mbox{\hyperlink{_transform_8h}{Transform.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,65 @@
+\doxysection{Material.\+h}
+\hypertarget{_material_8h_source}{}\label{_material_8h_source}\index{core/Material.h@{core/Material.h}}
+\mbox{\hyperlink{_material_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_shader_8h}{Shader.h}}>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_texture_8h}{Texture.h}}>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <glm/glm.hpp>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_material}{Material}}}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//\ New\ types\ and\ order\ must\ match\ the\ array\ below}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{class_material_ad8d759af2ca304921c68ef56e9aaccae}{TextureType}}}
+\DoxyCodeLine{00023\ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_material_ad8d759af2ca304921c68ef56e9aaccaeab7b6a54bf705851df4351fe540a6296b}{ALBEDO}},}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_material_ad8d759af2ca304921c68ef56e9aaccaea66b7035936c46b641aa4a552e85547bf}{SPECULAR}},}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_material_ad8d759af2ca304921c68ef56e9aaccaea2ec963c8a987b666b2dc3c190b7cf651}{NORMAL}},}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_material_ad8d759af2ca304921c68ef56e9aaccaea0eac491426cab1f98effca170cbe9d53}{ALPHA}},}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_material_ad8d759af2ca304921c68ef56e9aaccaea1af8d64f92f29d01445759ce3514cbb7}{COUNT}}}
+\DoxyCodeLine{00029\ \ \ \ \ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ std::array<std::string,\ static\_cast<size\_t>(\mbox{\hyperlink{class_material_ad8d759af2ca304921c68ef56e9aaccaea1af8d64f92f29d01445759ce3514cbb7}{TextureType::COUNT}})>\ \mbox{\hyperlink{class_material_ae6a91e0ba94c10763793925955044d65}{textureUniformNames}}\ =\ \{\ \ \ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}material.albedoMap"{}},\ \textcolor{stringliteral}{"{}material.specularMap"{}},\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}material.normalMap"{}},\ \textcolor{stringliteral}{"{}material.alphaMap"{}}}
+\DoxyCodeLine{00034\ \ \ \ \ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_material_1_1_material_properties}{MaterialProperties}}}
+\DoxyCodeLine{00046\ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ glm::vec3\ \mbox{\hyperlink{struct_material_1_1_material_properties_a3aea141d203239a509f8b98a557c528c}{mColor}}\{1.f,\ 1.f,\ 1.f\};}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_material_1_1_material_properties_a905ca02e6231fccdf1228e6b0a796306}{mShininess}}\{\ 1.f\ \};}
+\DoxyCodeLine{00049\ \ \ \ \ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00052\ \ \ \ \ MaterialProperties\ mProperties\{\};}
+\DoxyCodeLine{00053\ \ \ \ \ std::array<Texture*,\ TextureType::COUNT>\ mTextures\{\};}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{static}\ std::unordered\_map<std::string,\ Material*>\ mCache;}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{class_material}{Material}}(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{class_material_a25b550b11c2b1c2154b3a79fc38c3938}{Material}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_material}{Material}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{class_material}{Material}}\&\ \mbox{\hyperlink{class_material_aa114078f437ae09781af21ed23dfce45}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_material}{Material}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_material}{Material}}*\ \mbox{\hyperlink{class_material_a9676f1109f9531ebefd6695ae9425e3d}{Load}}(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_material}{Material}}*\ \mbox{\hyperlink{class_material_a9676f1109f9531ebefd6695ae9425e3d}{Load}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ std::array<Texture*,\ TextureType::COUNT>\&\ textures,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_material_1_1_material_properties}{MaterialProperties}}\&\ properties);}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_material_aac337f6a576cfdea27058c9a9b34721f}{Unload}}(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_material_a87d1923c77c5a11d7657b9c84419b351}{ClearCache}}()\ \{\ mCache.clear();\ \};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{comment}{//\ Assumes\ the\ shader\ is\ bound}}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_material_a88bfc750f34cc4438acdf1f372f62b1b}{Bind}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_shader}{Shader}}*\ shader)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_material_a1c7b663924f724f6b9cc1138b1aac21a}{SetTexture}}(\mbox{\hyperlink{class_material_ad8d759af2ca304921c68ef56e9aaccae}{TextureType}}\ type,\ \mbox{\hyperlink{class_texture}{Texture}}*\ texture);}
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{class_texture}{Texture}}*\ \mbox{\hyperlink{class_material_a51b817e21c0cfebc1098fef6289e72cd}{GetTexture}}(\mbox{\hyperlink{class_material_ad8d759af2ca304921c68ef56e9aaccae}{TextureType}}\ type)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_material_1_1_material_properties}{MaterialProperties}}\&\ \mbox{\hyperlink{class_material_afacb197925feb1de9ed46daa9f20c82f}{GetProperties}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ mProperties;\ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_material_a8edec34b25aae92ad452b97f79130eed}{SetProperties}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_material_1_1_material_properties}{MaterialProperties}}\&\ properties)\ \{\ mProperties\ =\ properties;\ \}}
+\DoxyCodeLine{00075\ \};}
+
+\end{DoxyCode}

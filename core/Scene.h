@@ -5,6 +5,15 @@
 #include <Controller.h>
 #include <Mesh.h>
 
+/**
+ * @class Scene
+ * @brief Manages the lifecycle and rendering of a scene.
+ *
+ * The Scene class is responsible for managing all the objects within a particular scene,
+ * including their loading, updating, and rendering. It supports scene graph management
+ * for hierarchical object relationships and handles user input through an associated
+ * controller. This class cannot be copied or moved to ensure unique instances of each scene.
+ */
 class Scene
 {
 public:
@@ -33,7 +42,7 @@ public:
     void SetController(const std::shared_ptr<IController>& controller) { mController = controller; }
 
     SceneGraph mSceneGraph;
-    Camera mSceneCamera{ "SceneCamera" };
+    CameraActor mSceneCamera{ "SceneCamera" };
 
 private:
     MeshActor* mCube0{nullptr};

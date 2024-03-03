@@ -1,0 +1,98 @@
+\doxysection{Camera\+Controller Class Reference}
+\hypertarget{class_camera_controller}{}\label{class_camera_controller}\index{CameraController@{CameraController}}
+
+
+Controls camera movement and orientation based on user input.  
+
+
+
+
+{\ttfamily \#include $<$Camera\+Controller.\+h$>$}
+
+Inheritance diagram for Camera\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_camera_controller}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_camera_controller_ae5a8cef4f816b32f0abe30faacdf18f1}{Camera\+Controller}} (class \mbox{\hyperlink{class_camera_actor}{Camera\+Actor}} \texorpdfstring{$\ast$}{*}camera)
+\item 
+virtual void \mbox{\hyperlink{class_camera_controller_a14ceeccd1d7391b7ffff420b5097304c}{Handle\+Mouse\+Move}} (class \mbox{\hyperlink{class_window}{Window}} \texorpdfstring{$\ast$}{*}window, double xpos, double ypos) override
+\item 
+virtual void \mbox{\hyperlink{class_camera_controller_aa96f49807dc9549b6d22a80f62c0d7d4}{Handle\+Mouse\+Scroll}} (class \mbox{\hyperlink{class_window}{Window}} \texorpdfstring{$\ast$}{*}window, double xoffset, double yoffset) override
+\item 
+virtual void \mbox{\hyperlink{class_camera_controller_a3ba05e0e09c3bcae043da4027fe6d5e2}{Handle\+Mouse\+Button}} (class \mbox{\hyperlink{class_window}{Window}} \texorpdfstring{$\ast$}{*}window, int button, int action, int mods) override
+\item 
+virtual void \mbox{\hyperlink{class_camera_controller_a895b6f4f26366f0db14c24e7db422294}{Handle\+Keyboard}} (class \mbox{\hyperlink{class_window}{Window}} \texorpdfstring{$\ast$}{*}window, int key, int scancode, int action, int mods) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_controller}{IController}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_controller_adbe8a8556fee242cfdb0cc251ebd1a81}{\texorpdfstring{$\sim$}{\string~}\+IController}} ()=default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controls camera movement and orientation based on user input. 
+
+\doxylink{class_camera_controller}{Camera\+Controller} is responsible for handling user inputs. It is designed to work with a \doxylink{class_camera_actor}{Camera\+Actor} to update its transformation based on the input. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_camera_controller_ae5a8cef4f816b32f0abe30faacdf18f1}\label{class_camera_controller_ae5a8cef4f816b32f0abe30faacdf18f1} 
+\index{CameraController@{CameraController}!CameraController@{CameraController}}
+\index{CameraController@{CameraController}!CameraController@{CameraController}}
+\doxysubsubsection{\texorpdfstring{CameraController()}{CameraController()}}
+{\footnotesize\ttfamily Camera\+Controller\+::\+Camera\+Controller (\begin{DoxyParamCaption}\item[{class \mbox{\hyperlink{class_camera_actor}{Camera\+Actor}} \texorpdfstring{$\ast$}{*}}]{camera }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_camera_controller_a895b6f4f26366f0db14c24e7db422294}\label{class_camera_controller_a895b6f4f26366f0db14c24e7db422294} 
+\index{CameraController@{CameraController}!HandleKeyboard@{HandleKeyboard}}
+\index{HandleKeyboard@{HandleKeyboard}!CameraController@{CameraController}}
+\doxysubsubsection{\texorpdfstring{HandleKeyboard()}{HandleKeyboard()}}
+{\footnotesize\ttfamily void Camera\+Controller\+::\+Handle\+Keyboard (\begin{DoxyParamCaption}\item[{class \mbox{\hyperlink{class_window}{Window}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{int}]{key,  }\item[{int}]{scancode,  }\item[{int}]{action,  }\item[{int}]{mods }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_controller_a2d13c6a5c8ed679f5609d32112cb52b8}{IController}}.
+
+\Hypertarget{class_camera_controller_a3ba05e0e09c3bcae043da4027fe6d5e2}\label{class_camera_controller_a3ba05e0e09c3bcae043da4027fe6d5e2} 
+\index{CameraController@{CameraController}!HandleMouseButton@{HandleMouseButton}}
+\index{HandleMouseButton@{HandleMouseButton}!CameraController@{CameraController}}
+\doxysubsubsection{\texorpdfstring{HandleMouseButton()}{HandleMouseButton()}}
+{\footnotesize\ttfamily void Camera\+Controller\+::\+Handle\+Mouse\+Button (\begin{DoxyParamCaption}\item[{class \mbox{\hyperlink{class_window}{Window}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{int}]{button,  }\item[{int}]{action,  }\item[{int}]{mods }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_controller_a7ede469072bd089eb9d123991167be90}{IController}}.
+
+\Hypertarget{class_camera_controller_a14ceeccd1d7391b7ffff420b5097304c}\label{class_camera_controller_a14ceeccd1d7391b7ffff420b5097304c} 
+\index{CameraController@{CameraController}!HandleMouseMove@{HandleMouseMove}}
+\index{HandleMouseMove@{HandleMouseMove}!CameraController@{CameraController}}
+\doxysubsubsection{\texorpdfstring{HandleMouseMove()}{HandleMouseMove()}}
+{\footnotesize\ttfamily void Camera\+Controller\+::\+Handle\+Mouse\+Move (\begin{DoxyParamCaption}\item[{class \mbox{\hyperlink{class_window}{Window}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{double}]{xpos,  }\item[{double}]{ypos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_controller_ae76b08d1f4d5cdf2b367aa112f28b3c5}{IController}}.
+
+\Hypertarget{class_camera_controller_aa96f49807dc9549b6d22a80f62c0d7d4}\label{class_camera_controller_aa96f49807dc9549b6d22a80f62c0d7d4} 
+\index{CameraController@{CameraController}!HandleMouseScroll@{HandleMouseScroll}}
+\index{HandleMouseScroll@{HandleMouseScroll}!CameraController@{CameraController}}
+\doxysubsubsection{\texorpdfstring{HandleMouseScroll()}{HandleMouseScroll()}}
+{\footnotesize\ttfamily void Camera\+Controller\+::\+Handle\+Mouse\+Scroll (\begin{DoxyParamCaption}\item[{class \mbox{\hyperlink{class_window}{Window}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{double}]{xoffset,  }\item[{double}]{yoffset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_controller_ac785c7bf69fbb9723890590e7d48553b}{IController}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\mbox{\hyperlink{_camera_controller_8h}{Camera\+Controller.\+h}}\item 
+core/\mbox{\hyperlink{_camera_controller_8cpp}{Camera\+Controller.\+cpp}}\end{DoxyCompactItemize}

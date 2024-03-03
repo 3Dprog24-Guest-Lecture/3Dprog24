@@ -1,0 +1,71 @@
+\doxysection{Texture Class Reference}
+\hypertarget{class_texture}{}\label{class_texture}\index{Texture@{Texture}}
+
+
+Manages texture resources.  
+
+
+
+
+{\ttfamily \#include $<$Texture.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_types_8h_a7d50c2c31a1c84abc985b39bfa05eea8}{Texture\+ID}} \mbox{\hyperlink{class_texture_a0730c6fe2f07bd8e1eca1255a8ac168a}{Get\+Texture\+ID}} () const
+\item 
+bool \mbox{\hyperlink{class_texture_a9ce2ebd76a71e91f329c5ed041370422}{Is\+Valid}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_texture}{Texture}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_texture_a61a2233e0b8b6ca38cb130184a526ecf}{Load}} (const std\+::string \&path)
+\item 
+static void \mbox{\hyperlink{class_texture_a3b1eedfb18dfff069ec2bd54fa775b1c}{Unload}} (const std\+::string \&path)
+\item 
+static void \mbox{\hyperlink{class_texture_a166fe3e1390b6e2eb474c5239c4e5387}{Clear\+Cache}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages texture resources. 
+
+This class encapsulates texture resources, including loading textures from files and ensuring textures are unique through a caching mechanism. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_texture_a166fe3e1390b6e2eb474c5239c4e5387}\label{class_texture_a166fe3e1390b6e2eb474c5239c4e5387} 
+\index{Texture@{Texture}!ClearCache@{ClearCache}}
+\index{ClearCache@{ClearCache}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{ClearCache()}{ClearCache()}}
+{\footnotesize\ttfamily static void Texture\+::\+Clear\+Cache (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_texture_a0730c6fe2f07bd8e1eca1255a8ac168a}\label{class_texture_a0730c6fe2f07bd8e1eca1255a8ac168a} 
+\index{Texture@{Texture}!GetTextureID@{GetTextureID}}
+\index{GetTextureID@{GetTextureID}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{GetTextureID()}{GetTextureID()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_types_8h_a7d50c2c31a1c84abc985b39bfa05eea8}{Texture\+ID}} Texture\+::\+Get\+Texture\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_texture_a9ce2ebd76a71e91f329c5ed041370422}\label{class_texture_a9ce2ebd76a71e91f329c5ed041370422} 
+\index{Texture@{Texture}!IsValid@{IsValid}}
+\index{IsValid@{IsValid}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{IsValid()}{IsValid()}}
+{\footnotesize\ttfamily bool Texture\+::\+Is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_texture_a61a2233e0b8b6ca38cb130184a526ecf}\label{class_texture_a61a2233e0b8b6ca38cb130184a526ecf} 
+\index{Texture@{Texture}!Load@{Load}}
+\index{Load@{Load}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{Load()}{Load()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_texture}{Texture}} \texorpdfstring{$\ast$}{*} Texture\+::\+Load (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_texture_a3b1eedfb18dfff069ec2bd54fa775b1c}\label{class_texture_a3b1eedfb18dfff069ec2bd54fa775b1c} 
+\index{Texture@{Texture}!Unload@{Unload}}
+\index{Unload@{Unload}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{Unload()}{Unload()}}
+{\footnotesize\ttfamily void Texture\+::\+Unload (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\mbox{\hyperlink{_texture_8h}{Texture.\+h}}\item 
+core/\mbox{\hyperlink{_texture_8cpp}{Texture.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,137 @@
+\doxysection{Mesh\+Actor Class Reference}
+\hypertarget{class_mesh_actor}{}\label{class_mesh_actor}\index{MeshActor@{MeshActor}}
+
+
+Represents an actor in the scene that holds a mesh.  
+
+
+
+
+{\ttfamily \#include $<$Mesh.\+h$>$}
+
+Inheritance diagram for Mesh\+Actor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_mesh_actor}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mesh_actor_abf3da0ba75ebc06176e31192bb58aaac}{Mesh\+Actor}} (const std\+::string \&name, \mbox{\hyperlink{class_mesh}{Mesh}} \texorpdfstring{$\ast$}{*}mesh)
+\item 
+virtual void \mbox{\hyperlink{class_mesh_actor_a749c390f830beed28d289db92af4cb74}{Draw}} (const class \mbox{\hyperlink{class_shader}{Shader}} \texorpdfstring{$\ast$}{*}shader=nullptr) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_actor}{Actor}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_actor_af17d22383fdbe2edb46d07cd26c01754}{Actor}} (const std\+::string \&name)
+\item 
+\mbox{\hyperlink{class_actor_a22f32e3ce430a9f5c6dc9eab2ed7224c}{Actor}} (const \mbox{\hyperlink{class_actor}{Actor}} \&)=delete
+\item 
+\mbox{\hyperlink{class_actor}{Actor}} \& \mbox{\hyperlink{class_actor_a2694d37daf78fdd5c472bbced3f411b5}{operator=}} (const \mbox{\hyperlink{class_actor}{Actor}} \&)=delete
+\item 
+\mbox{\hyperlink{class_actor_aa3a169246ab4b9293e238732700fba4d}{Actor}} (\mbox{\hyperlink{class_actor}{Actor}} \&\&)=default
+\item 
+\mbox{\hyperlink{class_actor}{Actor}} \& \mbox{\hyperlink{class_actor_a9be3746bee0b124b6ca67bbaa838288f}{operator=}} (\mbox{\hyperlink{class_actor}{Actor}} \&\&)=default
+\item 
+\mbox{\hyperlink{class_actor_a94a117a9b8506259f0c987435917617b}{\texorpdfstring{$\sim$}{\string~}\+Actor}} ()=default
+\item 
+virtual void \mbox{\hyperlink{class_actor_a651fecef34d686452750bc165fcc76ce}{Update}} (float dt)
+\item 
+void \mbox{\hyperlink{class_actor_aba5cc96b0d0097ef4fd67aa155810e2c}{Set\+Parent}} (\mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*}parent)
+\item 
+void \mbox{\hyperlink{class_actor_a52786836e705c29df948c268da4b42e2}{Add\+Child}} (\mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*}child)
+\item 
+void \mbox{\hyperlink{class_actor_ae244e4ffa7005b14970d64616b1b717c}{Remove\+Child}} (\mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*}child)
+\item 
+void \mbox{\hyperlink{class_actor_ace4af4f181e7f1f19d46b57b2f1cb2c6}{Set\+Transform}} (const \mbox{\hyperlink{struct_transform}{Transform}} \&transform)
+\item 
+void \mbox{\hyperlink{class_actor_a88c4013859a75cd89933b4d125a309a4}{Set\+Position}} (const glm\+::vec3 \&position, \mbox{\hyperlink{class_actor_a3c153709d0bc28c652f10218ca6de712}{Actor\+::\+Transform\+Space}} type=\mbox{\hyperlink{class_actor_a3c153709d0bc28c652f10218ca6de712a509820290d57f333403f490dde7316f4}{Actor\+::\+Transform\+Space\+::\+Local}})
+\item 
+void \mbox{\hyperlink{class_actor_a0ae706ebcff9693c796cc425d2c66056}{Set\+Rotation}} (const glm\+::quat \&rotation, \mbox{\hyperlink{class_actor_a3c153709d0bc28c652f10218ca6de712}{Actor\+::\+Transform\+Space}} type=\mbox{\hyperlink{class_actor_a3c153709d0bc28c652f10218ca6de712a509820290d57f333403f490dde7316f4}{Actor\+::\+Transform\+Space\+::\+Local}})
+\item 
+void \mbox{\hyperlink{class_actor_af38c9c7d4dc25124cf2e28b65a72761a}{Set\+Scale}} (const glm\+::vec3 \&scale, \mbox{\hyperlink{class_actor_a3c153709d0bc28c652f10218ca6de712}{Actor\+::\+Transform\+Space}} type=\mbox{\hyperlink{class_actor_a3c153709d0bc28c652f10218ca6de712a509820290d57f333403f490dde7316f4}{Actor\+::\+Transform\+Space\+::\+Local}})
+\item 
+const glm\+::vec3 \& \mbox{\hyperlink{class_actor_af67fca2394dfd7a0c7eed35d9b4df705}{Get\+Position}} () const
+\item 
+glm\+::vec3 \mbox{\hyperlink{class_actor_a07cc4ee2bc3e908fdfd13e90ae6548f9}{Get\+Global\+Position}} () const
+\item 
+const glm\+::quat \& \mbox{\hyperlink{class_actor_a21b8672438a42af3654c7e25f10a84cd}{Get\+Rotation}} () const
+\item 
+glm\+::quat \mbox{\hyperlink{class_actor_a04bb639f5d5d5d0e2d465e755db31ac9}{Get\+Global\+Rotation}} () const
+\item 
+const glm\+::vec3 \& \mbox{\hyperlink{class_actor_ab0fd1b72111679e277f169c2d7be8c19}{Get\+Scale}} () const
+\item 
+glm\+::vec3 \mbox{\hyperlink{class_actor_a6d0ca0091883b69cde02eaf5d10a6f52}{Get\+Global\+Scale}} () const
+\item 
+const glm\+::mat4 \mbox{\hyperlink{class_actor_a60bd82bc2660d32f7418fe8894e7d6e9}{Get\+Transform\+Matrix}} () const
+\item 
+glm\+::mat4 \mbox{\hyperlink{class_actor_a5f238a412629b47f3a746d44ea271d7e}{Get\+Global\+Transform\+Matrix}} () const
+\item 
+const \mbox{\hyperlink{struct_transform}{Transform}} \& \mbox{\hyperlink{class_actor_aa14c40bea560b0ca4de10a1cd30434f9}{Get\+Transform}} () const
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{class_actor_a067c9709390f5185e5a8535785dc2ff8}{Get\+Children}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mesh}{Mesh}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_mesh_actor_ab102d04f498a18ea948c066ef668b720}{m\+Mesh}} \{ nullptr \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{class_actor}{Actor}}}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_actor_a3c153709d0bc28c652f10218ca6de712}{Transform\+Space}} \{ \mbox{\hyperlink{class_actor_a3c153709d0bc28c652f10218ca6de712a509820290d57f333403f490dde7316f4}{Local}}
+, \mbox{\hyperlink{class_actor_a3c153709d0bc28c652f10218ca6de712a4cc6684df7b4a92b1dec6fce3264fac8}{Global}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_actor}{Actor}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_actor_a2e23b38fa11b43c4e5cf57d65b8349a4}{m\+Parent}} \{nullptr\}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_actor_ad59a8d1d6e8407c01883d325884b25ec}{m\+Children}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents an actor in the scene that holds a mesh. 
+
+\doxylink{class_mesh_actor}{Mesh\+Actor} is a specialized type of actor designed to hold a mesh and render it. It inherits from the \doxylink{class_actor}{Actor} class to integrate into the scene graph and implements the \doxylink{class_i_render}{IRender} interface to provide rendering functionality. This allows the \doxylink{class_mesh_actor}{Mesh\+Actor} to be managed within the scene graph while also having the capability to render a specific mesh using a shader. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_mesh_actor_abf3da0ba75ebc06176e31192bb58aaac}\label{class_mesh_actor_abf3da0ba75ebc06176e31192bb58aaac} 
+\index{MeshActor@{MeshActor}!MeshActor@{MeshActor}}
+\index{MeshActor@{MeshActor}!MeshActor@{MeshActor}}
+\doxysubsubsection{\texorpdfstring{MeshActor()}{MeshActor()}}
+{\footnotesize\ttfamily Mesh\+Actor\+::\+Mesh\+Actor (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{\mbox{\hyperlink{class_mesh}{Mesh}} \texorpdfstring{$\ast$}{*}}]{mesh }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_mesh_actor_a749c390f830beed28d289db92af4cb74}\label{class_mesh_actor_a749c390f830beed28d289db92af4cb74} 
+\index{MeshActor@{MeshActor}!Draw@{Draw}}
+\index{Draw@{Draw}!MeshActor@{MeshActor}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Mesh\+Actor\+::\+Draw (\begin{DoxyParamCaption}\item[{const class \mbox{\hyperlink{class_shader}{Shader}} \texorpdfstring{$\ast$}{*}}]{shader = {\ttfamily nullptr} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_render_a0d4c9147e115913b44490acc3f2726b5}{IRender}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_mesh_actor_ab102d04f498a18ea948c066ef668b720}\label{class_mesh_actor_ab102d04f498a18ea948c066ef668b720} 
+\index{MeshActor@{MeshActor}!mMesh@{mMesh}}
+\index{mMesh@{mMesh}!MeshActor@{MeshActor}}
+\doxysubsubsection{\texorpdfstring{mMesh}{mMesh}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_mesh}{Mesh}}\texorpdfstring{$\ast$}{*} Mesh\+Actor\+::m\+Mesh \{ nullptr \}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\mbox{\hyperlink{_mesh_8h}{Mesh.\+h}}\item 
+core/\mbox{\hyperlink{_mesh_8cpp}{Mesh.\+cpp}}\end{DoxyCompactItemize}

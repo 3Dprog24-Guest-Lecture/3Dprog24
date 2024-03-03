@@ -1,0 +1,263 @@
+\doxysection{Camera Class Reference}
+\hypertarget{class_camera}{}\label{class_camera}\index{Camera@{Camera}}
+
+
+{\ttfamily \#include $<$Camera.\+h$>$}
+
+Inheritance diagram for Camera\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_camera}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_camera_a2428203403612479e5ffa96886de6bca}{Camera}} (const std\+::string \&name, glm\+::vec3 position=glm\+::vec3(0.\+0f, 0.\+0f, 0.\+0f), glm\+::quat rotation=glm\+::quat(glm\+::identity$<$ glm\+::quat $>$()), float aspect\+Ratio=1280.f/720.f, float near\+Plane=0.\+1f, float far\+Plane=100.\+0f, float field\+Of\+View=45.\+0f, float max\+Movement\+Seed=40.f, float acceleration\+Speed=20.\+0f, float damping\+Factor=5.\+0f)
+\item 
+virtual void \mbox{\hyperlink{class_camera_a74c190b3103d701f678094b46de55ba2}{Update}} (float dt) override
+\item 
+void \mbox{\hyperlink{class_camera_aaf4289774913406229101c957f7717a6}{Add\+Velocity}} (const glm\+::vec3 \&velocity)
+\item 
+void \mbox{\hyperlink{class_camera_afdfe894e382bf0dfd82500a72558ecab}{Set\+Aspect\+Ratio}} (float aspect\+Ratio)
+\item 
+void \mbox{\hyperlink{class_camera_afc5cc54023f080a6b2e4e1763c912b80}{Set\+Velocity}} (const glm\+::vec3 \&velocity)
+\item 
+void \mbox{\hyperlink{class_camera_ab0585145b090d1f7b04824a69b2ff984}{Set\+Acceleration\+Speed}} (float acceleration\+Speed)
+\item 
+void \mbox{\hyperlink{class_camera_a6733526c3faae1d1cdeb8529678d6b6e}{Set\+Acceleration}} (const glm\+::vec3 \&acceleration)
+\item 
+void \mbox{\hyperlink{class_camera_a24ec575123d767c671162918af7162f5}{Set\+Max\+Movement\+Speed}} (float movement\+Speed)
+\item 
+float \mbox{\hyperlink{class_camera_a2c0a222940c28307e2932dbd082352c7}{Get\+Max\+Movement\+Speed}} () const
+\item 
+float \mbox{\hyperlink{class_camera_ab041320f0998c72ed62792926de62d9e}{Get\+Aspect\+Ratio}} () const
+\item 
+float \mbox{\hyperlink{class_camera_a717524d55ea7594868ce8c0e42b42b45}{Get\+Near\+Plane}} () const
+\item 
+float \mbox{\hyperlink{class_camera_ad13d8e8a41fb0259843a82e484c60134}{Get\+Far\+Plane}} () const
+\item 
+float \mbox{\hyperlink{class_camera_abd4c35855c6c6687a54606cccd7943fc}{Get\+Field\+Of\+View}} () const
+\item 
+float \mbox{\hyperlink{class_camera_a81bf60355067e9cb17b7152649c13207}{Get\+Acceleration\+Speed}} () const
+\item 
+const glm\+::vec3 \& \mbox{\hyperlink{class_camera_aa1fc0a2ba37eafb7905022ff25542f23}{Get\+Acceleration}} () const
+\item 
+glm\+::vec3 \mbox{\hyperlink{class_camera_a67b217e807dab7e623bb2dba434cdec9}{Get\+Front}} () const
+\item 
+glm\+::vec3 \mbox{\hyperlink{class_camera_ac3829288645557ae4fd9b1fd0168e3d7}{Get\+Up}} () const
+\item 
+const glm\+::vec3 \& \mbox{\hyperlink{class_camera_aac261f6f818344eb357ff5662994bdc9}{Get\+Velocity}} () const
+\item 
+glm\+::mat4 \mbox{\hyperlink{class_camera_ac5be0b9a950effe0e5f5993c182c12da}{Get\+View\+Matrix}} () const
+\item 
+const glm\+::mat4 \& \mbox{\hyperlink{class_camera_a68ed33e67ba5a91ff68cbe53c090c736}{Get\+Projection\+Matrix}} () const
+\item 
+glm\+::mat4 \mbox{\hyperlink{class_camera_a5e2dc6c9d1d9779b5991fd310091b4be}{Get\+VPMatrix}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_actor}{Actor}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_actor_af17d22383fdbe2edb46d07cd26c01754}{Actor}} (const std\+::string \&name)
+\item 
+\mbox{\hyperlink{class_actor_a22f32e3ce430a9f5c6dc9eab2ed7224c}{Actor}} (const \mbox{\hyperlink{class_actor}{Actor}} \&)=delete
+\item 
+\mbox{\hyperlink{class_actor}{Actor}} \& \mbox{\hyperlink{class_actor_a2694d37daf78fdd5c472bbced3f411b5}{operator=}} (const \mbox{\hyperlink{class_actor}{Actor}} \&)=delete
+\item 
+\mbox{\hyperlink{class_actor_aa3a169246ab4b9293e238732700fba4d}{Actor}} (\mbox{\hyperlink{class_actor}{Actor}} \&\&)=default
+\item 
+\mbox{\hyperlink{class_actor}{Actor}} \& \mbox{\hyperlink{class_actor_a9be3746bee0b124b6ca67bbaa838288f}{operator=}} (\mbox{\hyperlink{class_actor}{Actor}} \&\&)=default
+\item 
+\mbox{\hyperlink{class_actor_a94a117a9b8506259f0c987435917617b}{\texorpdfstring{$\sim$}{\string~}\+Actor}} ()=default
+\item 
+void \mbox{\hyperlink{class_actor_aba5cc96b0d0097ef4fd67aa155810e2c}{Set\+Parent}} (\mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*}parent)
+\item 
+void \mbox{\hyperlink{class_actor_a52786836e705c29df948c268da4b42e2}{Add\+Child}} (\mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*}child)
+\item 
+void \mbox{\hyperlink{class_actor_ae244e4ffa7005b14970d64616b1b717c}{Remove\+Child}} (\mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*}child)
+\item 
+void \mbox{\hyperlink{class_actor_ace4af4f181e7f1f19d46b57b2f1cb2c6}{Set\+Transform}} (const \mbox{\hyperlink{struct_transform}{Transform}} \&transform)
+\item 
+void \mbox{\hyperlink{class_actor_a88c4013859a75cd89933b4d125a309a4}{Set\+Position}} (const glm\+::vec3 \&position, \mbox{\hyperlink{class_actor_a3c153709d0bc28c652f10218ca6de712}{Actor\+::\+Transform\+Space}} type=\mbox{\hyperlink{class_actor_a3c153709d0bc28c652f10218ca6de712a509820290d57f333403f490dde7316f4}{Actor\+::\+Transform\+Space\+::\+Local}})
+\item 
+void \mbox{\hyperlink{class_actor_a0ae706ebcff9693c796cc425d2c66056}{Set\+Rotation}} (const glm\+::quat \&rotation, \mbox{\hyperlink{class_actor_a3c153709d0bc28c652f10218ca6de712}{Actor\+::\+Transform\+Space}} type=\mbox{\hyperlink{class_actor_a3c153709d0bc28c652f10218ca6de712a509820290d57f333403f490dde7316f4}{Actor\+::\+Transform\+Space\+::\+Local}})
+\item 
+void \mbox{\hyperlink{class_actor_af38c9c7d4dc25124cf2e28b65a72761a}{Set\+Scale}} (const glm\+::vec3 \&scale, \mbox{\hyperlink{class_actor_a3c153709d0bc28c652f10218ca6de712}{Actor\+::\+Transform\+Space}} type=\mbox{\hyperlink{class_actor_a3c153709d0bc28c652f10218ca6de712a509820290d57f333403f490dde7316f4}{Actor\+::\+Transform\+Space\+::\+Local}})
+\item 
+const glm\+::vec3 \& \mbox{\hyperlink{class_actor_af67fca2394dfd7a0c7eed35d9b4df705}{Get\+Position}} () const
+\item 
+glm\+::vec3 \mbox{\hyperlink{class_actor_a07cc4ee2bc3e908fdfd13e90ae6548f9}{Get\+Global\+Position}} () const
+\item 
+const glm\+::quat \& \mbox{\hyperlink{class_actor_a21b8672438a42af3654c7e25f10a84cd}{Get\+Rotation}} () const
+\item 
+glm\+::quat \mbox{\hyperlink{class_actor_a04bb639f5d5d5d0e2d465e755db31ac9}{Get\+Global\+Rotation}} () const
+\item 
+const glm\+::vec3 \& \mbox{\hyperlink{class_actor_ab0fd1b72111679e277f169c2d7be8c19}{Get\+Scale}} () const
+\item 
+glm\+::vec3 \mbox{\hyperlink{class_actor_a6d0ca0091883b69cde02eaf5d10a6f52}{Get\+Global\+Scale}} () const
+\item 
+const glm\+::mat4 \mbox{\hyperlink{class_actor_a60bd82bc2660d32f7418fe8894e7d6e9}{Get\+Transform\+Matrix}} () const
+\item 
+glm\+::mat4 \mbox{\hyperlink{class_actor_a5f238a412629b47f3a746d44ea271d7e}{Get\+Global\+Transform\+Matrix}} () const
+\item 
+const \mbox{\hyperlink{struct_transform}{Transform}} \& \mbox{\hyperlink{class_actor_aa14c40bea560b0ca4de10a1cd30434f9}{Get\+Transform}} () const
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{class_actor_a067c9709390f5185e5a8535785dc2ff8}{Get\+Children}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{class_actor}{Actor}}}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_actor_a3c153709d0bc28c652f10218ca6de712}{Transform\+Space}} \{ \mbox{\hyperlink{class_actor_a3c153709d0bc28c652f10218ca6de712a509820290d57f333403f490dde7316f4}{Local}}
+, \mbox{\hyperlink{class_actor_a3c153709d0bc28c652f10218ca6de712a4cc6684df7b4a92b1dec6fce3264fac8}{Global}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_actor}{Actor}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_actor_a2e23b38fa11b43c4e5cf57d65b8349a4}{m\+Parent}} \{nullptr\}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_actor_ad59a8d1d6e8407c01883d325884b25ec}{m\+Children}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_camera_a2428203403612479e5ffa96886de6bca}\label{class_camera_a2428203403612479e5ffa96886de6bca} 
+\index{Camera@{Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{Camera()}{Camera()}}
+{\footnotesize\ttfamily Camera\+::\+Camera (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{glm\+::vec3}]{position = {\ttfamily glm\+:\+:vec3(0.0f,~0.0f,~0.0f)},  }\item[{glm\+::quat}]{rotation = {\ttfamily glm\+:\+:quat(glm\+:\+:identity$<$glm\+:\+:quat$>$())},  }\item[{float}]{aspect\+Ratio = {\ttfamily 1280.f~/~720.f},  }\item[{float}]{near\+Plane = {\ttfamily 0.1f},  }\item[{float}]{far\+Plane = {\ttfamily 100.0f},  }\item[{float}]{field\+Of\+View = {\ttfamily 45.0f},  }\item[{float}]{max\+Movement\+Seed = {\ttfamily 40.f},  }\item[{float}]{acceleration\+Speed = {\ttfamily 20.0f},  }\item[{float}]{damping\+Factor = {\ttfamily 5.0f} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_camera_aaf4289774913406229101c957f7717a6}\label{class_camera_aaf4289774913406229101c957f7717a6} 
+\index{Camera@{Camera}!AddVelocity@{AddVelocity}}
+\index{AddVelocity@{AddVelocity}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{AddVelocity()}{AddVelocity()}}
+{\footnotesize\ttfamily void Camera\+::\+Add\+Velocity (\begin{DoxyParamCaption}\item[{const glm\+::vec3 \&}]{velocity }\end{DoxyParamCaption})}
+
+\Hypertarget{class_camera_aa1fc0a2ba37eafb7905022ff25542f23}\label{class_camera_aa1fc0a2ba37eafb7905022ff25542f23} 
+\index{Camera@{Camera}!GetAcceleration@{GetAcceleration}}
+\index{GetAcceleration@{GetAcceleration}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{GetAcceleration()}{GetAcceleration()}}
+{\footnotesize\ttfamily const glm\+::vec3 \& Camera\+::\+Get\+Acceleration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_camera_a81bf60355067e9cb17b7152649c13207}\label{class_camera_a81bf60355067e9cb17b7152649c13207} 
+\index{Camera@{Camera}!GetAccelerationSpeed@{GetAccelerationSpeed}}
+\index{GetAccelerationSpeed@{GetAccelerationSpeed}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{GetAccelerationSpeed()}{GetAccelerationSpeed()}}
+{\footnotesize\ttfamily float Camera\+::\+Get\+Acceleration\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_camera_ab041320f0998c72ed62792926de62d9e}\label{class_camera_ab041320f0998c72ed62792926de62d9e} 
+\index{Camera@{Camera}!GetAspectRatio@{GetAspectRatio}}
+\index{GetAspectRatio@{GetAspectRatio}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{GetAspectRatio()}{GetAspectRatio()}}
+{\footnotesize\ttfamily float Camera\+::\+Get\+Aspect\+Ratio (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_camera_ad13d8e8a41fb0259843a82e484c60134}\label{class_camera_ad13d8e8a41fb0259843a82e484c60134} 
+\index{Camera@{Camera}!GetFarPlane@{GetFarPlane}}
+\index{GetFarPlane@{GetFarPlane}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{GetFarPlane()}{GetFarPlane()}}
+{\footnotesize\ttfamily float Camera\+::\+Get\+Far\+Plane (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_camera_abd4c35855c6c6687a54606cccd7943fc}\label{class_camera_abd4c35855c6c6687a54606cccd7943fc} 
+\index{Camera@{Camera}!GetFieldOfView@{GetFieldOfView}}
+\index{GetFieldOfView@{GetFieldOfView}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{GetFieldOfView()}{GetFieldOfView()}}
+{\footnotesize\ttfamily float Camera\+::\+Get\+Field\+Of\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_camera_a67b217e807dab7e623bb2dba434cdec9}\label{class_camera_a67b217e807dab7e623bb2dba434cdec9} 
+\index{Camera@{Camera}!GetFront@{GetFront}}
+\index{GetFront@{GetFront}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{GetFront()}{GetFront()}}
+{\footnotesize\ttfamily glm\+::vec3 Camera\+::\+Get\+Front (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_camera_a2c0a222940c28307e2932dbd082352c7}\label{class_camera_a2c0a222940c28307e2932dbd082352c7} 
+\index{Camera@{Camera}!GetMaxMovementSpeed@{GetMaxMovementSpeed}}
+\index{GetMaxMovementSpeed@{GetMaxMovementSpeed}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{GetMaxMovementSpeed()}{GetMaxMovementSpeed()}}
+{\footnotesize\ttfamily float Camera\+::\+Get\+Max\+Movement\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_camera_a717524d55ea7594868ce8c0e42b42b45}\label{class_camera_a717524d55ea7594868ce8c0e42b42b45} 
+\index{Camera@{Camera}!GetNearPlane@{GetNearPlane}}
+\index{GetNearPlane@{GetNearPlane}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{GetNearPlane()}{GetNearPlane()}}
+{\footnotesize\ttfamily float Camera\+::\+Get\+Near\+Plane (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_camera_a68ed33e67ba5a91ff68cbe53c090c736}\label{class_camera_a68ed33e67ba5a91ff68cbe53c090c736} 
+\index{Camera@{Camera}!GetProjectionMatrix@{GetProjectionMatrix}}
+\index{GetProjectionMatrix@{GetProjectionMatrix}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{GetProjectionMatrix()}{GetProjectionMatrix()}}
+{\footnotesize\ttfamily const glm\+::mat4 \& Camera\+::\+Get\+Projection\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_camera_ac3829288645557ae4fd9b1fd0168e3d7}\label{class_camera_ac3829288645557ae4fd9b1fd0168e3d7} 
+\index{Camera@{Camera}!GetUp@{GetUp}}
+\index{GetUp@{GetUp}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{GetUp()}{GetUp()}}
+{\footnotesize\ttfamily glm\+::vec3 Camera\+::\+Get\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_camera_aac261f6f818344eb357ff5662994bdc9}\label{class_camera_aac261f6f818344eb357ff5662994bdc9} 
+\index{Camera@{Camera}!GetVelocity@{GetVelocity}}
+\index{GetVelocity@{GetVelocity}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{GetVelocity()}{GetVelocity()}}
+{\footnotesize\ttfamily const glm\+::vec3 \& Camera\+::\+Get\+Velocity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_camera_ac5be0b9a950effe0e5f5993c182c12da}\label{class_camera_ac5be0b9a950effe0e5f5993c182c12da} 
+\index{Camera@{Camera}!GetViewMatrix@{GetViewMatrix}}
+\index{GetViewMatrix@{GetViewMatrix}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{GetViewMatrix()}{GetViewMatrix()}}
+{\footnotesize\ttfamily glm\+::mat4 Camera\+::\+Get\+View\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_camera_a5e2dc6c9d1d9779b5991fd310091b4be}\label{class_camera_a5e2dc6c9d1d9779b5991fd310091b4be} 
+\index{Camera@{Camera}!GetVPMatrix@{GetVPMatrix}}
+\index{GetVPMatrix@{GetVPMatrix}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{GetVPMatrix()}{GetVPMatrix()}}
+{\footnotesize\ttfamily glm\+::mat4 Camera\+::\+Get\+VPMatrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_camera_a6733526c3faae1d1cdeb8529678d6b6e}\label{class_camera_a6733526c3faae1d1cdeb8529678d6b6e} 
+\index{Camera@{Camera}!SetAcceleration@{SetAcceleration}}
+\index{SetAcceleration@{SetAcceleration}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{SetAcceleration()}{SetAcceleration()}}
+{\footnotesize\ttfamily void Camera\+::\+Set\+Acceleration (\begin{DoxyParamCaption}\item[{const glm\+::vec3 \&}]{acceleration }\end{DoxyParamCaption})}
+
+\Hypertarget{class_camera_ab0585145b090d1f7b04824a69b2ff984}\label{class_camera_ab0585145b090d1f7b04824a69b2ff984} 
+\index{Camera@{Camera}!SetAccelerationSpeed@{SetAccelerationSpeed}}
+\index{SetAccelerationSpeed@{SetAccelerationSpeed}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{SetAccelerationSpeed()}{SetAccelerationSpeed()}}
+{\footnotesize\ttfamily void Camera\+::\+Set\+Acceleration\+Speed (\begin{DoxyParamCaption}\item[{float}]{acceleration\+Speed }\end{DoxyParamCaption})}
+
+\Hypertarget{class_camera_afdfe894e382bf0dfd82500a72558ecab}\label{class_camera_afdfe894e382bf0dfd82500a72558ecab} 
+\index{Camera@{Camera}!SetAspectRatio@{SetAspectRatio}}
+\index{SetAspectRatio@{SetAspectRatio}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{SetAspectRatio()}{SetAspectRatio()}}
+{\footnotesize\ttfamily void Camera\+::\+Set\+Aspect\+Ratio (\begin{DoxyParamCaption}\item[{float}]{aspect\+Ratio }\end{DoxyParamCaption})}
+
+\Hypertarget{class_camera_a24ec575123d767c671162918af7162f5}\label{class_camera_a24ec575123d767c671162918af7162f5} 
+\index{Camera@{Camera}!SetMaxMovementSpeed@{SetMaxMovementSpeed}}
+\index{SetMaxMovementSpeed@{SetMaxMovementSpeed}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{SetMaxMovementSpeed()}{SetMaxMovementSpeed()}}
+{\footnotesize\ttfamily void Camera\+::\+Set\+Max\+Movement\+Speed (\begin{DoxyParamCaption}\item[{float}]{movement\+Speed }\end{DoxyParamCaption})}
+
+\Hypertarget{class_camera_afc5cc54023f080a6b2e4e1763c912b80}\label{class_camera_afc5cc54023f080a6b2e4e1763c912b80} 
+\index{Camera@{Camera}!SetVelocity@{SetVelocity}}
+\index{SetVelocity@{SetVelocity}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{SetVelocity()}{SetVelocity()}}
+{\footnotesize\ttfamily void Camera\+::\+Set\+Velocity (\begin{DoxyParamCaption}\item[{const glm\+::vec3 \&}]{velocity }\end{DoxyParamCaption})}
+
+\Hypertarget{class_camera_a74c190b3103d701f678094b46de55ba2}\label{class_camera_a74c190b3103d701f678094b46de55ba2} 
+\index{Camera@{Camera}!Update@{Update}}
+\index{Update@{Update}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Camera\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_actor_a651fecef34d686452750bc165fcc76ce}{Actor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\mbox{\hyperlink{_camera_8h}{Camera.\+h}}\item 
+core/\mbox{\hyperlink{_camera_8cpp}{Camera.\+cpp}}\end{DoxyCompactItemize}

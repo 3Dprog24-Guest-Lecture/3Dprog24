@@ -5,6 +5,14 @@
 #include <unordered_map>
 #include <Types.h>
 
+/**
+ * @class Texture
+ * @brief Manages texture resources.
+ *
+ * This class encapsulates texture resources, including loading textures from files 
+ * and ensuring textures are unique through a caching mechanism.
+ * 
+ */
 class Texture
 {
     TextureID mId{ 0U };

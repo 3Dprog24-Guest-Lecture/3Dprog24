@@ -1,0 +1,195 @@
+\doxysection{Material Class Reference}
+\hypertarget{class_material}{}\label{class_material}\index{Material@{Material}}
+
+
+Manages material properties and textures for rendering.  
+
+
+
+
+{\ttfamily \#include $<$Material.\+h$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_material_1_1_material_properties}{Material\+Properties}}
+\begin{DoxyCompactList}\small\item\em Holds properties related to the visual appearance of a material. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_material_ad8d759af2ca304921c68ef56e9aaccae}{Texture\+Type}} \{ \newline
+\mbox{\hyperlink{class_material_ad8d759af2ca304921c68ef56e9aaccaeab7b6a54bf705851df4351fe540a6296b}{ALBEDO}}
+, \mbox{\hyperlink{class_material_ad8d759af2ca304921c68ef56e9aaccaea66b7035936c46b641aa4a552e85547bf}{SPECULAR}}
+, \mbox{\hyperlink{class_material_ad8d759af2ca304921c68ef56e9aaccaea2ec963c8a987b666b2dc3c190b7cf651}{NORMAL}}
+, \mbox{\hyperlink{class_material_ad8d759af2ca304921c68ef56e9aaccaea0eac491426cab1f98effca170cbe9d53}{ALPHA}}
+, \newline
+\mbox{\hyperlink{class_material_ad8d759af2ca304921c68ef56e9aaccaea1af8d64f92f29d01445759ce3514cbb7}{COUNT}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_material_a25b550b11c2b1c2154b3a79fc38c3938}{Material}} (const \mbox{\hyperlink{class_material}{Material}} \&)=delete
+\item 
+\mbox{\hyperlink{class_material}{Material}} \& \mbox{\hyperlink{class_material_aa114078f437ae09781af21ed23dfce45}{operator=}} (const \mbox{\hyperlink{class_material}{Material}} \&)=delete
+\item 
+void \mbox{\hyperlink{class_material_a88bfc750f34cc4438acdf1f372f62b1b}{Bind}} (const \mbox{\hyperlink{class_shader}{Shader}} \texorpdfstring{$\ast$}{*}shader) const
+\item 
+void \mbox{\hyperlink{class_material_a1c7b663924f724f6b9cc1138b1aac21a}{Set\+Texture}} (\mbox{\hyperlink{class_material_ad8d759af2ca304921c68ef56e9aaccae}{Texture\+Type}} type, \mbox{\hyperlink{class_texture}{Texture}} \texorpdfstring{$\ast$}{*}texture)
+\item 
+\mbox{\hyperlink{class_texture}{Texture}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_material_a51b817e21c0cfebc1098fef6289e72cd}{Get\+Texture}} (\mbox{\hyperlink{class_material_ad8d759af2ca304921c68ef56e9aaccae}{Texture\+Type}} type) const
+\item 
+const \mbox{\hyperlink{struct_material_1_1_material_properties}{Material\+Properties}} \& \mbox{\hyperlink{class_material_afacb197925feb1de9ed46daa9f20c82f}{Get\+Properties}} () const
+\item 
+void \mbox{\hyperlink{class_material_a8edec34b25aae92ad452b97f79130eed}{Set\+Properties}} (const \mbox{\hyperlink{struct_material_1_1_material_properties}{Material\+Properties}} \&properties)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_material}{Material}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_material_a9676f1109f9531ebefd6695ae9425e3d}{Load}} (const std\+::string \&name)
+\item 
+static \mbox{\hyperlink{class_material}{Material}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_material_aec04d4df781c6446b0bf46878556539c}{Load}} (const std\+::string \&name, const std\+::array$<$ \mbox{\hyperlink{class_texture}{Texture}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{class_material_ad8d759af2ca304921c68ef56e9aaccaea1af8d64f92f29d01445759ce3514cbb7}{Texture\+Type\+::\+COUNT}} $>$ \&textures, const \mbox{\hyperlink{struct_material_1_1_material_properties}{Material\+Properties}} \&properties)
+\item 
+static void \mbox{\hyperlink{class_material_aac337f6a576cfdea27058c9a9b34721f}{Unload}} (const std\+::string \&name)
+\item 
+static void \mbox{\hyperlink{class_material_a87d1923c77c5a11d7657b9c84419b351}{Clear\+Cache}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::array$<$ std\+::string, static\+\_\+cast$<$ size\+\_\+t $>$(\mbox{\hyperlink{class_material_ad8d759af2ca304921c68ef56e9aaccaea1af8d64f92f29d01445759ce3514cbb7}{Texture\+Type\+::\+COUNT}})$>$ \mbox{\hyperlink{class_material_ae6a91e0ba94c10763793925955044d65}{texture\+Uniform\+Names}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages material properties and textures for rendering. 
+
+\begin{DoxyNote}{Note}
+This class cannot be copied or assigned due to the deletion of the copy constructor and copy assignment operator, ensuring unique instances for the use of the lightweight pattern. 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_material_ad8d759af2ca304921c68ef56e9aaccae}\label{class_material_ad8d759af2ca304921c68ef56e9aaccae} 
+\index{Material@{Material}!TextureType@{TextureType}}
+\index{TextureType@{TextureType}!Material@{Material}}
+\doxysubsubsection{\texorpdfstring{TextureType}{TextureType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_material_ad8d759af2ca304921c68ef56e9aaccae}{Material\+::\+Texture\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALBEDO@{ALBEDO}!Material@{Material}}\index{Material@{Material}!ALBEDO@{ALBEDO}}}\Hypertarget{class_material_ad8d759af2ca304921c68ef56e9aaccaeab7b6a54bf705851df4351fe540a6296b}\label{class_material_ad8d759af2ca304921c68ef56e9aaccaeab7b6a54bf705851df4351fe540a6296b} 
+ALBEDO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPECULAR@{SPECULAR}!Material@{Material}}\index{Material@{Material}!SPECULAR@{SPECULAR}}}\Hypertarget{class_material_ad8d759af2ca304921c68ef56e9aaccaea66b7035936c46b641aa4a552e85547bf}\label{class_material_ad8d759af2ca304921c68ef56e9aaccaea66b7035936c46b641aa4a552e85547bf} 
+SPECULAR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NORMAL@{NORMAL}!Material@{Material}}\index{Material@{Material}!NORMAL@{NORMAL}}}\Hypertarget{class_material_ad8d759af2ca304921c68ef56e9aaccaea2ec963c8a987b666b2dc3c190b7cf651}\label{class_material_ad8d759af2ca304921c68ef56e9aaccaea2ec963c8a987b666b2dc3c190b7cf651} 
+NORMAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALPHA@{ALPHA}!Material@{Material}}\index{Material@{Material}!ALPHA@{ALPHA}}}\Hypertarget{class_material_ad8d759af2ca304921c68ef56e9aaccaea0eac491426cab1f98effca170cbe9d53}\label{class_material_ad8d759af2ca304921c68ef56e9aaccaea0eac491426cab1f98effca170cbe9d53} 
+ALPHA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COUNT@{COUNT}!Material@{Material}}\index{Material@{Material}!COUNT@{COUNT}}}\Hypertarget{class_material_ad8d759af2ca304921c68ef56e9aaccaea1af8d64f92f29d01445759ce3514cbb7}\label{class_material_ad8d759af2ca304921c68ef56e9aaccaea1af8d64f92f29d01445759ce3514cbb7} 
+COUNT&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_material_a25b550b11c2b1c2154b3a79fc38c3938}\label{class_material_a25b550b11c2b1c2154b3a79fc38c3938} 
+\index{Material@{Material}!Material@{Material}}
+\index{Material@{Material}!Material@{Material}}
+\doxysubsubsection{\texorpdfstring{Material()}{Material()}}
+{\footnotesize\ttfamily Material\+::\+Material (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_material}{Material}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_material_a88bfc750f34cc4438acdf1f372f62b1b}\label{class_material_a88bfc750f34cc4438acdf1f372f62b1b} 
+\index{Material@{Material}!Bind@{Bind}}
+\index{Bind@{Bind}!Material@{Material}}
+\doxysubsubsection{\texorpdfstring{Bind()}{Bind()}}
+{\footnotesize\ttfamily void Material\+::\+Bind (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_shader}{Shader}} \texorpdfstring{$\ast$}{*}}]{shader }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_material_a87d1923c77c5a11d7657b9c84419b351}\label{class_material_a87d1923c77c5a11d7657b9c84419b351} 
+\index{Material@{Material}!ClearCache@{ClearCache}}
+\index{ClearCache@{ClearCache}!Material@{Material}}
+\doxysubsubsection{\texorpdfstring{ClearCache()}{ClearCache()}}
+{\footnotesize\ttfamily static void Material\+::\+Clear\+Cache (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_material_afacb197925feb1de9ed46daa9f20c82f}\label{class_material_afacb197925feb1de9ed46daa9f20c82f} 
+\index{Material@{Material}!GetProperties@{GetProperties}}
+\index{GetProperties@{GetProperties}!Material@{Material}}
+\doxysubsubsection{\texorpdfstring{GetProperties()}{GetProperties()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_material_1_1_material_properties}{Material\+Properties}} \& Material\+::\+Get\+Properties (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_material_a51b817e21c0cfebc1098fef6289e72cd}\label{class_material_a51b817e21c0cfebc1098fef6289e72cd} 
+\index{Material@{Material}!GetTexture@{GetTexture}}
+\index{GetTexture@{GetTexture}!Material@{Material}}
+\doxysubsubsection{\texorpdfstring{GetTexture()}{GetTexture()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_texture}{Texture}} \texorpdfstring{$\ast$}{*} Material\+::\+Get\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_material_ad8d759af2ca304921c68ef56e9aaccae}{Texture\+Type}}}]{type }\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_material_a9676f1109f9531ebefd6695ae9425e3d}\label{class_material_a9676f1109f9531ebefd6695ae9425e3d} 
+\index{Material@{Material}!Load@{Load}}
+\index{Load@{Load}!Material@{Material}}
+\doxysubsubsection{\texorpdfstring{Load()}{Load()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_material}{Material}} \texorpdfstring{$\ast$}{*} Material\+::\+Load (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_material_aec04d4df781c6446b0bf46878556539c}\label{class_material_aec04d4df781c6446b0bf46878556539c} 
+\index{Material@{Material}!Load@{Load}}
+\index{Load@{Load}!Material@{Material}}
+\doxysubsubsection{\texorpdfstring{Load()}{Load()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_material}{Material}} \texorpdfstring{$\ast$}{*} Material\+::\+Load (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const std\+::array$<$ \mbox{\hyperlink{class_texture}{Texture}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{class_material_ad8d759af2ca304921c68ef56e9aaccaea1af8d64f92f29d01445759ce3514cbb7}{Texture\+Type\+::\+COUNT}} $>$ \&}]{textures,  }\item[{const \mbox{\hyperlink{struct_material_1_1_material_properties}{Material\+Properties}} \&}]{properties }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_material_aa114078f437ae09781af21ed23dfce45}\label{class_material_aa114078f437ae09781af21ed23dfce45} 
+\index{Material@{Material}!operator=@{operator=}}
+\index{operator=@{operator=}!Material@{Material}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_material}{Material}} \& Material\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_material}{Material}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{class_material_a8edec34b25aae92ad452b97f79130eed}\label{class_material_a8edec34b25aae92ad452b97f79130eed} 
+\index{Material@{Material}!SetProperties@{SetProperties}}
+\index{SetProperties@{SetProperties}!Material@{Material}}
+\doxysubsubsection{\texorpdfstring{SetProperties()}{SetProperties()}}
+{\footnotesize\ttfamily void Material\+::\+Set\+Properties (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_material_1_1_material_properties}{Material\+Properties}} \&}]{properties }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_material_a1c7b663924f724f6b9cc1138b1aac21a}\label{class_material_a1c7b663924f724f6b9cc1138b1aac21a} 
+\index{Material@{Material}!SetTexture@{SetTexture}}
+\index{SetTexture@{SetTexture}!Material@{Material}}
+\doxysubsubsection{\texorpdfstring{SetTexture()}{SetTexture()}}
+{\footnotesize\ttfamily void Material\+::\+Set\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_material_ad8d759af2ca304921c68ef56e9aaccae}{Texture\+Type}}}]{type,  }\item[{\mbox{\hyperlink{class_texture}{Texture}} \texorpdfstring{$\ast$}{*}}]{texture }\end{DoxyParamCaption})}
+
+\Hypertarget{class_material_aac337f6a576cfdea27058c9a9b34721f}\label{class_material_aac337f6a576cfdea27058c9a9b34721f} 
+\index{Material@{Material}!Unload@{Unload}}
+\index{Unload@{Unload}!Material@{Material}}
+\doxysubsubsection{\texorpdfstring{Unload()}{Unload()}}
+{\footnotesize\ttfamily void Material\+::\+Unload (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_material_ae6a91e0ba94c10763793925955044d65}\label{class_material_ae6a91e0ba94c10763793925955044d65} 
+\index{Material@{Material}!textureUniformNames@{textureUniformNames}}
+\index{textureUniformNames@{textureUniformNames}!Material@{Material}}
+\doxysubsubsection{\texorpdfstring{textureUniformNames}{textureUniformNames}}
+{\footnotesize\ttfamily std\+::array$<$std\+::string, static\+\_\+cast$<$size\+\_\+t$>$(\mbox{\hyperlink{class_material_ad8d759af2ca304921c68ef56e9aaccaea1af8d64f92f29d01445759ce3514cbb7}{Texture\+Type\+::\+COUNT}})$>$ Material\+::texture\+Uniform\+Names}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{\ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}material.albedoMap"{}},\ \textcolor{stringliteral}{"{}material.specularMap"{}},\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}material.normalMap"{}},\ \textcolor{stringliteral}{"{}material.alphaMap"{}}}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\mbox{\hyperlink{_material_8h}{Material.\+h}}\item 
+core/\mbox{\hyperlink{_material_8cpp}{Material.\+cpp}}\end{DoxyCompactItemize}

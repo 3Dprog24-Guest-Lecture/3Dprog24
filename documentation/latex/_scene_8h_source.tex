@@ -1,0 +1,51 @@
+\doxysection{Scene.\+h}
+\hypertarget{_scene_8h_source}{}\label{_scene_8h_source}\index{core/Scene.h@{core/Scene.h}}
+\mbox{\hyperlink{_scene_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_camera_8h}{Camera.h}}>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_scene_graph_8h}{SceneGraph.h}}>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_controller_8h}{Controller.h}}>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_mesh_8h}{Mesh.h}}>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_scene}{Scene}}}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_scene_aa8f88e4c6ad29a3f30b0c3f8a8fdace3}{Scene}}(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_scene_af6e09d91ebd10ae9cc7c12c39d06386c}{\string~Scene}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_scene_a817e38149ed312f00941b7fbb28a4fcb}{Scene}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_scene}{Scene}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_scene}{Scene}}\&\ \mbox{\hyperlink{class_scene_abe04ae93a28174a72f0066fc32cd2eb0}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_scene}{Scene}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_scene_ac8da64e4c17db10489db6112c584532c}{Scene}}(\mbox{\hyperlink{class_scene}{Scene}}\&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_scene}{Scene}}\&\ \mbox{\hyperlink{class_scene_aae8fe193a2eea4a1b868377d59023b4a}{operator=}}(\mbox{\hyperlink{class_scene}{Scene}}\&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene_a73837497f01ae040fa96428ee4dd7c76}{LoadContent}}();}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene_a8a38bb48e079d56fed4949564dcf1d20}{UnloadContent}}();}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene_a5a0aa910170ea1750579504283cb4406}{UpdateSceneGraph}}(\mbox{\hyperlink{class_actor}{Actor}}*\ actor,\ \textcolor{keywordtype}{float}\ dt,\ \mbox{\hyperlink{struct_transform}{Transform}}\ globalTransform\ =\ \mbox{\hyperlink{struct_transform}{Transform}}\{\});}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene_aaabe5f4be250a6752542925fa3ba0d54}{RenderSceneGraph}}(\mbox{\hyperlink{class_actor}{Actor}}*\ actor,\ \textcolor{keywordtype}{float}\ dt,\ \mbox{\hyperlink{struct_transform}{Transform}}\ globalTransform\ =\ \mbox{\hyperlink{struct_transform}{Transform}}\{\});}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene_ac48b4f744fee99a5b7c5a84e28b76334}{Update}}(\textcolor{keywordtype}{float}\ dt);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene_a1ba6595d2800589ca50868b1b9ce0e56}{Render}}(\textcolor{keywordtype}{float}\ dt);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene_aa88204fea8e32a31ac8465892d5ed3d3}{FramebufferSizeCallback}}(\textcolor{keyword}{class}\ \mbox{\hyperlink{class_window}{Window}}*\ window,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height);}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene_a651db2e079e412d2bf3e90053b7d388d}{MouseMoveCallback}}(\textcolor{keyword}{class}\ \mbox{\hyperlink{class_window}{Window}}*\ window,\ \textcolor{keywordtype}{double}\ xpos,\ \textcolor{keywordtype}{double}\ ypos);}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene_a908928361751263dd6bb2e08b8b4a3ba}{MouseButtonCallback}}(\textcolor{keyword}{class}\ \mbox{\hyperlink{class_window}{Window}}*\ window,\ \textcolor{keywordtype}{int}\ button,\ \textcolor{keywordtype}{int}\ action,\ \textcolor{keywordtype}{int}\ mods);}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene_a607110ecbe26130863acae1281ffead5}{MouseScrollCallback}}(\textcolor{keyword}{class}\ \mbox{\hyperlink{class_window}{Window}}*\ window,\ \textcolor{keywordtype}{double}\ xoffset,\ \textcolor{keywordtype}{double}\ yoffset);}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene_aab2eaec8ce590a64f3d1e998565a00ae}{KeyCallback}}(\textcolor{keyword}{class}\ \mbox{\hyperlink{class_window}{Window}}*\ window,\ \textcolor{keywordtype}{int}\ key,\ \textcolor{keywordtype}{int}\ scancode,\ \textcolor{keywordtype}{int}\ action,\ \textcolor{keywordtype}{int}\ mods);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ std::shared\_ptr<IController>\ \mbox{\hyperlink{class_scene_a43cfe1be2a653b2c70ec711d6a75ebd3}{GetController}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_scene_ae204c3411ed6767d95af6bf54987ead4}{mController}};\ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene_aa73dd067a1a038b7e7533a28fb6ef9ad}{SetController}}(\textcolor{keyword}{const}\ std::shared\_ptr<IController>\&\ controller)\ \{\ \mbox{\hyperlink{class_scene_ae204c3411ed6767d95af6bf54987ead4}{mController}}\ =\ controller;\ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{class_scene_graph}{SceneGraph}}\ \mbox{\hyperlink{class_scene_ac0844f31d54cad2a8c4cdc25202ed21c}{mSceneGraph}};}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{class_camera_actor}{CameraActor}}\ \mbox{\hyperlink{class_scene_af9cbdc85720f3fa313d38745bd75a719}{mSceneCamera}}\{\ \textcolor{stringliteral}{"{}SceneCamera"{}}\ \};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{class_mesh_actor}{MeshActor}}*\ mCube0\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{class_mesh_actor}{MeshActor}}*\ mCube1\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_shader}{Shader}}*\ mShader\{\ \textcolor{keyword}{nullptr}\ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00053\ \ \ \ \ std::shared\_ptr<IController>\ \mbox{\hyperlink{class_scene_ae204c3411ed6767d95af6bf54987ead4}{mController}}\{\ \textcolor{keyword}{nullptr}\ \};}
+\DoxyCodeLine{00054\ \};}
+
+\end{DoxyCode}

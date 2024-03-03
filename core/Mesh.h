@@ -10,6 +10,13 @@
 #include <Actor.h>
 #include <Types.h>
 
+/**
+ * @class Mesh
+ * @brief Represents a 3D mesh.
+ *
+ * Has the necessary data to render a 3D object, including vertices, indices,
+ * and material information, but not a transform. Uses the lightweight pattern, copies and move operations are deleted.
+ */
 class Mesh 
 {
 private:
@@ -37,6 +44,16 @@ public:
     static std::unordered_map<std::string, Mesh*> mCache;
 };
 
+/**
+ * @class MeshActor
+ * @brief Represents an actor in the scene that holds a mesh.
+ *
+ * MeshActor is a specialized type of actor designed to hold a mesh and render it.
+ * It inherits from the Actor class to integrate into the scene graph and implements
+ * the IRender interface to provide rendering functionality. This allows the MeshActor
+ * to be managed within the scene graph while also having the capability to render a
+ * specific mesh using a shader.
+ */
 class MeshActor : public Actor, public IRender
 {
 public:

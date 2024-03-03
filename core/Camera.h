@@ -4,10 +4,16 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <Actor.h>
 
-class Camera : public Actor
+/**
+ * @class CameraActor
+ * @brief Represents a camera in the scene.
+ *
+ * CameraActor inherits from Actor, allowing it to be part of the scene graph.
+ */
+class CameraActor : public Actor
 {
 public:
-    Camera(const std::string& name,
+    CameraActor(const std::string& name,
         glm::vec3 position = glm::vec3(0.0f, 0.0f, 0.0f),
         glm::quat rotation = glm::quat(glm::identity<glm::quat>()),
         float aspectRatio = 1280.f / 720.f,

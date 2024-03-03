@@ -4,6 +4,15 @@
 #include <unordered_set>
 #include <stdexcept>
 
+/**
+ * @struct TagUnique
+ * @brief Ensures uniqueness of tags within the application.
+ *
+ * The TagUnique struct is designed to manage tag uniqueness across the application,
+ * preventing duplicate tags from being created. It uses a static unordered set to keep
+ * track of all existing tags. Attempting to create a TagUnique with a value that already
+ * exists in the set will result in a runtime_error.
+ */
 struct TagUnique
 {
 private:

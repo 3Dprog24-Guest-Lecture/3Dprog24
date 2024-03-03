@@ -1,6 +1,6 @@
 #include <Camera.h>
 
-Camera::Camera(
+CameraActor::Camera(
     const std::string& name,
     glm::vec3 position,
     glm::quat rotation,
@@ -25,7 +25,7 @@ Camera::Camera(
     UpdateProjectionMatrix();
 }
 
-void Camera::UpdateVelocity(float dt)
+void CameraActor::UpdateVelocity(float dt)
 {
     mVelocity += mAcceleration * dt;
 
@@ -35,7 +35,7 @@ void Camera::UpdateVelocity(float dt)
     }
 }
 
-void Camera::UpdateDamping(float dt)
+void CameraActor::UpdateDamping(float dt)
 {
     float dampingFactor = glm::length(mVelocity) > 0 ? mDampingFactor : 0.0f;
 
@@ -47,7 +47,7 @@ void Camera::UpdateDamping(float dt)
     }
 }
 
-void Camera::UpdatePosition(float dt)
+void CameraActor::UpdatePosition(float dt)
 {
     glm::vec3 front = GetFront();
     glm::vec3 right = glm::normalize(glm::cross(front, glm::vec3(0.0f, 1.0f, 0.0f)));
@@ -56,83 +56,83 @@ void Camera::UpdatePosition(float dt)
     SetPosition(GetPosition() + mVelocity.x * dt * right + mVelocity.y * dt * up + mVelocity.z * dt * front);
 }
 
-void Camera::Update(float dt)
+void CameraActor::Update(float dt)
 {
     UpdateVelocity(dt);
     UpdatePosition(dt);
     UpdateDamping(dt);
 }
 
-void Camera::AddVelocity(const glm::vec3& velocity)
+void CameraActor::AddVelocity(const glm::vec3& velocity)
 {
     mVelocity += velocity;
 }
 
-void Camera::SetAspectRatio(float aspectRatio)
+void CameraActor::SetAspectRatio(float aspectRatio)
 {
     mAspectRatio = aspectRatio;
     UpdateProjectionMatrix();
 }
 
-void Camera::SetVelocity(const glm::vec3& velocity)
+void CameraActor::SetVelocity(const glm::vec3& velocity)
 {
     mVelocity = velocity;
 }
 
-void Camera::SetAccelerationSpeed(float accelerationSpeed)
+void CameraActor::SetAccelerationSpeed(float accelerationSpeed)
 {
     mAccelerationSpeed = accelerationSpeed;
 }
 
-void Camera::SetAcceleration(const glm::vec3& acceleration)
+void CameraActor::SetAcceleration(const glm::vec3& acceleration)
 {
     mAcceleration = acceleration;
 }
 
-void Camera::SetMaxMovementSpeed(float movementSpeed)
+void CameraActor::SetMaxMovementSpeed(float movementSpeed)
 {
     mMaxMovementSpeed = movementSpeed;
 }
 
-glm::mat4 Camera::GetViewMatrix() const
+glm::mat4 CameraActor::GetViewMatrix() const
 {
     return glm::lookAt(GetPosition(), GetPosition() + GetFront(), glm::vec3(0.0f, 1.0f, 0.0f));
 }
 
-const glm::mat4& Camera::GetProjectionMatrix() const
+const glm::mat4& CameraActor::GetProjectionMatrix() const
 {
     return mProjectionMatrix;
 }
 
-glm::vec3 Camera::GetFront() const
+glm::vec3 CameraActor::GetFront() const
 {
     return glm::rotate(GetRotation(), glm::vec3(0.0f, 0.0f, -1.0f));
 }
 
-glm::vec3 Camera::GetUp() const
+glm::vec3 CameraActor::GetUp() const
 {
     return glm::rotate(GetRotation(), glm::vec3(0.0f, 1.0f, 0.0f));
 }
 
-const glm::vec3& Camera::GetVelocity() const
+const glm::vec3& CameraActor::GetVelocity() const
 {
     return mVelocity;
 }
 
-float Camera::GetMaxMovementSpeed() const { return mMaxMovementSpeed; }
-float Camera::GetAspectRatio() const { return mAspectRatio; }
-float Camera::GetNearPlane() const { return mNearPlane; }
-float Camera::GetFarPlane() const { return mFarPlane; }
-float Camera::GetFieldOfView() const { return mFieldOfView; }
-float Camera::GetAccelerationSpeed() const{ return mAccelerationSpeed; }
-const glm::vec3& Camera::GetAcceleration() const{ return mAcceleration; }
+float CameraActor::GetMaxMovementSpeed() const { return mMaxMovementSpeed; }
+float CameraActor::GetAspectRatio() const { return mAspectRatio; }
+float CameraActor::GetNearPlane() const { return mNearPlane; }
+float CameraActor::GetFarPlane() const { return mFarPlane; }
+float CameraActor::GetFieldOfView() const { return mFieldOfView; }
+float CameraActor::GetAccelerationSpeed() const{ return mAccelerationSpeed; }
+const glm::vec3& CameraActor::GetAcceleration() const{ return mAcceleration; }
 
-glm::mat4 Camera::GetVPMatrix() const
+glm::mat4 CameraActor::GetVPMatrix() const
 {
     return mProjectionMatrix * GetViewMatrix();
 }
 
-void Camera::UpdateProjectionMatrix()
+void CameraActor::UpdateProjectionMatrix()
 {
     mProjectionMatrix = glm::perspective(glm::radians(mFieldOfView), mAspectRatio, mNearPlane, mFarPlane);
 }

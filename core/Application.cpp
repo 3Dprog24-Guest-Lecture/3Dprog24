@@ -35,7 +35,7 @@ void Application::LoadContent()
     mWindow.LoadContent(); 
 }
 
-void Application::Run()
+int Application::Run()
 {
     LOG_INFO("Application::Run");
     Init();
@@ -60,4 +60,6 @@ void Application::Run()
     Texture::ClearCache();
    
     glfwTerminate();
+
+    return 0;
 }
