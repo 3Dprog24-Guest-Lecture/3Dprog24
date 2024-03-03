@@ -1,7 +1,4 @@
-﻿# CMakeList.txt : CMake project for 3Dprog24, include source and define
-# project specific logic here.
-#
-cmake_minimum_required (VERSION 3.8)
+﻿cmake_minimum_required (VERSION 3.8)
 
 # Enable Hot Reload for MSVC compilers if supported.
 if (POLICY CMP0141)
@@ -11,10 +8,10 @@ endif()
 
 project ("3Dprog24")
 
-# Additional include directories
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/includes)
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/includes/imgui)
-
+include_directories(includes)
+include_directories(includes/imgui)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/core)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/Games/TestGame)
 
 #Add IMGUI headers
 set( IMGUI_HEADERS
@@ -25,7 +22,7 @@ set( IMGUI_HEADERS
     includes/imgui/imgui_impl_opengl3_loader.h
 )
 
-#Add IMGUI headers
+#Add IMGUI sources
 set( IMGUI_SOURCE
     includes/imgui/imgui.cpp
     includes/imgui/imgui_demo.cpp
@@ -36,13 +33,54 @@ set( IMGUI_SOURCE
     includes/imgui/imgui_tables.cpp
 )
 
-# Add source to this project's executable.
-add_executable (3Dprog24 ${IMGUI_HEADERS} ${IMGUI_SOURCE} "3Dprog24.cpp" "3Dprog24.h" "glad.c"  "Shader.h" "Shader.cpp" "stb_image.h" "Camera.h" "Camera.cpp")
+set (HEADER_FILES
+  3Dprog24.h
+  includes/stb_image.h
+  core/Shader.h
+  core/Camera.h
+  core/Window.h
+  core/Application.h
+  core/Material.h
+  core/Mesh.h
+  core/Renderer.h
+  core/Scene.h
+  core/Texture.h
+  core/Scene.h
+  core/Actor.h
+  core/Logger.h
+  core/Types.h  
+  core/Transform.h
+  core/Tag.h
+  core/Vertex.h
+  core/SceneGraph.h
+  core/Controller.h 
+  core/Defines.h 
+  core/CameraController.h 
+  )
 
-target_link_libraries(3Dprog24 PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/libs/glfw3.lib)
+set (SRC_FILES
+  3Dprog24.cpp
+  includes/glad.c
+  core/Shader.cpp
+  core/Camera.cpp
+  core/Window.cpp
+  core/Application.cpp
+  core/Texture.cpp 
+  core/Material.cpp     
+  core/Mesh.cpp
+  core/Scene.cpp
+  core/Actor.cpp
+  core/CameraController.cpp
+)
+
+add_subdirectory(libs/glfw-3.3.9)
+
+# Add source to this project's executable.
+add_executable(3Dprog24 ${IMGUI_HEADERS} ${IMGUI_SOURCE} ${HEADER_FILES} ${SRC_FILES})
+
+#target_link_libraries(3Dprog24 PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/libs/glfw3.lib)
+target_link_libraries(3Dprog24 glfw)
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET 3Dprog24 PROPERTY CXX_STANDARD 20)
 endif()
-
-# TODO: Add tests and install targets if needed.

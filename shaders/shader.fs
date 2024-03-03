@@ -3,9 +3,14 @@ out vec4 FragColor;
   
 in vec2 TexCoord;
 
-uniform sampler2D ourTexture;
+struct Material 
+{
+    sampler2D albedoMap;
+};
+
+uniform Material material;
 
 void main()
 {
-    FragColor = texture(ourTexture, TexCoord);  
+    FragColor = texture(material.albedoMap, TexCoord);    
 }
