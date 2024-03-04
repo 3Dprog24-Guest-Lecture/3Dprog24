@@ -34,7 +34,6 @@ set( IMGUI_SOURCE
 )
 
 set (HEADER_FILES
-  3Dprog24.h
   includes/stb_image.h
   core/Shader.h
   core/Camera.h

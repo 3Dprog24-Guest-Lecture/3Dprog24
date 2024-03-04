@@ -130,6 +130,11 @@ std::vector<Actor*>& Actor::GetChildren()
     return mChildren;
 }
 
+glm::vec3 Actor::GetRight() const
+{
+    return mTransform.GetRight();
+}
+
 const glm::vec3& Actor::GetPosition() const
 {
     return mTransform.GetPosition();

@@ -9,27 +9,20 @@
 
 void CameraController::HandleMouseMove(Window* window, double xpos, double ypos)
 {
+    if (!mRightMousePressed) return;
+
     float xoffset = mLastX - xpos;
     float yoffset = mLastY - ypos;
-    LOG_INFO("TEST");
-    LOG_INFO(xoffset);
-    //LOG_INFO(yoffset);
 
     mLastX = xpos;
     mLastY = ypos;
 
-    xoffset *= mouseSensitivity;
-    yoffset *= mouseSensitivity;
+    xoffset *= mMouseSensitivity;
+    yoffset *= mMouseSensitivity;
 
-    float yawRad = glm::radians(xoffset);
-    float pitchRad = glm::radians(yoffset);
+    auto angularSpeed = mCamera->GetAngularAccelerationSpeed();
 
-    glm::quat currentOrientation = mCamera->GetRotation();
-    glm::quat yawRotation = glm::angleAxis(yawRad, glm::vec3(0.0f, 1.0f, 0.0f));
-    glm::quat pitchRotation = glm::angleAxis(pitchRad, glm::vec3(1.0f, 0.0f, 0.0f));
-    glm::quat newOrientation = yawRotation * currentOrientation * pitchRotation;
-    newOrientation = glm::normalize(newOrientation);
-    mCamera->SetRotation(newOrientation);
+    mCamera->AddAngularAcceleration({ xoffset * angularSpeed, yoffset * angularSpeed });
 }
 
 void CameraController::HandleMouseButton(Window* window, int button, int action, int mods)
@@ -39,17 +32,18 @@ void CameraController::HandleMouseButton(Window* window, int button, int action,
         if (action == GLFW_PRESS) 
         {
             mRightMousePressed = true;
+            mLastX = static_cast<float>(window->GetWidth() / 2);
+            mLastY = static_cast<float>(window->GetHeight() / 2);
+            glfwSetCursorPos(window->GetGLFWWindow(), window->GetWidth() / 2, window->GetHeight() / 2);
             glfwSetInputMode(window->GetGLFWWindow(), GLFW_CURSOR, GLFW_CURSOR_DISABLED);
-
-            double xpos, ypos;
-            glfwGetCursorPos(window->GetGLFWWindow(), &xpos, &ypos);
-            mLastX = static_cast<float>(xpos);
-            mLastY = static_cast<float>(ypos);
         }
         else if (action == GLFW_RELEASE) 
         {
-            mRightMousePressed = false;
+            mRightMousePressed = false;       
             glfwSetInputMode(window->GetGLFWWindow(), GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+            mLastX = static_cast<float>(window->GetWidth() / 2);
+            mLastY = static_cast<float>(window->GetHeight() / 2);
+            glfwSetCursorPos(window->GetGLFWWindow(), window->GetWidth() / 2, window->GetHeight() / 2);
         }
     }
 }
@@ -65,8 +59,8 @@ void CameraController::UpdateCameraAcceleration()
     if (mKeyStates[GLFW_KEY_S]) acceleration.z -= movementSpeed;
     if (mKeyStates[GLFW_KEY_A]) acceleration.x -= movementSpeed;
     if (mKeyStates[GLFW_KEY_D]) acceleration.x += movementSpeed;
-    if (mKeyStates[GLFW_KEY_Q]) acceleration.y += movementSpeed;
-    if (mKeyStates[GLFW_KEY_E]) acceleration.y -= movementSpeed;
+    if (mKeyStates[GLFW_KEY_Q]) acceleration.y -= movementSpeed;
+    if (mKeyStates[GLFW_KEY_E]) acceleration.y += movementSpeed;
 
     mCamera->SetAcceleration(acceleration);
 }

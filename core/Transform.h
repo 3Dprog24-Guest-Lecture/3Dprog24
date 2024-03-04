@@ -7,6 +7,7 @@
 #include <glm/gtx/quaternion.hpp>
 #include <glm/gtx/matrix_decompose.hpp>
 #include <glm/gtc/matrix_transform.hpp>
+#include <algorithm> // For std::clamp
 
 /**
  * @struct Transform
@@ -110,6 +111,11 @@ struct Transform
         glm::mat4 rotMat = glm::toMat4(mRotation);
         glm::mat4 translateMat = glm::translate(glm::mat4(1.0f), mPosition);
         return translateMat * rotMat * scaleMat;
+    }
+
+    glm::vec3 GetRight() const 
+    {
+        return glm::rotate(mRotation, glm::vec3(1.0f, 0.0f, 0.0f));
     }
 
 private:

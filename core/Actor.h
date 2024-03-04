@@ -47,6 +47,8 @@ public:
     glm::mat4 GetGlobalTransformMatrix() const;
     const Transform& GetTransform() const;
     std::vector<Actor*>& GetChildren();
+    glm::vec3 GetRight() const;
+
 protected:
     Actor* mParent{nullptr};
     std::vector<Actor*> mChildren;

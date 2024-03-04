@@ -47,6 +47,33 @@ void CameraActor::UpdateDamping(float dt)
     }
 }
 
+void CameraActor::UpdateAngularDamping(float dt)
+{
+    mAngularAcceleration = glm::vec2(0.0f);
+
+    if (glm::length(mAngularVelocity) > 0) 
+    {
+        mAngularVelocity -= mAngularVelocity * mAngularDampingFactor * dt;
+        if (glm::length(mAngularVelocity) < 0.001f) 
+        {
+            mAngularVelocity = glm::vec2(0.0f);
+        }
+    }
+}
+
+void CameraActor::UpdateAngularVelocity(float dt)
+{
+    mAngularVelocity += mAngularAcceleration * dt;
+    // Clamp angular velocity to the maximum allowed
+    mAngularVelocity = glm::clamp(mAngularVelocity, -mMaxAngularSpeed, mMaxAngularSpeed);
+}
+
+void CameraActor::UpdateRotation(float dt)
+{
+    AddYaw(mAngularVelocity.x * dt);
+    AddPitch(mAngularVelocity.y * dt);
+}
+
 void CameraActor::UpdatePosition(float dt)
 {
     glm::vec3 front = GetFront();
@@ -61,6 +88,9 @@ void CameraActor::Update(float dt)
     UpdateVelocity(dt);
     UpdatePosition(dt);
     UpdateDamping(dt);
+    UpdateAngularVelocity(dt);
+    UpdateRotation(dt);
+    UpdateAngularDamping(dt);
 }
 
 void CameraActor::AddVelocity(const glm::vec3& velocity)
@@ -92,6 +122,45 @@ void CameraActor::SetAcceleration(const glm::vec3& acceleration)
 void CameraActor::SetMaxMovementSpeed(float movementSpeed)
 {
     mMaxMovementSpeed = movementSpeed;
+}
+
+void CameraActor::SetAngularVelocity(const glm::vec2& angularVelocity) {
+    mAngularVelocity = angularVelocity;
+}
+
+void CameraActor::AddAngularVelocity(const glm::vec2& angularVelocityDelta) 
+{
+    mAngularVelocity += angularVelocityDelta;
+}
+
+const glm::vec2& CameraActor::GetAngularVelocity() const 
+{
+    return mAngularVelocity;
+}
+
+void CameraActor::SetAngularAcceleration(const glm::vec2& angularAcceleration) 
+{
+    mAngularAcceleration = angularAcceleration;
+}
+
+void CameraActor::AddAngularAcceleration(const glm::vec2& angularAccelerationDelta) 
+{
+    mAngularAcceleration += angularAccelerationDelta;
+}
+
+const glm::vec2& CameraActor::GetAngularAcceleration() const 
+{
+    return mAngularAcceleration;
+}
+
+void CameraActor::SetAngularDampingFactor(float dampingFactor) 
+{
+    mAngularDampingFactor = dampingFactor;
+}
+
+float CameraActor::GetAngularDampingFactor() const 
+{
+    return mAngularDampingFactor;
 }
 
 glm::mat4 CameraActor::GetViewMatrix() const
@@ -132,7 +201,12 @@ glm::mat4 CameraActor::GetVPMatrix() const
     return mProjectionMatrix * GetViewMatrix();
 }
 
+float CameraActor::GetAngularAccelerationSpeed() const
+{
+    return mAngularAccelerationSpeed;
+}
+
 void CameraActor::UpdateProjectionMatrix()
 {
-    mProjectionMatrix = glm::perspective(glm::radians(mFieldOfView), mAspectRatio, mNearPlane, mFarPlane);
+    mProjectionMatrix = glm::perspectiveRH(glm::radians(mFieldOfView), mAspectRatio, mNearPlane, mFarPlane);
 }
