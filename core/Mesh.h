@@ -38,12 +38,12 @@ public:
     // Assumes the shader is bound
     void Draw(const Shader* shader) const;
 
-    static Mesh* CreateCube(Material* material);
+    static Mesh* LoadCube(Material* material);
     static Mesh* Load(const std::string& path);
     static void Unload(const std::string& path);
     static void ClearCache();
 
-    static std::unordered_map<std::string, Mesh*> mCache;
+    static std::unordered_map<std::string, Mesh*> sCache;
 };
 
 /**
@@ -64,7 +64,6 @@ public:
     virtual AABB GetAABB() override;
     
     Mesh* mMesh{ nullptr };
-    AABB mAABB;
 };
 
 // Can eventually create a MeshComponent

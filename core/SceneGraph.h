@@ -15,8 +15,7 @@
  */
 class SceneGraph : public Actor
 {
-	//BVH mBVH;
+	//BVH* mBVH;
 public:
 	SceneGraph(const std::string& name) : Actor(name) { };
-
 };

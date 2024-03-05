@@ -51,13 +51,16 @@ public:
 private:
     MaterialProperties mProperties{};
     std::array<Texture*, TextureType::COUNT> mTextures{};
-    static std::unordered_map<std::string, Material*> mCache;
+    static std::unordered_map<std::string, Material*> sCache;
 
     Material(const std::string& name);
 
 public:
     Material(const Material&) = delete;
     Material& operator=(const Material&) = delete;
+
+    Material(Material&&) = delete;
+    Material& operator=(Material&&) = delete;
 
     static Material* Load(const std::string& name);
     static Material* Load(const std::string& name, const std::array<Texture*, TextureType::COUNT>& textures, const MaterialProperties& properties);

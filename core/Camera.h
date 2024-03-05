@@ -28,42 +28,21 @@ public:
 
     // Adders
     void AddVelocity(const glm::vec3& velocity);
-    // Add or update methods to modify yaw and pitch
-    void AddYaw(float angleDegrees) 
-    {
-        mYaw += angleDegrees;
-        // Ensure yaw stays within a reasonable range
-        mYaw = std::fmod(mYaw, 360.0f);
+    void AddYaw(float angleDegrees);
+    void AddPitch(float angleDegrees);
+    void AddAngularVelocity(const glm::vec2& angularVelocityDelta);
+    void AddAngularAcceleration(const glm::vec2& angularAccelerationDelta);
 
-        UpdateRotationFromYawPitch();
-    }
-
-    void AddPitch(float angleDegrees) 
-    {
-        // Calculate new pitch and clamp it to prevent flipping
-        float newPitch = std::clamp(mPitch + angleDegrees, -89.0f, 89.0f);
-        mPitch = newPitch;
-
-        UpdateRotationFromYawPitch();
-    }
     // Setters
     void SetAspectRatio(float aspectRatio);
     void SetVelocity(const glm::vec3& velocity);
     void SetAccelerationSpeed(float accelerationSpeed);
     void SetAcceleration(const glm::vec3& acceleration);
     void SetMaxMovementSpeed(float movementSpeed);
-
     void SetAngularVelocity(const glm::vec2& angularVelocity);
-    void AddAngularVelocity(const glm::vec2& angularVelocityDelta);
-    const glm::vec2& GetAngularVelocity() const;
-
-    void SetAngularAcceleration(const glm::vec2& angularAcceleration);
-    void AddAngularAcceleration(const glm::vec2& angularAccelerationDelta);
-    const glm::vec2& GetAngularAcceleration() const;
-
+    void SetAngularAcceleration(const glm::vec2& angularAcceleration);   
     void SetAngularDampingFactor(float dampingFactor);
-    float GetAngularDampingFactor() const;
-
+    
     // Getters
     float GetMaxMovementSpeed() const;
     float GetAspectRatio() const;
@@ -72,7 +51,9 @@ public:
     float GetFieldOfView() const;
     float GetAccelerationSpeed() const;
     const glm::vec3& GetAcceleration() const;
-
+    const glm::vec2& GetAngularVelocity() const;
+    const glm::vec2& GetAngularAcceleration() const;
+    float GetAngularDampingFactor() const;
     glm::vec3 GetFront() const;
     glm::vec3 GetUp() const;
     const glm::vec3& GetVelocity() const;
@@ -82,6 +63,7 @@ public:
     float GetAngularAccelerationSpeed() const;
 
  private:
+    // Update
     void UpdateVelocity(float dt);    
     void UpdatePosition(float dt);
     void UpdateRotation(float dt);
@@ -89,38 +71,31 @@ public:
     void UpdateAngularDamping(float dt);
     void UpdateDamping(float dt);
     void UpdateProjectionMatrix();
+    void UpdateRotationFromYawPitch();
 
-    void UpdateRotationFromYawPitch() 
-    {
-        glm::quat pitchQuat = glm::angleAxis(glm::radians(mPitch), glm::vec3(1.0f, 0.0f, 0.0f));
-        glm::quat yawQuat = glm::angleAxis(glm::radians(mYaw), glm::vec3(0.0f, 1.0f, 0.0f));
-
-        // Combined rotation
-        glm::quat newRotation = yawQuat * pitchQuat;
-        newRotation = glm::normalize(newRotation); // Ensure the quaternion is normalized
-
-        // Assuming SetRotation directly sets the Transform's rotation
-        this->SetRotation(newRotation);
-    }
-
+    // Speed
     float mMaxMovementSpeed;
     float mAccelerationSpeed;
+    float mAngularAccelerationSpeed{ 1000.f };
+    float mMaxAngularSpeed{ 500.f };
+
+    // Damping
     float mDampingFactor;
-
-    float mAngularAccelerationSpeed = 1000.f;
-    float mMaxAngularSpeed = 500.f;
-    float mAngularDampingFactor = 20.0f;
-
+    float mAngularDampingFactor{ 20.0f };
+    
+    // Velocity and acceleration
     glm::vec3 mVelocity{0.f, 0.f, 0.f};
     glm::vec3 mAcceleration{0.f, 0.f, 0.f};
     glm::vec2 mAngularVelocity{0.f, 0.f}; // x for yaw, y for pitch
     glm::vec2 mAngularAcceleration{0.f, 0.f};
 
+    // Perspecitve
     float mAspectRatio;
     float mNearPlane;
     float mFarPlane;
     float mFieldOfView;
 
+    // Todo: Update these values on other rotation operations
     float mYaw = 0.0f; // Yaw angle in degrees
     float mPitch = 0.0f; // Pitch angle in degrees
 

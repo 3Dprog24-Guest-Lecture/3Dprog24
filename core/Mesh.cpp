@@ -2,7 +2,11 @@
 #include <glad/glad.h>
 #include <Logger.h>
 
-std::unordered_map<std::string, Mesh*> Mesh::mCache;
+std::unordered_map<std::string, Mesh*> Mesh::sCache;
+
+MeshActor::MeshActor(const std::string& name, Mesh* mesh)
+    :Actor(name), mMesh(mesh)
+{}
 
 Mesh::Mesh(const std::string& name, std::vector<Vertex>&& vertices, std::vector<Index>&& indices, Material* material)
     : mVertices(std::move(vertices)), mIndices(std::move(indices)), mMaterial(material)
@@ -46,8 +50,8 @@ void Mesh::Draw(const Shader* shader) const
 
 Mesh* Mesh::Load(const std::string& path)
 {
-    auto it = mCache.find(path);
-    if (it != mCache.end())
+    auto it = sCache.find(path);
+    if (it != sCache.end())
     {
         return it->second;
     }
@@ -56,29 +60,29 @@ Mesh* Mesh::Load(const std::string& path)
 
 void Mesh::Unload(const std::string& path)
 {
-    auto it = mCache.find(path);
-    if (it != mCache.end())
+    auto it = sCache.find(path);
+    if (it != sCache.end())
     {
         delete it->second;
-        mCache.erase(it);
+        sCache.erase(it);
     }
 }
 
 void Mesh::ClearCache()
 {
-    for (auto it : mCache)
+    for (auto it : sCache)
     { 
         delete it.second;
     }
-    mCache.clear();
+    sCache.clear();
 }
 
-Mesh* Mesh::CreateCube(Material* material)
+Mesh* Mesh::LoadCube(Material* material)
 {
     const std::string cubeKey = "Cube";
 
-    auto it = mCache.find(cubeKey);
-    if (it != mCache.end())
+    auto it = sCache.find(cubeKey);
+    if (it != sCache.end())
     {
         return it->second;
     }
@@ -131,15 +135,11 @@ Mesh* Mesh::CreateCube(Material* material)
         20, 21, 22, 20, 22, 23
     };
 
-    mCache[cubeKey] = new Mesh(cubeKey, std::move(vertices), std::move(indices), material);
+    sCache[cubeKey] = new Mesh(cubeKey, std::move(vertices), std::move(indices), material);
     LOG_INFO("Mesh::Cube::Created");
 
-    return mCache[cubeKey];
+    return sCache[cubeKey];
 }
-
-MeshActor::MeshActor(const std::string& name, Mesh* mesh)
-    :Actor(name), mMesh(mesh)
-{}
 
 void MeshActor::Draw(const Shader* shader) const
 {
@@ -149,8 +149,6 @@ void MeshActor::Draw(const Shader* shader) const
 
 AABB MeshActor::GetAABB()
 {
-    mAABB.center = GetGlobalPosition();
-    mAABB.extent = GetGlobalScale() * 0.5f;
-    return mAABB;
+    return AABB(GetGlobalPosition(), GetGlobalScale() * 0.5f);
 }
 

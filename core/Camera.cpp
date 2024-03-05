@@ -33,6 +33,8 @@ void CameraActor::UpdateVelocity(float dt)
     {
         mVelocity = glm::normalize(mVelocity) * mMaxMovementSpeed;
     }
+
+    mAcceleration = glm::vec3(0.f);
 }
 
 void CameraActor::UpdateDamping(float dt)
@@ -96,6 +98,24 @@ void CameraActor::Update(float dt)
 void CameraActor::AddVelocity(const glm::vec3& velocity)
 {
     mVelocity += velocity;
+}
+
+void CameraActor::AddYaw(float angleDegrees)
+{
+    mYaw += angleDegrees;
+    // Ensure yaw stays within a reasonable range
+    mYaw = std::fmod(mYaw, 360.0f);
+
+    UpdateRotationFromYawPitch();
+}
+
+void CameraActor::AddPitch(float angleDegrees)
+{
+    // Calculate new pitch and clamp it to prevent flipping
+    float newPitch = std::clamp(mPitch + angleDegrees, -89.0f, 89.0f);
+    mPitch = newPitch;
+
+    UpdateRotationFromYawPitch();
 }
 
 void CameraActor::SetAspectRatio(float aspectRatio)
@@ -209,4 +229,17 @@ float CameraActor::GetAngularAccelerationSpeed() const
 void CameraActor::UpdateProjectionMatrix()
 {
     mProjectionMatrix = glm::perspectiveRH(glm::radians(mFieldOfView), mAspectRatio, mNearPlane, mFarPlane);
+}
+
+void CameraActor::UpdateRotationFromYawPitch()
+{
+    glm::quat pitchQuat = glm::angleAxis(glm::radians(mPitch), glm::vec3(1.0f, 0.0f, 0.0f));
+    glm::quat yawQuat = glm::angleAxis(glm::radians(mYaw), glm::vec3(0.0f, 1.0f, 0.0f));
+
+    // Combined rotation
+    glm::quat newRotation = yawQuat * pitchQuat;
+    newRotation = glm::normalize(newRotation); // Ensure the quaternion is normalized
+
+    // Assuming SetRotation directly sets the Transform's rotation
+    this->SetRotation(newRotation);
 }

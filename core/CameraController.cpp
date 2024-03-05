@@ -16,11 +16,11 @@ void CameraController::HandleMouseMove(Window* window, double xpos, double ypos)
 {
     if (!mRightMousePressed) return;
 
-    float xoffset = mLastX - xpos;
-    float yoffset = mLastY - ypos;
+    float xoffset = mLastX - static_cast<float>(xpos);
+    float yoffset = mLastY - static_cast<float>(ypos);
 
-    mLastX = xpos;
-    mLastY = ypos;
+    mLastX = static_cast<float>(xpos);
+    mLastY = static_cast<float>(ypos);
 
     xoffset *= mMouseSensitivity;
     yoffset *= mMouseSensitivity;
@@ -57,8 +57,6 @@ void CameraController::UpdateCameraAcceleration()
 {
     auto acceleration = mCamera->GetAcceleration();
     float movementSpeed = mCamera->GetAccelerationSpeed();
-
-    acceleration = glm::vec3(0.f);
 
     if (mKeyStates[GLFW_KEY_W]) acceleration.z += movementSpeed;
     if (mKeyStates[GLFW_KEY_S]) acceleration.z -= movementSpeed;

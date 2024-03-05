@@ -13,22 +13,20 @@
  */
 class Application
 {
-    public:
+public:
     Application(const Application&) = delete;
     Application(Application&&) = delete;
 
     static Application* Get();
 
-    void InitializeGLFW();
-
-    void Init();
-
-    void LoadContent();
-
     int Run();
 
-    private:
+private:
     Application() = default;
+
+    void Init();
+    void InitializeGLFW();
+    void LoadContent();
 
     Scene mScene{"Scene"};
     Window mWindow{"LearnOpenGL", &mScene, 1280, 720};

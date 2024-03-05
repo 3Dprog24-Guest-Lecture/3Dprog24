@@ -7,7 +7,7 @@
 #include <glm/gtx/quaternion.hpp>
 #include <glm/gtx/matrix_decompose.hpp>
 #include <glm/gtc/matrix_transform.hpp>
-#include <algorithm> // For std::clamp
+#include <algorithm>
 
 /**
  * @struct Transform

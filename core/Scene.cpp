@@ -22,9 +22,9 @@ void Scene::LoadContent()
 	auto tex = Texture::Load(SOURCE_DIRECTORY + "textures/container.jpg");
 	auto mat = Material::Load("Default", { tex }, {});
 
-	mCube0 = new MeshActor("Cube0", Mesh::CreateCube(mat));
-	mCube1 = new MeshActor("Cube1", Mesh::CreateCube(mat));
-	mCube2 = new MeshActor("Cube2", Mesh::CreateCube(mat));
+	mCube0 = new MeshActor("Cube0", Mesh::LoadCube(mat));
+	mCube1 = new MeshActor("Cube1", Mesh::LoadCube(mat));
+	mCube2 = new MeshActor("Cube2", Mesh::LoadCube(mat));
 	mShader = new Shader(SOURCE_DIRECTORY + "shaders/shader.vs", SOURCE_DIRECTORY + "shaders/shader.fs");
 
 	mSceneGraph.AddChild(&mSceneCamera);

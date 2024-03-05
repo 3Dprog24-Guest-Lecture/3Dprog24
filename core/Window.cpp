@@ -1,4 +1,4 @@
-#include "Window.h"
+#include <Window.h>
 #include <exception>
 #include <stdexcept>
 
@@ -33,7 +33,7 @@ void Window::Init()
 
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
     {
-       std::runtime_error("Failed to initialize glad");
+       throw std::runtime_error("Failed to initialize glad");
     }
 
     IMGUI_CHECKVERSION();
@@ -154,6 +154,9 @@ void Window::FramebufferSizeCallback(GLFWwindow* window, int width, int height)
 {
     LOG_INFO("Window::FramebufferSizeCallback");
     glViewport(0, 0, width, height);
+
+    if (mScene)
+        mScene->FramebufferSizeCallback(this, width, height);
 }
 
 void Window::MouseMoveCallback(GLFWwindow* window, double xpos, double ypos)

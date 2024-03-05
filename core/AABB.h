@@ -26,7 +26,6 @@ struct AABB
     glm::vec3 center{0.f, 0.f ,0.f};
     glm::vec3 extent{0.5f, 0.5f, 0.5f};
 
-    AABB() = default;
     AABB(const glm::vec3& center, const glm::vec3& extent) : center(center), extent(extent) {}
 
     // Calculate intersection between this AABB and another
@@ -70,7 +69,7 @@ struct AABB
             if (minAxis != -1) 
             {
                 glm::vec3 direction = glm::vec3(0);
-                direction[minAxis] = diff[minAxis] > 0 ? 1 : -1;
+                direction[minAxis] = diff[minAxis] > 0.f ? 1.f : -1.f;
                 *mtv = direction * minMTV;
             }
         }

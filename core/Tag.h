@@ -15,19 +15,14 @@
  */
 struct TagUnique
 {
-private:
-    static std::unordered_set<std::string> mExistingTags;
-    std::string mValue;
-
-public:
     TagUnique(const std::string& val)
     {
-        if (mExistingTags.find(val) != mExistingTags.end())
+        if (sExistingTags.find(val) != sExistingTags.end())
         {
             throw std::runtime_error("Tag already exists: " + val);
         }
         mValue = val;
-        mExistingTags.insert(val);
+        sExistingTags.insert(val);
     }
 
     TagUnique(const TagUnique&) = delete;
@@ -38,7 +33,7 @@ public:
 
     ~TagUnique()
     {
-        mExistingTags.erase(mValue);
+        sExistingTags.erase(mValue);
     }
 
     const std::string& GetValue() const
@@ -48,13 +43,17 @@ public:
 
     static bool TagExists(const std::string& tag)
     {
-        return mExistingTags.find(tag) != mExistingTags.end();
+        return sExistingTags.find(tag) != sExistingTags.end();
     }
 
     static void ClearCache()
     {
-        mExistingTags.clear();
+        sExistingTags.clear();
     }
+
+private:
+    static std::unordered_set<std::string> sExistingTags;
+    std::string mValue;
 };
 
-inline std::unordered_set<std::string> TagUnique::mExistingTags{};
+inline std::unordered_set<std::string> TagUnique::sExistingTags{};

@@ -8,19 +8,13 @@ void ActorController::Update(float dt)
 }
 
 void ActorController::HandleMouseMove(Window* window, double xpos, double ypos)
-{
-
-}
+{}
 
 void ActorController::HandleMouseScroll(Window* window, double xoffset, double yoffset)
-{
-
-}
+{}
 
 void ActorController::HandleMouseButton(Window* window, int button, int action, int mods)
-{
-
-}
+{}
 
 void ActorController::HandleKeyboard(Window* window, int key, int scancode, int action, int mods)
 {
