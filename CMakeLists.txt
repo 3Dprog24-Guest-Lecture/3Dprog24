@@ -75,7 +75,7 @@ set (SRC_FILES
 add_subdirectory(libs/glfw-3.3.9)
 
 # Add source to this project's executable.
-add_executable(3Dprog24 ${IMGUI_HEADERS} ${IMGUI_SOURCE} ${HEADER_FILES} ${SRC_FILES})
+add_executable(3Dprog24 ${IMGUI_HEADERS} ${IMGUI_SOURCE} ${HEADER_FILES} ${SRC_FILES} "core/AABB.h"  "core/ActorController.h" "core/ActorController.cpp")
 
 #target_link_libraries(3Dprog24 PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/libs/glfw3.lib)
 target_link_libraries(3Dprog24 glfw)

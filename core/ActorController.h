@@ -4,16 +4,16 @@
 #include <map>
 
 /**
- * @class CameraController
- * @brief Controls camera movement and orientation based on user input.
+ * @class ActorController
+ * @brief Controls actor movement based on user input.
  *
- * CameraController is responsible for handling user inputs. It is designed to work with a
- * CameraActor to update its transformation based on the input.
+ * ActorController is responsible for handling user inputs. It is designed to work with a
+ * Actor to update its transformation based on the input.
  */
-class CameraController : public IController
+class ActorController : public IController
 {
 public:
-    CameraController(class CameraActor* camera) : mCamera(camera) {}
+    ActorController(class Actor* actor) : mActor(actor) {}
 
     virtual void Update(float dt) override;
     virtual void HandleMouseMove(class Window* window, double xpos, double ypos) override;
@@ -22,12 +22,8 @@ public:
     virtual void HandleKeyboard(class Window* window, int key, int scancode, int action, int mods) override;
 
 private:
-    void UpdateCameraAcceleration();
+    void UpdateActor(float dt);
 
-    float mLastX = 0.0, mLastY = 0.0;
-    bool mRightMousePressed = false;
-    float mMouseSensitivity = 0.1f;
-
+    class Actor* mActor;
     std::map<int, bool> mKeyStates;
-    class CameraActor* mCamera;
 };

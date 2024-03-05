@@ -37,6 +37,15 @@ void Material::Unload(const std::string& name)
     }
 }
 
+void Material::ClearCache()
+{
+    for (auto it : mCache)
+    {
+        delete it.second;
+    }
+    mCache.clear();
+}
+
 void Material::Bind(const Shader* shader) const
 {
     for (size_t i = 0; i < mTextures.size(); ++i)

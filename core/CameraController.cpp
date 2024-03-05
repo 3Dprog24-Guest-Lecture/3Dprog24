@@ -7,6 +7,11 @@
 #include <glm/gtx/quaternion.hpp>
 #include <Window.h>
 
+void CameraController::Update(float dt)
+{
+    UpdateCameraAcceleration();
+}
+
 void CameraController::HandleMouseMove(Window* window, double xpos, double ypos)
 {
     if (!mRightMousePressed) return;
@@ -77,8 +82,6 @@ void CameraController::HandleKeyboard(Window* window, int key, int scancode, int
     {
         mKeyStates[key] = false;
     }
-
-    UpdateCameraAcceleration();
 }
 
 void CameraController::HandleMouseScroll(Window* window, double xoffset, double yoffset){}

@@ -62,7 +62,7 @@ public:
     static Material* Load(const std::string& name);
     static Material* Load(const std::string& name, const std::array<Texture*, TextureType::COUNT>& textures, const MaterialProperties& properties);
     static void Unload(const std::string& name);
-    static void ClearCache() { mCache.clear(); };
+    static void ClearCache();
 
     // Assumes the shader is bound
     void Bind(const Shader* shader) const;

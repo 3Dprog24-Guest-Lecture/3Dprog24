@@ -1,6 +1,7 @@
 #pragma once
 
 #include <Actor.h>
+#include <AABB.h>
 
 /**
  * @class SceneGraph
@@ -17,4 +18,5 @@ class SceneGraph : public Actor
 	//BVH mBVH;
 public:
 	SceneGraph(const std::string& name) : Actor(name) { };
+
 };

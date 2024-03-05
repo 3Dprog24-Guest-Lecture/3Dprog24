@@ -49,6 +49,17 @@ public:
     std::vector<Actor*>& GetChildren();
     glm::vec3 GetRight() const;
 
+    // Query
+    template <typename T>
+    void Query(std::vector<Actor*>& actors)
+    {
+        if (dynamic_cast<T*>(this))
+            actors.emplace_back(this);
+
+        for (auto child : this->mChildren)
+            child->Query<T>(actors);
+    }
+
 protected:
     Actor* mParent{nullptr};
     std::vector<Actor*> mChildren;

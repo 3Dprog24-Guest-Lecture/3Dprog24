@@ -9,6 +9,7 @@
 #include <unordered_map>
 #include <Actor.h>
 #include <Types.h>
+#include <AABB.h>
 
 /**
  * @class Mesh
@@ -34,12 +35,13 @@ public:
     explicit Mesh(const std::string& name, std::vector<Vertex>&& vertices, std::vector<Index>&& indices, Material* material);
     virtual ~Mesh();
 
+    // Assumes the shader is bound
     void Draw(const Shader* shader) const;
 
     static Mesh* CreateCube(Material* material);
     static Mesh* Load(const std::string& path);
     static void Unload(const std::string& path);
-    static void ClearCache() { mCache.clear(); };
+    static void ClearCache();
 
     static std::unordered_map<std::string, Mesh*> mCache;
 };
@@ -54,12 +56,15 @@ public:
  * to be managed within the scene graph while also having the capability to render a
  * specific mesh using a shader.
  */
-class MeshActor : public Actor, public IRender
+class MeshActor : public Actor, public IRender, public IBounded
 {
 public:
     MeshActor(const std::string& name, Mesh* mesh);
-    virtual void Draw(const class Shader* shader = nullptr) const;
+    virtual void Draw(const class Shader* shader = nullptr) const override;
+    virtual AABB GetAABB() override;
+    
     Mesh* mMesh{ nullptr };
+    AABB mAABB;
 };
 
 // Can eventually create a MeshComponent

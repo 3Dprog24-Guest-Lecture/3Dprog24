@@ -64,6 +64,15 @@ void Mesh::Unload(const std::string& path)
     }
 }
 
+void Mesh::ClearCache()
+{
+    for (auto it : mCache)
+    { 
+        delete it.second;
+    }
+    mCache.clear();
+}
+
 Mesh* Mesh::CreateCube(Material* material)
 {
     const std::string cubeKey = "Cube";
@@ -136,5 +145,12 @@ void MeshActor::Draw(const Shader* shader) const
 {
     if (!mMesh) return;
     mMesh->Draw(shader);
+}
+
+AABB MeshActor::GetAABB()
+{
+    mAABB.center = GetGlobalPosition();
+    mAABB.extent = GetGlobalScale() * 0.5f;
+    return mAABB;
 }
 

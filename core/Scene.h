@@ -4,6 +4,8 @@
 #include <memory>
 #include <Controller.h>
 #include <Mesh.h>
+#include <ActorController.h>
+#include <CameraController.h>
 
 /**
  * @class Scene
@@ -27,9 +29,11 @@ public:
 
     virtual void LoadContent();
     virtual void UnloadContent();
+    void UpdateInputController(float dt);
     void UpdateSceneGraph(Actor* actor, float dt, Transform globalTransform = Transform{});
     void RenderSceneGraph(Actor* actor, float dt, Transform globalTransform = Transform{});
     void Update(float dt);
+    void HandleCollision();
     void Render(float dt);
 
     void FramebufferSizeCallback(class Window* window, int width, int height);
@@ -38,8 +42,8 @@ public:
     void MouseScrollCallback(class Window* window, double xoffset, double yoffset);
     void KeyCallback(class Window* window, int key, int scancode, int action, int mods);
 
-    std::shared_ptr<IController> GetController() const { return mController; }
-    void SetController(const std::shared_ptr<IController>& controller) { mController = controller; }
+    std::shared_ptr<IController> GetController() const { return mActiveController; }
+    void SetController(const std::shared_ptr<IController>& controller) { mActiveController = controller; }
 
     SceneGraph mSceneGraph;
     CameraActor mSceneCamera{ "SceneCamera" };
@@ -47,8 +51,11 @@ public:
 private:
     MeshActor* mCube0{nullptr};
     MeshActor* mCube1{nullptr};
+    MeshActor* mCube2{ nullptr };
     class Shader* mShader{ nullptr };
 
+    std::shared_ptr<ActorController> mActorController;
+    std::shared_ptr<CameraController> mCameraController;
 protected:
-    std::shared_ptr<IController> mController{ nullptr };
+    std::shared_ptr<IController> mActiveController{ nullptr };
 };

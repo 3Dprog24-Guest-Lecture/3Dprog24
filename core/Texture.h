@@ -21,7 +21,7 @@ class Texture
 public:
     static Texture* Load(const std::string& path);
     static void Unload(const std::string& path);
-    static void ClearCache() { mCache.clear(); };
+    static void ClearCache();
     
     TextureID GetTextureID() const { return mId; };
     bool IsValid() const { return mId == 0; };

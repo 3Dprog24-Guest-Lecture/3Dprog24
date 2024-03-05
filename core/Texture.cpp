@@ -73,3 +73,12 @@ void Texture::Unload(const std::string& path)
         LOG_ERROR("Texture not found in cache: ", path);
     }
 }
+
+void Texture::ClearCache()
+{
+    for (auto it : mCache)
+    {
+        delete it.second;
+    }
+    mCache.clear();
+}
