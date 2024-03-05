@@ -6,12 +6,21 @@
 
 struct AABB;
 
+/**
+ * @brief Interface for objects that can be bounded by an Axis-Aligned Bounding Box (AABB).
+ */
 class IBounded 
 {
 public:
     virtual AABB GetAABB() = 0;
 };
 
+/**
+ * @brief Represents an Axis-Aligned Bounding Box (AABB) used for collision detection.
+ *
+ * The AABB is defined by a center point and an extent (half-size in each dimension),
+ * allowing for efficient intersection tests and spatial partitioning.
+ */
 struct AABB 
 {
     glm::vec3 center{0.f, 0.f ,0.f};

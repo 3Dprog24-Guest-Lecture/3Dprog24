@@ -25,19 +25,16 @@ void Scene::LoadContent()
 	mCube0 = new MeshActor("Cube0", Mesh::CreateCube(mat));
 	mCube1 = new MeshActor("Cube1", Mesh::CreateCube(mat));
 	mCube2 = new MeshActor("Cube2", Mesh::CreateCube(mat));
+	mShader = new Shader(SOURCE_DIRECTORY + "shaders/shader.vs", SOURCE_DIRECTORY + "shaders/shader.fs");
 
 	mSceneGraph.AddChild(&mSceneCamera);
 	mSceneGraph.AddChild(mCube0);
 	mSceneGraph.AddChild(mCube1);
 	mSceneGraph.AddChild(mCube2);
 
-	//mCube0->AddChild(mCube1);
-
 	mCube0->SetPosition({ -2.f, 0.f, 0.f }, Actor::TransformSpace::Global);
-	mCube1->SetPosition({ 2.f, 0.f, 0.f }, Actor::TransformSpace::Global);
-	
+	mCube1->SetPosition({ 2.f, 0.f, 0.f }, Actor::TransformSpace::Global);	
 	mSceneCamera.SetPosition({ 0.f, 0.f, 3.f });
-	mShader = new Shader(SOURCE_DIRECTORY + "shaders/shader.vs", SOURCE_DIRECTORY + "shaders/shader.fs");
 
 	mActorController = std::shared_ptr<ActorController>(new ActorController(mCube0));
 	mCameraController = std::shared_ptr<CameraController>(new CameraController(&mSceneCamera));
@@ -109,7 +106,7 @@ void Scene::HandleCollision()
 			glm::vec3 mtv{}; // minimum translation vector to resolve the collision		
 			if (a.Intersect(b, &mtv)) // This means that the two bounding boxes intersect
 			{
-				// Move both actors equally by halfing the mtv
+				// Move both actors equally at opposite sides by halfing the mtv vector
 				actors[i]->SetPosition(actors[i]->GetGlobalPosition() - mtv * 0.5f);
 				actors[j]->SetPosition(actors[j]->GetGlobalPosition() + mtv * 0.5f);
 			}
