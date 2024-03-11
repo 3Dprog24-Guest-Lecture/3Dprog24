@@ -41,7 +41,8 @@ void Scene::LoadContent()
 	mSceneGraph.AddChild(mDirectionalLightActor);
 
 	mCube0->SetPosition({ -2.f, 0.f, 0.f }, Actor::TransformSpace::Global);
-	mCube1->SetPosition({ 2.f, 0.f, 0.f }, Actor::TransformSpace::Global);	
+	mCube1->SetPosition({ 0.f, -1.f, 0.f }, Actor::TransformSpace::Global);	
+	mCube1->SetScale({ 5.f, 1.f, 5.f }, Actor::TransformSpace::Global);
 	mSceneCamera.SetPosition({ 0.f, 0.f, 3.f });
 
 	mDirectionalLightActor->SetRotation(glm::angleAxis(glm::radians(-90.0f), glm::vec3(1.0f, 0.0f, 0.0f)));
