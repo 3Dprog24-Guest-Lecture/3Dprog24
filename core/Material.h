@@ -21,7 +21,7 @@ public:
     // New types and order must match the array below
     enum TextureType
     {
-        ALBEDO,
+        DIFFUSE,
         SPECULAR,
         NORMAL,
         ALPHA,
@@ -29,7 +29,7 @@ public:
     };
 
     std::array<std::string, static_cast<size_t>(TextureType::COUNT)> textureUniformNames = {   
-        "material.albedoMap", "material.specularMap", 
+        "material.diffuseMap", "material.specularMap", 
         "material.normalMap", "material.alphaMap"
     };
 
@@ -45,7 +45,7 @@ public:
     struct MaterialProperties
     {
         glm::vec3 mColor{1.f, 1.f, 1.f};
-        float mShininess{ 1.f };
+        float mShininess{ 64.f };
     };
 
 private:

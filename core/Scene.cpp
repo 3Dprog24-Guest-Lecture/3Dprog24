@@ -19,12 +19,17 @@ void Scene::LoadContent()
 {
 	LOG_INFO("Scene::LoadContent");
 
-	auto tex = Texture::Load(SOURCE_DIRECTORY + "textures/container.jpg");
-	auto mat = Material::Load("Default", { tex }, {});
+	auto diffuseTex = Texture::Load(SOURCE_DIRECTORY + "textures/container2.jpg");
+	auto specularTex = Texture::Load(SOURCE_DIRECTORY + "textures/container2_specular.jpg");
+	auto mat = Material::Load("Default", { diffuseTex, specularTex }, {});
 
 	mCube0 = new MeshActor("Cube0", Mesh::LoadCube(mat));
 	mCube1 = new MeshActor("Cube1", Mesh::LoadCube(mat));
 	mCube2 = new MeshActor("Cube2", Mesh::LoadCube(mat));
+
+	mPointLightActor = new PointLightActor("Point light 0");
+	mDirectionalLightActor = new DirectionalLightActor("Directional light");
+
 	mShader = new Shader(SOURCE_DIRECTORY + "shaders/shader.vs", SOURCE_DIRECTORY + "shaders/shader.fs");
 
 	mSceneGraph.AddChild(&mSceneCamera);
@@ -32,9 +37,15 @@ void Scene::LoadContent()
 	mSceneGraph.AddChild(mCube1);
 	mSceneGraph.AddChild(mCube2);
 
+	//mSceneGraph.AddChild(mPointLightActor);
+	mSceneGraph.AddChild(mDirectionalLightActor);
+
 	mCube0->SetPosition({ -2.f, 0.f, 0.f }, Actor::TransformSpace::Global);
 	mCube1->SetPosition({ 2.f, 0.f, 0.f }, Actor::TransformSpace::Global);	
 	mSceneCamera.SetPosition({ 0.f, 0.f, 3.f });
+
+	mDirectionalLightActor->SetRotation(glm::angleAxis(glm::radians(-90.0f), glm::vec3(1.0f, 0.0f, 0.0f)));
+	//mPointLightActor->SetPosition({ 0.f, 1.0f, 0.f });
 
 	mActorController = std::shared_ptr<ActorController>(new ActorController(mCube0));
 	mCameraController = std::shared_ptr<CameraController>(new CameraController(&mSceneCamera));
@@ -48,7 +59,9 @@ void Scene::UnloadContent()
 	delete mCube0;
 	delete mCube1;
 	delete mCube2;
-
+	delete mPointLightActor;
+	delete mDirectionalLightActor;
+	
 	Mesh::ClearCache();
 	Material::ClearCache();
 	Texture::ClearCache();	
@@ -124,8 +137,6 @@ void Scene::RenderSceneGraph(Actor* actor, float dt, Transform globalTransform)
 	{
 		mShader->use();
 		mShader->setMat4("model", globalTransform.GetTransformMatrix());
-		mShader->setMat4("view", mSceneCamera.GetViewMatrix());
-		mShader->setMat4("projection", mSceneCamera.GetProjectionMatrix());
 		iRender->Draw(mShader);
 	}
 
@@ -136,9 +147,57 @@ void Scene::RenderSceneGraph(Actor* actor, float dt, Transform globalTransform)
 	}
 }
 
+void Scene::BindDirectionalLight()
+{
+	// Bind Directional light
+	std::vector<Actor*> directionalLights;
+	mSceneGraph.Query<DirectionalLightActor>(directionalLights);
+	if (!directionalLights.empty())
+	{
+		auto dl = dynamic_cast<DirectionalLightActor*>(directionalLights[0]);
+		mShader->setVec3("dl.direction", glm::normalize(dl->GetDirection()));
+		mShader->setVec3("dl.color", dl->mColor);
+		mShader->setVec3("dl.ambient", dl->mAmbient);
+	}
+}
+
+void Scene::BindPointLights()
+{
+	// Bind Point lights
+	std::vector<Actor*> pointLightActors;
+	mSceneGraph.Query<PointLightActor>(pointLightActors);
+
+	mShader->setInt("numPointLights", pointLightActors.size());
+	for (int i = 0; i < pointLightActors.size(); i++)
+	{
+		auto pl = dynamic_cast<PointLightActor*>(pointLightActors[i]);
+
+		std::string pointLightArrayIndex = "pointLights[" + std::to_string(i) + "]";
+		mShader->setVec3(pointLightArrayIndex + ".ambient", pl->mAmbient);
+		mShader->setVec3(pointLightArrayIndex + ".color", pl->mColor);
+		mShader->setVec3(pointLightArrayIndex + ".position", pl->GetGlobalPosition());
+		mShader->setFloat(pointLightArrayIndex + ".constant", pl->constant);
+		mShader->setFloat(pointLightArrayIndex + ".linear", pl->linear);
+		mShader->setFloat(pointLightArrayIndex + ".quadratic", pl->quadratic);
+	}
+}
+
 void Scene::Render(float dt)
 {
 	glEnable(GL_DEPTH_TEST);
+
+	// Bind Shader, only using 1 shader for now
+	mShader->use();
+
+	// Bind lights
+	BindDirectionalLight();
+	BindPointLights();
+
+	// Bind camera
+	mShader->setMat4("view", mSceneCamera.GetViewMatrix());
+	mShader->setMat4("projection", mSceneCamera.GetProjectionMatrix());
+	mShader->setVec3("viewPos", mSceneCamera.GetGlobalPosition());
+
 	RenderSceneGraph(&mSceneGraph, dt);
 
 	// Variables for ImGui combo box

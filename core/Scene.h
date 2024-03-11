@@ -6,6 +6,8 @@
 #include <Mesh.h>
 #include <ActorController.h>
 #include <CameraController.h>
+#include <Lights/PointLight.h>
+#include <Lights/DirectionalLight.h>
 
 /**
  * @class Scene
@@ -37,6 +39,8 @@ public:
     void HandleCollision();
 
     void RenderSceneGraph(Actor* actor, float dt, Transform globalTransform = Transform{});
+    void BindDirectionalLight();
+    void BindPointLights();
     void Render(float dt);
 
     void FramebufferSizeCallback(class Window* window, int width, int height);
@@ -55,7 +59,11 @@ private:
     MeshActor* mCube0{nullptr};
     MeshActor* mCube1{nullptr};
     MeshActor* mCube2{ nullptr };
+   
     class Shader* mShader{ nullptr };
+
+    PointLightActor* mPointLightActor{ nullptr };
+    DirectionalLightActor* mDirectionalLightActor{ nullptr };
 
     std::shared_ptr<ActorController> mActorController;
     std::shared_ptr<CameraController> mCameraController;
