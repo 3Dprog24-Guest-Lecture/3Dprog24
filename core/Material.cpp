@@ -59,7 +59,7 @@ void Material::Bind(const Shader* shader) const
         }
     }
 
-    shader->setVec3("material.color", mProperties.mColor);
+    shader->setVec3("material.diffuseColor", mProperties.mColor);
     shader->setFloat("material.shininess", mProperties.mShininess);
 }
 
