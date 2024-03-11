@@ -41,6 +41,8 @@ public:
     void RenderSceneGraph(Actor* actor, float dt, Transform globalTransform = Transform{});
     void BindDirectionalLight();
     void BindPointLights();
+    void BindCamera();
+    void RenderUI();
     void Render(float dt);
 
     void FramebufferSizeCallback(class Window* window, int width, int height);
