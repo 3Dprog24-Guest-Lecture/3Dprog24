@@ -45,7 +45,7 @@ void Scene::LoadContent()
 	mSceneCamera.SetPosition({ 0.f, 0.f, 3.f });
 
 	mDirectionalLightActor->SetRotation(glm::angleAxis(glm::radians(-90.0f), glm::vec3(1.0f, 0.0f, 0.0f)));
-	//mPointLightActor->SetPosition({ 0.f, 1.0f, 0.f });
+	//mPointLightActor->SetPosition({ 0.f, 2.0f, 0.f });
 
 	mActorController = std::shared_ptr<ActorController>(new ActorController(mCube0));
 	mCameraController = std::shared_ptr<CameraController>(new CameraController(&mSceneCamera));
@@ -135,7 +135,6 @@ void Scene::RenderSceneGraph(Actor* actor, float dt, Transform globalTransform)
 
 	if (auto iRender = dynamic_cast<IRender*>(actor))
 	{
-		mShader->use();
 		mShader->setMat4("model", globalTransform.GetTransformMatrix());
 		iRender->Draw(mShader);
 	}
@@ -182,24 +181,15 @@ void Scene::BindPointLights()
 	}
 }
 
-void Scene::Render(float dt)
+void Scene::BindCamera()
 {
-	glEnable(GL_DEPTH_TEST);
-
-	// Bind Shader, only using 1 shader for now
-	mShader->use();
-
-	// Bind lights
-	BindDirectionalLight();
-	BindPointLights();
-
-	// Bind camera
 	mShader->setMat4("view", mSceneCamera.GetViewMatrix());
 	mShader->setMat4("projection", mSceneCamera.GetProjectionMatrix());
 	mShader->setVec3("viewPos", mSceneCamera.GetGlobalPosition());
+}
 
-	RenderSceneGraph(&mSceneGraph, dt);
-
+void Scene::RenderUI()
+{
 	// Variables for ImGui combo box
 	const char* items[] = { "Camera", "Player" };
 	static int item_current = 0; // Current item index
@@ -220,6 +210,19 @@ void Scene::Render(float dt)
 	}
 
 	ImGui::End(); // End of the window
+}
+
+void Scene::Render(float dt)
+{
+	glEnable(GL_DEPTH_TEST);
+
+	// Bind Shader, only using 1 shader for now
+	mShader->use();
+	BindDirectionalLight();
+	BindPointLights();
+	BindCamera();
+	RenderSceneGraph(&mSceneGraph, dt);
+	RenderUI();
 }
 
 void Scene::MouseMoveCallback(Window* window, double xpos, double ypos)
