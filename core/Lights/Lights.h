@@ -4,6 +4,6 @@
 struct Light
 {
 	virtual ~Light() = default;
-	glm::vec3 mAmbient{0.5f, 0.5f, 0.5f};
+	glm::vec3 mAmbient{0.4f, 0.4f, 0.4f};
 	glm::vec3 mColor{1.f, 1.f, 1.f};
 };

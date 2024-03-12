@@ -178,6 +178,16 @@ void CameraActor::SetAngularDampingFactor(float dampingFactor)
     mAngularDampingFactor = dampingFactor;
 }
 
+void CameraActor::SetPitch(float pitchDegrees)
+{
+    mPitch = pitchDegrees;
+}
+
+void CameraActor::SetYaw(float yawDegrees)
+{
+    mYaw = yawDegrees;
+}
+
 float CameraActor::GetAngularDampingFactor() const 
 {
     return mAngularDampingFactor;

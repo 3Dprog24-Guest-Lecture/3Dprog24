@@ -42,6 +42,8 @@ public:
     void SetAngularVelocity(const glm::vec2& angularVelocity);
     void SetAngularAcceleration(const glm::vec2& angularAcceleration);   
     void SetAngularDampingFactor(float dampingFactor);
+    void SetPitch(float pitchDegrees);
+    void SetYaw(float yawDegrees);
     
     // Getters
     float GetMaxMovementSpeed() const;

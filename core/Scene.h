@@ -61,7 +61,7 @@ private:
     MeshActor* mCube0{nullptr};
     MeshActor* mCube1{nullptr};
     MeshActor* mCube2{ nullptr };
-   
+    class Skybox* mSkybox{ nullptr };
     class Shader* mShader{ nullptr };
 
     PointLightActor* mPointLightActor{ nullptr };

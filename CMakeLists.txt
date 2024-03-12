@@ -55,7 +55,9 @@ set (HEADER_FILES
   core/Controller.h 
   core/Defines.h 
   core/CameraController.h 
-   "core/Component.h" "core/Collision.h")
+  core/Component.h 
+  core/Collision.h 
+  core/Skybox.h)
 
 set (SRC_FILES
   3Dprog24.cpp
@@ -70,7 +72,8 @@ set (SRC_FILES
   core/Scene.cpp
   core/Actor.cpp
   core/CameraController.cpp
- "core/PhysicsComponent.cpp")
+  core/PhysicsComponent.cpp
+  core/Skybox.cpp)
 
 add_subdirectory(libs/glfw-3.3.9)
 

@@ -12,6 +12,7 @@
 #include <imgui.h>
 #include <GLFW/glfw3.h>
 #include <PhysicsComponent.h>
+#include <Skybox.h>
 
 Scene::Scene(const std::string& name)
 	:mSceneGraph(name){}
@@ -31,6 +32,15 @@ void Scene::LoadContent()
 	mPointLightActor = new PointLightActor("Point light 0");
 	mDirectionalLightActor = new DirectionalLightActor("Directional light");
 
+	mSkybox = new Skybox({
+		SOURCE_DIRECTORY + "textures/Starfield_And_Haze/Starfield_And_Haze_left.png",
+		SOURCE_DIRECTORY + "textures/Starfield_And_Haze/Starfield_And_Haze_right.png",
+		SOURCE_DIRECTORY + "textures/Starfield_And_Haze/Starfield_And_Haze_up.png",
+		SOURCE_DIRECTORY + "textures/Starfield_And_Haze/Starfield_And_Haze_down.png",
+		SOURCE_DIRECTORY + "textures/Starfield_And_Haze/Starfield_And_Haze_front.png",
+		SOURCE_DIRECTORY + "textures/Starfield_And_Haze/Starfield_And_Haze_back.png",
+		});
+
 	mShader = new Shader(SOURCE_DIRECTORY + "shaders/shader.vs", SOURCE_DIRECTORY + "shaders/shader.fs");
 
 	mSceneGraph.AddChild(&mSceneCamera);
@@ -47,7 +57,8 @@ void Scene::LoadContent()
 	mCube0->SetWorldPosition({ -2.f, 10.f, 0.f });
 	mCube1->SetWorldPosition({ 0.f, -1.f, 0.f });	
 	mCube1->SetWorldScale({ 5.f, 1.f, 5.f });
-	mSceneCamera.SetWorldPosition({ 0.f, 0.f, 3.f });
+	mSceneCamera.SetWorldPosition({ 0.f, 2.f, 3.f });
+	mSceneCamera.SetPitch(-30.f);
 
 	mDirectionalLightActor->SetWorldRotation(glm::angleAxis(glm::radians(-90.0f), glm::vec3(1.0f, 0.0f, 0.0f)));
 	//mPointLightActor->SetPosition({ 0.f, 2.0f, 0.f });
@@ -66,6 +77,7 @@ void Scene::UnloadContent()
 	delete mCube2;
 	delete mPointLightActor;
 	delete mDirectionalLightActor;
+	delete mSkybox;
 	
 	Mesh::ClearCache();
 	Material::ClearCache();
@@ -258,7 +270,6 @@ void Scene::RenderUI()
 void Scene::Render(float dt)
 {
 	glEnable(GL_DEPTH_TEST);
-
 	// Bind Shader, only using 1 shader for now
 	mShader->use();
 	BindDirectionalLight();
@@ -266,6 +277,9 @@ void Scene::Render(float dt)
 	BindCamera();
 	RenderSceneGraph(&mSceneGraph, dt);
 	RenderUI();
+
+	glDepthFunc(GL_LEQUAL);
+	mSkybox->Render(&mSceneCamera);
 }
 
 void Scene::MouseMoveCallback(Window* window, double xpos, double ypos)
