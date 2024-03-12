@@ -7,12 +7,6 @@
 class Actor
 {
 public:
-    enum class TransformSpace 
-    {
-        Local,
-        Global
-    };
-
     Actor(const std::string& name) :mTag(name), mParent(nullptr) {};
 
 	Actor(const Actor&) = delete;
@@ -32,24 +26,35 @@ public:
 
     // Setters
     void SetTransform(const Transform& transform);
-    void SetPosition(const glm::vec3& position, Actor::TransformSpace type = Actor::TransformSpace::Local);
-    void SetRotation(const glm::quat& rotation, Actor::TransformSpace type = Actor::TransformSpace::Local);
-    void SetScale(const glm::vec3& scale, Actor::TransformSpace type = Actor::TransformSpace::Local);
+    void SetLocalPosition(const glm::vec3& position);
+    void SetLocalRotation(const glm::quat& rotation);
+    void SetLocalScale(const glm::vec3& scale);
+    void SetWorldPosition(const glm::vec3& position);
+    void SetWorldRotation(const glm::quat& rotation);
+    void SetWorldScale(const glm::vec3& scale);
 
     // Getters
-    const glm::vec3& GetPosition() const;
-    glm::vec3 GetGlobalPosition() const;
-    const glm::quat& GetRotation() const;
-    glm::quat GetGlobalRotation() const;
-    const glm::vec3& GetScale() const;
-    glm::vec3 GetGlobalScale() const;
-    const glm::mat4 GetTransformMatrix() const;
-    glm::mat4 GetGlobalTransformMatrix() const;
-    const Transform& GetTransform() const;
+    const glm::vec3& GetLocalPosition() const;
+    glm::vec3 GetWorldPosition() const;
+    const glm::quat& GetLocalRotation() const;
+    glm::quat GetWorldRotation() const;
+    const glm::vec3& GetLocalScale() const;
+    glm::vec3 GetWorldScale() const;
+    const glm::mat4 GetLocalTransformMatrix() const;
+    glm::mat4 GetWorldTransformMatrix() const;
+    const Transform& GetLocalTransform() const;
     std::vector<Actor*>& GetChildren();
     glm::vec3 GetRight() const;
 
-    // Query
+    /**
+     * @brief Adds actors of type T to a vector if they match the current object type.
+     *
+     * This function recursively checks the current object and its children for type T. If the object is of type T,
+     * it is added to the provided vector of Actor pointers. This allows for collecting all actors of a specific type
+     * within a hierarchy.
+     *
+     * @param actors A reference to a vector of Actor pointers to be filled with actors of type T.
+     */
     template <typename T>
     void Query(std::vector<Actor*>& actors)
     {
@@ -61,6 +66,7 @@ public:
     }
 
 protected:
+    // Scene graph
     Actor* mParent{nullptr};
     std::vector<Actor*> mChildren;
 private:

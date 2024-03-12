@@ -18,6 +18,6 @@ public:
 
 	virtual glm::vec3 GetDirection() const override
 	{
-		return GetRotation() * glm::vec3(0.f, 0.f, -1.f);
+		return GetLocalRotation() * glm::vec3(0.f, 0.f, -1.f);
 	}
 };

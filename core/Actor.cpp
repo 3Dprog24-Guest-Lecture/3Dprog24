@@ -41,85 +41,79 @@ void Actor::SetTransform(const Transform& transform)
     mTransform = transform;
 }
 
-void Actor::SetPosition(const glm::vec3& position, Actor::TransformSpace type)
+void Actor::SetLocalPosition(const glm::vec3& position)
 {
-    if (type == TransformSpace::Local)
+    mTransform.SetPosition(position);
+}
+
+void Actor::SetWorldPosition(const glm::vec3& position)
+{
+    if (mParent)
     {
-        mTransform.SetPosition(position);
+        glm::mat4 parentGlobalInverse = glm::inverse(mParent->GetWorldTransformMatrix());
+        glm::vec4 localPosition = parentGlobalInverse * glm::vec4(position, 1.0f);
+        mTransform.SetPosition(glm::vec3(localPosition));
     }
-    else if (type == TransformSpace::Global)
-    {
-        if (mParent) 
-        {
-            glm::mat4 parentGlobalInverse = glm::inverse(mParent->GetGlobalTransformMatrix());
-            glm::vec4 localPosition = parentGlobalInverse * glm::vec4(position, 1.0f);
-            mTransform.SetPosition(glm::vec3(localPosition));
-        }
-        else {
-            mTransform.SetPosition(position);
-        }
+    else {
+        mTransform.SetPosition(position);
     }
 }
 
-void Actor::SetRotation(const glm::quat& rotation, Actor::TransformSpace type)
+void Actor::SetLocalRotation(const glm::quat& rotation)
 {
-    if (type == TransformSpace::Local) 
+    mTransform.SetRotation(rotation);
+}
+
+void Actor::SetWorldRotation(const glm::quat& rotation)
+{
+    if (mParent)
+    {
+        glm::quat parentGlobalRotationInverse = glm::inverse(glm::quat_cast(mParent->GetWorldTransformMatrix()));
+        glm::quat localRotation = parentGlobalRotationInverse * rotation;
+        mTransform.SetRotation(localRotation);
+    }
+    else
     {
         mTransform.SetRotation(rotation);
     }
-    else if (type == TransformSpace::Global) 
-    {
-        if (mParent) 
-        {
-            glm::quat parentGlobalRotationInverse = glm::inverse(glm::quat_cast(mParent->GetGlobalTransformMatrix()));
-            glm::quat localRotation = parentGlobalRotationInverse * rotation;
-            mTransform.SetRotation(localRotation);
-        }
-        else 
-        {
-            mTransform.SetRotation(rotation);
-        }
-    }
 }
 
-void Actor::SetScale(const glm::vec3& scale, Actor::TransformSpace type)
+void Actor::SetLocalScale(const glm::vec3& scale)
 {
-    if (type == TransformSpace::Local) 
+    mTransform.SetScale(scale);
+}
+
+void Actor::SetWorldScale(const glm::vec3& scale)
+{
+    if (mParent)
+    {
+        glm::vec3 parentGlobalScale = mParent->GetWorldScale();
+        glm::vec3 relativeScale = scale / parentGlobalScale;
+        mTransform.SetScale(relativeScale);
+    }
+    else
     {
         mTransform.SetScale(scale);
     }
-    else if (type == TransformSpace::Global) 
-    {
-        if (mParent) 
-        {
-            glm::vec3 parentGlobalScale = mParent->GetGlobalScale();
-            glm::vec3 relativeScale = scale / parentGlobalScale;
-            mTransform.SetScale(relativeScale);
-        }
-        else 
-        {
-            mTransform.SetScale(scale);
-        }
-    }
 }
 
-const Transform& Actor::GetTransform() const
+const Transform& Actor::GetLocalTransform() const
 {
     return mTransform;
 }
 
-const glm::mat4 Actor::GetTransformMatrix() const
+const glm::mat4 Actor::GetLocalTransformMatrix() const
 {
     return mTransform.GetTransformMatrix();
 }
 
-glm::mat4 Actor::GetGlobalTransformMatrix() const
+glm::mat4 Actor::GetWorldTransformMatrix() const
 {
     glm::mat4 globalTransform = mTransform.GetTransformMatrix();
     const Actor* current = this;
     while (current->mParent != nullptr)
     {
-        globalTransform = current->mParent->GetTransformMatrix() * globalTransform;
+        globalTransform = current->mParent->GetLocalTransformMatrix() * globalTransform;
         current = current->mParent;
     }
     return globalTransform;
@@ -135,12 +129,12 @@ glm::vec3 Actor::GetRight() const
     return mTransform.GetRight();
 }
 
-const glm::vec3& Actor::GetPosition() const
+const glm::vec3& Actor::GetLocalPosition() const
 {
     return mTransform.GetPosition();
 }
 
-glm::vec3 Actor::GetGlobalPosition() const
+glm::vec3 Actor::GetWorldPosition() const
 {
     glm::vec3 globalPosition = mTransform.GetPosition();
     const Actor* current = this->mParent;
@@ -153,12 +147,12 @@ glm::vec3 Actor::GetGlobalPosition() const
     return globalPosition;
 }
 
-const glm::quat& Actor::GetRotation() const
+const glm::quat& Actor::GetLocalRotation() const
 {
     return mTransform.GetRotation();
 }
 
-glm::quat Actor::GetGlobalRotation() const 
+glm::quat Actor::GetWorldRotation() const 
 {
     glm::quat globalRotation = mTransform.GetRotation();
     const Actor* current = this->mParent;
@@ -170,12 +164,12 @@ glm::quat Actor::GetGlobalRotation() const
     return globalRotation;
 }
 
-const glm::vec3& Actor::GetScale() const
+const glm::vec3& Actor::GetLocalScale() const
 {
     return mTransform.GetScale();
 }
 
-glm::vec3 Actor::GetGlobalScale() const
+glm::vec3 Actor::GetWorldScale() const
 {
     glm::vec3 globalScale = mTransform.GetScale();
     const Actor* current = this->mParent;

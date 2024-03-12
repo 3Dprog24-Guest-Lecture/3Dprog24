@@ -32,6 +32,6 @@ public:
 		
 	virtual glm::vec3 GetPosition() const
 	{
-		return GetGlobalPosition();
+		return GetWorldPosition();
 	}
 };

@@ -149,6 +149,6 @@ void MeshActor::Draw(const Shader* shader) const
 
 AABB MeshActor::GetAABB()
 {
-    return AABB(GetGlobalPosition(), GetGlobalScale() * 0.5f);
+    return AABB(GetWorldPosition(), GetWorldScale() * 0.5f);
 }
 

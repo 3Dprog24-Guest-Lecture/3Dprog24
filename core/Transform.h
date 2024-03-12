@@ -118,6 +118,16 @@ struct Transform
         return glm::rotate(mRotation, glm::vec3(1.0f, 0.0f, 0.0f));
     }
 
+    glm::vec3 GetForward() const
+    {
+        return glm::rotate(mRotation, glm::vec3(0.0f, 0.0f, -1.0f));
+    }
+
+    glm::vec3 GetUp() const
+    {
+        return glm::rotate(mRotation, glm::vec3(0.0f, 1.0f, 0.0f));
+    }
+
 private:
     glm::vec3 mPosition;
     glm::quat mRotation;

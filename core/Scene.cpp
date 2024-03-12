@@ -40,12 +40,12 @@ void Scene::LoadContent()
 	//mSceneGraph.AddChild(mPointLightActor);
 	mSceneGraph.AddChild(mDirectionalLightActor);
 
-	mCube0->SetPosition({ -2.f, 0.f, 0.f }, Actor::TransformSpace::Global);
-	mCube1->SetPosition({ 0.f, -1.f, 0.f }, Actor::TransformSpace::Global);	
-	mCube1->SetScale({ 5.f, 1.f, 5.f }, Actor::TransformSpace::Global);
-	mSceneCamera.SetPosition({ 0.f, 0.f, 3.f });
+	mCube0->SetWorldPosition({ -2.f, 0.f, 0.f });
+	mCube1->SetWorldPosition({ 0.f, -1.f, 0.f });	
+	mCube1->SetWorldScale({ 5.f, 1.f, 5.f });
+	mSceneCamera.SetWorldPosition({ 0.f, 0.f, 3.f });
 
-	mDirectionalLightActor->SetRotation(glm::angleAxis(glm::radians(-90.0f), glm::vec3(1.0f, 0.0f, 0.0f)));
+	mDirectionalLightActor->SetWorldRotation(glm::angleAxis(glm::radians(-90.0f), glm::vec3(1.0f, 0.0f, 0.0f)));
 	//mPointLightActor->SetPosition({ 0.f, 2.0f, 0.f });
 
 	mActorController = std::shared_ptr<ActorController>(new ActorController(mCube0));
@@ -78,7 +78,7 @@ void Scene::UpdateSceneGraph(Actor* actor, float dt, Transform globalTransform)
 {
 	if (!actor) return;
 
-	globalTransform.SetTransformMatrix(globalTransform.GetTransformMatrix() * actor->GetTransformMatrix());
+	globalTransform.SetTransformMatrix(globalTransform.GetTransformMatrix() * actor->GetLocalTransformMatrix());
 
 	actor->Update(dt);
 
@@ -121,8 +121,8 @@ void Scene::HandleCollision()
 			if (a.Intersect(b, &mtv)) // This means that the two bounding boxes intersect
 			{
 				// Move both actors equally at opposite sides by halfing the mtv vector
-				actors[i]->SetPosition(actors[i]->GetGlobalPosition() - mtv * 0.5f);
-				actors[j]->SetPosition(actors[j]->GetGlobalPosition() + mtv * 0.5f);
+				actors[i]->SetLocalPosition(actors[i]->GetWorldPosition() - mtv * 0.5f);
+				actors[j]->SetLocalPosition(actors[j]->GetWorldPosition() + mtv * 0.5f);
 			}
 		}
 	}
@@ -132,7 +132,7 @@ void Scene::RenderSceneGraph(Actor* actor, float dt, Transform globalTransform)
 {
 	if (!actor) return;
 
-	globalTransform.SetTransformMatrix(globalTransform.GetTransformMatrix() * actor->GetTransformMatrix());
+	globalTransform.SetTransformMatrix(globalTransform.GetTransformMatrix() * actor->GetLocalTransformMatrix());
 
 	if (auto iRender = dynamic_cast<IRender*>(actor))
 	{
@@ -175,7 +175,7 @@ void Scene::BindPointLights()
 		std::string pointLightArrayIndex = "pointLights[" + std::to_string(i) + "]";
 		mShader->setVec3(pointLightArrayIndex + ".ambient", pl->mAmbient);
 		mShader->setVec3(pointLightArrayIndex + ".color", pl->mColor);
-		mShader->setVec3(pointLightArrayIndex + ".position", pl->GetGlobalPosition());
+		mShader->setVec3(pointLightArrayIndex + ".position", pl->GetWorldPosition());
 		mShader->setFloat(pointLightArrayIndex + ".constant", pl->constant);
 		mShader->setFloat(pointLightArrayIndex + ".linear", pl->linear);
 		mShader->setFloat(pointLightArrayIndex + ".quadratic", pl->quadratic);
@@ -186,7 +186,7 @@ void Scene::BindCamera()
 {
 	mShader->setMat4("view", mSceneCamera.GetViewMatrix());
 	mShader->setMat4("projection", mSceneCamera.GetProjectionMatrix());
-	mShader->setVec3("viewPos", mSceneCamera.GetGlobalPosition());
+	mShader->setVec3("viewPos", mSceneCamera.GetWorldPosition());
 }
 
 void Scene::RenderUI()

@@ -20,8 +20,8 @@ CameraActor::CameraActor(
     mFarPlane(farPlane),
     mFieldOfView(fieldOfView)
 {
-    SetPosition(position);
-    SetRotation(rotation);
+    SetLocalPosition(position);
+    SetLocalRotation(rotation);
     UpdateProjectionMatrix();
 }
 
@@ -82,7 +82,7 @@ void CameraActor::UpdatePosition(float dt)
     glm::vec3 right = glm::normalize(glm::cross(front, glm::vec3(0.0f, 1.0f, 0.0f)));
     glm::vec3 up = glm::cross(right, front);
 
-    SetPosition(GetPosition() + mVelocity.x * dt * right + mVelocity.y * dt * up + mVelocity.z * dt * front);
+    SetLocalPosition(GetLocalPosition() + mVelocity.x * dt * right + mVelocity.y * dt * up + mVelocity.z * dt * front);
 }
 
 void CameraActor::Update(float dt)
@@ -185,7 +185,7 @@ float CameraActor::GetAngularDampingFactor() const
 
 glm::mat4 CameraActor::GetViewMatrix() const
 {
-    return glm::lookAt(GetPosition(), GetPosition() + GetFront(), glm::vec3(0.0f, 1.0f, 0.0f));
+    return glm::lookAt(GetLocalPosition(), GetLocalPosition() + GetFront(), glm::vec3(0.0f, 1.0f, 0.0f));
 }
 
 const glm::mat4& CameraActor::GetProjectionMatrix() const
@@ -195,12 +195,12 @@ const glm::mat4& CameraActor::GetProjectionMatrix() const
 
 glm::vec3 CameraActor::GetFront() const
 {
-    return glm::rotate(GetRotation(), glm::vec3(0.0f, 0.0f, -1.0f));
+    return glm::rotate(GetLocalRotation(), glm::vec3(0.0f, 0.0f, -1.0f));
 }
 
 glm::vec3 CameraActor::GetUp() const
 {
-    return glm::rotate(GetRotation(), glm::vec3(0.0f, 1.0f, 0.0f));
+    return glm::rotate(GetLocalRotation(), glm::vec3(0.0f, 1.0f, 0.0f));
 }
 
 const glm::vec3& CameraActor::GetVelocity() const
@@ -241,5 +241,5 @@ void CameraActor::UpdateRotationFromYawPitch()
     newRotation = glm::normalize(newRotation); // Ensure the quaternion is normalized
 
     // Assuming SetRotation directly sets the Transform's rotation
-    this->SetRotation(newRotation);
+    this->SetLocalRotation(newRotation);
 }

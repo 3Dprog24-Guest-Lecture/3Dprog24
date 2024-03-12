@@ -34,18 +34,18 @@ void ActorController::UpdateActor(float dt)
 {
     if (mKeyStates[GLFW_KEY_D])
     {
-        mActor->SetPosition(mActor->GetGlobalPosition() + glm::vec3(1.0f, 0.f, 0.f) * dt);
+        mActor->SetLocalPosition(mActor->GetWorldPosition() + glm::vec3(1.0f, 0.f, 0.f) * dt);
     }
     if (mKeyStates[GLFW_KEY_A])
     {
-        mActor->SetPosition(mActor->GetGlobalPosition() - glm::vec3(1.0f, 0.f, 0.f) * dt);
+        mActor->SetLocalPosition(mActor->GetWorldPosition() - glm::vec3(1.0f, 0.f, 0.f) * dt);
     }
     if (mKeyStates[GLFW_KEY_W])
     {
-        mActor->SetPosition(mActor->GetGlobalPosition() - glm::vec3(0.f, 0.f, 1.0f) * dt);
+        mActor->SetLocalPosition(mActor->GetWorldPosition() - glm::vec3(0.f, 0.f, 1.0f) * dt);
     }
     if (mKeyStates[GLFW_KEY_S])
     {
-        mActor->SetPosition(mActor->GetGlobalPosition() + glm::vec3(-0.1f, 0.f, 1.0f) * dt);
+        mActor->SetLocalPosition(mActor->GetWorldPosition() + glm::vec3(-0.1f, 0.f, 1.0f) * dt);
     }   
 }
