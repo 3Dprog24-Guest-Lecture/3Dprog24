@@ -3,9 +3,9 @@
 
 void PhysicsComponent::UpdateForces()
 {
-	// Usually this should be around 9.81, but that is slow in games
-	glm::vec3 gravity{0.f, -18.f, 0.f};
-	mAcceleration = gravity;
+	// Fake it for now
+	glm::vec3 gravity{0.f, -9.81f * 0.4f, 0.f};
+	mAcceleration += gravity;
 }
 
 void PhysicsComponent::UpdateVelocity(float dt)
@@ -15,11 +15,12 @@ void PhysicsComponent::UpdateVelocity(float dt)
 
 void PhysicsComponent::UpdatePosition(float dt)
 {
-	mOwner->SetWorldPosition(mOwner->GetWorldPosition() + (glm::vec3(0.f, -1.f, 0.f) * dt));
+	mOwner->SetWorldPosition(mOwner->GetWorldPosition() + (mAcceleration * dt));
 }
 
 void PhysicsComponent::ResetValues()
 {
+	mAcceleration = glm::vec3(0.f);
 	mVelocity = glm::vec3(0.f);
 }
 

@@ -11,7 +11,6 @@ enum class CollisionResponse
 {
     BLOCK,
     OVERLAP,
-    //KINETIC, Usually used for characters
     IGNORE
 };
 
