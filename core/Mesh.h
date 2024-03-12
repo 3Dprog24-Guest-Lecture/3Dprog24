@@ -10,6 +10,7 @@
 #include <Actor.h>
 #include <Types.h>
 #include <AABB.h>
+#include <Collision.h>
 
 /**
  * @class Mesh
@@ -61,9 +62,11 @@ class MeshActor : public Actor, public IRender, public IBounded
 public:
     MeshActor(const std::string& name, Mesh* mesh);
     virtual void Draw(const class Shader* shader = nullptr) const override;
-    virtual AABB GetAABB() override;
+    virtual AABB GetAABB() const override;
+    virtual CollisionProperties GetCollisionProperties() const override;
     
     Mesh* mMesh{ nullptr };
+    CollisionProperties mCollisionProperties{CollisionType::STATIC, CollisionResponse::BLOCK };
 };
 
 // Can eventually create a MeshComponent

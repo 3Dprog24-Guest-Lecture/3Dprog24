@@ -3,6 +3,8 @@
 #include <vector>
 #include <Transform.h>
 #include <Tag.h>
+#include <Component.h>
+#include <type_traits>
 
 class Actor
 {
@@ -15,13 +17,27 @@ public:
 	Actor(Actor&&) = default;
     Actor& operator=(Actor&&) = default;
 
-	~Actor() = default;
+	~Actor();
 
+    // Actor update should run first
     virtual void Update(float dt) {};
+    // Components update after
+    void UpdateComponents(float dt);
 
     // Scene Graph
     void SetParent(Actor* parent);
     void AddChild(Actor* child);
+
+    template <typename T>
+    void AddComponent(const std::string& componentName)
+    {
+        static_assert(std::is_base_of<Component, T>::value, "T must be derived from Component");
+
+        auto component = new T(componentName, this);
+        component->Init();
+        mComponents.emplace_back(component);
+    }
+
     void RemoveChild(Actor* child);
 
     // Setters
@@ -64,11 +80,13 @@ public:
         for (auto child : this->mChildren)
             child->Query<T>(actors);
     }
-
 protected:
     // Scene graph
     Actor* mParent{nullptr};
     std::vector<Actor*> mChildren;
+
+    // Components
+    std::vector<Component*> mComponents;
 private:
     TagUnique mTag;
     Transform mTransform{};

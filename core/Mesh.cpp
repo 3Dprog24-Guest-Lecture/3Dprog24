@@ -147,8 +147,13 @@ void MeshActor::Draw(const Shader* shader) const
     mMesh->Draw(shader);
 }
 
-AABB MeshActor::GetAABB()
+AABB MeshActor::GetAABB() const
 {
     return AABB(GetWorldPosition(), GetWorldScale() * 0.5f);
+}
+
+CollisionProperties MeshActor::GetCollisionProperties() const
+{
+    return mCollisionProperties;
 }
 

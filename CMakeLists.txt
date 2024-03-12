@@ -55,7 +55,7 @@ set (HEADER_FILES
   core/Controller.h 
   core/Defines.h 
   core/CameraController.h 
-  )
+   "core/Component.h" "core/Collision.h")
 
 set (SRC_FILES
   3Dprog24.cpp
@@ -70,12 +70,12 @@ set (SRC_FILES
   core/Scene.cpp
   core/Actor.cpp
   core/CameraController.cpp
-)
+ "core/PhysicsComponent.cpp")
 
 add_subdirectory(libs/glfw-3.3.9)
 
 # Add source to this project's executable.
-add_executable(3Dprog24 ${IMGUI_HEADERS} ${IMGUI_SOURCE} ${HEADER_FILES} ${SRC_FILES} "core/AABB.h"  "core/ActorController.h" "core/ActorController.cpp" "core/Lights/Lights.h" "core/Lights/DirectionalLight.h" "core/Lights/PointLight.h")
+add_executable(3Dprog24 ${IMGUI_HEADERS} ${IMGUI_SOURCE} ${HEADER_FILES} ${SRC_FILES} "core/AABB.h"  "core/ActorController.h" "core/ActorController.cpp" "core/Lights/Lights.h" "core/Lights/DirectionalLight.h" "core/Lights/PointLight.h"  "core/PhysicsComponent.h" "core/PhysicsComponent.cpp" "core/Collision.h")
 
 #target_link_libraries(3Dprog24 PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/libs/glfw3.lib)
 target_link_libraries(3Dprog24 glfw)

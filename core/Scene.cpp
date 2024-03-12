@@ -11,6 +11,7 @@
 #include <Renderer.h>
 #include <imgui.h>
 #include <GLFW/glfw3.h>
+#include <PhysicsComponent.h>
 
 Scene::Scene(const std::string& name)
 	:mSceneGraph(name){}
@@ -37,10 +38,13 @@ void Scene::LoadContent()
 	mSceneGraph.AddChild(mCube1);
 	mSceneGraph.AddChild(mCube2);
 
+	mCube0->AddComponent<PhysicsComponent>("Cube0PhysicsComponent");
+	mCube0->mCollisionProperties.mType = CollisionType::DYNAMIC;
+
 	//mSceneGraph.AddChild(mPointLightActor);
 	mSceneGraph.AddChild(mDirectionalLightActor);
 
-	mCube0->SetWorldPosition({ -2.f, 0.f, 0.f });
+	mCube0->SetWorldPosition({ -2.f, 2.f, 0.f });
 	mCube1->SetWorldPosition({ 0.f, -1.f, 0.f });	
 	mCube1->SetWorldScale({ 5.f, 1.f, 5.f });
 	mSceneCamera.SetWorldPosition({ 0.f, 0.f, 3.f });
@@ -78,9 +82,10 @@ void Scene::UpdateSceneGraph(Actor* actor, float dt, Transform globalTransform)
 {
 	if (!actor) return;
 
-	globalTransform.SetTransformMatrix(globalTransform.GetTransformMatrix() * actor->GetLocalTransformMatrix());
-
 	actor->Update(dt);
+	actor->UpdateComponents(dt);
+
+	globalTransform.SetTransformMatrix(globalTransform.GetTransformMatrix() * actor->GetLocalTransformMatrix());
 
 	const auto& children = actor->GetChildren();
 	for (Actor* child : children) 
@@ -114,15 +119,52 @@ void Scene::HandleCollision()
 			IBounded* iA = dynamic_cast<IBounded*>(actors[i]);
 			IBounded* iB = dynamic_cast<IBounded*>(actors[j]);
 
+			// Skip intersection checks for two static objects
+			if (iA->GetCollisionProperties().IsStatic() &&
+				iB->GetCollisionProperties().IsStatic())
+			{ 
+				continue;
+			}
+
 			auto a = iA->GetAABB();
 			auto b = iB->GetAABB();
 
 			glm::vec3 mtv{}; // minimum translation vector to resolve the collision		
 			if (a.Intersect(b, &mtv)) // This means that the two bounding boxes intersect
 			{
-				// Move both actors equally at opposite sides by halfing the mtv vector
-				actors[i]->SetLocalPosition(actors[i]->GetWorldPosition() - mtv * 0.5f);
-				actors[j]->SetLocalPosition(actors[j]->GetWorldPosition() + mtv * 0.5f);
+				// Determine how to apply the MTV based on the collision responses of the actors
+				bool isADynamic = iA->GetCollisionProperties().IsDynamic();
+				bool isBDynamic = iB->GetCollisionProperties().IsDynamic();
+
+				glm::vec3 mtvA(0.f), mtvB(0.f); // Initialize MTV adjustments
+
+				if (isADynamic && isBDynamic)
+				{
+					// If both actors are dynamic, split the MTV between them
+					mtvA = -mtv * 0.5f;
+					mtvB = mtv * 0.5f;
+				}
+				else if (isADynamic)
+				{
+					// If only actor A is dynamic, apply the full MTV to A
+					mtvA = -mtv;
+				}
+				else if (isBDynamic)
+				{
+					// If only actor B is dynamic, apply the full MTV to B
+					mtvB = mtv;
+				}
+				// No adjustment for static objects
+
+				// Apply MTV adjustments
+				if (isADynamic)
+				{
+					actors[i]->SetWorldPosition(actors[i]->GetWorldPosition() + mtvA);
+				}
+				if (isBDynamic)
+				{
+					actors[j]->SetWorldPosition(actors[j]->GetWorldPosition() + mtvB);
+				}
 			}
 		}
 	}
@@ -167,7 +209,7 @@ void Scene::BindPointLights()
 	std::vector<Actor*> pointLightActors;
 	mSceneGraph.Query<PointLightActor>(pointLightActors);
 
-	mShader->setInt("numPointLights", pointLightActors.size());
+	mShader->setInt("numPointLights", static_cast<int>(pointLightActors.size()));
 	for (int i = 0; i < pointLightActors.size(); i++)
 	{
 		auto pl = dynamic_cast<PointLightActor*>(pointLightActors[i]);

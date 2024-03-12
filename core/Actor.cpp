@@ -1,5 +1,21 @@
 #include "Actor.h"
 
+Actor::~Actor()
+{
+    for (auto component : mComponents)
+    {
+        delete component;
+    }
+}
+
+void Actor::UpdateComponents(float dt)
+{
+    for (auto component : mComponents)
+    {
+        component->Update(dt);
+    };
+}
+
 void Actor::SetParent(Actor* parent)
 {
     if (mParent) {

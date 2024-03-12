@@ -3,6 +3,7 @@
 #include <glm/vec3.hpp>
 #include <glm/glm.hpp>
 #include <memory>
+#include <Collision.h>
 
 struct AABB;
 
@@ -12,7 +13,8 @@ struct AABB;
 class IBounded 
 {
 public:
-    virtual AABB GetAABB() = 0;
+    virtual AABB GetAABB() const = 0;
+    virtual CollisionProperties GetCollisionProperties() const = 0;
 };
 
 /**
