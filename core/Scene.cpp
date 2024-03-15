@@ -13,6 +13,7 @@
 #include <GLFW/glfw3.h>
 #include <PhysicsComponent.h>
 #include <Skybox.h>
+#include <ModelLoader/FBXLoader.h>
 
 Scene::Scene(const std::string& name)
 	:mSceneGraph(name){}
@@ -21,8 +22,8 @@ void Scene::LoadContent()
 {
 	LOG_INFO("Scene::LoadContent");
 
-	auto diffuseTex = Texture::Load(SOURCE_DIRECTORY + "textures/container2.jpg");
-	auto specularTex = Texture::Load(SOURCE_DIRECTORY + "textures/container2_specular.jpg");
+	auto diffuseTex = Texture::Load(SOURCE_DIRECTORY("textures/container2.jpg"));
+	auto specularTex = Texture::Load(SOURCE_DIRECTORY("textures/container2_specular.jpg"));
 	auto mat = Material::Load("Default", { diffuseTex, specularTex }, {});
 
 	mCube0 = new MeshActor("Cube0", Mesh::LoadCube(mat));
@@ -32,16 +33,18 @@ void Scene::LoadContent()
 	mPointLightActor = new PointLightActor("Point light 0");
 	mDirectionalLightActor = new DirectionalLightActor("Directional light");
 
+	FBXLoader::LoadFBX(SOURCE_DIRECTORY("Assets/Models/Stone/wgprbiq_LOD0.fbx"));
+
 	mSkybox = new Skybox({
-		SOURCE_DIRECTORY + "textures/Starfield_And_Haze/Starfield_And_Haze_left.png",
-		SOURCE_DIRECTORY + "textures/Starfield_And_Haze/Starfield_And_Haze_right.png",
-		SOURCE_DIRECTORY + "textures/Starfield_And_Haze/Starfield_And_Haze_up.png",
-		SOURCE_DIRECTORY + "textures/Starfield_And_Haze/Starfield_And_Haze_down.png",
-		SOURCE_DIRECTORY + "textures/Starfield_And_Haze/Starfield_And_Haze_front.png",
-		SOURCE_DIRECTORY + "textures/Starfield_And_Haze/Starfield_And_Haze_back.png",
+		SOURCE_DIRECTORY("textures/Starfield_And_Haze/Starfield_And_Haze_left.png"),
+		SOURCE_DIRECTORY("textures/Starfield_And_Haze/Starfield_And_Haze_right.png"),
+		SOURCE_DIRECTORY("textures/Starfield_And_Haze/Starfield_And_Haze_up.png"),
+		SOURCE_DIRECTORY("textures/Starfield_And_Haze/Starfield_And_Haze_down.png"),
+		SOURCE_DIRECTORY("textures/Starfield_And_Haze/Starfield_And_Haze_front.png"),
+		SOURCE_DIRECTORY("textures/Starfield_And_Haze/Starfield_And_Haze_back.png"),
 		});
 
-	mShader = new Shader(SOURCE_DIRECTORY + "shaders/shader.vs", SOURCE_DIRECTORY + "shaders/shader.fs");
+	mShader = new Shader(SOURCE_DIRECTORY("shaders/shader.vs"), SOURCE_DIRECTORY("shaders/shader.fs"));
 
 	mSceneGraph.AddChild(&mSceneCamera);
 	mSceneGraph.AddChild(mCube0);

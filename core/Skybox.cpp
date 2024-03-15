@@ -10,7 +10,7 @@
 
 Skybox::Skybox(std::initializer_list<std::string> texturePaths)
 {
-    mSkyboxShader = new Shader(SOURCE_DIRECTORY + "shaders/skybox.vs", SOURCE_DIRECTORY + "shaders/skybox.fs");
+    mSkyboxShader = new Shader(SOURCE_DIRECTORY("shaders/skybox.vs"), SOURCE_DIRECTORY("shaders/skybox.fs"));
     mMesh = Mesh::LoadCube(nullptr);
 
     glGenTextures(1, &mTextureId);

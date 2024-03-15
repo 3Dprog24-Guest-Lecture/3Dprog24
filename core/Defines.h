@@ -2,4 +2,4 @@
 
 #include <string>
 
-#define SOURCE_DIRECTORY std::string("../../../") 
+#define SOURCE_DIRECTORY(relativePath) std::string("../../../" + std::string(relativePath)) 
