@@ -13,6 +13,7 @@
 #include <GLFW/glfw3.h>
 #include <PhysicsComponent.h>
 #include <Skybox.h>
+#include <ModelLoader/FBXLoader.h>
 
 Scene::Scene(const std::string& name)
 	:mSceneGraph(name){}
@@ -31,6 +32,8 @@ void Scene::LoadContent()
 
 	mPointLightActor = new PointLightActor("Point light 0");
 	mDirectionalLightActor = new DirectionalLightActor("Directional light");
+
+	FBXLoader::LoadFBX("Test");
 
 	mSkybox = new Skybox({
 		SOURCE_DIRECTORY + "textures/Starfield_And_Haze/Starfield_And_Haze_left.png",
