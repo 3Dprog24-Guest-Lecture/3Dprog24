@@ -85,9 +85,9 @@ add_executable(3Dprog24 ${IMGUI_HEADERS} ${IMGUI_SOURCE} ${HEADER_FILES} ${SRC_F
 
 #target_link_libraries(3Dprog24 PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/libs/glfw3.lib)
 target_link_libraries(3Dprog24 glfw)
-target_link_libraries(3Dprog24 libfbxsdk)
-target_link_libraries(3Dprog24 libxml2-mt)
-target_link_libraries(3Dprog24 zlib-mt)
+target_link_libraries(3Dprog24 libfbxsdk-md)
+target_link_libraries(3Dprog24 libxml2-md)
+target_link_libraries(3Dprog24 zlib-md)
 
 #target_link_libraries(3Dprog24 fbx)
 

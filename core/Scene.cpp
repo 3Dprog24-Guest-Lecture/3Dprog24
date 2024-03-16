@@ -33,7 +33,10 @@ void Scene::LoadContent()
 	mPointLightActor = new PointLightActor("Point light 0");
 	mDirectionalLightActor = new DirectionalLightActor("Directional light");
 
-	FBXLoader::LoadFBX(SOURCE_DIRECTORY("Assets/Models/Stone/wgprbiq_LOD0.fbx"));
+	auto meshTest = new Actor("test");
+
+	FBXLoader::LoadFBX(SOURCE_DIRECTORY("Assets/Models/Stone/wgprbiq_LOD0.fbx"), meshTest);
+	//meshTest->SetLocalScale({0.01f, 0.01f, 0.01f});
 
 	mSkybox = new Skybox({
 		SOURCE_DIRECTORY("textures/Starfield_And_Haze/Starfield_And_Haze_left.png"),
@@ -47,9 +50,10 @@ void Scene::LoadContent()
 	mShader = new Shader(SOURCE_DIRECTORY("shaders/shader.vs"), SOURCE_DIRECTORY("shaders/shader.fs"));
 
 	mSceneGraph.AddChild(&mSceneCamera);
-	mSceneGraph.AddChild(mCube0);
-	mSceneGraph.AddChild(mCube1);
-	mSceneGraph.AddChild(mCube2);
+	//mSceneGraph.AddChild(mCube0);
+	//mSceneGraph.AddChild(mCube1);
+	//mSceneGraph.AddChild(mCube2);
+	mSceneGraph.AddChild(meshTest);
 
 	mCube0->AddComponent<PhysicsComponent>("Cube0PhysicsComponent");
 	mCube0->mCollisionProperties.mType = CollisionType::DYNAMIC;

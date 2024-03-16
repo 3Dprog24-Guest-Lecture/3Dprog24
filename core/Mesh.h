@@ -44,6 +44,9 @@ public:
     static void Unload(const std::string& path);
     static void ClearCache();
 
+    void SetMaterial(Material* material) { mMaterial = material; }
+    const Material* GetMaterial() const { return mMaterial; }
+
     static std::unordered_map<std::string, Mesh*> sCache;
 };
 
