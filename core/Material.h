@@ -44,8 +44,11 @@ public:
      */
     struct MaterialProperties
     {
-        glm::vec3 mColor{1.f, 1.f, 1.f};
+        glm::vec3 mAmbient{ 1.f, 1.f, 1.f };
+        glm::vec3 mDiffuse{1.f, 1.f, 1.f};
+        glm::vec3 mSpecular{ 1.f, 1.f, 1.f };
         float mShininess{ 64.f };
+        float mAlphaCutoff = 1.f;
     };
 
 private:

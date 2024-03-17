@@ -49,17 +49,18 @@ uniform vec3 viewPos;
 // Lots of optimizations can be done here
 vec3 CalculateDirectionalLightContribution()
 {   
+    vec3 lightDir = normalize(dl.direction);
     vec3 viewDir = normalize(viewPos - FragPos);
-    vec3 reflectDir = reflect(dl.direction, Normal);
+    vec3 reflectDir = reflect(lightDir, Normal);
 
-    float NdL = max(dot(Normal, -dl.direction), 0);
+    float NdL = max(dot(Normal, -lightDir), 0);
     float VdR = pow(max(dot(viewDir, reflectDir), 0), material.shininess);
     
     vec3 materialDiffuseColor = vec3(texture(material.diffuseMap, TexCoord)) * material.diffuseColor;
     vec3 materialSpecularColor = vec3(texture(material.specularMap, TexCoord));
 
     vec3 ambientContribution = dl.ambient * materialDiffuseColor;
-    vec3 diffuseContribution = dl.color * materialDiffuseColor * NdL;
+    vec3 diffuseContribution = materialDiffuseColor * NdL;
     vec3 specularContribution = dl.color * materialSpecularColor * VdR;
 
     return ambientContribution + diffuseContribution + specularContribution;
@@ -89,7 +90,7 @@ vec3 CalculatePointLightContribution()
         float distance    = length(pointLights[i].position - FragPos);
         float attenuation = 1.0 / (pointLights[i].constant + pointLights[i].linear * distance + pointLights[i].quadratic * (distance * distance)); 
 
-        finalColor += (ambientContribution + diffuseContribution + specularContribution);
+        finalColor += (ambientContribution + diffuseContribution + specularContribution) * attenuation;
     }
 
     return finalColor;
@@ -97,6 +98,9 @@ vec3 CalculatePointLightContribution()
 
 void main()
 {
+    if (texture(material.diffuseMap, TexCoord).a < 0.5)
+        discard;
+
     vec3 directionalLightContribution = CalculateDirectionalLightContribution();
     vec3 pointLightsContribution = CalculatePointLightContribution();
     vec3 finalColor = pointLightsContribution + directionalLightContribution;

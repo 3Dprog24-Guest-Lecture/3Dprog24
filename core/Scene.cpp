@@ -14,6 +14,7 @@
 #include <PhysicsComponent.h>
 #include <Skybox.h>
 #include <ModelLoader/FBXLoader.h>
+#include <ModelLoader/AssimpLoader.h>
 
 Scene::Scene(const std::string& name)
 	:mSceneGraph(name){}
@@ -35,8 +36,8 @@ void Scene::LoadContent()
 
 	auto meshTest = new Actor("test");
 
-	FBXLoader::LoadFBX(SOURCE_DIRECTORY("Assets/Models/Stone/wgprbiq_LOD0.fbx"), meshTest);
-	//meshTest->SetLocalScale({0.01f, 0.01f, 0.01f});
+	AssimpLoader::Load(SOURCE_DIRECTORY("Assets/Models/Sponza/sponza.fbx"), meshTest, 0);
+	meshTest->SetWorldScale({0.01f, 0.01f, 0.01f});
 
 	mSkybox = new Skybox({
 		SOURCE_DIRECTORY("textures/Starfield_And_Haze/Starfield_And_Haze_left.png"),
@@ -50,7 +51,7 @@ void Scene::LoadContent()
 	mShader = new Shader(SOURCE_DIRECTORY("shaders/shader.vs"), SOURCE_DIRECTORY("shaders/shader.fs"));
 
 	mSceneGraph.AddChild(&mSceneCamera);
-	//mSceneGraph.AddChild(mCube0);
+	mSceneGraph.AddChild(mCube0);
 	//mSceneGraph.AddChild(mCube1);
 	//mSceneGraph.AddChild(mCube2);
 	mSceneGraph.AddChild(meshTest);
@@ -59,7 +60,7 @@ void Scene::LoadContent()
 	mCube0->mCollisionProperties.mType = CollisionType::DYNAMIC;
 
 	//mSceneGraph.AddChild(mPointLightActor);
-	mSceneGraph.AddChild(mDirectionalLightActor);
+	//mSceneGraph.AddChild(mDirectionalLightActor);
 
 	mCube0->SetWorldPosition({ -2.f, 10.f, 0.f });
 	mCube1->SetWorldPosition({ 0.f, -1.f, 0.f });	

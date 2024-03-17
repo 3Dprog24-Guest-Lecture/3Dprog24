@@ -6,57 +6,10 @@
 #include <Mesh.h>
 #include <Vertex.h>
 #include <Material.h>
-
-namespace fs = std::filesystem;
+#include <ModelLoader/Shared.h>
 
 std::string FBXLoader::msBasePath = "";
 long long FBXLoader::msNameIndex = 0;
-
-std::string ToRelativePath(const std::string& basePath, const std::string& absolutePath) {
-    fs::path base(basePath);
-    fs::path absolute(absolutePath);
-    fs::path relative = fs::relative(absolute, base);
-    return relative.string();
-}
-
-std::string GetFileNameFromPath(const std::string& filePath) 
-{
-    size_t pos = filePath.find_last_of("\\/");
-    if (pos != std::string::npos) 
-    {
-        return filePath.substr(pos + 1);
-    }
-    return filePath;
-}
-
-std::string GetDirectoryPath(const std::string& filePath) 
-{
-    size_t pos = filePath.find_last_of("\\/");
-    if (pos != std::string::npos) 
-    {
-        return filePath.substr(0, pos + 1);
-    }
-    return "";
-}
-
-std::string GetFileExtension(const std::string& filePath) {
-    size_t pos = filePath.find_last_of('.');
-    if (pos != std::string::npos) 
-    {
-        return filePath.substr(pos);
-    }
-    return "";
-}
-
-std::string RemoveFileExtension(const std::string& filePath)
-{
-    size_t pos = filePath.find_last_of('.');
-    if (pos != std::string::npos) 
-    {
-        return filePath.substr(0, pos);
-    }
-    return filePath;
-}
 
 bool FBXLoader::LoadFBX(const std::string& path, Actor* staticMeshActor)
 {
@@ -241,7 +194,7 @@ Material* FBXLoader::ProcessMaterial(FbxSurfaceMaterial* material)
     LOG_INFO("FBXLoader::ProcessMaterial::DiffuseColor: (%f, %f, %f)",
         diffuseColor[0], diffuseColor[1], diffuseColor[2]);
 
-    internalMaterialProperties.mColor = {diffuseColor[0], diffuseColor[1], diffuseColor[2]};
+    internalMaterialProperties.mDiffuse = {diffuseColor[0], diffuseColor[1], diffuseColor[2]};
     internalMaterial->SetProperties(internalMaterialProperties);
 
     return internalMaterial;

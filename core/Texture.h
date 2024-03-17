@@ -26,6 +26,8 @@ class Texture
 
 public:
     static Texture* Load(const std::string& path);
+    static Texture* LoadWhiteTexture();
+    static Texture* LoadBlackTexture();
     static void Unload(const std::string& path);
     static void ClearCache();
 

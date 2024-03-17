@@ -14,6 +14,7 @@ include_directories(core)
 include_directories(Games/TestGame)
 include_directories(includes/imgui)
 include_directories(libs/FBX/include)
+include_directories(libs/assimp/include)
 
 #Add IMGUI headers
 set( IMGUI_HEADERS
@@ -37,7 +38,7 @@ set( IMGUI_SOURCE
 
 set (HEADER_FILES
   includes/stb_image.h
-  core/Shader.h
+  "core/ModelLoader/Shared.h"
   core/Camera.h
   core/Window.h
   core/Application.h
@@ -59,7 +60,9 @@ set (HEADER_FILES
   core/CameraController.h 
   core/Component.h 
   core/Collision.h 
-  core/Skybox.h "core/ModelLoader/FBXLoader.h")
+  core/Skybox.h 
+  "core/ModelLoader/FBXLoader.h" 
+  "core/ModelLoader/AssimpLoader.h")
 
 set (SRC_FILES
   3Dprog24.cpp
@@ -75,10 +78,13 @@ set (SRC_FILES
   core/Actor.cpp
   core/CameraController.cpp
   core/PhysicsComponent.cpp
-  core/Skybox.cpp "core/ModelLoader/FBXLoader.cpp")
+  core/Skybox.cpp "core/ModelLoader/FBXLoader.cpp" "core/ModelLoader/AssimpLoader.cpp")
 
 add_subdirectory(libs/glfw-3.3.9)
 link_directories(libs/FBX/lib/vs2022/x64/debug)
+
+#set(BUILD_SHARED_LIBS OFF)
+add_subdirectory(libs/assimp)
 
 # Add source to this project's executable.
 add_executable(3Dprog24 ${IMGUI_HEADERS} ${IMGUI_SOURCE} ${HEADER_FILES} ${SRC_FILES} "core/AABB.h"  "core/ActorController.h" "core/ActorController.cpp" "core/Lights/Lights.h" "core/Lights/DirectionalLight.h" "core/Lights/PointLight.h"  "core/PhysicsComponent.h" "core/PhysicsComponent.cpp" "core/Collision.h" "core/ModelLoader/FBXLoader.cpp")
@@ -88,6 +94,7 @@ target_link_libraries(3Dprog24 glfw)
 target_link_libraries(3Dprog24 libfbxsdk-md)
 target_link_libraries(3Dprog24 libxml2-md)
 target_link_libraries(3Dprog24 zlib-md)
+target_link_libraries(3Dprog24 assimp)
 
 #target_link_libraries(3Dprog24 fbx)
 

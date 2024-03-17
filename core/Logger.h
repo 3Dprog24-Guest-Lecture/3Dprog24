@@ -6,7 +6,7 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_access.hpp>
 
-#define DEBUG_MODE
+//#define DEBUG_MODE
 
 template <glm::length_t L, typename T, glm::qualifier Q>
 std::ostream& operator<<(std::ostream& os, const glm::vec<L, T, Q>& vec) {

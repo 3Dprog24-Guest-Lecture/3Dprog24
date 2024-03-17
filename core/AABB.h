@@ -4,6 +4,8 @@
 #include <glm/glm.hpp>
 #include <memory>
 #include <Collision.h>
+#include <Actor.h>
+#include <iostream>
 
 struct AABB;
 
@@ -87,4 +89,32 @@ struct AABB
 
         return true; // Intersection exists
     }
+
+    void Expand(const glm::vec3& p)
+    {
+        auto relativeP = p - center;
+        extent.x = glm::max(abs(relativeP.x), extent.x);
+        extent.y = glm::max(abs(relativeP.y), extent.y);
+        extent.z = glm::max(abs(relativeP.z), extent.z);
+    }
+};
+
+class AABBActor : public Actor, public IBounded
+{
+public:
+    AABBActor(const std::string& name, AABB aabb = AABB({0.f, 0.f, 0.f}, {0.1f, 0.1f, 0.1f}))
+        :Actor(name), mAABB(aabb) {}
+   
+    virtual AABB GetAABB() const override
+    {         
+        return AABB(mAABB.center + GetWorldPosition(), mAABB.extent + GetWorldScale());
+    }
+
+    virtual CollisionProperties GetCollisionProperties() const
+    {
+        return mCollisionProperties;
+    }
+
+    AABB mAABB{ {0.f, 0.f, 0.f}, {0.5f, 0.5f, 0.5f} };
+    CollisionProperties mCollisionProperties{ CollisionType::STATIC, CollisionResponse::BLOCK };
 };

@@ -1,6 +1,7 @@
 #include <Texture.h>
 #include <iostream>
 #include <Logger.h>
+#include <Defines.h>
 
 #define STB_IMAGE_IMPLEMENTATION
 #include <stb_image.h>
@@ -58,6 +59,16 @@ Texture* Texture::Load(const std::string& path)
         sCache[path] = texture;
         return texture;
     }
+}
+
+Texture* Texture::LoadWhiteTexture()
+{
+    return Load(SOURCE_DIRECTORY("textures/DefaultTextures/WhiteTexture.jpg"));
+}
+
+Texture* Texture::LoadBlackTexture()
+{
+    return Load(SOURCE_DIRECTORY("textures/DefaultTextures/BlackTexture.jpg"));
 }
 
 void Texture::Unload(const std::string& path)
