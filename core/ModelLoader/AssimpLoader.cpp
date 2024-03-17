@@ -7,26 +7,16 @@
 #include <Texture.h>
 #include <exception>
 #include <Lights/PointLight.h>
+#include <ModelLoader/AssimpUtility.h>
 
 std::string AssimpLoader::msBasePath = "";
 long long AssimpLoader::msNameIndex = 0;
 long long AssimpLoader::msFlags = 0;
 
-template <typename T>
-T GetProperty(const std::string& key, aiMaterial* material)
+void AssimpLoader::Load(const std::string& path, Actor* staticMeshActor, unsigned flags)
 {
-	T value;
-	material->Get(key.c_str(), 0, 0, value);
-
-	return value;
-}
-
-void AssimpLoader::Load(const std::string& path, Actor* staticMeshActor, long long flags)
-{
-	unsigned int aiFlags = aiProcessPreset_TargetRealtime_MaxQuality | aiProcess_Triangulate | aiProcess_GenSmoothNormals | aiProcess_GenUVCoords;
-
 	Assimp::Importer importer;
-	const aiScene* scene = importer.ReadFile(path, aiFlags);
+	const aiScene* scene = importer.ReadFile(path, flags);
 
 	if (!scene || scene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode)
 	{
@@ -35,7 +25,7 @@ void AssimpLoader::Load(const std::string& path, Actor* staticMeshActor, long lo
 	}
 
 	msBasePath = path;
-	msFlags = aiFlags;
+	msFlags = flags;
 	ProcessLights(scene, staticMeshActor);
 	ProcessNode(scene, scene->mRootNode, staticMeshActor);
 }
@@ -49,11 +39,19 @@ void AssimpLoader::ProcessLights(const aiScene* scene, Actor* actor)
 			continue;
 
 		auto pointLightActor = new PointLightActor(scene->mLights[i]->mName.C_Str());
+
+		auto lightNode = scene->mRootNode->FindNode(scene->mLights[i]->mName);
+		auto lightTransform = GetTransformationMatrix(lightNode);
+		aiVector3D worldPosition = TransformPosition(lightTransform, scene->mLights[i]->mPosition);
+
+		PrintMatrix(lightTransform);
+		PrintVector3D(worldPosition);
+
 		glm::vec3 pos = 
 		{ 
-			scene->mLights[i]->mPosition.x, 
-			scene->mLights[i]->mPosition.y, 
-			scene->mLights[i]->mPosition.z 
+			worldPosition.x,
+			worldPosition.y,
+			worldPosition.z
 		};
 		pointLightActor->mAmbient =
 		{
@@ -69,22 +67,28 @@ void AssimpLoader::ProcessLights(const aiScene* scene, Actor* actor)
 		};
 
 		pointLightActor->mColor = glm::clamp(pointLightActor->mColor, 0.f, 1.f);
-		pointLightActor->SetWorldPosition(pos+glm::vec3(0.f, 5.f, 0.f));
+		pointLightActor->SetWorldPosition(pos);
 		actor->AddChild(pointLightActor);
 	}
 }
 
-void AssimpLoader::ProcessNode(const aiScene* scene, aiNode* node, Actor* actor)
+void AssimpLoader::ProcessNode(const aiScene* scene, aiNode* node, Actor* parentActor)
 {
+	Actor* actor = nullptr;
 	for (auto i = 0; i < node->mNumMeshes; i++)
 	{
 		aiMesh* mesh = scene->mMeshes[node->mMeshes[i]];
 
 		std::string collisionPrefix;
+		std::string lightPrefix;
 		if (HasCollisionPrefix(mesh->mName.C_Str(), collisionPrefix))
 		{
 			LOG_INFO("AssimpLoader::ProcessNode::CollisionPrefix: %s", collisionPrefix.c_str());
-			actor->AddChild(ProcessCollisionAABB(mesh));
+			actor = ProcessCollisionAABB(mesh);
+		}
+		else if (HasLightPrefix(mesh->mName.C_Str(), lightPrefix))
+		{
+			LOG_INFO("AssimpLoader::ProcessNode::LightPrefix: %s", lightPrefix.c_str());
 		}
 		else
 		{ 
@@ -96,9 +100,23 @@ void AssimpLoader::ProcessNode(const aiScene* scene, aiNode* node, Actor* actor)
 			std::string modelName = RemoveFileExtension(GetFileNameFromPath(msBasePath));
 			std::string meshName = mesh->mName.C_Str();
 			std::string meshActorName = modelName + "/" + "MeshLoadID: " + std::to_string(msNameIndex++) + meshName;
-			actor->AddChild(new MeshActor(meshActorName, internalMesh));
+			MeshActor* meshActor = new MeshActor(meshActorName, internalMesh);
+			meshActor->mCollisionProperties.mResponse = CollisionResponse::IGNORE;
+			actor = meshActor;
 		}
 	}
+	if (!actor)
+	{
+		actor = new Actor(std::string(node->mName.C_Str()) + "NodeID: " + std::to_string(msNameIndex++));
+	}
+	
+	{ // Apply node transform
+		actor->SetLocalTransformMatrix(AiMatrix4x4ToGlm(node->mTransformation));
+	}
+
+	// Add node as a child
+	parentActor->AddChild(actor);
+
 	for (auto i = 0; i < node->mNumChildren; i++)
 	{
 		ProcessNode(scene, node->mChildren[i], actor);
@@ -178,6 +196,15 @@ Material* AssimpLoader::ProcessMaterial(aiMaterial* material)
 		LOG_INFO("AssimpLoader::ProcessMaterial::Texture::Specular::Path: %s", texturePath.c_str());
 		internalMaterial->SetTexture(Material::SPECULAR, Texture::Load(texturePath));
 	}
+	// Normal
+	if (0 < material->GetTextureCount(aiTextureType_NORMALS))
+	{
+		aiString str;
+		material->GetTexture(aiTextureType_NORMALS, 0, &str);
+		std::string texturePath = GetDirectoryPath(msBasePath) + "Textures/" + std::string(str.C_Str());
+		LOG_INFO("AssimpLoader::ProcessMaterial::Texture::Normal::Path: %s", texturePath.c_str());
+		internalMaterial->SetTexture(Material::NORMAL, Texture::Load(texturePath));
+	}
 	// Opacity
 	if (0 < material->GetTextureCount(aiTextureType_OPACITY))
 	{
@@ -202,7 +229,6 @@ Material* AssimpLoader::ProcessMaterial(aiMaterial* material)
 AABBActor* AssimpLoader::ProcessCollisionAABB(aiMesh* mesh)
 {
 	AABB aabb{ {},{} };
-	aabb.center = { 0.f, 0.f, 0.f };
 	for (auto i = 0; i < mesh->mNumVertices; i++)
 	{
 		glm::vec3 pos{ 0.f };
@@ -221,8 +247,12 @@ AABBActor* AssimpLoader::ProcessCollisionAABB(aiMesh* mesh)
 		pos.y = mesh->mVertices[i].y;
 		pos.z = mesh->mVertices[i].z;
 		
+		LOG_INFO("pos: (%f, %f, %f)", pos.x, pos.y, pos.z);
+
 		aabb.Expand(pos);
 	}
 
-	return new AABBActor(std::string(mesh->mName.C_Str()), aabb);
+	LOG_INFO("aabb extent: (%f, %f, %f)", aabb.extent.x, aabb.extent.y, aabb.extent.z);
+	const std::string actorName = std::string(mesh->mName.C_Str()) + std::to_string(msNameIndex++);
+	return new AABBActor(actorName, aabb);
 }

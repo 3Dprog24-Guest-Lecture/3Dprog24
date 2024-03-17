@@ -23,9 +23,9 @@ void Scene::LoadContent()
 {
 	LOG_INFO("Scene::LoadContent");
 
-	auto diffuseTex = Texture::Load(SOURCE_DIRECTORY("textures/container2.jpg"));
-	auto specularTex = Texture::Load(SOURCE_DIRECTORY("textures/container2_specular.jpg"));
-	auto mat = Material::Load("Default", { diffuseTex, specularTex }, {});
+	Texture* diffuseTex = Texture::Load(SOURCE_DIRECTORY("textures/container2.jpg"));
+	Texture* specularTex = Texture::Load(SOURCE_DIRECTORY("textures/container2_specular.jpg"));
+	Material* mat = Material::Load("Default", { diffuseTex, specularTex }, {});
 
 	mCube0 = new MeshActor("Cube0", Mesh::LoadCube(mat));
 	mCube1 = new MeshActor("Cube1", Mesh::LoadCube(mat));
@@ -34,10 +34,8 @@ void Scene::LoadContent()
 	mPointLightActor = new PointLightActor("Point light 0");
 	mDirectionalLightActor = new DirectionalLightActor("Directional light");
 
-	auto meshTest = new Actor("test");
-
-	AssimpLoader::Load(SOURCE_DIRECTORY("Assets/Models/Sponza/sponza.fbx"), meshTest, 0);
-	meshTest->SetWorldScale({0.01f, 0.01f, 0.01f});
+	Actor* meshTest = new Actor("test");
+	AssimpLoader::Load(SOURCE_DIRECTORY("Assets/Models/Sponza/Sponza.fbx"), meshTest);
 
 	mSkybox = new Skybox({
 		SOURCE_DIRECTORY("textures/Starfield_And_Haze/Starfield_And_Haze_left.png"),
@@ -62,7 +60,7 @@ void Scene::LoadContent()
 	//mSceneGraph.AddChild(mPointLightActor);
 	//mSceneGraph.AddChild(mDirectionalLightActor);
 
-	mCube0->SetWorldPosition({ -2.f, 10.f, 0.f });
+	mCube0->SetWorldPosition({ 0.f, 10.f, 0.f });
 	mCube1->SetWorldPosition({ 0.f, -1.f, 0.f });	
 	mCube1->SetWorldScale({ 5.f, 1.f, 5.f });
 	mSceneCamera.SetWorldPosition({ 0.f, 2.f, 3.f });
@@ -138,6 +136,13 @@ void Scene::HandleCollision()
 		{
 			IBounded* iA = dynamic_cast<IBounded*>(actors[i]);
 			IBounded* iB = dynamic_cast<IBounded*>(actors[j]);
+
+			// Skip intersection if a object ignores collision
+			if (iA->GetCollisionProperties().IsIgnoreResponse() ||
+				iB->GetCollisionProperties().IsIgnoreResponse())
+			{
+				continue;
+			}
 
 			// Skip intersection checks for two static objects
 			if (iA->GetCollisionProperties().IsStatic() &&

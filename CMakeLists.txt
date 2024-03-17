@@ -62,7 +62,7 @@ set (HEADER_FILES
   core/Collision.h 
   core/Skybox.h 
   "core/ModelLoader/FBXLoader.h" 
-  "core/ModelLoader/AssimpLoader.h")
+  "core/ModelLoader/AssimpLoader.h" "core/ModelLoader/AssimpUtility.h")
 
 set (SRC_FILES
   3Dprog24.cpp
@@ -81,9 +81,17 @@ set (SRC_FILES
   core/Skybox.cpp "core/ModelLoader/FBXLoader.cpp" "core/ModelLoader/AssimpLoader.cpp")
 
 add_subdirectory(libs/glfw-3.3.9)
-link_directories(libs/FBX/lib/vs2022/x64/debug)
 
-#set(BUILD_SHARED_LIBS OFF)
+# Link libraries
+if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+    link_directories(libs/FBX/lib/vs2022/x64/debug)
+    # Add debug library names here with target_link_libraries() below
+elseif(CMAKE_BUILD_TYPE STREQUAL "Release")
+    link_directories(libs/FBX/lib/vs2022/x64/release)
+    # Add release library names here with target_link_libraries() below
+endif()
+
+set(BUILD_SHARED_LIBS OFF)
 add_subdirectory(libs/assimp)
 
 # Add source to this project's executable.

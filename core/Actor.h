@@ -42,6 +42,7 @@ public:
 
     // Setters
     void SetTransform(const Transform& transform);
+    void SetLocalTransformMatrix(const glm::mat4& transformMatrix);
     void SetLocalPosition(const glm::vec3& position);
     void SetLocalRotation(const glm::quat& rotation);
     void SetLocalScale(const glm::vec3& scale);

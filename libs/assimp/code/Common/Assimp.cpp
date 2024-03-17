@@ -3,7 +3,7 @@
 Open Asset Import Library (assimp)
 ---------------------------------------------------------------------------
 
-Copyright (c) 2006-2022, assimp team
+Copyright (c) 2006-2024, assimp team
 
 All rights reserved.
 
@@ -1131,7 +1131,7 @@ ASSIMP_API void aiMatrix4RotationX(
 ASSIMP_API void aiMatrix4RotationY(
         C_STRUCT aiMatrix4x4 *mat,
         const float angle) {
-    ai_assert(NULL != mat);
+    ai_assert(nullptr != mat);
     aiMatrix4x4::RotationY(angle, *mat);
 }
 

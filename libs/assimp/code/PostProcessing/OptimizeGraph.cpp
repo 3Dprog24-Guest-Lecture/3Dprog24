@@ -3,7 +3,7 @@
 Open Asset Import Library (assimp)
 ---------------------------------------------------------------------------
 
-Copyright (c) 2006-2022, assimp team
+Copyright (c) 2006-2024, assimp team
 
 All rights reserved.
 
@@ -77,10 +77,6 @@ OptimizeGraphProcess::OptimizeGraphProcess() :
 		count_merged() {
 	// empty
 }
-
-// ------------------------------------------------------------------------------------------------
-// Destructor, private as well
-OptimizeGraphProcess::~OptimizeGraphProcess() = default;
 
 // ------------------------------------------------------------------------------------------------
 // Returns whether the processing step is present in the given flag field.

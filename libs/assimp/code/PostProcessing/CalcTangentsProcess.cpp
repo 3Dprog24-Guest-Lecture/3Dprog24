@@ -3,7 +3,7 @@
 Open Asset Import Library (assimp)
 ---------------------------------------------------------------------------
 
-Copyright (c) 2006-2022, assimp team
+Copyright (c) 2006-2024, assimp team
 
 
 
@@ -59,10 +59,6 @@ CalcTangentsProcess::CalcTangentsProcess() :
         configMaxAngle(float(AI_DEG_TO_RAD(45.f))), configSourceUV(0) {
     // nothing to do here
 }
-
-// ------------------------------------------------------------------------------------------------
-// Destructor, private as well
-CalcTangentsProcess::~CalcTangentsProcess() = default;
 
 // ------------------------------------------------------------------------------------------------
 // Returns whether the processing step is present in the given flag field.

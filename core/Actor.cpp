@@ -57,6 +57,11 @@ void Actor::SetTransform(const Transform& transform)
     mTransform = transform;
 }
 
+void Actor::SetLocalTransformMatrix(const glm::mat4& transformMatrix)
+{
+    mTransform.SetTransformMatrix(transformMatrix);
+}
+
 void Actor::SetLocalPosition(const glm::vec3& position)
 {
     mTransform.SetPosition(position);

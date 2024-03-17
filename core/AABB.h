@@ -6,6 +6,7 @@
 #include <Collision.h>
 #include <Actor.h>
 #include <iostream>
+#include <Logger.h>
 
 struct AABB;
 
@@ -93,9 +94,7 @@ struct AABB
     void Expand(const glm::vec3& p)
     {
         auto relativeP = p - center;
-        extent.x = glm::max(abs(relativeP.x), extent.x);
-        extent.y = glm::max(abs(relativeP.y), extent.y);
-        extent.z = glm::max(abs(relativeP.z), extent.z);
+        extent = glm::max(abs(relativeP), extent);
     }
 };
 
@@ -107,7 +106,12 @@ public:
    
     virtual AABB GetAABB() const override
     {         
-        return AABB(mAABB.center + GetWorldPosition(), mAABB.extent + GetWorldScale());
+        auto aabb = AABB(mAABB.center ,mAABB.extent);
+        aabb.center += GetWorldPosition();
+        aabb.extent *= GetWorldScale();
+        // AABBs should not really be able to rotate, but this is okay as long as they rotate to a new aligned axis
+        aabb.extent = abs(GetWorldRotation() * aabb.extent);
+        return aabb;
     }
 
     virtual CollisionProperties GetCollisionProperties() const

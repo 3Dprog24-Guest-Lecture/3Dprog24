@@ -2,7 +2,7 @@
 Open Asset Import Library (assimp)
 ----------------------------------------------------------------------
 
-Copyright (c) 2006-2022, assimp team
+Copyright (c) 2006-2024, assimp team
 
 
 All rights reserved.
@@ -1348,6 +1348,9 @@ void SceneCombiner::Copy(aiMetadata **_dest, const aiMetadata *src) {
             break;
         case AI_AIVECTOR3D:
             out.mData = new aiVector3D(*static_cast<aiVector3D *>(in.mData));
+            break;
+        case AI_AIMETADATA:
+            out.mData = new aiMetadata(*static_cast<aiMetadata *>(in.mData));
             break;
         default:
             ai_assert(false);

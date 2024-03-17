@@ -66,3 +66,20 @@ inline bool HasCollisionPrefix(const std::string& filePath, std::string& outPref
 
     return true;
 }
+
+inline bool HasLightPrefix(const std::string& filePath, std::string& outPrefix)
+{
+    if (filePath[0] != '_')
+        return false;
+
+    size_t pos = std::string(filePath.begin() + 1, filePath.end()).find_first_of('_');
+    if (pos == std::string::npos)
+        return false;
+
+    if (std::string(filePath.begin(), filePath.begin() + pos + 2) != "_Light_")
+        return false;
+
+    outPrefix = std::string(filePath.begin() + pos + 2, filePath.end());
+
+    return true;
+}
