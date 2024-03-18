@@ -15,7 +15,7 @@ private:
     static void ProcessNode(const class aiScene* scene, class aiNode* node, class Actor* parentActor);   
     static class Mesh* ProcessMesh(class aiMesh* mesh);
     static class Material* ProcessMaterial(class aiMaterial* material);
-    static class AABBActor* ProcessCollisionAABB(class aiMesh* mesh);
+    static class AABB ProcessCollisionAABB(class aiMesh* mesh);
 
     // Variables
     static std::string msBasePath;
