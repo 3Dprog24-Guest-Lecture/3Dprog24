@@ -12,6 +12,7 @@ inline T GetProperty(const std::string& key, aiMaterial* material)
 	return value;
 }
 
+// Returns worldspace transformation matrix
 inline aiMatrix4x4 GetTransformationMatrix(const aiNode* node)
 {
 	if (node->mParent == nullptr)

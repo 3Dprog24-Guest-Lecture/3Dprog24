@@ -72,11 +72,12 @@ public:
     CollisionProperties mCollisionProperties{CollisionType::STATIC, CollisionResponse::BLOCK };
 };
 
-class StaticMeshActor : public MeshActor
+// Describes just the root of several connected meshes
+class StaticMeshActor : public Actor
 {
 public:
-    StaticMeshActor(const std::string& name, Mesh* mesh)
-        :MeshActor(name, mesh){};
+    StaticMeshActor(const std::string& name)
+        :Actor(name){};
 };
 
 // Can eventually create a MeshComponent

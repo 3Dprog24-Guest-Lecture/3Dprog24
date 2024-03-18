@@ -58,9 +58,9 @@ public:
     CameraActor mSceneCamera{ "SceneCamera" };
 
 private:
-    MeshActor* mCube0{nullptr};
-    MeshActor* mCube1{nullptr};
-    MeshActor* mCube2{ nullptr };
+    MeshActor* mCubeActor0{nullptr};
+    StaticMeshActor* mStaticMeshActor0{nullptr};
+
     class Skybox* mSkybox{ nullptr };
     class Shader* mShader{ nullptr };
 

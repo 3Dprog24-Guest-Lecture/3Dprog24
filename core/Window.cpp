@@ -24,17 +24,12 @@ void Window::Init()
 {
     LOG_INFO("Window::Init");
     mGLFWWindow = glfwCreateWindow(mWidth, mHeight, mName.c_str(), NULL, NULL);
-    if (mGLFWWindow == NULL)
-    {
-        glfwTerminate();
-        throw std::runtime_error("Failed to create glfw window");
-    }
+    assert(mGLFWWindow && "Failed to create glfw window");
+
     glfwMakeContextCurrent(mGLFWWindow);
 
-    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
-    {
-       throw std::runtime_error("Failed to initialize glad");
-    }
+    int gladResult = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+    assert(gladResult && "Failed to initialize glad");
 
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();

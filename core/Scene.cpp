@@ -26,15 +26,13 @@ void Scene::LoadContent()
 	Texture* specularTex = Texture::Load(SOURCE_DIRECTORY("textures/container2_specular.jpg"));
 	Material* mat = Material::Load("Default", { diffuseTex, specularTex }, {});
 
-	mCube0 = new MeshActor("Cube0", Mesh::LoadCube(mat));
-	mCube1 = new MeshActor("Cube1", Mesh::LoadCube(mat));
-	mCube2 = new MeshActor("Cube2", Mesh::LoadCube(mat));
+	mCubeActor0 = new MeshActor("Cube0", Mesh::LoadCube(mat));
 
-	mPointLightActor = new PointLightActor("Point light 0");
-	mDirectionalLightActor = new DirectionalLightActor("Directional light");
+	mPointLightActor = new PointLightActor("PointLight0");
+	mDirectionalLightActor = new DirectionalLightActor("DirectionalLight0");
 
-	Actor* meshTest = new Actor("test");
-	AssimpLoader::Load(SOURCE_DIRECTORY("Assets/Models/Sponza/Sponza.fbx"), meshTest);
+	mStaticMeshActor0 = new StaticMeshActor("StaticMeshActor0");
+	AssimpLoader::Load(SOURCE_DIRECTORY("Assets/Models/Sponza/Sponza.fbx"), mStaticMeshActor0);
 
 	mSkybox = new Skybox({
 		SOURCE_DIRECTORY("textures/Starfield_And_Haze/Starfield_And_Haze_left.png"),
@@ -48,27 +46,23 @@ void Scene::LoadContent()
 	mShader = new Shader(SOURCE_DIRECTORY("shaders/shader.vs"), SOURCE_DIRECTORY("shaders/shader.fs"));
 
 	mSceneGraph.AddChild(&mSceneCamera);
-	mSceneGraph.AddChild(mCube0);
-	//mSceneGraph.AddChild(mCube1);
-	//mSceneGraph.AddChild(mCube2);
-	mSceneGraph.AddChild(meshTest);
+	mSceneGraph.AddChild(mCubeActor0);
+	mSceneGraph.AddChild(mStaticMeshActor0);
 
-	mCube0->AddComponent<PhysicsComponent>("Cube0PhysicsComponent");
-	mCube0->mCollisionProperties.mType = CollisionType::DYNAMIC;
+	mCubeActor0->AddComponent<PhysicsComponent>("Cube0PhysicsComponent");
+	mCubeActor0->mCollisionProperties.mType = CollisionType::DYNAMIC;
 
 	//mSceneGraph.AddChild(mPointLightActor);
 	//mSceneGraph.AddChild(mDirectionalLightActor);
 
-	mCube0->SetWorldPosition({ 0.f, 10.f, 0.f });
-	mCube1->SetWorldPosition({ 0.f, -1.f, 0.f });	
-	mCube1->SetWorldScale({ 5.f, 1.f, 5.f });
+	mCubeActor0->SetWorldPosition({ 0.f, 10.f, 0.f });
 	mSceneCamera.SetWorldPosition({ 0.f, 2.f, 3.f });
 	mSceneCamera.SetPitch(-30.f);
 
 	mDirectionalLightActor->SetWorldRotation(glm::angleAxis(glm::radians(-90.0f), glm::vec3(1.0f, 0.0f, 0.0f)));
 	//mPointLightActor->SetPosition({ 0.f, 2.0f, 0.f });
 
-	mActorController = std::shared_ptr<ActorController>(new ActorController(mCube0));
+	mActorController = std::shared_ptr<ActorController>(new ActorController(mCubeActor0));
 	mCameraController = std::shared_ptr<CameraController>(new CameraController(&mSceneCamera));
 
 	mActiveController = mCameraController;
@@ -77,9 +71,8 @@ void Scene::LoadContent()
 void Scene::UnloadContent()
 {
 	delete mShader;
-	delete mCube0;
-	delete mCube1;
-	delete mCube2;
+	delete mCubeActor0;
+	delete mStaticMeshActor0;
 	delete mPointLightActor;
 	delete mDirectionalLightActor;
 	delete mSkybox;

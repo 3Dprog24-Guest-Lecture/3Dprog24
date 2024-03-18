@@ -50,36 +50,36 @@ inline std::string RemoveFileExtension(const std::string& filePath)
     return filePath;
 }
 
-inline bool HasCollisionPrefix(const std::string& filePath, std::string& outPrefix)
+inline bool HasCollisionPrefix(const std::string& fileName, std::string& outPrefix)
 {
-    if (filePath[0] != '_')
+    if (fileName[0] != '_')
         return false;
 
-    size_t pos = std::string(filePath.begin() + 1, filePath.end()).find_first_of('_');
+    size_t pos = std::string(fileName.begin() + 1, fileName.end()).find_first_of('_');
     if (pos == std::string::npos)
         return false;
 
-    if (std::string(filePath.begin(), filePath.begin() + pos + 2) != "_Collision_")
+    if (std::string(fileName.begin(), fileName.begin() + pos + 2) != "_Collision_")
         return false;
 
-    outPrefix = std::string(filePath.begin() + pos + 2, filePath.end());
+    outPrefix = std::string(fileName.begin() + pos + 2, fileName.end());
 
     return true;
 }
 
-inline bool HasLightPrefix(const std::string& filePath, std::string& outPrefix)
+inline bool HasLightPrefix(const std::string& fileName, std::string& outPrefix)
 {
-    if (filePath[0] != '_')
+    if (fileName[0] != '_')
         return false;
 
-    size_t pos = std::string(filePath.begin() + 1, filePath.end()).find_first_of('_');
+    size_t pos = std::string(fileName.begin() + 1, fileName.end()).find_first_of('_');
     if (pos == std::string::npos)
         return false;
 
-    if (std::string(filePath.begin(), filePath.begin() + pos + 2) != "_Light_")
+    if (std::string(fileName.begin(), fileName.begin() + pos + 2) != "_Light_")
         return false;
 
-    outPrefix = std::string(filePath.begin() + pos + 2, filePath.end());
+    outPrefix = std::string(fileName.begin() + pos + 2, fileName.end());
 
     return true;
 }
