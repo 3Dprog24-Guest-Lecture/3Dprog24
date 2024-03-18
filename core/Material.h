@@ -21,11 +21,7 @@ public:
     // New types and order must match the array below
     enum TextureType
     {
-        DIFFUSE,
-        SPECULAR,
-        NORMAL,
-        ALPHA,
-        COUNT
+        DIFFUSE, SPECULAR, NORMAL, ALPHA, COUNT
     };
 
     std::array<std::string, static_cast<size_t>(TextureType::COUNT)> textureUniformNames = {   
@@ -54,7 +50,7 @@ public:
 private:
     MaterialProperties mProperties{};
     std::array<Texture*, TextureType::COUNT> mTextures{};
-    static std::unordered_map<std::string, Material*> sCache;
+    static std::unordered_map<std::string, Material*> msCache;
 
     Material(const std::string& name);
 

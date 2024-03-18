@@ -40,5 +40,5 @@ private:
     TextureID mId{ 0U };
     std::string mPath;
 
-    static std::unordered_map<std::string, Texture*> sCache;
+    static std::unordered_map<std::string, Texture*> msCache;
 };

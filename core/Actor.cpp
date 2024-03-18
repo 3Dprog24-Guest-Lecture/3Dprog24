@@ -6,6 +6,10 @@ Actor::~Actor()
     {
         delete component;
     }
+    for (auto child : mChildren)
+    {
+        delete child;
+    }
 }
 
 void Actor::UpdateComponents(float dt)

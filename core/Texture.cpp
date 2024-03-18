@@ -6,7 +6,7 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include <stb_image.h>
 
-std::unordered_map<std::string, Texture*> Texture::sCache;
+std::unordered_map<std::string, Texture*> Texture::msCache;
 
 Texture::Texture(const std::string& path) : mId(0), mPath(path)
 {
@@ -48,15 +48,15 @@ void Texture::LoadTexture()
 
 Texture* Texture::Load(const std::string& path)
 {
-    auto it = sCache.find(path);
-    if (it != sCache.end())
+    auto it = msCache.find(path);
+    if (it != msCache.end())
     {
         return it->second;
     }
     else
     {
         Texture* texture = new Texture(path);
-        sCache[path] = texture;
+        msCache[path] = texture;
         return texture;
     }
 }
@@ -73,11 +73,11 @@ Texture* Texture::LoadBlackTexture()
 
 void Texture::Unload(const std::string& path)
 {
-    auto it = sCache.find(path);
-    if (it != sCache.end())
+    auto it = msCache.find(path);
+    if (it != msCache.end())
     {
         delete it->second;
-        sCache.erase(it);
+        msCache.erase(it);
     }
     else
     {
@@ -87,9 +87,9 @@ void Texture::Unload(const std::string& path)
 
 void Texture::ClearCache()
 {
-    for (auto it : sCache)
+    for (auto it : msCache)
     {
         delete it.second;
     }
-    sCache.clear();
+    msCache.clear();
 }

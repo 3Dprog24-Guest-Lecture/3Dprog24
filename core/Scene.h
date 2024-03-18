@@ -21,7 +21,7 @@
 class Scene
 {
 public:
-    explicit Scene(const std::string& name);
+    Scene(const std::string& name);
     virtual ~Scene() = default;
 
     Scene(const Scene&) = delete;

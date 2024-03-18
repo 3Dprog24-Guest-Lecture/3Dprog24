@@ -74,6 +74,8 @@ void AssimpLoader::ProcessLights(const aiScene* scene, Actor* actor)
 
 void AssimpLoader::ProcessNode(const aiScene* scene, aiNode* node, Actor* parentActor)
 {
+	LOG_INFO("AssimpLoader::ProcessNode::NodeName: %s", node->mName.C_Str());
+
 	Actor* actor = nullptr;
 	for (auto i = 0; i < node->mNumMeshes; i++)
 	{

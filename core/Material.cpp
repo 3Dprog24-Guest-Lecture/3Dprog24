@@ -1,6 +1,6 @@
 #include "Material.h"
 
-std::unordered_map<std::string, Material*> Material::sCache;
+std::unordered_map<std::string, Material*> Material::msCache;
 
 Material::Material(const std::string& name)
 {
@@ -14,36 +14,36 @@ Material* Material::Load(const std::string& name)
 
 Material* Material::Load(const std::string& name, const std::array<Texture*, TextureType::COUNT>& textures, const MaterialProperties& properties)
 {
-    auto it = sCache.find(name);
-    if (it != sCache.end())
+    auto it = msCache.find(name);
+    if (it != msCache.end())
     {
-        return sCache[name];
+        return msCache[name];
     }
 
     Material* material = new Material(name);
     material->mTextures = textures;
     material->mProperties = properties;
-    sCache[name] = material;
+    msCache[name] = material;
     return material;
 }
 
 void Material::Unload(const std::string& name)
 {
-    auto it = sCache.find(name);
-    if (it != sCache.end())
+    auto it = msCache.find(name);
+    if (it != msCache.end())
     {
         delete it->second;
-        sCache.erase(it);
+        msCache.erase(it);
     }
 }
 
 void Material::ClearCache()
 {
-    for (auto it : sCache)
+    for (auto it : msCache)
     {
         delete it.second;
     }
-    sCache.clear();
+    msCache.clear();
 }
 
 void Material::Bind(const Shader* shader) const

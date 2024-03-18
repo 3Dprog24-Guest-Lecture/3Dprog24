@@ -2,7 +2,7 @@
 #include <glad/glad.h>
 #include <Logger.h>
 
-std::unordered_map<std::string, Mesh*> Mesh::sCache;
+std::unordered_map<std::string, Mesh*> Mesh::msCache;
 
 MeshActor::MeshActor(const std::string& name, Mesh* mesh)
     :Actor(name), mMesh(mesh)
@@ -53,8 +53,8 @@ void Mesh::Draw(const Shader* shader) const
 
 Mesh* Mesh::Load(const std::string& path)
 {
-    auto it = sCache.find(path);
-    if (it != sCache.end())
+    auto it = msCache.find(path);
+    if (it != msCache.end())
     {
         return it->second;
     }
@@ -63,29 +63,29 @@ Mesh* Mesh::Load(const std::string& path)
 
 void Mesh::Unload(const std::string& path)
 {
-    auto it = sCache.find(path);
-    if (it != sCache.end())
+    auto it = msCache.find(path);
+    if (it != msCache.end())
     {
         delete it->second;
-        sCache.erase(it);
+        msCache.erase(it);
     }
 }
 
 void Mesh::ClearCache()
 {
-    for (auto it : sCache)
+    for (auto it : msCache)
     { 
         delete it.second;
     }
-    sCache.clear();
+    msCache.clear();
 }
 
 Mesh* Mesh::LoadCube(Material* material)
 {
     const std::string cubeKey = "Cube";
 
-    auto it = sCache.find(cubeKey);
-    if (it != sCache.end())
+    auto it = msCache.find(cubeKey);
+    if (it != msCache.end())
     {
         return it->second;
     }
@@ -138,10 +138,10 @@ Mesh* Mesh::LoadCube(Material* material)
         20, 21, 22, 20, 22, 23
     };
 
-    sCache[cubeKey] = new Mesh(cubeKey, std::move(vertices), std::move(indices), material);
+    msCache[cubeKey] = new Mesh(cubeKey, std::move(vertices), std::move(indices), material);
     LOG_INFO("Mesh::Cube::Created");
 
-    return sCache[cubeKey];
+    return msCache[cubeKey];
 }
 
 void MeshActor::Draw(const Shader* shader) const

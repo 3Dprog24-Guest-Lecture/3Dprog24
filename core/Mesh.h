@@ -47,7 +47,7 @@ public:
     void SetMaterial(Material* material) { mMaterial = material; }
     const Material* GetMaterial() const { return mMaterial; }
 
-    static std::unordered_map<std::string, Mesh*> sCache;
+    static std::unordered_map<std::string, Mesh*> msCache;
 };
 
 /**
