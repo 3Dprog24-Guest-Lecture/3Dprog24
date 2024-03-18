@@ -13,7 +13,6 @@
 #include <GLFW/glfw3.h>
 #include <PhysicsComponent.h>
 #include <Skybox.h>
-#include <ModelLoader/FBXLoader.h>
 #include <ModelLoader/AssimpLoader.h>
 
 Scene::Scene(const std::string& name)
