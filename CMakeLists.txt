@@ -91,7 +91,7 @@ elseif(CMAKE_BUILD_TYPE STREQUAL "Release")
     # Add release library names here with target_link_libraries() below
 endif()
 
-set(BUILD_SHARED_LIBS OFF)
+#set(BUILD_SHARED_LIBS OFF)
 add_subdirectory(libs/assimp)
 
 # Add source to this project's executable.
