@@ -1,5 +1,5 @@
-\doxysection{Tag\+Unique Struct Reference}
-\hypertarget{struct_tag_unique}{}\label{struct_tag_unique}\index{TagUnique@{TagUnique}}
+\hypertarget{struct_tag_unique}{}\doxysection{Tag\+Unique Struct Reference}
+\label{struct_tag_unique}\index{TagUnique@{TagUnique}}
 
 
 Ensures uniqueness of tags within the application.  
@@ -9,24 +9,24 @@ Ensures uniqueness of tags within the application.
 
 {\ttfamily \#include $<$Tag.\+h$>$}
 
-\doxysubsubsection*{Public Member Functions}
+\doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{struct_tag_unique_a4bee97a97904fe7ac30f45c28e5a41eb}{Tag\+Unique}} (const std\+::string \&val)
 \item 
 \mbox{\hyperlink{struct_tag_unique_a6756c2b685c0272c2dfe569cdc66d9b8}{Tag\+Unique}} (const \mbox{\hyperlink{struct_tag_unique}{Tag\+Unique}} \&)=delete
 \item 
-\mbox{\hyperlink{struct_tag_unique}{Tag\+Unique}} \& \mbox{\hyperlink{struct_tag_unique_a85298f7013b272531ac3b2c51ffae747}{operator=}} (const \mbox{\hyperlink{struct_tag_unique}{Tag\+Unique}} \&)=delete
+\mbox{\hyperlink{struct_tag_unique}{Tag\+Unique}} \& \mbox{\hyperlink{struct_tag_unique_ad1f96e6ca8b7830dd5d68c4e8845d2f7}{operator=}} (const \mbox{\hyperlink{struct_tag_unique}{Tag\+Unique}} \&)=delete
 \item 
 \mbox{\hyperlink{struct_tag_unique_a23204561a07593b4162478e58f0946e1}{Tag\+Unique}} (\mbox{\hyperlink{struct_tag_unique}{Tag\+Unique}} \&\&)=default
 \item 
-\mbox{\hyperlink{struct_tag_unique}{Tag\+Unique}} \& \mbox{\hyperlink{struct_tag_unique_a08e9be22314aabf30eee35595591eb8f}{operator=}} (\mbox{\hyperlink{struct_tag_unique}{Tag\+Unique}} \&\&)=default
+\mbox{\hyperlink{struct_tag_unique}{Tag\+Unique}} \& \mbox{\hyperlink{struct_tag_unique_a637536a3005613eaadf978b4e72b2acf}{operator=}} (\mbox{\hyperlink{struct_tag_unique}{Tag\+Unique}} \&\&)=default
 \item 
-\mbox{\hyperlink{struct_tag_unique_a85b84caadc722212df3f837879902e06}{\texorpdfstring{$\sim$}{\string~}\+Tag\+Unique}} ()
+\mbox{\hyperlink{struct_tag_unique_a85b84caadc722212df3f837879902e06}{$\sim$\+Tag\+Unique}} ()
 \item 
-const std\+::string \& \mbox{\hyperlink{struct_tag_unique_a96f34b8029a8e4246d41cebeb873326e}{Get\+Value}} () const
+const std\+::string \& \mbox{\hyperlink{struct_tag_unique_a3fd8f61065043150029e07c43d687e7b}{Get\+Value}} () const
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Static Public Member Functions}
+\doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static bool \mbox{\hyperlink{struct_tag_unique_a6a4b02f40297c52972c20c7c1760548b}{Tag\+Exists}} (const std\+::string \&tag)
@@ -38,61 +38,61 @@ static void \mbox{\hyperlink{struct_tag_unique_a7a8a4ce5a4e45398348de387d9a2b1e1
 \doxysubsection{Detailed Description}
 Ensures uniqueness of tags within the application. 
 
-The \doxylink{struct_tag_unique}{Tag\+Unique} struct is designed to manage tag uniqueness across the application, preventing duplicate tags from being created. It uses a static unordered set to keep track of all existing tags. Attempting to create a \doxylink{struct_tag_unique}{Tag\+Unique} with a value that already exists in the set will result in a runtime\+\_\+error. 
+The \mbox{\hyperlink{struct_tag_unique}{Tag\+Unique}} struct is designed to manage tag uniqueness across the application, preventing duplicate tags from being created. It uses a static unordered set to keep track of all existing tags. Attempting to create a \mbox{\hyperlink{struct_tag_unique}{Tag\+Unique}} with a value that already exists in the set will result in a runtime\+\_\+error. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{struct_tag_unique_a4bee97a97904fe7ac30f45c28e5a41eb}\label{struct_tag_unique_a4bee97a97904fe7ac30f45c28e5a41eb} 
+\mbox{\Hypertarget{struct_tag_unique_a4bee97a97904fe7ac30f45c28e5a41eb}\label{struct_tag_unique_a4bee97a97904fe7ac30f45c28e5a41eb}} 
 \index{TagUnique@{TagUnique}!TagUnique@{TagUnique}}
 \index{TagUnique@{TagUnique}!TagUnique@{TagUnique}}
 \doxysubsubsection{\texorpdfstring{TagUnique()}{TagUnique()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
 {\footnotesize\ttfamily Tag\+Unique\+::\+Tag\+Unique (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\Hypertarget{struct_tag_unique_a6756c2b685c0272c2dfe569cdc66d9b8}\label{struct_tag_unique_a6756c2b685c0272c2dfe569cdc66d9b8} 
+\mbox{\Hypertarget{struct_tag_unique_a6756c2b685c0272c2dfe569cdc66d9b8}\label{struct_tag_unique_a6756c2b685c0272c2dfe569cdc66d9b8}} 
 \index{TagUnique@{TagUnique}!TagUnique@{TagUnique}}
 \index{TagUnique@{TagUnique}!TagUnique@{TagUnique}}
 \doxysubsubsection{\texorpdfstring{TagUnique()}{TagUnique()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
 {\footnotesize\ttfamily Tag\+Unique\+::\+Tag\+Unique (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_tag_unique}{Tag\+Unique}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
 
-\Hypertarget{struct_tag_unique_a23204561a07593b4162478e58f0946e1}\label{struct_tag_unique_a23204561a07593b4162478e58f0946e1} 
+\mbox{\Hypertarget{struct_tag_unique_a23204561a07593b4162478e58f0946e1}\label{struct_tag_unique_a23204561a07593b4162478e58f0946e1}} 
 \index{TagUnique@{TagUnique}!TagUnique@{TagUnique}}
 \index{TagUnique@{TagUnique}!TagUnique@{TagUnique}}
 \doxysubsubsection{\texorpdfstring{TagUnique()}{TagUnique()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
 {\footnotesize\ttfamily Tag\+Unique\+::\+Tag\+Unique (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_tag_unique}{Tag\+Unique}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
 
-\Hypertarget{struct_tag_unique_a85b84caadc722212df3f837879902e06}\label{struct_tag_unique_a85b84caadc722212df3f837879902e06} 
-\index{TagUnique@{TagUnique}!````~TagUnique@{\texorpdfstring{$\sim$}{\string~}TagUnique}}
-\index{````~TagUnique@{\texorpdfstring{$\sim$}{\string~}TagUnique}!TagUnique@{TagUnique}}
-\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}TagUnique()}{\string~TagUnique()}}
-{\footnotesize\ttfamily Tag\+Unique\+::\texorpdfstring{$\sim$}{\string~}\+Tag\+Unique (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\Hypertarget{struct_tag_unique_a85b84caadc722212df3f837879902e06}\label{struct_tag_unique_a85b84caadc722212df3f837879902e06}} 
+\index{TagUnique@{TagUnique}!````~TagUnique@{$\sim$TagUnique}}
+\index{````~TagUnique@{$\sim$TagUnique}!TagUnique@{TagUnique}}
+\doxysubsubsection{\texorpdfstring{$\sim$TagUnique()}{~TagUnique()}}
+{\footnotesize\ttfamily Tag\+Unique\+::$\sim$\+Tag\+Unique (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{struct_tag_unique_a7a8a4ce5a4e45398348de387d9a2b1e1}\label{struct_tag_unique_a7a8a4ce5a4e45398348de387d9a2b1e1} 
+\mbox{\Hypertarget{struct_tag_unique_a7a8a4ce5a4e45398348de387d9a2b1e1}\label{struct_tag_unique_a7a8a4ce5a4e45398348de387d9a2b1e1}} 
 \index{TagUnique@{TagUnique}!ClearCache@{ClearCache}}
 \index{ClearCache@{ClearCache}!TagUnique@{TagUnique}}
 \doxysubsubsection{\texorpdfstring{ClearCache()}{ClearCache()}}
 {\footnotesize\ttfamily static void Tag\+Unique\+::\+Clear\+Cache (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
-\Hypertarget{struct_tag_unique_a96f34b8029a8e4246d41cebeb873326e}\label{struct_tag_unique_a96f34b8029a8e4246d41cebeb873326e} 
+\mbox{\Hypertarget{struct_tag_unique_a3fd8f61065043150029e07c43d687e7b}\label{struct_tag_unique_a3fd8f61065043150029e07c43d687e7b}} 
 \index{TagUnique@{TagUnique}!GetValue@{GetValue}}
 \index{GetValue@{GetValue}!TagUnique@{TagUnique}}
 \doxysubsubsection{\texorpdfstring{GetValue()}{GetValue()}}
-{\footnotesize\ttfamily const std\+::string \& Tag\+Unique\+::\+Get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily const std\+::string\& Tag\+Unique\+::\+Get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-\Hypertarget{struct_tag_unique_a85298f7013b272531ac3b2c51ffae747}\label{struct_tag_unique_a85298f7013b272531ac3b2c51ffae747} 
+\mbox{\Hypertarget{struct_tag_unique_ad1f96e6ca8b7830dd5d68c4e8845d2f7}\label{struct_tag_unique_ad1f96e6ca8b7830dd5d68c4e8845d2f7}} 
 \index{TagUnique@{TagUnique}!operator=@{operator=}}
 \index{operator=@{operator=}!TagUnique@{TagUnique}}
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{struct_tag_unique}{Tag\+Unique}} \& Tag\+Unique\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_tag_unique}{Tag\+Unique}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_tag_unique}{Tag\+Unique}}\& Tag\+Unique\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_tag_unique}{Tag\+Unique}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
 
-\Hypertarget{struct_tag_unique_a08e9be22314aabf30eee35595591eb8f}\label{struct_tag_unique_a08e9be22314aabf30eee35595591eb8f} 
+\mbox{\Hypertarget{struct_tag_unique_a637536a3005613eaadf978b4e72b2acf}\label{struct_tag_unique_a637536a3005613eaadf978b4e72b2acf}} 
 \index{TagUnique@{TagUnique}!operator=@{operator=}}
 \index{operator=@{operator=}!TagUnique@{TagUnique}}
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{struct_tag_unique}{Tag\+Unique}} \& Tag\+Unique\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_tag_unique}{Tag\+Unique}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_tag_unique}{Tag\+Unique}}\& Tag\+Unique\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_tag_unique}{Tag\+Unique}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
 
-\Hypertarget{struct_tag_unique_a6a4b02f40297c52972c20c7c1760548b}\label{struct_tag_unique_a6a4b02f40297c52972c20c7c1760548b} 
+\mbox{\Hypertarget{struct_tag_unique_a6a4b02f40297c52972c20c7c1760548b}\label{struct_tag_unique_a6a4b02f40297c52972c20c7c1760548b}} 
 \index{TagUnique@{TagUnique}!TagExists@{TagExists}}
 \index{TagExists@{TagExists}!TagUnique@{TagUnique}}
 \doxysubsubsection{\texorpdfstring{TagExists()}{TagExists()}}

@@ -1,0 +1,63 @@
+\hypertarget{_collision_8h}{}\doxysection{core/\+Collision.h File Reference}
+\label{_collision_8h}\index{core/Collision.h@{core/Collision.h}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_collision_properties}{Collision\+Properties}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_collision_8h_aa884075f403706dceea29a61771a0d44}{Collision\+Type}} \{ \mbox{\hyperlink{_collision_8h_aa884075f403706dceea29a61771a0d44afe6f99ef1ec99efbdc19a9786cf1facc}{Collision\+Type\+::\+S\+T\+A\+T\+IC}}, 
+\mbox{\hyperlink{_collision_8h_aa884075f403706dceea29a61771a0d44a0fcc90da4811c877ba9f9c12f7d60bc9}{Collision\+Type\+::\+D\+Y\+N\+A\+M\+IC}}, 
+\mbox{\hyperlink{_collision_8h_aa884075f403706dceea29a61771a0d44ac0893282d183a6fa7fd80184fa3c55b5}{Collision\+Type\+::\+K\+I\+N\+E\+T\+IC}}
+ \}
+\item 
+enum \mbox{\hyperlink{_collision_8h_a97e8562c7f43f19f908003d638ff930f}{Collision\+Response}} \{ \mbox{\hyperlink{_collision_8h_a97e8562c7f43f19f908003d638ff930fa4d34f53389ed7f28ca91fc31ea360a66}{Collision\+Response\+::\+B\+L\+O\+CK}}, 
+\mbox{\hyperlink{_collision_8h_a97e8562c7f43f19f908003d638ff930fa8c009c8dd4d4f9dde7515c00d5cd4661}{Collision\+Response\+::\+O\+V\+E\+R\+L\+AP}}, 
+\mbox{\hyperlink{_collision_8h_a97e8562c7f43f19f908003d638ff930faa2e843feab94ef623fea888f07c28696}{Collision\+Response\+::\+I\+G\+N\+O\+RE}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_collision_8h_a97e8562c7f43f19f908003d638ff930f}\label{_collision_8h_a97e8562c7f43f19f908003d638ff930f}} 
+\index{Collision.h@{Collision.h}!CollisionResponse@{CollisionResponse}}
+\index{CollisionResponse@{CollisionResponse}!Collision.h@{Collision.h}}
+\doxysubsubsection{\texorpdfstring{CollisionResponse}{CollisionResponse}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_collision_8h_a97e8562c7f43f19f908003d638ff930f}{Collision\+Response}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BLOCK@{BLOCK}!Collision.h@{Collision.h}}\index{Collision.h@{Collision.h}!BLOCK@{BLOCK}}}\mbox{\Hypertarget{_collision_8h_a97e8562c7f43f19f908003d638ff930fa4d34f53389ed7f28ca91fc31ea360a66}\label{_collision_8h_a97e8562c7f43f19f908003d638ff930fa4d34f53389ed7f28ca91fc31ea360a66}} 
+B\+L\+O\+CK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OVERLAP@{OVERLAP}!Collision.h@{Collision.h}}\index{Collision.h@{Collision.h}!OVERLAP@{OVERLAP}}}\mbox{\Hypertarget{_collision_8h_a97e8562c7f43f19f908003d638ff930fa8c009c8dd4d4f9dde7515c00d5cd4661}\label{_collision_8h_a97e8562c7f43f19f908003d638ff930fa8c009c8dd4d4f9dde7515c00d5cd4661}} 
+O\+V\+E\+R\+L\+AP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IGNORE@{IGNORE}!Collision.h@{Collision.h}}\index{Collision.h@{Collision.h}!IGNORE@{IGNORE}}}\mbox{\Hypertarget{_collision_8h_a97e8562c7f43f19f908003d638ff930faa2e843feab94ef623fea888f07c28696}\label{_collision_8h_a97e8562c7f43f19f908003d638ff930faa2e843feab94ef623fea888f07c28696}} 
+I\+G\+N\+O\+RE&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{_collision_8h_aa884075f403706dceea29a61771a0d44}\label{_collision_8h_aa884075f403706dceea29a61771a0d44}} 
+\index{Collision.h@{Collision.h}!CollisionType@{CollisionType}}
+\index{CollisionType@{CollisionType}!Collision.h@{Collision.h}}
+\doxysubsubsection{\texorpdfstring{CollisionType}{CollisionType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_collision_8h_aa884075f403706dceea29a61771a0d44}{Collision\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATIC@{STATIC}!Collision.h@{Collision.h}}\index{Collision.h@{Collision.h}!STATIC@{STATIC}}}\mbox{\Hypertarget{_collision_8h_aa884075f403706dceea29a61771a0d44afe6f99ef1ec99efbdc19a9786cf1facc}\label{_collision_8h_aa884075f403706dceea29a61771a0d44afe6f99ef1ec99efbdc19a9786cf1facc}} 
+S\+T\+A\+T\+IC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DYNAMIC@{DYNAMIC}!Collision.h@{Collision.h}}\index{Collision.h@{Collision.h}!DYNAMIC@{DYNAMIC}}}\mbox{\Hypertarget{_collision_8h_aa884075f403706dceea29a61771a0d44a0fcc90da4811c877ba9f9c12f7d60bc9}\label{_collision_8h_aa884075f403706dceea29a61771a0d44a0fcc90da4811c877ba9f9c12f7d60bc9}} 
+D\+Y\+N\+A\+M\+IC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KINETIC@{KINETIC}!Collision.h@{Collision.h}}\index{Collision.h@{Collision.h}!KINETIC@{KINETIC}}}\mbox{\Hypertarget{_collision_8h_aa884075f403706dceea29a61771a0d44ac0893282d183a6fa7fd80184fa3c55b5}\label{_collision_8h_aa884075f403706dceea29a61771a0d44ac0893282d183a6fa7fd80184fa3c55b5}} 
+K\+I\+N\+E\+T\+IC&\\
+\hline
+
+\end{DoxyEnumFields}

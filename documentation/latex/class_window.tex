@@ -1,5 +1,5 @@
-\doxysection{Window Class Reference}
-\hypertarget{class_window}{}\label{class_window}\index{Window@{Window}}
+\hypertarget{class_window}{}\doxysection{Window Class Reference}
+\label{class_window}\index{Window@{Window}}
 
 
 Represents a window in the application, managing its lifecycle, events, and rendering context.  
@@ -9,12 +9,12 @@ Represents a window in the application, managing its lifecycle, events, and rend
 
 {\ttfamily \#include $<$Window.\+h$>$}
 
-\doxysubsubsection*{Public Member Functions}
+\doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_window_a4046a073d4ec711bd58ecf62cdd00ee0}{Window}} (std\+::string name, \mbox{\hyperlink{class_scene}{Scene}} \texorpdfstring{$\ast$}{*}scene, int width, int height)
+\mbox{\hyperlink{class_window_a4046a073d4ec711bd58ecf62cdd00ee0}{Window}} (std\+::string name, \mbox{\hyperlink{class_scene}{Scene}} $\ast$scene, int width, int height)
 \item 
-\mbox{\hyperlink{class_window_a245d821e6016fa1f6970ccbbedd635f6}{\texorpdfstring{$\sim$}{\string~}\+Window}} ()
+\mbox{\hyperlink{class_window_a245d821e6016fa1f6970ccbbedd635f6}{$\sim$\+Window}} ()
 \item 
 void \mbox{\hyperlink{class_window_afddf437cee627426a7cfdda27093803a}{Init}} ()
 \item 
@@ -22,7 +22,7 @@ void \mbox{\hyperlink{class_window_a8dd72d1a38b999dc64f7b3ce867c1724}{Register\+
 \item 
 bool \mbox{\hyperlink{class_window_aa35120be764e23647438759d598c09a2}{Load\+Content}} ()
 \item 
-void \mbox{\hyperlink{class_window_a52e86626bc7102f59283b5a3253fcbd6}{Set\+Scene}} (\mbox{\hyperlink{class_scene}{Scene}} \texorpdfstring{$\ast$}{*}scene)
+void \mbox{\hyperlink{class_window_a52e86626bc7102f59283b5a3253fcbd6}{Set\+Scene}} (\mbox{\hyperlink{class_scene}{Scene}} $\ast$scene)
 \item 
 void \mbox{\hyperlink{class_window_a6e002ebf5c26635f38c52a714bdb13fa}{Start\+Frame}} ()
 \item 
@@ -34,15 +34,15 @@ void \mbox{\hyperlink{class_window_a23bf99dc7ae51eacb31f71b1b1d01975}{End\+Frame
 \item 
 bool \mbox{\hyperlink{class_window_a4025633243fff688f55b55ed1778f906}{Is\+Closed}} ()
 \item 
-void \mbox{\hyperlink{class_window_ad73154cb7fb46021aeae204ea0bf87de}{Framebuffer\+Size\+Callback}} (class GLFWwindow \texorpdfstring{$\ast$}{*}window, int width, int height)
+void \mbox{\hyperlink{class_window_a5b8d0424d4a856997f44780e8586e0d0}{Framebuffer\+Size\+Callback}} (struct G\+L\+F\+Wwindow $\ast$window, int width, int height)
 \item 
-void \mbox{\hyperlink{class_window_ad7d57b16b06f5653f0338d6724a728ce}{Mouse\+Move\+Callback}} (class GLFWwindow \texorpdfstring{$\ast$}{*}window, double xpos, double ypos)
+void \mbox{\hyperlink{class_window_a16b9b3459b8f0846af5c9a8e0acab268}{Mouse\+Move\+Callback}} (struct G\+L\+F\+Wwindow $\ast$window, double xpos, double ypos)
 \item 
-void \mbox{\hyperlink{class_window_a0daa680cac00b0f41b1748b2c90fbc61}{Mouse\+Button\+Callback}} (GLFWwindow \texorpdfstring{$\ast$}{*}window, int button, int action, int mods)
+void \mbox{\hyperlink{class_window_a0daa680cac00b0f41b1748b2c90fbc61}{Mouse\+Button\+Callback}} (G\+L\+F\+Wwindow $\ast$window, int button, int action, int mods)
 \item 
-void \mbox{\hyperlink{class_window_a6f45a33505d5329276efc75a882f7927}{Mouse\+Scroll\+Callback}} (class GLFWwindow \texorpdfstring{$\ast$}{*}window, double xoffset, double yoffset)
+void \mbox{\hyperlink{class_window_ae0c7353ec039182da9c9e22c81306fc5}{Mouse\+Scroll\+Callback}} (struct G\+L\+F\+Wwindow $\ast$window, double xoffset, double yoffset)
 \item 
-void \mbox{\hyperlink{class_window_a66a236886b5990163eaa3cb2da64d72b}{Key\+Callback}} (class GLFWwindow \texorpdfstring{$\ast$}{*}window, int key, int scancode, int action, int mods)
+void \mbox{\hyperlink{class_window_a4e1d4b498f7a81adcdbe5ab34dad83b9}{Key\+Callback}} (struct G\+L\+F\+Wwindow $\ast$window, int key, int scancode, int action, int mods)
 \item 
 void \mbox{\hyperlink{class_window_abb340925061382253e6fa031238cc83d}{Set\+Width}} (int width)
 \item 
@@ -52,140 +52,140 @@ int \mbox{\hyperlink{class_window_a451bdfeab37afce97712f23f5c2492aa}{Get\+Width}
 \item 
 int \mbox{\hyperlink{class_window_a2196b5ae099037272cc85b223e80bd6d}{Get\+Height}} () const
 \item 
-class GLFWwindow \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_window_aaf89d5309f58018c32341500f4f3082d}{Get\+GLFWWindow}} () const
+struct G\+L\+F\+Wwindow $\ast$ \mbox{\hyperlink{class_window_aaa137328d16a3d9bc7bdf54b48be49ef}{Get\+G\+L\+F\+W\+Window}} () const
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Represents a window in the application, managing its lifecycle, events, and rendering context. 
 
-The \doxylink{class_window}{Window} class encapsulates a GLFW window and its associated context. It is responsible for initializing the window, handling input events through callbacks, and managing the render loop. The class also integrates with a \doxylink{class_scene}{Scene} object to update and render the content within the window. 
+The \mbox{\hyperlink{class_window}{Window}} class encapsulates a G\+L\+FW window and its associated context. It is responsible for initializing the window, handling input events through callbacks, and managing the render loop. The class also integrates with a \mbox{\hyperlink{class_scene}{Scene}} object to update and render the content within the window. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{class_window_a4046a073d4ec711bd58ecf62cdd00ee0}\label{class_window_a4046a073d4ec711bd58ecf62cdd00ee0} 
+\mbox{\Hypertarget{class_window_a4046a073d4ec711bd58ecf62cdd00ee0}\label{class_window_a4046a073d4ec711bd58ecf62cdd00ee0}} 
 \index{Window@{Window}!Window@{Window}}
 \index{Window@{Window}!Window@{Window}}
 \doxysubsubsection{\texorpdfstring{Window()}{Window()}}
-{\footnotesize\ttfamily Window\+::\+Window (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{\mbox{\hyperlink{class_scene}{Scene}} \texorpdfstring{$\ast$}{*}}]{scene,  }\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Window\+::\+Window (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{\mbox{\hyperlink{class_scene}{Scene}} $\ast$}]{scene,  }\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
 
-\Hypertarget{class_window_a245d821e6016fa1f6970ccbbedd635f6}\label{class_window_a245d821e6016fa1f6970ccbbedd635f6} 
-\index{Window@{Window}!````~Window@{\texorpdfstring{$\sim$}{\string~}Window}}
-\index{````~Window@{\texorpdfstring{$\sim$}{\string~}Window}!Window@{Window}}
-\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Window()}{\string~Window()}}
-{\footnotesize\ttfamily Window\+::\texorpdfstring{$\sim$}{\string~}\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_window_a245d821e6016fa1f6970ccbbedd635f6}\label{class_window_a245d821e6016fa1f6970ccbbedd635f6}} 
+\index{Window@{Window}!````~Window@{$\sim$Window}}
+\index{````~Window@{$\sim$Window}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{$\sim$Window()}{~Window()}}
+{\footnotesize\ttfamily Window\+::$\sim$\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_window_a23bf99dc7ae51eacb31f71b1b1d01975}\label{class_window_a23bf99dc7ae51eacb31f71b1b1d01975} 
+\mbox{\Hypertarget{class_window_a23bf99dc7ae51eacb31f71b1b1d01975}\label{class_window_a23bf99dc7ae51eacb31f71b1b1d01975}} 
 \index{Window@{Window}!EndFrame@{EndFrame}}
 \index{EndFrame@{EndFrame}!Window@{Window}}
 \doxysubsubsection{\texorpdfstring{EndFrame()}{EndFrame()}}
 {\footnotesize\ttfamily void Window\+::\+End\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\Hypertarget{class_window_ad73154cb7fb46021aeae204ea0bf87de}\label{class_window_ad73154cb7fb46021aeae204ea0bf87de} 
+\mbox{\Hypertarget{class_window_a5b8d0424d4a856997f44780e8586e0d0}\label{class_window_a5b8d0424d4a856997f44780e8586e0d0}} 
 \index{Window@{Window}!FramebufferSizeCallback@{FramebufferSizeCallback}}
 \index{FramebufferSizeCallback@{FramebufferSizeCallback}!Window@{Window}}
 \doxysubsubsection{\texorpdfstring{FramebufferSizeCallback()}{FramebufferSizeCallback()}}
-{\footnotesize\ttfamily void Window\+::\+Framebuffer\+Size\+Callback (\begin{DoxyParamCaption}\item[{class GLFWwindow \texorpdfstring{$\ast$}{*}}]{window,  }\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Window\+::\+Framebuffer\+Size\+Callback (\begin{DoxyParamCaption}\item[{struct G\+L\+F\+Wwindow $\ast$}]{window,  }\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
 
-\Hypertarget{class_window_aaf89d5309f58018c32341500f4f3082d}\label{class_window_aaf89d5309f58018c32341500f4f3082d} 
+\mbox{\Hypertarget{class_window_aaa137328d16a3d9bc7bdf54b48be49ef}\label{class_window_aaa137328d16a3d9bc7bdf54b48be49ef}} 
 \index{Window@{Window}!GetGLFWWindow@{GetGLFWWindow}}
 \index{GetGLFWWindow@{GetGLFWWindow}!Window@{Window}}
 \doxysubsubsection{\texorpdfstring{GetGLFWWindow()}{GetGLFWWindow()}}
-{\footnotesize\ttfamily class GLFWwindow \texorpdfstring{$\ast$}{*} Window\+::\+Get\+GLFWWindow (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily struct G\+L\+F\+Wwindow$\ast$ Window\+::\+Get\+G\+L\+F\+W\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-\Hypertarget{class_window_a2196b5ae099037272cc85b223e80bd6d}\label{class_window_a2196b5ae099037272cc85b223e80bd6d} 
+\mbox{\Hypertarget{class_window_a2196b5ae099037272cc85b223e80bd6d}\label{class_window_a2196b5ae099037272cc85b223e80bd6d}} 
 \index{Window@{Window}!GetHeight@{GetHeight}}
 \index{GetHeight@{GetHeight}!Window@{Window}}
 \doxysubsubsection{\texorpdfstring{GetHeight()}{GetHeight()}}
 {\footnotesize\ttfamily int Window\+::\+Get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\Hypertarget{class_window_a451bdfeab37afce97712f23f5c2492aa}\label{class_window_a451bdfeab37afce97712f23f5c2492aa} 
+\mbox{\Hypertarget{class_window_a451bdfeab37afce97712f23f5c2492aa}\label{class_window_a451bdfeab37afce97712f23f5c2492aa}} 
 \index{Window@{Window}!GetWidth@{GetWidth}}
 \index{GetWidth@{GetWidth}!Window@{Window}}
 \doxysubsubsection{\texorpdfstring{GetWidth()}{GetWidth()}}
 {\footnotesize\ttfamily int Window\+::\+Get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\Hypertarget{class_window_afddf437cee627426a7cfdda27093803a}\label{class_window_afddf437cee627426a7cfdda27093803a} 
+\mbox{\Hypertarget{class_window_afddf437cee627426a7cfdda27093803a}\label{class_window_afddf437cee627426a7cfdda27093803a}} 
 \index{Window@{Window}!Init@{Init}}
 \index{Init@{Init}!Window@{Window}}
 \doxysubsubsection{\texorpdfstring{Init()}{Init()}}
 {\footnotesize\ttfamily void Window\+::\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\Hypertarget{class_window_a4025633243fff688f55b55ed1778f906}\label{class_window_a4025633243fff688f55b55ed1778f906} 
+\mbox{\Hypertarget{class_window_a4025633243fff688f55b55ed1778f906}\label{class_window_a4025633243fff688f55b55ed1778f906}} 
 \index{Window@{Window}!IsClosed@{IsClosed}}
 \index{IsClosed@{IsClosed}!Window@{Window}}
 \doxysubsubsection{\texorpdfstring{IsClosed()}{IsClosed()}}
 {\footnotesize\ttfamily bool Window\+::\+Is\+Closed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\Hypertarget{class_window_a66a236886b5990163eaa3cb2da64d72b}\label{class_window_a66a236886b5990163eaa3cb2da64d72b} 
+\mbox{\Hypertarget{class_window_a4e1d4b498f7a81adcdbe5ab34dad83b9}\label{class_window_a4e1d4b498f7a81adcdbe5ab34dad83b9}} 
 \index{Window@{Window}!KeyCallback@{KeyCallback}}
 \index{KeyCallback@{KeyCallback}!Window@{Window}}
 \doxysubsubsection{\texorpdfstring{KeyCallback()}{KeyCallback()}}
-{\footnotesize\ttfamily void Window\+::\+Key\+Callback (\begin{DoxyParamCaption}\item[{class GLFWwindow \texorpdfstring{$\ast$}{*}}]{window,  }\item[{int}]{key,  }\item[{int}]{scancode,  }\item[{int}]{action,  }\item[{int}]{mods }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Window\+::\+Key\+Callback (\begin{DoxyParamCaption}\item[{struct G\+L\+F\+Wwindow $\ast$}]{window,  }\item[{int}]{key,  }\item[{int}]{scancode,  }\item[{int}]{action,  }\item[{int}]{mods }\end{DoxyParamCaption})}
 
-\Hypertarget{class_window_aa35120be764e23647438759d598c09a2}\label{class_window_aa35120be764e23647438759d598c09a2} 
+\mbox{\Hypertarget{class_window_aa35120be764e23647438759d598c09a2}\label{class_window_aa35120be764e23647438759d598c09a2}} 
 \index{Window@{Window}!LoadContent@{LoadContent}}
 \index{LoadContent@{LoadContent}!Window@{Window}}
 \doxysubsubsection{\texorpdfstring{LoadContent()}{LoadContent()}}
 {\footnotesize\ttfamily bool Window\+::\+Load\+Content (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\Hypertarget{class_window_a0daa680cac00b0f41b1748b2c90fbc61}\label{class_window_a0daa680cac00b0f41b1748b2c90fbc61} 
+\mbox{\Hypertarget{class_window_a0daa680cac00b0f41b1748b2c90fbc61}\label{class_window_a0daa680cac00b0f41b1748b2c90fbc61}} 
 \index{Window@{Window}!MouseButtonCallback@{MouseButtonCallback}}
 \index{MouseButtonCallback@{MouseButtonCallback}!Window@{Window}}
 \doxysubsubsection{\texorpdfstring{MouseButtonCallback()}{MouseButtonCallback()}}
-{\footnotesize\ttfamily void Window\+::\+Mouse\+Button\+Callback (\begin{DoxyParamCaption}\item[{GLFWwindow \texorpdfstring{$\ast$}{*}}]{window,  }\item[{int}]{button,  }\item[{int}]{action,  }\item[{int}]{mods }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Window\+::\+Mouse\+Button\+Callback (\begin{DoxyParamCaption}\item[{G\+L\+F\+Wwindow $\ast$}]{window,  }\item[{int}]{button,  }\item[{int}]{action,  }\item[{int}]{mods }\end{DoxyParamCaption})}
 
-\Hypertarget{class_window_ad7d57b16b06f5653f0338d6724a728ce}\label{class_window_ad7d57b16b06f5653f0338d6724a728ce} 
+\mbox{\Hypertarget{class_window_a16b9b3459b8f0846af5c9a8e0acab268}\label{class_window_a16b9b3459b8f0846af5c9a8e0acab268}} 
 \index{Window@{Window}!MouseMoveCallback@{MouseMoveCallback}}
 \index{MouseMoveCallback@{MouseMoveCallback}!Window@{Window}}
 \doxysubsubsection{\texorpdfstring{MouseMoveCallback()}{MouseMoveCallback()}}
-{\footnotesize\ttfamily void Window\+::\+Mouse\+Move\+Callback (\begin{DoxyParamCaption}\item[{class GLFWwindow \texorpdfstring{$\ast$}{*}}]{window,  }\item[{double}]{xpos,  }\item[{double}]{ypos }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Window\+::\+Mouse\+Move\+Callback (\begin{DoxyParamCaption}\item[{struct G\+L\+F\+Wwindow $\ast$}]{window,  }\item[{double}]{xpos,  }\item[{double}]{ypos }\end{DoxyParamCaption})}
 
-\Hypertarget{class_window_a6f45a33505d5329276efc75a882f7927}\label{class_window_a6f45a33505d5329276efc75a882f7927} 
+\mbox{\Hypertarget{class_window_ae0c7353ec039182da9c9e22c81306fc5}\label{class_window_ae0c7353ec039182da9c9e22c81306fc5}} 
 \index{Window@{Window}!MouseScrollCallback@{MouseScrollCallback}}
 \index{MouseScrollCallback@{MouseScrollCallback}!Window@{Window}}
 \doxysubsubsection{\texorpdfstring{MouseScrollCallback()}{MouseScrollCallback()}}
-{\footnotesize\ttfamily void Window\+::\+Mouse\+Scroll\+Callback (\begin{DoxyParamCaption}\item[{class GLFWwindow \texorpdfstring{$\ast$}{*}}]{window,  }\item[{double}]{xoffset,  }\item[{double}]{yoffset }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Window\+::\+Mouse\+Scroll\+Callback (\begin{DoxyParamCaption}\item[{struct G\+L\+F\+Wwindow $\ast$}]{window,  }\item[{double}]{xoffset,  }\item[{double}]{yoffset }\end{DoxyParamCaption})}
 
-\Hypertarget{class_window_a8dd72d1a38b999dc64f7b3ce867c1724}\label{class_window_a8dd72d1a38b999dc64f7b3ce867c1724} 
+\mbox{\Hypertarget{class_window_a8dd72d1a38b999dc64f7b3ce867c1724}\label{class_window_a8dd72d1a38b999dc64f7b3ce867c1724}} 
 \index{Window@{Window}!RegisterWindowCallbacks@{RegisterWindowCallbacks}}
 \index{RegisterWindowCallbacks@{RegisterWindowCallbacks}!Window@{Window}}
 \doxysubsubsection{\texorpdfstring{RegisterWindowCallbacks()}{RegisterWindowCallbacks()}}
 {\footnotesize\ttfamily void Window\+::\+Register\+Window\+Callbacks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\Hypertarget{class_window_a455cf4a5b8e34f1876750e7df194a19d}\label{class_window_a455cf4a5b8e34f1876750e7df194a19d} 
+\mbox{\Hypertarget{class_window_a455cf4a5b8e34f1876750e7df194a19d}\label{class_window_a455cf4a5b8e34f1876750e7df194a19d}} 
 \index{Window@{Window}!Render@{Render}}
 \index{Render@{Render}!Window@{Window}}
 \doxysubsubsection{\texorpdfstring{Render()}{Render()}}
 {\footnotesize\ttfamily void Window\+::\+Render (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})}
 
-\Hypertarget{class_window_a6a9aab9f4b2e81b407318924aac1a843}\label{class_window_a6a9aab9f4b2e81b407318924aac1a843} 
+\mbox{\Hypertarget{class_window_a6a9aab9f4b2e81b407318924aac1a843}\label{class_window_a6a9aab9f4b2e81b407318924aac1a843}} 
 \index{Window@{Window}!SetHeight@{SetHeight}}
 \index{SetHeight@{SetHeight}!Window@{Window}}
 \doxysubsubsection{\texorpdfstring{SetHeight()}{SetHeight()}}
 {\footnotesize\ttfamily void Window\+::\+Set\+Height (\begin{DoxyParamCaption}\item[{int}]{height }\end{DoxyParamCaption})}
 
-\Hypertarget{class_window_a52e86626bc7102f59283b5a3253fcbd6}\label{class_window_a52e86626bc7102f59283b5a3253fcbd6} 
+\mbox{\Hypertarget{class_window_a52e86626bc7102f59283b5a3253fcbd6}\label{class_window_a52e86626bc7102f59283b5a3253fcbd6}} 
 \index{Window@{Window}!SetScene@{SetScene}}
 \index{SetScene@{SetScene}!Window@{Window}}
 \doxysubsubsection{\texorpdfstring{SetScene()}{SetScene()}}
-{\footnotesize\ttfamily void Window\+::\+Set\+Scene (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_scene}{Scene}} \texorpdfstring{$\ast$}{*}}]{scene }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Window\+::\+Set\+Scene (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_scene}{Scene}} $\ast$}]{scene }\end{DoxyParamCaption})}
 
-\Hypertarget{class_window_abb340925061382253e6fa031238cc83d}\label{class_window_abb340925061382253e6fa031238cc83d} 
+\mbox{\Hypertarget{class_window_abb340925061382253e6fa031238cc83d}\label{class_window_abb340925061382253e6fa031238cc83d}} 
 \index{Window@{Window}!SetWidth@{SetWidth}}
 \index{SetWidth@{SetWidth}!Window@{Window}}
 \doxysubsubsection{\texorpdfstring{SetWidth()}{SetWidth()}}
 {\footnotesize\ttfamily void Window\+::\+Set\+Width (\begin{DoxyParamCaption}\item[{int}]{width }\end{DoxyParamCaption})}
 
-\Hypertarget{class_window_a6e002ebf5c26635f38c52a714bdb13fa}\label{class_window_a6e002ebf5c26635f38c52a714bdb13fa} 
+\mbox{\Hypertarget{class_window_a6e002ebf5c26635f38c52a714bdb13fa}\label{class_window_a6e002ebf5c26635f38c52a714bdb13fa}} 
 \index{Window@{Window}!StartFrame@{StartFrame}}
 \index{StartFrame@{StartFrame}!Window@{Window}}
 \doxysubsubsection{\texorpdfstring{StartFrame()}{StartFrame()}}
 {\footnotesize\ttfamily void Window\+::\+Start\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\Hypertarget{class_window_a78cb30f5710f06251250f8c337fa5ff0}\label{class_window_a78cb30f5710f06251250f8c337fa5ff0} 
+\mbox{\Hypertarget{class_window_a78cb30f5710f06251250f8c337fa5ff0}\label{class_window_a78cb30f5710f06251250f8c337fa5ff0}} 
 \index{Window@{Window}!Update@{Update}}
 \index{Update@{Update}!Window@{Window}}
 \doxysubsubsection{\texorpdfstring{Update()}{Update()}}

@@ -1,5 +1,5 @@
-\doxysection{Scene\+Graph Class Reference}
-\hypertarget{class_scene_graph}{}\label{class_scene_graph}\index{SceneGraph@{SceneGraph}}
+\hypertarget{class_scene_graph}{}\doxysection{Scene\+Graph Class Reference}
+\label{class_scene_graph}\index{SceneGraph@{SceneGraph}}
 
 
 Represents the root node of a scene\textquotesingle{}s hierarchical structure.  
@@ -15,91 +15,26 @@ Inheritance diagram for Scene\+Graph\+:\begin{figure}[H]
 \includegraphics[height=2.000000cm]{class_scene_graph}
 \end{center}
 \end{figure}
-\doxysubsubsection*{Public Member Functions}
+\doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_scene_graph_a4d91e19db788741016eb1f437b29e34f}{Scene\+Graph}} (const std\+::string \&name)
 \end{DoxyCompactItemize}
-\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_actor}{Actor}}}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{class_actor_af17d22383fdbe2edb46d07cd26c01754}{Actor}} (const std\+::string \&name)
-\item 
-\mbox{\hyperlink{class_actor_a22f32e3ce430a9f5c6dc9eab2ed7224c}{Actor}} (const \mbox{\hyperlink{class_actor}{Actor}} \&)=delete
-\item 
-\mbox{\hyperlink{class_actor}{Actor}} \& \mbox{\hyperlink{class_actor_a2694d37daf78fdd5c472bbced3f411b5}{operator=}} (const \mbox{\hyperlink{class_actor}{Actor}} \&)=delete
-\item 
-\mbox{\hyperlink{class_actor_aa3a169246ab4b9293e238732700fba4d}{Actor}} (\mbox{\hyperlink{class_actor}{Actor}} \&\&)=default
-\item 
-\mbox{\hyperlink{class_actor}{Actor}} \& \mbox{\hyperlink{class_actor_a9be3746bee0b124b6ca67bbaa838288f}{operator=}} (\mbox{\hyperlink{class_actor}{Actor}} \&\&)=default
-\item 
-\mbox{\hyperlink{class_actor_a94a117a9b8506259f0c987435917617b}{\texorpdfstring{$\sim$}{\string~}\+Actor}} ()=default
-\item 
-virtual void \mbox{\hyperlink{class_actor_a651fecef34d686452750bc165fcc76ce}{Update}} (float dt)
-\item 
-void \mbox{\hyperlink{class_actor_aba5cc96b0d0097ef4fd67aa155810e2c}{Set\+Parent}} (\mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*}parent)
-\item 
-void \mbox{\hyperlink{class_actor_a52786836e705c29df948c268da4b42e2}{Add\+Child}} (\mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*}child)
-\item 
-void \mbox{\hyperlink{class_actor_ae244e4ffa7005b14970d64616b1b717c}{Remove\+Child}} (\mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*}child)
-\item 
-void \mbox{\hyperlink{class_actor_ace4af4f181e7f1f19d46b57b2f1cb2c6}{Set\+Transform}} (const \mbox{\hyperlink{struct_transform}{Transform}} \&transform)
-\item 
-void \mbox{\hyperlink{class_actor_a88c4013859a75cd89933b4d125a309a4}{Set\+Position}} (const glm\+::vec3 \&position, \mbox{\hyperlink{class_actor_a3c153709d0bc28c652f10218ca6de712}{Actor\+::\+Transform\+Space}} type=\mbox{\hyperlink{class_actor_a3c153709d0bc28c652f10218ca6de712a509820290d57f333403f490dde7316f4}{Actor\+::\+Transform\+Space\+::\+Local}})
-\item 
-void \mbox{\hyperlink{class_actor_a0ae706ebcff9693c796cc425d2c66056}{Set\+Rotation}} (const glm\+::quat \&rotation, \mbox{\hyperlink{class_actor_a3c153709d0bc28c652f10218ca6de712}{Actor\+::\+Transform\+Space}} type=\mbox{\hyperlink{class_actor_a3c153709d0bc28c652f10218ca6de712a509820290d57f333403f490dde7316f4}{Actor\+::\+Transform\+Space\+::\+Local}})
-\item 
-void \mbox{\hyperlink{class_actor_af38c9c7d4dc25124cf2e28b65a72761a}{Set\+Scale}} (const glm\+::vec3 \&scale, \mbox{\hyperlink{class_actor_a3c153709d0bc28c652f10218ca6de712}{Actor\+::\+Transform\+Space}} type=\mbox{\hyperlink{class_actor_a3c153709d0bc28c652f10218ca6de712a509820290d57f333403f490dde7316f4}{Actor\+::\+Transform\+Space\+::\+Local}})
-\item 
-const glm\+::vec3 \& \mbox{\hyperlink{class_actor_af67fca2394dfd7a0c7eed35d9b4df705}{Get\+Position}} () const
-\item 
-glm\+::vec3 \mbox{\hyperlink{class_actor_a07cc4ee2bc3e908fdfd13e90ae6548f9}{Get\+Global\+Position}} () const
-\item 
-const glm\+::quat \& \mbox{\hyperlink{class_actor_a21b8672438a42af3654c7e25f10a84cd}{Get\+Rotation}} () const
-\item 
-glm\+::quat \mbox{\hyperlink{class_actor_a04bb639f5d5d5d0e2d465e755db31ac9}{Get\+Global\+Rotation}} () const
-\item 
-const glm\+::vec3 \& \mbox{\hyperlink{class_actor_ab0fd1b72111679e277f169c2d7be8c19}{Get\+Scale}} () const
-\item 
-glm\+::vec3 \mbox{\hyperlink{class_actor_a6d0ca0091883b69cde02eaf5d10a6f52}{Get\+Global\+Scale}} () const
-\item 
-const glm\+::mat4 \mbox{\hyperlink{class_actor_a60bd82bc2660d32f7418fe8894e7d6e9}{Get\+Transform\+Matrix}} () const
-\item 
-glm\+::mat4 \mbox{\hyperlink{class_actor_a5f238a412629b47f3a746d44ea271d7e}{Get\+Global\+Transform\+Matrix}} () const
-\item 
-const \mbox{\hyperlink{struct_transform}{Transform}} \& \mbox{\hyperlink{class_actor_aa14c40bea560b0ca4de10a1cd30434f9}{Get\+Transform}} () const
-\item 
-std\+::vector$<$ \mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{class_actor_a067c9709390f5185e5a8535785dc2ff8}{Get\+Children}} ()
-\end{DoxyCompactItemize}
-\doxysubsubsection*{Additional Inherited Members}
-\doxysubsection*{Public Types inherited from \mbox{\hyperlink{class_actor}{Actor}}}
-\begin{DoxyCompactItemize}
-\item 
-enum class \mbox{\hyperlink{class_actor_a3c153709d0bc28c652f10218ca6de712}{Transform\+Space}} \{ \mbox{\hyperlink{class_actor_a3c153709d0bc28c652f10218ca6de712a509820290d57f333403f490dde7316f4}{Local}}
-, \mbox{\hyperlink{class_actor_a3c153709d0bc28c652f10218ca6de712a4cc6684df7b4a92b1dec6fce3264fac8}{Global}}
- \}
-\end{DoxyCompactItemize}
-\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_actor}{Actor}}}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_actor_a2e23b38fa11b43c4e5cf57d65b8349a4}{m\+Parent}} \{nullptr\}
-\item 
-std\+::vector$<$ \mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_actor_ad59a8d1d6e8407c01883d325884b25ec}{m\+Children}}
-\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
 
 
 \doxysubsection{Detailed Description}
 Represents the root node of a scene\textquotesingle{}s hierarchical structure. 
 
-\doxylink{class_scene_graph}{Scene\+Graph} extends the \doxylink{class_actor}{Actor} class to act as the root node in a scene\textquotesingle{}s hierarchy, allowing for the organization and management of a collection of actors within a scene.
+\mbox{\hyperlink{class_scene_graph}{Scene\+Graph}} extends the \mbox{\hyperlink{class_actor}{Actor}} class to act as the root node in a scene\textquotesingle{}s hierarchy, allowing for the organization and management of a collection of actors within a scene.
 
 \begin{DoxyNote}{Note}
-This class currently does not implement a bounding volume hierarchy (BVH) for spatial partitioning, which can be used for efficient collision detection and culling. 
+This class currently does not implement a bounding volume hierarchy (B\+VH) for spatial partitioning, which can be used for efficient collision detection and culling. 
 \end{DoxyNote}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{class_scene_graph_a4d91e19db788741016eb1f437b29e34f}\label{class_scene_graph_a4d91e19db788741016eb1f437b29e34f} 
+\mbox{\Hypertarget{class_scene_graph_a4d91e19db788741016eb1f437b29e34f}\label{class_scene_graph_a4d91e19db788741016eb1f437b29e34f}} 
 \index{SceneGraph@{SceneGraph}!SceneGraph@{SceneGraph}}
 \index{SceneGraph@{SceneGraph}!SceneGraph@{SceneGraph}}
 \doxysubsubsection{\texorpdfstring{SceneGraph()}{SceneGraph()}}

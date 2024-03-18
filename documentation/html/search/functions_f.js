@@ -1,6 +1,10 @@
 var searchData=
 [
-  ['tagexists_0',['TagExists',['../struct_tag_unique.html#a6a4b02f40297c52972c20c7c1760548b',1,'TagUnique']]],
-  ['tagunique_1',['TagUnique',['../struct_tag_unique.html#a4bee97a97904fe7ac30f45c28e5a41eb',1,'TagUnique::TagUnique(const std::string &amp;val)'],['../struct_tag_unique.html#a6756c2b685c0272c2dfe569cdc66d9b8',1,'TagUnique::TagUnique(const TagUnique &amp;)=delete'],['../struct_tag_unique.html#a23204561a07593b4162478e58f0946e1',1,'TagUnique::TagUnique(TagUnique &amp;&amp;)=default']]],
-  ['transform_2',['Transform',['../struct_transform.html#aa08ca4266efabc768973cdeea51945ab',1,'Transform']]]
+  ['registerwindowcallbacks_508',['RegisterWindowCallbacks',['../class_window.html#a8dd72d1a38b999dc64f7b3ce867c1724',1,'Window']]],
+  ['removechild_509',['RemoveChild',['../class_actor.html#ae244e4ffa7005b14970d64616b1b717c',1,'Actor']]],
+  ['removefileextension_510',['RemoveFileExtension',['../_shared_8h.html#a32f36289bacc1391d5edd75cbc467862',1,'Shared.h']]],
+  ['render_511',['Render',['../class_scene.html#a1ba6595d2800589ca50868b1b9ce0e56',1,'Scene::Render()'],['../class_skybox.html#a47bae195d1dcf6d3e9f597fc2241f816',1,'Skybox::Render()'],['../class_window.html#a455cf4a5b8e34f1876750e7df194a19d',1,'Window::Render()']]],
+  ['renderscenegraph_512',['RenderSceneGraph',['../class_scene.html#aaabe5f4be250a6752542925fa3ba0d54',1,'Scene']]],
+  ['renderui_513',['RenderUI',['../class_scene.html#a6631f5cb9b269f0f0acd01a7996e790a',1,'Scene']]],
+  ['run_514',['Run',['../class_application.html#a02799e64b246a6b6b8fa58477882a4be',1,'Application']]]
 ];

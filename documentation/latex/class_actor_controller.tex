@@ -1,0 +1,105 @@
+\hypertarget{class_actor_controller}{}\doxysection{Actor\+Controller Class Reference}
+\label{class_actor_controller}\index{ActorController@{ActorController}}
+
+
+Controls actor movement based on user input.  
+
+
+
+
+{\ttfamily \#include $<$Actor\+Controller.\+h$>$}
+
+Inheritance diagram for Actor\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_actor_controller}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_actor_controller_aa7b17d804038bbd1f67db08d997fee2b}{Actor\+Controller}} (class \mbox{\hyperlink{class_actor}{Actor}} $\ast$actor)
+\item 
+virtual void \mbox{\hyperlink{class_actor_controller_a3b9d7951c65d798c9f993a9e876eb181}{Update}} (float dt) override
+\item 
+virtual void \mbox{\hyperlink{class_actor_controller_ae3db31a6f8ad9f471f88d803b702bdb4}{Handle\+Mouse\+Move}} (class \mbox{\hyperlink{class_window}{Window}} $\ast$window, double xpos, double ypos) override
+\item 
+virtual void \mbox{\hyperlink{class_actor_controller_a88a46c791b6dd7d80a6a01606693e6fa}{Handle\+Mouse\+Scroll}} (class \mbox{\hyperlink{class_window}{Window}} $\ast$window, double xoffset, double yoffset) override
+\item 
+virtual void \mbox{\hyperlink{class_actor_controller_aa0b52b2ef395526a1534d0389501d03e}{Handle\+Mouse\+Button}} (class \mbox{\hyperlink{class_window}{Window}} $\ast$window, int button, int action, int mods) override
+\item 
+virtual void \mbox{\hyperlink{class_actor_controller_a4ecaf4d7dc77574e2a4c960a96688aef}{Handle\+Keyboard}} (class \mbox{\hyperlink{class_window}{Window}} $\ast$window, int key, int scancode, int action, int mods) override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controls actor movement based on user input. 
+
+\mbox{\hyperlink{class_actor_controller}{Actor\+Controller}} is responsible for handling user inputs. It is designed to work with a \mbox{\hyperlink{class_actor}{Actor}} to update its transformation based on the input. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_actor_controller_aa7b17d804038bbd1f67db08d997fee2b}\label{class_actor_controller_aa7b17d804038bbd1f67db08d997fee2b}} 
+\index{ActorController@{ActorController}!ActorController@{ActorController}}
+\index{ActorController@{ActorController}!ActorController@{ActorController}}
+\doxysubsubsection{\texorpdfstring{ActorController()}{ActorController()}}
+{\footnotesize\ttfamily Actor\+Controller\+::\+Actor\+Controller (\begin{DoxyParamCaption}\item[{class \mbox{\hyperlink{class_actor}{Actor}} $\ast$}]{actor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_actor_controller_a4ecaf4d7dc77574e2a4c960a96688aef}\label{class_actor_controller_a4ecaf4d7dc77574e2a4c960a96688aef}} 
+\index{ActorController@{ActorController}!HandleKeyboard@{HandleKeyboard}}
+\index{HandleKeyboard@{HandleKeyboard}!ActorController@{ActorController}}
+\doxysubsubsection{\texorpdfstring{HandleKeyboard()}{HandleKeyboard()}}
+{\footnotesize\ttfamily void Actor\+Controller\+::\+Handle\+Keyboard (\begin{DoxyParamCaption}\item[{class \mbox{\hyperlink{class_window}{Window}} $\ast$}]{window,  }\item[{int}]{key,  }\item[{int}]{scancode,  }\item[{int}]{action,  }\item[{int}]{mods }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_controller_a2d13c6a5c8ed679f5609d32112cb52b8}{I\+Controller}}.
+
+\mbox{\Hypertarget{class_actor_controller_aa0b52b2ef395526a1534d0389501d03e}\label{class_actor_controller_aa0b52b2ef395526a1534d0389501d03e}} 
+\index{ActorController@{ActorController}!HandleMouseButton@{HandleMouseButton}}
+\index{HandleMouseButton@{HandleMouseButton}!ActorController@{ActorController}}
+\doxysubsubsection{\texorpdfstring{HandleMouseButton()}{HandleMouseButton()}}
+{\footnotesize\ttfamily void Actor\+Controller\+::\+Handle\+Mouse\+Button (\begin{DoxyParamCaption}\item[{class \mbox{\hyperlink{class_window}{Window}} $\ast$}]{window,  }\item[{int}]{button,  }\item[{int}]{action,  }\item[{int}]{mods }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_controller_a7ede469072bd089eb9d123991167be90}{I\+Controller}}.
+
+\mbox{\Hypertarget{class_actor_controller_ae3db31a6f8ad9f471f88d803b702bdb4}\label{class_actor_controller_ae3db31a6f8ad9f471f88d803b702bdb4}} 
+\index{ActorController@{ActorController}!HandleMouseMove@{HandleMouseMove}}
+\index{HandleMouseMove@{HandleMouseMove}!ActorController@{ActorController}}
+\doxysubsubsection{\texorpdfstring{HandleMouseMove()}{HandleMouseMove()}}
+{\footnotesize\ttfamily void Actor\+Controller\+::\+Handle\+Mouse\+Move (\begin{DoxyParamCaption}\item[{class \mbox{\hyperlink{class_window}{Window}} $\ast$}]{window,  }\item[{double}]{xpos,  }\item[{double}]{ypos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_controller_ae76b08d1f4d5cdf2b367aa112f28b3c5}{I\+Controller}}.
+
+\mbox{\Hypertarget{class_actor_controller_a88a46c791b6dd7d80a6a01606693e6fa}\label{class_actor_controller_a88a46c791b6dd7d80a6a01606693e6fa}} 
+\index{ActorController@{ActorController}!HandleMouseScroll@{HandleMouseScroll}}
+\index{HandleMouseScroll@{HandleMouseScroll}!ActorController@{ActorController}}
+\doxysubsubsection{\texorpdfstring{HandleMouseScroll()}{HandleMouseScroll()}}
+{\footnotesize\ttfamily void Actor\+Controller\+::\+Handle\+Mouse\+Scroll (\begin{DoxyParamCaption}\item[{class \mbox{\hyperlink{class_window}{Window}} $\ast$}]{window,  }\item[{double}]{xoffset,  }\item[{double}]{yoffset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_controller_ac785c7bf69fbb9723890590e7d48553b}{I\+Controller}}.
+
+\mbox{\Hypertarget{class_actor_controller_a3b9d7951c65d798c9f993a9e876eb181}\label{class_actor_controller_a3b9d7951c65d798c9f993a9e876eb181}} 
+\index{ActorController@{ActorController}!Update@{Update}}
+\index{Update@{Update}!ActorController@{ActorController}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Actor\+Controller\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_i_controller_ab696be83337ae63d66e67a43d3e8f39c}{I\+Controller}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+core/\mbox{\hyperlink{_actor_controller_8h}{Actor\+Controller.\+h}}\item 
+core/\mbox{\hyperlink{_actor_controller_8cpp}{Actor\+Controller.\+cpp}}\end{DoxyCompactItemize}

@@ -7,9 +7,9 @@
 
 struct Vertex 
 {
-    glm::vec3 mPosition;
-    glm::vec3 mNormal;
-    glm::vec2 mTexCoords;
+    glm::vec3 mPosition{};
+    glm::vec3 mNormal{};
+    glm::vec2 mTexCoords{};
 
     Vertex() {};
     Vertex(const glm::vec3& position, const glm::vec3& normal, const glm::vec2& texCoords)

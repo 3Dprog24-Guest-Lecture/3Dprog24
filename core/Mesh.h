@@ -72,5 +72,12 @@ public:
     CollisionProperties mCollisionProperties{CollisionType::STATIC, CollisionResponse::BLOCK };
 };
 
+class StaticMeshActor : public MeshActor
+{
+public:
+    StaticMeshActor(const std::string& name, Mesh* mesh)
+        :MeshActor(name, mesh){};
+};
+
 // Can eventually create a MeshComponent
 //class MeshComponent : public Component, public IRender

@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['registerwindowcallbacks_0',['RegisterWindowCallbacks',['../class_window.html#a8dd72d1a38b999dc64f7b3ce867c1724',1,'Window']]],
-  ['removechild_1',['RemoveChild',['../class_actor.html#ae244e4ffa7005b14970d64616b1b717c',1,'Actor']]],
-  ['render_2',['Render',['../class_scene.html#a1ba6595d2800589ca50868b1b9ce0e56',1,'Scene::Render()'],['../class_window.html#a455cf4a5b8e34f1876750e7df194a19d',1,'Window::Render()']]],
-  ['renderer_2eh_3',['Renderer.h',['../_renderer_8h.html',1,'']]],
-  ['renderscenegraph_4',['RenderSceneGraph',['../class_scene.html#aaabe5f4be250a6752542925fa3ba0d54',1,'Scene']]],
-  ['run_5',['Run',['../class_application.html#a02799e64b246a6b6b8fa58477882a4be',1,'Application']]]
+  ['quadratic_205',['quadratic',['../class_point_light.html#a3dba0bf3332f30b9a5925fc16774dcc0',1,'PointLight']]],
+  ['query_206',['Query',['../class_actor.html#a3e6480c40842863595b388a3be2c1533',1,'Actor']]]
 ];

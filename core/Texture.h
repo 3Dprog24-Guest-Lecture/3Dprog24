@@ -31,7 +31,7 @@ public:
     static void Unload(const std::string& path);
     static void ClearCache();
 
-    bool IsValid() const { return mId == 0; };
+    bool IsValid() const { return mId != 0; };
     TextureID GetTextureID() const { return mId; };
 
 private:

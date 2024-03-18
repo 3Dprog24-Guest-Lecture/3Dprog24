@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['ebo_0',['EBO',['../_types_8h.html#a4104268a49b6a500e29e64279df45774',1,'Types.h']]],
-  ['endframe_1',['EndFrame',['../class_window.html#a23bf99dc7ae51eacb31f71b1b1d01975',1,'Window']]]
+  ['framebuffersizecallback_64',['FramebufferSizeCallback',['../class_scene.html#aa88204fea8e32a31ac8465892d5ed3d3',1,'Scene::FramebufferSizeCallback()'],['../class_window.html#a5b8d0424d4a856997f44780e8586e0d0',1,'Window::FramebufferSizeCallback()']]]
 ];

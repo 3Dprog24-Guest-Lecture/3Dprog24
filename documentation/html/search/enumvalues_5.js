@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['normal_0',['NORMAL',['../class_material.html#ad8d759af2ca304921c68ef56e9aaccaea2ec963c8a987b666b2dc3c190b7cf651',1,'Material']]]
+  ['ignore_634',['IGNORE',['../_collision_8h.html#a97e8562c7f43f19f908003d638ff930faa2e843feab94ef623fea888f07c28696',1,'Collision.h']]]
 ];

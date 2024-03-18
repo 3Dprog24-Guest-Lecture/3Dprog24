@@ -1,27 +1,4 @@
 var searchData=
 [
-  ['main_0',['main',['../3_dprog24_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'3Dprog24.cpp']]],
-  ['material_1',['Material',['../class_material.html',1,'Material'],['../class_material.html#a25b550b11c2b1c2154b3a79fc38c3938',1,'Material::Material()']]],
-  ['material_2ecpp_2',['Material.cpp',['../_material_8cpp.html',1,'']]],
-  ['material_2eh_3',['Material.h',['../_material_8h.html',1,'']]],
-  ['materialproperties_4',['MaterialProperties',['../struct_material_1_1_material_properties.html',1,'Material']]],
-  ['mcache_5',['mCache',['../class_mesh.html#a25da8a916ea7ec907bc90a89faefbbbd',1,'Mesh']]],
-  ['mchildren_6',['mChildren',['../class_actor.html#ad59a8d1d6e8407c01883d325884b25ec',1,'Actor']]],
-  ['mcolor_7',['mColor',['../struct_material_1_1_material_properties.html#a3aea141d203239a509f8b98a557c528c',1,'Material::MaterialProperties']]],
-  ['mcontroller_8',['mController',['../class_scene.html#ae204c3411ed6767d95af6bf54987ead4',1,'Scene']]],
-  ['mesh_9',['Mesh',['../class_mesh.html',1,'Mesh'],['../class_mesh.html#a9c5c38e06f3a061736ba23b43225e0cc',1,'Mesh::Mesh()']]],
-  ['mesh_2ecpp_10',['Mesh.cpp',['../_mesh_8cpp.html',1,'']]],
-  ['mesh_2eh_11',['Mesh.h',['../_mesh_8h.html',1,'']]],
-  ['meshactor_12',['MeshActor',['../class_mesh_actor.html',1,'MeshActor'],['../class_mesh_actor.html#abf3da0ba75ebc06176e31192bb58aaac',1,'MeshActor::MeshActor(const std::string &amp;name, Mesh *mesh)']]],
-  ['mmesh_13',['mMesh',['../class_mesh_actor.html#ab102d04f498a18ea948c066ef668b720',1,'MeshActor']]],
-  ['mnormal_14',['mNormal',['../struct_vertex.html#a1954547988e2fed7e7e936eb74e09cae',1,'Vertex']]],
-  ['mousebuttoncallback_15',['MouseButtonCallback',['../class_scene.html#a908928361751263dd6bb2e08b8b4a3ba',1,'Scene::MouseButtonCallback()'],['../class_window.html#a0daa680cac00b0f41b1748b2c90fbc61',1,'Window::MouseButtonCallback()']]],
-  ['mousemovecallback_16',['MouseMoveCallback',['../class_scene.html#a651db2e079e412d2bf3e90053b7d388d',1,'Scene::MouseMoveCallback()'],['../class_window.html#ad7d57b16b06f5653f0338d6724a728ce',1,'Window::MouseMoveCallback()']]],
-  ['mousescrollcallback_17',['MouseScrollCallback',['../class_scene.html#a607110ecbe26130863acae1281ffead5',1,'Scene::MouseScrollCallback()'],['../class_window.html#a6f45a33505d5329276efc75a882f7927',1,'Window::MouseScrollCallback()']]],
-  ['mparent_18',['mParent',['../class_actor.html#a2e23b38fa11b43c4e5cf57d65b8349a4',1,'Actor']]],
-  ['mposition_19',['mPosition',['../struct_vertex.html#a1b8266b61e52e83271623e40b9bbba07',1,'Vertex']]],
-  ['mscenecamera_20',['mSceneCamera',['../class_scene.html#af9cbdc85720f3fa313d38745bd75a719',1,'Scene']]],
-  ['mscenegraph_21',['mSceneGraph',['../class_scene.html#ac0844f31d54cad2a8c4cdc25202ed21c',1,'Scene']]],
-  ['mshininess_22',['mShininess',['../struct_material_1_1_material_properties.html#a905ca02e6231fccdf1228e6b0a796306',1,'Material::MaterialProperties']]],
-  ['mtexcoords_23',['mTexCoords',['../struct_vertex.html#a2cff7003a258a96a3a26314024655790',1,'Vertex']]]
+  ['normal_193',['NORMAL',['../class_material.html#ad8d759af2ca304921c68ef56e9aaccaea2ec963c8a987b666b2dc3c190b7cf651',1,'Material']]]
 ];

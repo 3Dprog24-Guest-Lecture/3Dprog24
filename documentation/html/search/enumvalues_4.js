@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['local_0',['Local',['../class_actor.html#a3c153709d0bc28c652f10218ca6de712a509820290d57f333403f490dde7316f4',1,'Actor']]]
+  ['diffuse_632',['DIFFUSE',['../class_material.html#ad8d759af2ca304921c68ef56e9aaccaea1f17ceafe04d70586701c6d8736dcf00',1,'Material']]],
+  ['dynamic_633',['DYNAMIC',['../_collision_8h.html#aa884075f403706dceea29a61771a0d44a0fcc90da4811c877ba9f9c12f7d60bc9',1,'Collision.h']]]
 ];

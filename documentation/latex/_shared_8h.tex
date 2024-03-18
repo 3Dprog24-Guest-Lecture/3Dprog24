@@ -1,0 +1,66 @@
+\hypertarget{_shared_8h}{}\doxysection{core/\+Model\+Loader/\+Shared.h File Reference}
+\label{_shared_8h}\index{core/ModelLoader/Shared.h@{core/ModelLoader/Shared.h}}
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{_shared_8h_af44847a11d082b8e86738f2b1e866c9b}{To\+Relative\+Path}} (const std\+::string \&base\+Path, const std\+::string \&absolute\+Path)
+\item 
+std\+::string \mbox{\hyperlink{_shared_8h_ab24b66dce6024393a3b775b5e5325d38}{Get\+File\+Name\+From\+Path}} (const std\+::string \&file\+Path)
+\item 
+std\+::string \mbox{\hyperlink{_shared_8h_af252ff1df365d9c524663defcf1a4425}{Get\+Directory\+Path}} (const std\+::string \&file\+Path)
+\item 
+std\+::string \mbox{\hyperlink{_shared_8h_a0cb382ca9e5a052ee326a9dd44d72214}{Get\+File\+Extension}} (const std\+::string \&file\+Path)
+\item 
+std\+::string \mbox{\hyperlink{_shared_8h_a32f36289bacc1391d5edd75cbc467862}{Remove\+File\+Extension}} (const std\+::string \&file\+Path)
+\item 
+bool \mbox{\hyperlink{_shared_8h_aed7ee90e53b873144a3754993d8dc1b9}{Has\+Collision\+Prefix}} (const std\+::string \&file\+Path, std\+::string \&out\+Prefix)
+\item 
+bool \mbox{\hyperlink{_shared_8h_adcd08fc5f24f4733b02b7686c085e2e3}{Has\+Light\+Prefix}} (const std\+::string \&file\+Path, std\+::string \&out\+Prefix)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_shared_8h_af252ff1df365d9c524663defcf1a4425}\label{_shared_8h_af252ff1df365d9c524663defcf1a4425}} 
+\index{Shared.h@{Shared.h}!GetDirectoryPath@{GetDirectoryPath}}
+\index{GetDirectoryPath@{GetDirectoryPath}!Shared.h@{Shared.h}}
+\doxysubsubsection{\texorpdfstring{GetDirectoryPath()}{GetDirectoryPath()}}
+{\footnotesize\ttfamily std\+::string Get\+Directory\+Path (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{_shared_8h_a0cb382ca9e5a052ee326a9dd44d72214}\label{_shared_8h_a0cb382ca9e5a052ee326a9dd44d72214}} 
+\index{Shared.h@{Shared.h}!GetFileExtension@{GetFileExtension}}
+\index{GetFileExtension@{GetFileExtension}!Shared.h@{Shared.h}}
+\doxysubsubsection{\texorpdfstring{GetFileExtension()}{GetFileExtension()}}
+{\footnotesize\ttfamily std\+::string Get\+File\+Extension (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{_shared_8h_ab24b66dce6024393a3b775b5e5325d38}\label{_shared_8h_ab24b66dce6024393a3b775b5e5325d38}} 
+\index{Shared.h@{Shared.h}!GetFileNameFromPath@{GetFileNameFromPath}}
+\index{GetFileNameFromPath@{GetFileNameFromPath}!Shared.h@{Shared.h}}
+\doxysubsubsection{\texorpdfstring{GetFileNameFromPath()}{GetFileNameFromPath()}}
+{\footnotesize\ttfamily std\+::string Get\+File\+Name\+From\+Path (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{_shared_8h_aed7ee90e53b873144a3754993d8dc1b9}\label{_shared_8h_aed7ee90e53b873144a3754993d8dc1b9}} 
+\index{Shared.h@{Shared.h}!HasCollisionPrefix@{HasCollisionPrefix}}
+\index{HasCollisionPrefix@{HasCollisionPrefix}!Shared.h@{Shared.h}}
+\doxysubsubsection{\texorpdfstring{HasCollisionPrefix()}{HasCollisionPrefix()}}
+{\footnotesize\ttfamily bool Has\+Collision\+Prefix (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Path,  }\item[{std\+::string \&}]{out\+Prefix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{_shared_8h_adcd08fc5f24f4733b02b7686c085e2e3}\label{_shared_8h_adcd08fc5f24f4733b02b7686c085e2e3}} 
+\index{Shared.h@{Shared.h}!HasLightPrefix@{HasLightPrefix}}
+\index{HasLightPrefix@{HasLightPrefix}!Shared.h@{Shared.h}}
+\doxysubsubsection{\texorpdfstring{HasLightPrefix()}{HasLightPrefix()}}
+{\footnotesize\ttfamily bool Has\+Light\+Prefix (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Path,  }\item[{std\+::string \&}]{out\+Prefix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{_shared_8h_a32f36289bacc1391d5edd75cbc467862}\label{_shared_8h_a32f36289bacc1391d5edd75cbc467862}} 
+\index{Shared.h@{Shared.h}!RemoveFileExtension@{RemoveFileExtension}}
+\index{RemoveFileExtension@{RemoveFileExtension}!Shared.h@{Shared.h}}
+\doxysubsubsection{\texorpdfstring{RemoveFileExtension()}{RemoveFileExtension()}}
+{\footnotesize\ttfamily std\+::string Remove\+File\+Extension (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{_shared_8h_af44847a11d082b8e86738f2b1e866c9b}\label{_shared_8h_af44847a11d082b8e86738f2b1e866c9b}} 
+\index{Shared.h@{Shared.h}!ToRelativePath@{ToRelativePath}}
+\index{ToRelativePath@{ToRelativePath}!Shared.h@{Shared.h}}
+\doxysubsubsection{\texorpdfstring{ToRelativePath()}{ToRelativePath()}}
+{\footnotesize\ttfamily std\+::string To\+Relative\+Path (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{base\+Path,  }\item[{const std\+::string \&}]{absolute\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+

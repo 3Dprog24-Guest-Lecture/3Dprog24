@@ -1,5 +1,11 @@
 var searchData=
 [
-  ['operator_3c_3c_0',['operator&lt;&lt;',['../_logger_8h.html#a75de70eccd8c4f7fab71efd18b33d243',1,'operator&lt;&lt;(std::ostream &amp;os, const glm::vec&lt; L, T, Q &gt; &amp;vec):&#160;Logger.h'],['../_logger_8h.html#aa494e853ee37cee23aa8c45b576fab19',1,'operator&lt;&lt;(std::ostream &amp;os, const glm::mat&lt; C, R, T, Q &gt; &amp;mat):&#160;Logger.h']]],
-  ['operator_3d_1',['operator=',['../class_actor.html#a2694d37daf78fdd5c472bbced3f411b5',1,'Actor::operator=(const Actor &amp;)=delete'],['../class_actor.html#a9be3746bee0b124b6ca67bbaa838288f',1,'Actor::operator=(Actor &amp;&amp;)=default'],['../class_material.html#aa114078f437ae09781af21ed23dfce45',1,'Material::operator=()'],['../class_scene.html#abe04ae93a28174a72f0066fc32cd2eb0',1,'Scene::operator=(const Scene &amp;)=delete'],['../class_scene.html#aae8fe193a2eea4a1b868377d59023b4a',1,'Scene::operator=(Scene &amp;&amp;)=delete'],['../struct_tag_unique.html#a85298f7013b272531ac3b2c51ffae747',1,'TagUnique::operator=(const TagUnique &amp;)=delete'],['../struct_tag_unique.html#a08e9be22314aabf30eee35595591eb8f',1,'TagUnique::operator=(TagUnique &amp;&amp;)=default']]]
+  ['physicscomponent_197',['PhysicsComponent',['../class_physics_component.html',1,'']]],
+  ['physicscomponent_2ecpp_198',['PhysicsComponent.cpp',['../_physics_component_8cpp.html',1,'']]],
+  ['physicscomponent_2eh_199',['PhysicsComponent.h',['../_physics_component_8h.html',1,'']]],
+  ['pointlight_200',['PointLight',['../class_point_light.html',1,'']]],
+  ['pointlight_2eh_201',['PointLight.h',['../_point_light_8h.html',1,'']]],
+  ['pointlightactor_202',['PointLightActor',['../class_point_light_actor.html',1,'PointLightActor'],['../class_point_light_actor.html#aea6dc6a72a8b7bd103187b36f221f3f8',1,'PointLightActor::PointLightActor()']]],
+  ['printmatrix_203',['PrintMatrix',['../_assimp_utility_8h.html#ab8953382e8858fc51024f60c9165ecc6',1,'AssimpUtility.h']]],
+  ['printvector3d_204',['PrintVector3D',['../_assimp_utility_8h.html#afd8bbd462fbbd4fdfe0ea091e84614f1',1,'AssimpUtility.h']]]
 ];

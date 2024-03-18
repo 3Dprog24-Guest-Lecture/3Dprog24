@@ -1,12 +1,12 @@
 #pragma once
 #include <Types.h>
-#include <initializer_list>
+#include <array>
 #include <string>
 
 class Skybox
 {
 public:
-	Skybox(std::initializer_list<std::string> texturePaths);
+	Skybox(const std::array<std::string, 6>& texturePaths);
 	~Skybox();
 
 	void Render(class CameraActor* renderCamera);

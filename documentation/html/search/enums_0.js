@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['loglevel_0',['LogLevel',['../namespace_logger.html#ac744681e23720966b5f430ec2060da36',1,'Logger']]]
+  ['collisionresponse_620',['CollisionResponse',['../_collision_8h.html#a97e8562c7f43f19f908003d638ff930f',1,'Collision.h']]],
+  ['collisiontype_621',['CollisionType',['../_collision_8h.html#aa884075f403706dceea29a61771a0d44',1,'Collision.h']]]
 ];

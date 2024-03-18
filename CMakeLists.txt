@@ -97,11 +97,8 @@ add_subdirectory(libs/assimp)
 # Add source to this project's executable.
 add_executable(3Dprog24 ${IMGUI_HEADERS} ${IMGUI_SOURCE} ${HEADER_FILES} ${SRC_FILES})
 
-#target_link_libraries(3Dprog24 PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/libs/glfw3.lib)
 target_link_libraries(3Dprog24 glfw)
 target_link_libraries(3Dprog24 assimp)
-
-#target_link_libraries(3Dprog24 fbx)
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET 3Dprog24 PROPERTY CXX_STANDARD 20)
