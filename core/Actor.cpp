@@ -134,14 +134,10 @@ const glm::mat4 Actor::GetLocalTransformMatrix() const
 
 glm::mat4 Actor::GetWorldTransformMatrix() const
 {
-    glm::mat4 globalTransform = mTransform.GetTransformMatrix();
-    const Actor* current = this;
-    while (current->mParent != nullptr)
-    {
-        globalTransform = current->mParent->GetLocalTransformMatrix() * globalTransform;
-        current = current->mParent;
-    }
-    return globalTransform;
+    if (mParent == nullptr) 
+        return mTransform.GetTransformMatrix();
+
+    return mParent->GetWorldTransformMatrix() * mTransform.GetTransformMatrix();
 }
 
 std::vector<Actor*>& Actor::GetChildren()
@@ -161,15 +157,7 @@ const glm::vec3& Actor::GetLocalPosition() const
 
 glm::vec3 Actor::GetWorldPosition() const
 {
-    glm::vec3 globalPosition = mTransform.GetPosition();
-    const Actor* current = this->mParent;
-    while (current != nullptr)
-    {
-        globalPosition = glm::rotate(current->mTransform.GetRotation(), globalPosition);
-        globalPosition += current->mTransform.GetPosition();
-        current = current->mParent;
-    }
-    return globalPosition;
+    return glm::vec3(GetWorldTransformMatrix()[3]);
 }
 
 const glm::quat& Actor::GetLocalRotation() const
@@ -179,14 +167,13 @@ const glm::quat& Actor::GetLocalRotation() const
 
 glm::quat Actor::GetWorldRotation() const 
 {
-    glm::quat globalRotation = mTransform.GetRotation();
-    const Actor* current = this->mParent;
-    while (current != nullptr) 
-    {
-        globalRotation = current->mTransform.GetRotation() * globalRotation;
-        current = current->mParent;
-    }
-    return globalRotation;
+    glm::vec3 scale;
+    glm::quat rotation;
+    glm::vec3 translation;
+    glm::vec3 skew;
+    glm::vec4 perspective;
+    glm::decompose(GetWorldTransformMatrix(), scale, rotation, translation, skew, perspective);
+    return rotation;
 }
 
 const glm::vec3& Actor::GetLocalScale() const
@@ -196,12 +183,11 @@ const glm::vec3& Actor::GetLocalScale() const
 
 glm::vec3 Actor::GetWorldScale() const
 {
-    glm::vec3 globalScale = mTransform.GetScale();
-    const Actor* current = this->mParent;
-    while (current != nullptr) 
-    {
-        globalScale *= current->mTransform.GetScale();
-        current = current->mParent;
-    }
-    return globalScale;
+    glm::vec3 scale;
+    glm::quat rotation;
+    glm::vec3 translation;
+    glm::vec3 skew;
+    glm::vec4 perspective;
+    glm::decompose(GetWorldTransformMatrix(), scale, rotation, translation, skew, perspective);
+    return scale;
 }

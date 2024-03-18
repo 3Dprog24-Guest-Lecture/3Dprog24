@@ -21,13 +21,15 @@ public:
 
     // Actor update should run first
     virtual void Update(float dt) {};
-    // Components update after
+    // Components update after actor
     void UpdateComponents(float dt);
 
     // Scene Graph
     void SetParent(Actor* parent);
     void AddChild(Actor* child);
+    void RemoveChild(Actor* child);
 
+    // Adders
     template <typename T>
     void AddComponent(const std::string& componentName)
     {
@@ -37,8 +39,6 @@ public:
         component->Init();
         mComponents.emplace_back(component);
     }
-
-    void RemoveChild(Actor* child);
 
     // Setters
     void SetTransform(const Transform& transform);

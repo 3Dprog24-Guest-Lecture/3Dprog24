@@ -48,14 +48,13 @@ void Scene::LoadContent()
 	mSceneGraph.AddChild(&mSceneCamera);
 	mSceneGraph.AddChild(mCubeActor0);
 	mSceneGraph.AddChild(mStaticMeshActor0);
-
-	mCubeActor0->AddComponent<PhysicsComponent>("Cube0PhysicsComponent");
-	mCubeActor0->mCollisionProperties.mType = CollisionType::DYNAMIC;
-
 	//mSceneGraph.AddChild(mPointLightActor);
 	//mSceneGraph.AddChild(mDirectionalLightActor);
 
+	mCubeActor0->AddComponent<PhysicsComponent>("Cube0PhysicsComponent");
+	mCubeActor0->mCollisionProperties.mType = CollisionType::DYNAMIC;
 	mCubeActor0->SetWorldPosition({ 0.f, 10.f, 0.f });
+
 	mSceneCamera.SetWorldPosition({ 0.f, 2.f, 3.f });
 	mSceneCamera.SetPitch(-30.f);
 
