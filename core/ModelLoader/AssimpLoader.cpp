@@ -215,7 +215,6 @@ Material* AssimpLoader::ProcessMaterial(aiMaterial* material)
 		internalMaterial->SetTexture(Material::ALPHA, Texture::Load(texturePath));
 	}
 
-	// Material properties
 	//Material::MaterialProperties materialProperties;
 	//materialProperties.mAlphaCutoff = GetProperty<float>("$mat.gltf.alphaCutoff", material);
 	//materialProperties.mAmbient = GetProperty<glm::vec3>("$mat.ambient", material);

@@ -37,7 +37,7 @@ set( IMGUI_SOURCE
 
 set (HEADER_FILES
   includes/stb_image.h
-  "core/ModelLoader/Shared.h"
+  core/ModelLoader/Shared.h
   core/Camera.h
   core/Window.h
   core/Application.h
@@ -60,8 +60,15 @@ set (HEADER_FILES
   core/Component.h 
   core/Collision.h 
   core/Skybox.h 
-   
-  "core/ModelLoader/AssimpLoader.h" "core/ModelLoader/AssimpUtility.h")
+  core/AABB.h 
+  core/ActorController.h
+  core/ModelLoader/AssimpLoader.h 
+  core/ModelLoader/AssimpUtility.h
+  core/Lights/Lights.h 
+  core/Lights/DirectionalLight.h 
+  core/Lights/PointLight.h  
+  core/PhysicsComponent.h
+  core/Collision.h)
 
 set (SRC_FILES
   3Dprog24.cpp
@@ -77,7 +84,10 @@ set (SRC_FILES
   core/Actor.cpp
   core/CameraController.cpp
   core/PhysicsComponent.cpp
-  core/Skybox.cpp  "core/ModelLoader/AssimpLoader.cpp")
+  core/Skybox.cpp  
+  core/ModelLoader/AssimpLoader.cpp
+  core/PhysicsComponent.cpp
+  core/ActorController.cpp)
 
 add_subdirectory(libs/glfw-3.3.9)
 
@@ -85,7 +95,7 @@ add_subdirectory(libs/glfw-3.3.9)
 add_subdirectory(libs/assimp)
 
 # Add source to this project's executable.
-add_executable(3Dprog24 ${IMGUI_HEADERS} ${IMGUI_SOURCE} ${HEADER_FILES} ${SRC_FILES} "core/AABB.h"  "core/ActorController.h" "core/ActorController.cpp" "core/Lights/Lights.h" "core/Lights/DirectionalLight.h" "core/Lights/PointLight.h"  "core/PhysicsComponent.h" "core/PhysicsComponent.cpp" "core/Collision.h" )
+add_executable(3Dprog24 ${IMGUI_HEADERS} ${IMGUI_SOURCE} ${HEADER_FILES} ${SRC_FILES})
 
 #target_link_libraries(3Dprog24 PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/libs/glfw3.lib)
 target_link_libraries(3Dprog24 glfw)
