@@ -63,12 +63,12 @@ Texture* Texture::Load(const std::string& path)
 
 Texture* Texture::LoadWhiteTexture()
 {
-    return Load(SOURCE_DIRECTORY("textures/DefaultTextures/WhiteTexture.jpg"));
+    return Load(SOURCE_DIRECTORY("assets/textures/defaultTextures/WhiteTexture.jpg"));
 }
 
 Texture* Texture::LoadBlackTexture()
 {
-    return Load(SOURCE_DIRECTORY("textures/DefaultTextures/BlackTexture.jpg"));
+    return Load(SOURCE_DIRECTORY("assets/textures/defaultTextures/BlackTexture.jpg"));
 }
 
 void Texture::Unload(const std::string& path)

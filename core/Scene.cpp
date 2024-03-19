@@ -3,16 +3,16 @@
 #include <Mesh.h>
 #include <Material.h>
 #include <Shader.h>
-#include <Camera.h>
+#include <Camera/Camera.h>
 #include <Actor.h>
 #include <Defines.h>
-#include <CameraController.h>
+#include <Camera/CameraController.h>
 #include <ActorController.h>
 #include <Renderer.h>
 #include <imgui.h>
 #include <GLFW/glfw3.h>
-#include <PhysicsComponent.h>
-#include <Skybox.h>
+#include <Physics/PhysicsComponent.h>
+#include <Skybox/Skybox.h>
 #include <ModelLoader/AssimpLoader.h>
 
 Scene::Scene(const std::string& name)
@@ -22,8 +22,8 @@ void Scene::LoadContent()
 {
 	LOG_INFO("Scene::LoadContent");
 
-	Texture* diffuseTex = Texture::Load(SOURCE_DIRECTORY("textures/container2.jpg"));
-	Texture* specularTex = Texture::Load(SOURCE_DIRECTORY("textures/container2_specular.jpg"));
+	Texture* diffuseTex = Texture::Load(SOURCE_DIRECTORY("assets/textures/container2.jpg"));
+	Texture* specularTex = Texture::Load(SOURCE_DIRECTORY("assets/textures/container2_specular.jpg"));
 	Material* mat = Material::Load("Default", { diffuseTex, specularTex }, {});
 
 	mCubeActor0 = new MeshActor("Cube0", Mesh::LoadCube(mat));
@@ -32,18 +32,18 @@ void Scene::LoadContent()
 	mDirectionalLightActor = new DirectionalLightActor("DirectionalLight0");
 
 	mStaticMeshActor0 = new StaticMeshActor("StaticMeshActor0");
-	AssimpLoader::Load(SOURCE_DIRECTORY("Assets/Models/Sponza/Sponza.fbx"), mStaticMeshActor0);
+	AssimpLoader::Load(SOURCE_DIRECTORY("assets/models/sponza/sponza.fbx"), mStaticMeshActor0);
 
 	mSkybox = new Skybox({
-		SOURCE_DIRECTORY("textures/Starfield_And_Haze/Starfield_And_Haze_left.png"),
-		SOURCE_DIRECTORY("textures/Starfield_And_Haze/Starfield_And_Haze_right.png"),
-		SOURCE_DIRECTORY("textures/Starfield_And_Haze/Starfield_And_Haze_up.png"),
-		SOURCE_DIRECTORY("textures/Starfield_And_Haze/Starfield_And_Haze_down.png"),
-		SOURCE_DIRECTORY("textures/Starfield_And_Haze/Starfield_And_Haze_front.png"),
-		SOURCE_DIRECTORY("textures/Starfield_And_Haze/Starfield_And_Haze_back.png"),
+		SOURCE_DIRECTORY("assets/textures/starfield_And_Haze/Starfield_And_Haze_left.png"),
+		SOURCE_DIRECTORY("assets/textures/starfield_And_Haze/Starfield_And_Haze_right.png"),
+		SOURCE_DIRECTORY("assets/textures/starfield_And_Haze/Starfield_And_Haze_up.png"),
+		SOURCE_DIRECTORY("assets/textures/starfield_And_Haze/Starfield_And_Haze_down.png"),
+		SOURCE_DIRECTORY("assets/textures/starfield_And_Haze/Starfield_And_Haze_front.png"),
+		SOURCE_DIRECTORY("assets/textures/starfield_And_Haze/Starfield_And_Haze_back.png"),
 		});
 
-	mShader = new Shader(SOURCE_DIRECTORY("shaders/shader.vs"), SOURCE_DIRECTORY("shaders/shader.fs"));
+	mShader = new Shader(SOURCE_DIRECTORY("assets/shaders/shader.vs"), SOURCE_DIRECTORY("assets/shaders/shader.fs"));
 
 	mSceneGraph.AddChild(&mSceneCamera);
 	mSceneGraph.AddChild(mCubeActor0);
@@ -87,19 +87,19 @@ void Scene::UpdateInputController(float dt)
 		mActiveController->Update(dt);
 }
 
-void Scene::UpdateSceneGraph(Actor* actor, float dt, Transform globalTransform)
+void Scene::UpdateSceneGraph(Actor* actor, float dt, Transform globalParentTransform)
 {
 	if (!actor) return;
 
 	actor->Update(dt);
 	actor->UpdateComponents(dt);
 
-	globalTransform.SetTransformMatrix(globalTransform.GetTransformMatrix() * actor->GetLocalTransformMatrix());
+	globalParentTransform.SetTransformMatrix(globalParentTransform.GetTransformMatrix() * actor->GetLocalTransformMatrix());
 
 	const auto& children = actor->GetChildren();
 	for (Actor* child : children) 
 	{
-		UpdateSceneGraph(child, dt, globalTransform);
+		UpdateSceneGraph(child, dt, globalParentTransform);
 	}
 }
 
@@ -186,22 +186,22 @@ void Scene::HandleCollision()
 	}
 }
 
-void Scene::RenderSceneGraph(Actor* actor, float dt, Transform globalTransform)
+void Scene::RenderSceneGraph(Actor* actor, float dt, Transform globalParentTransform)
 {
 	if (!actor) return;
 
-	globalTransform.SetTransformMatrix(globalTransform.GetTransformMatrix() * actor->GetLocalTransformMatrix());
+	globalParentTransform.SetTransformMatrix(globalParentTransform.GetTransformMatrix() * actor->GetLocalTransformMatrix());
 
 	if (auto iRender = dynamic_cast<IRender*>(actor))
 	{
-		mShader->setMat4("model", globalTransform.GetTransformMatrix());
+		mShader->setMat4("model", globalParentTransform.GetTransformMatrix());
 		iRender->Draw(mShader);
 	}
 
 	const auto& children = actor->GetChildren();
 	for (Actor* child : children)
 	{
-		RenderSceneGraph(child, dt, globalTransform);
+		RenderSceneGraph(child, dt, globalParentTransform);
 	}
 }
 

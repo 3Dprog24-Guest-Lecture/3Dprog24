@@ -9,8 +9,8 @@
 #include <unordered_map>
 #include <Actor.h>
 #include <Types.h>
-#include <AABB.h>
-#include <Collision.h>
+#include <Collision/AABB.h>
+#include <Collision/Collision.h>
 
 /**
  * @class Mesh
@@ -72,7 +72,10 @@ public:
     CollisionProperties mCollisionProperties{CollisionType::STATIC, CollisionResponse::BLOCK };
 };
 
-// Describes just the root of several connected meshes
+/**
+ * @class StaticMeshActor
+ * @brief Represents the root of several connected meshes.
+*/
 class StaticMeshActor : public Actor
 {
 public:

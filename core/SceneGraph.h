@@ -1,7 +1,7 @@
 #pragma once
 
 #include <Actor.h>
-#include <AABB.h>
+#include <Collision/AABB.h>
 
 /**
  * @class SceneGraph
