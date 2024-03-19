@@ -9,7 +9,8 @@
 //#define DEBUG_MODE
 
 template <glm::length_t L, typename T, glm::qualifier Q>
-std::ostream& operator<<(std::ostream& os, const glm::vec<L, T, Q>& vec) {
+std::ostream& operator<<(std::ostream& os, const glm::vec<L, T, Q>& vec) 
+{
 	os << "(";
 	for (glm::length_t i = 0; i < L; ++i) {
 		os << vec[i];
@@ -20,7 +21,8 @@ std::ostream& operator<<(std::ostream& os, const glm::vec<L, T, Q>& vec) {
 }
 
 template <glm::length_t C, glm::length_t R, typename T, glm::qualifier Q>
-std::ostream& operator<<(std::ostream& os, const glm::mat<C, R, T, Q>& mat) {
+std::ostream& operator<<(std::ostream& os, const glm::mat<C, R, T, Q>& mat) 
+{
 	for (glm::length_t i = 0; i < R; ++i) {
 		os << (i == 0 ? "[" : " ");
 		for (glm::length_t j = 0; j < C; ++j) {
@@ -34,7 +36,8 @@ std::ostream& operator<<(std::ostream& os, const glm::mat<C, R, T, Q>& mat) {
 
 namespace Logger
 {
-	enum class LogLevel {
+	enum class LogLevel 
+	{
 		_DEFAULT_,
 		_DEBUG_,
 		_INFO_,
@@ -43,7 +46,8 @@ namespace Logger
 	};
 
 	template <LogLevel level>
-	void log(const char* format, ...) {
+	void log(const char* format, ...) 
+	{
 		std::ostringstream oss;
 
 		// Set color based on log level
@@ -75,8 +79,10 @@ namespace Logger
 		std::cout << oss.str();
 	}
 
-	constexpr const char* levelToStr(LogLevel level) {
-		switch (level) {
+	constexpr const char* levelToStr(LogLevel level) 
+	{
+		switch (level) 
+		{
 		case LogLevel::_DEBUG_:
 			return "[DEBUG] ";
 		case LogLevel::_INFO_:

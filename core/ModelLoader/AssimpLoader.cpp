@@ -225,6 +225,24 @@ Material* AssimpLoader::ProcessMaterial(aiMaterial* material)
         LOG_INFO("AssimpLoader::ProcessMaterial::Texture::Opacity::Path: %s", texturePath.c_str());
     }
 
+    
+    Material::MaterialProperties materialProperties;
+    aiColor3D color(0.f, 0.f, 0.f);
+
+    // To get a material property. Inspect the AI_MATKEY_COLOR_DIFFUSE define to see other properties
+    if (AI_SUCCESS == material->Get(AI_MATKEY_COLOR_DIFFUSE, color))
+    {
+        materialProperties.mDiffuse = { color.r, color.g, color.b };
+    }
+
+    float shininess = 64.f;
+    if (material->Get(AI_MATKEY_SHININESS, shininess) == AI_SUCCESS)
+    {
+        materialProperties.mShininess = shininess;
+    }
+
+    internalMaterial->SetProperties(materialProperties);
+
     return internalMaterial;
 }
 
