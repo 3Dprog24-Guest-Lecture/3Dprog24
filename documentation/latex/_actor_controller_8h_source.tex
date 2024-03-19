@@ -1,0 +1,28 @@
+\doxysection{Actor\+Controller.\+h}
+\hypertarget{_actor_controller_8h_source}{}\label{_actor_controller_8h_source}\index{core/ActorController.h@{core/ActorController.h}}
+\mbox{\hyperlink{_actor_controller_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_controller_8h}{Controller.h}}>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_actor_controller}{ActorController}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_controller}{IController}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_actor_controller_aa7b17d804038bbd1f67db08d997fee2b}{ActorController}}(\textcolor{keyword}{class}\ \mbox{\hyperlink{class_actor}{Actor}}*\ actor)\ :\ mActor(actor)\ \{\}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_actor_controller_a3b9d7951c65d798c9f993a9e876eb181}{Update}}(\textcolor{keywordtype}{float}\ dt)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_actor_controller_ae3db31a6f8ad9f471f88d803b702bdb4}{HandleMouseMove}}(\textcolor{keyword}{class}\ \mbox{\hyperlink{class_window}{Window}}*\ window,\ \textcolor{keywordtype}{double}\ xpos,\ \textcolor{keywordtype}{double}\ ypos)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_actor_controller_a88a46c791b6dd7d80a6a01606693e6fa}{HandleMouseScroll}}(\textcolor{keyword}{class}\ \mbox{\hyperlink{class_window}{Window}}*\ window,\ \textcolor{keywordtype}{double}\ xoffset,\ \textcolor{keywordtype}{double}\ yoffset)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_actor_controller_aa0b52b2ef395526a1534d0389501d03e}{HandleMouseButton}}(\textcolor{keyword}{class}\ \mbox{\hyperlink{class_window}{Window}}*\ window,\ \textcolor{keywordtype}{int}\ button,\ \textcolor{keywordtype}{int}\ action,\ \textcolor{keywordtype}{int}\ mods)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_actor_controller_a4ecaf4d7dc77574e2a4c960a96688aef}{HandleKeyboard}}(\textcolor{keyword}{class}\ \mbox{\hyperlink{class_window}{Window}}*\ window,\ \textcolor{keywordtype}{int}\ key,\ \textcolor{keywordtype}{int}\ scancode,\ \textcolor{keywordtype}{int}\ action,\ \textcolor{keywordtype}{int}\ mods)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ UpdateActor(\textcolor{keywordtype}{float}\ dt);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_actor}{Actor}}*\ mActor;}
+\DoxyCodeLine{00028\ \ \ \ \ std::map<int,\ bool>\ mKeyStates;}
+\DoxyCodeLine{00029\ \};}
+
+\end{DoxyCode}

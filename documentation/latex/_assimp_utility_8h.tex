@@ -1,14 +1,14 @@
-\hypertarget{_assimp_utility_8h}{}\doxysection{core/\+Model\+Loader/\+Assimp\+Utility.h File Reference}
-\label{_assimp_utility_8h}\index{core/ModelLoader/AssimpUtility.h@{core/ModelLoader/AssimpUtility.h}}
+\doxysection{core/\+Model\+Loader/\+Assimp\+Utility.h File Reference}
+\hypertarget{_assimp_utility_8h}{}\label{_assimp_utility_8h}\index{core/ModelLoader/AssimpUtility.h@{core/ModelLoader/AssimpUtility.h}}
 {\ttfamily \#include $<$assimp/scene.\+h$>$}\newline
 {\ttfamily \#include $<$glm/glm.\+hpp$>$}\newline
 {\ttfamily \#include $<$iostream$>$}\newline
-\doxysubsection*{Functions}
+\doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{_assimp_utility_8h_ae3db1e4777165f5c5cef3bc10cdd5eb9}{Get\+Property}} (const std\+::string \&key, ai\+Material $\ast$material)
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{_assimp_utility_8h_ae3db1e4777165f5c5cef3bc10cdd5eb9}{Get\+Property}} (const std\+::string \&key, ai\+Material \texorpdfstring{$\ast$}{*}material)
 \item 
-ai\+Matrix4x4 \mbox{\hyperlink{_assimp_utility_8h_ab55a1fe82a8295657210fd0dc4ca29dd}{Get\+Transformation\+Matrix}} (const ai\+Node $\ast$node)
+ai\+Matrix4x4 \mbox{\hyperlink{_assimp_utility_8h_ab55a1fe82a8295657210fd0dc4ca29dd}{Get\+Transformation\+Matrix}} (const ai\+Node \texorpdfstring{$\ast$}{*}node)
 \item 
 ai\+Vector3D \mbox{\hyperlink{_assimp_utility_8h_a8995186f79ad49b51564a7b82c3977fa}{Transform\+Position}} (const ai\+Matrix4x4 \&transform, const ai\+Vector3D \&position)
 \item 
@@ -21,38 +21,38 @@ glm\+::mat4 \mbox{\hyperlink{_assimp_utility_8h_a573e80a733121917f2fb454cae5d6b4
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{_assimp_utility_8h_a573e80a733121917f2fb454cae5d6b47}\label{_assimp_utility_8h_a573e80a733121917f2fb454cae5d6b47}} 
+\Hypertarget{_assimp_utility_8h_a573e80a733121917f2fb454cae5d6b47}\label{_assimp_utility_8h_a573e80a733121917f2fb454cae5d6b47} 
 \index{AssimpUtility.h@{AssimpUtility.h}!AiMatrix4x4ToGlm@{AiMatrix4x4ToGlm}}
 \index{AiMatrix4x4ToGlm@{AiMatrix4x4ToGlm}!AssimpUtility.h@{AssimpUtility.h}}
 \doxysubsubsection{\texorpdfstring{AiMatrix4x4ToGlm()}{AiMatrix4x4ToGlm()}}
 {\footnotesize\ttfamily glm\+::mat4 Ai\+Matrix4x4\+To\+Glm (\begin{DoxyParamCaption}\item[{const ai\+Matrix4x4 \&}]{from }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{_assimp_utility_8h_ae3db1e4777165f5c5cef3bc10cdd5eb9}\label{_assimp_utility_8h_ae3db1e4777165f5c5cef3bc10cdd5eb9}} 
+\Hypertarget{_assimp_utility_8h_ae3db1e4777165f5c5cef3bc10cdd5eb9}\label{_assimp_utility_8h_ae3db1e4777165f5c5cef3bc10cdd5eb9} 
 \index{AssimpUtility.h@{AssimpUtility.h}!GetProperty@{GetProperty}}
 \index{GetProperty@{GetProperty}!AssimpUtility.h@{AssimpUtility.h}}
 \doxysubsubsection{\texorpdfstring{GetProperty()}{GetProperty()}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-T Get\+Property (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key,  }\item[{ai\+Material $\ast$}]{material }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+T Get\+Property (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key,  }\item[{ai\+Material \texorpdfstring{$\ast$}{*}}]{material }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{_assimp_utility_8h_ab55a1fe82a8295657210fd0dc4ca29dd}\label{_assimp_utility_8h_ab55a1fe82a8295657210fd0dc4ca29dd}} 
+\Hypertarget{_assimp_utility_8h_ab55a1fe82a8295657210fd0dc4ca29dd}\label{_assimp_utility_8h_ab55a1fe82a8295657210fd0dc4ca29dd} 
 \index{AssimpUtility.h@{AssimpUtility.h}!GetTransformationMatrix@{GetTransformationMatrix}}
 \index{GetTransformationMatrix@{GetTransformationMatrix}!AssimpUtility.h@{AssimpUtility.h}}
 \doxysubsubsection{\texorpdfstring{GetTransformationMatrix()}{GetTransformationMatrix()}}
-{\footnotesize\ttfamily ai\+Matrix4x4 Get\+Transformation\+Matrix (\begin{DoxyParamCaption}\item[{const ai\+Node $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily ai\+Matrix4x4 Get\+Transformation\+Matrix (\begin{DoxyParamCaption}\item[{const ai\+Node \texorpdfstring{$\ast$}{*}}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{_assimp_utility_8h_ab8953382e8858fc51024f60c9165ecc6}\label{_assimp_utility_8h_ab8953382e8858fc51024f60c9165ecc6}} 
+\Hypertarget{_assimp_utility_8h_ab8953382e8858fc51024f60c9165ecc6}\label{_assimp_utility_8h_ab8953382e8858fc51024f60c9165ecc6} 
 \index{AssimpUtility.h@{AssimpUtility.h}!PrintMatrix@{PrintMatrix}}
 \index{PrintMatrix@{PrintMatrix}!AssimpUtility.h@{AssimpUtility.h}}
 \doxysubsubsection{\texorpdfstring{PrintMatrix()}{PrintMatrix()}}
 {\footnotesize\ttfamily void Print\+Matrix (\begin{DoxyParamCaption}\item[{const ai\+Matrix4x4 \&}]{mat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{_assimp_utility_8h_afd8bbd462fbbd4fdfe0ea091e84614f1}\label{_assimp_utility_8h_afd8bbd462fbbd4fdfe0ea091e84614f1}} 
+\Hypertarget{_assimp_utility_8h_afd8bbd462fbbd4fdfe0ea091e84614f1}\label{_assimp_utility_8h_afd8bbd462fbbd4fdfe0ea091e84614f1} 
 \index{AssimpUtility.h@{AssimpUtility.h}!PrintVector3D@{PrintVector3D}}
 \index{PrintVector3D@{PrintVector3D}!AssimpUtility.h@{AssimpUtility.h}}
 \doxysubsubsection{\texorpdfstring{PrintVector3D()}{PrintVector3D()}}
 {\footnotesize\ttfamily void Print\+Vector3D (\begin{DoxyParamCaption}\item[{const ai\+Vector3D \&}]{vec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{_assimp_utility_8h_a8995186f79ad49b51564a7b82c3977fa}\label{_assimp_utility_8h_a8995186f79ad49b51564a7b82c3977fa}} 
+\Hypertarget{_assimp_utility_8h_a8995186f79ad49b51564a7b82c3977fa}\label{_assimp_utility_8h_a8995186f79ad49b51564a7b82c3977fa} 
 \index{AssimpUtility.h@{AssimpUtility.h}!TransformPosition@{TransformPosition}}
 \index{TransformPosition@{TransformPosition}!AssimpUtility.h@{AssimpUtility.h}}
 \doxysubsubsection{\texorpdfstring{TransformPosition()}{TransformPosition()}}

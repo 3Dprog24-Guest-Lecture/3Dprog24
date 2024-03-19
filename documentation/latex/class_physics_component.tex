@@ -1,5 +1,10 @@
-\hypertarget{class_physics_component}{}\doxysection{Physics\+Component Class Reference}
-\label{class_physics_component}\index{PhysicsComponent@{PhysicsComponent}}
+\doxysection{Physics\+Component Class Reference}
+\hypertarget{class_physics_component}{}\label{class_physics_component}\index{PhysicsComponent@{PhysicsComponent}}
+
+
+Represents the physics component of an actor.  
+
+
 
 
 {\ttfamily \#include $<$Physics\+Component.\+h$>$}
@@ -10,16 +15,46 @@ Inheritance diagram for Physics\+Component\+:\begin{figure}[H]
 \includegraphics[height=2.000000cm]{class_physics_component}
 \end{center}
 \end{figure}
-\doxysubsection*{Friends}
+\doxysubsubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{class_physics_component_ae4af50bf1743d112cb2c2c784bea21c8}{Actor}}
 \end{DoxyCompactItemize}
-\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_component}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_component_a2e9aa4348314d981f05f67397ad2f872}{\texorpdfstring{$\sim$}{\string~}\+Component}} ()
+\item 
+\mbox{\hyperlink{class_component_aed2d7eb6cd97620b65456788dcdb4b4c}{Component}} (const \mbox{\hyperlink{class_component}{Component}} \&)=delete
+\item 
+\mbox{\hyperlink{class_component}{Component}} \& \mbox{\hyperlink{class_component_ae152806e92e166c5794ba9cd7a1263bd}{operator=}} (const \mbox{\hyperlink{class_component}{Component}} \&)=delete
+\item 
+\mbox{\hyperlink{class_component_a1739e84d9766c32e06dfc163b121f0c9}{Component}} (\mbox{\hyperlink{class_component}{Component}} \&\&)=delete
+\item 
+\mbox{\hyperlink{class_component}{Component}} \& \mbox{\hyperlink{class_component_a84b62f108ab594697b90d228b345d9d5}{operator=}} (\mbox{\hyperlink{class_component}{Component}} \&\&)=delete
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_component}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_component_a422617b7cfdeb4d7e52771cc0823de20}{Component}} (const std\+::string \&name, class \mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*}owner)
+\item 
+virtual void \mbox{\hyperlink{class_component_a5a5e595fab62ba757f03becc5b101732}{Init}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_component}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_component_a9a0930978714796afcab98293daed26d}{m\+Owner}}
+\end{DoxyCompactItemize}
 
 
-\doxysubsection{Friends And Related Function Documentation}
-\mbox{\Hypertarget{class_physics_component_ae4af50bf1743d112cb2c2c784bea21c8}\label{class_physics_component_ae4af50bf1743d112cb2c2c784bea21c8}} 
+\doxysubsection{Detailed Description}
+Represents the physics component of an actor. 
+
+This component is responsible for handling the physics-\/related attributes and behaviors of an actor, such as velocity and acceleration. It updates the actor transform based on these properties. 
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_physics_component_ae4af50bf1743d112cb2c2c784bea21c8}\label{class_physics_component_ae4af50bf1743d112cb2c2c784bea21c8} 
 \index{PhysicsComponent@{PhysicsComponent}!Actor@{Actor}}
 \index{Actor@{Actor}!PhysicsComponent@{PhysicsComponent}}
 \doxysubsubsection{\texorpdfstring{Actor}{Actor}}
@@ -29,5 +64,5 @@ class \mbox{\hyperlink{class_physics_component_ae4af50bf1743d112cb2c2c784bea21c8
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-core/\mbox{\hyperlink{_physics_component_8h}{Physics\+Component.\+h}}\item 
-core/\mbox{\hyperlink{_physics_component_8cpp}{Physics\+Component.\+cpp}}\end{DoxyCompactItemize}
+core/\+Physics/\mbox{\hyperlink{_physics_component_8h}{Physics\+Component.\+h}}\item 
+core/\+Physics/\mbox{\hyperlink{_physics_component_8cpp}{Physics\+Component.\+cpp}}\end{DoxyCompactItemize}

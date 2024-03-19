@@ -1,0 +1,40 @@
+\doxysection{Component.\+h}
+\hypertarget{_component_8h_source}{}\label{_component_8h_source}\index{core/Component.h@{core/Component.h}}
+\mbox{\hyperlink{_component_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_tag_8h}{Tag.h}}>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_transform_8h}{Transform.h}}>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_component}{Component}}\ }
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{comment}{//\ Friend\ classes\ should\ technically\ be\ avoided\ because\ they\ break\ encapsulation}}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{comment}{//\ But\ will\ be\ used\ in\ this\ case\ cause\ we\ only\ want\ an\ actor\ to\ create,\ init\ and\ update\ components}}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{comment}{//\ For\ all\ derived\ classes\ add\ actor\ as\ a\ friend}}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_actor}{Actor}};}
+\DoxyCodeLine{00011\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_component_a2e9aa4348314d981f05f67397ad2f872}{\string~Component}}()\ \{\}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_component_aed2d7eb6cd97620b65456788dcdb4b4c}{Component}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_component}{Component}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_component}{Component}}\&\ \mbox{\hyperlink{class_component_ae152806e92e166c5794ba9cd7a1263bd}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_component}{Component}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_component_a1739e84d9766c32e06dfc163b121f0c9}{Component}}(\mbox{\hyperlink{class_component}{Component}}\&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_component}{Component}}\&\ \mbox{\hyperlink{class_component_a84b62f108ab594697b90d228b345d9d5}{operator=}}(\mbox{\hyperlink{class_component}{Component}}\&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00019\ \ \ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_component_a422617b7cfdeb4d7e52771cc0823de20}{Component}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{class}\ \mbox{\hyperlink{class_actor}{Actor}}*\ owner)}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ :mTag(name),\ \mbox{\hyperlink{class_component_a9a0930978714796afcab98293daed26d}{mOwner}}(owner)}
+\DoxyCodeLine{00023\ \ \ \ \ \{\}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//\ Init\ runs\ when\ the\ component\ is\ added\ to\ an\ actor}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_component_a5a5e595fab62ba757f03becc5b101732}{Init}}()\ \{\}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\ Runs\ on\ actor\ update}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_component_ae171b1e9dc2d4cf3e62f4184e46860d5}{Update}}(\textcolor{keywordtype}{float}\ dt)\ \{\}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_actor}{Actor}}*\ \mbox{\hyperlink{class_component_a9a0930978714796afcab98293daed26d}{mOwner}};}
+\DoxyCodeLine{00032\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{struct_tag_unique}{TagUnique}}\ mTag;}
+\DoxyCodeLine{00034\ \};}
+
+\end{DoxyCode}

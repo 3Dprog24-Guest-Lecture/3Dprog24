@@ -1,5 +1,5 @@
-\hypertarget{class_point_light_actor}{}\doxysection{Point\+Light\+Actor Class Reference}
-\label{class_point_light_actor}\index{PointLightActor@{PointLightActor}}
+\doxysection{Point\+Light\+Actor Class Reference}
+\hypertarget{class_point_light_actor}{}\label{class_point_light_actor}\index{PointLightActor@{PointLightActor}}
 
 
 A concrete actor class representing a point light source in a 3D scene.  
@@ -15,23 +15,120 @@ Inheritance diagram for Point\+Light\+Actor\+:\begin{figure}[H]
 \includegraphics[height=3.000000cm]{class_point_light_actor}
 \end{center}
 \end{figure}
-\doxysubsection*{Public Member Functions}
+\doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_point_light_actor_aea6dc6a72a8b7bd103187b36f221f3f8}{Point\+Light\+Actor}} (const std\+::string \&name)
 \item 
 virtual glm\+::vec3 \mbox{\hyperlink{class_point_light_actor_a04a8e253cd3f66d555b31f31f9fe98dd}{Get\+Position}} () const
 \end{DoxyCompactItemize}
-\doxysubsection*{Additional Inherited Members}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_actor}{Actor}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_actor_af17d22383fdbe2edb46d07cd26c01754}{Actor}} (const std\+::string \&name)
+\item 
+\mbox{\hyperlink{class_actor_a22f32e3ce430a9f5c6dc9eab2ed7224c}{Actor}} (const \mbox{\hyperlink{class_actor}{Actor}} \&)=delete
+\item 
+\mbox{\hyperlink{class_actor}{Actor}} \& \mbox{\hyperlink{class_actor_a2694d37daf78fdd5c472bbced3f411b5}{operator=}} (const \mbox{\hyperlink{class_actor}{Actor}} \&)=delete
+\item 
+\mbox{\hyperlink{class_actor_aa3a169246ab4b9293e238732700fba4d}{Actor}} (\mbox{\hyperlink{class_actor}{Actor}} \&\&)=default
+\item 
+\mbox{\hyperlink{class_actor}{Actor}} \& \mbox{\hyperlink{class_actor_a9be3746bee0b124b6ca67bbaa838288f}{operator=}} (\mbox{\hyperlink{class_actor}{Actor}} \&\&)=default
+\item 
+\mbox{\hyperlink{class_actor_ad807fe8f85e72ab263a0c05e3231cb39}{\texorpdfstring{$\sim$}{\string~}\+Actor}} ()
+\item 
+virtual void \mbox{\hyperlink{class_actor_a651fecef34d686452750bc165fcc76ce}{Update}} (float dt)
+\item 
+void \mbox{\hyperlink{class_actor_a21715071792ab98d56eb7719fe70899a}{Update\+Components}} (float dt)
+\item 
+void \mbox{\hyperlink{class_actor_aba5cc96b0d0097ef4fd67aa155810e2c}{Set\+Parent}} (\mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*}parent)
+\item 
+void \mbox{\hyperlink{class_actor_a52786836e705c29df948c268da4b42e2}{Add\+Child}} (\mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*}child)
+\item 
+void \mbox{\hyperlink{class_actor_ae244e4ffa7005b14970d64616b1b717c}{Remove\+Child}} (\mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*}child)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_actor_a5d3321bea75500dd676a2c37c5f09479}{Add\+Component}} (const std\+::string \&component\+Name)
+\item 
+void \mbox{\hyperlink{class_actor_ace4af4f181e7f1f19d46b57b2f1cb2c6}{Set\+Transform}} (const \mbox{\hyperlink{struct_transform}{Transform}} \&transform)
+\item 
+void \mbox{\hyperlink{class_actor_a0498a4255bdf126e5663572027a9dde3}{Set\+Local\+Transform\+Matrix}} (const glm\+::mat4 \&transform\+Matrix)
+\item 
+void \mbox{\hyperlink{class_actor_a002c4572cb3c3b9005c20b59c9b35de9}{Set\+Local\+Position}} (const glm\+::vec3 \&position)
+\item 
+void \mbox{\hyperlink{class_actor_a8a6a7db905146d5feb1c49a5c39035cb}{Set\+Local\+Rotation}} (const glm\+::quat \&rotation)
+\item 
+void \mbox{\hyperlink{class_actor_ab23b23c60baea62fd53564bf3ebf4946}{Set\+Local\+Scale}} (const glm\+::vec3 \&scale)
+\item 
+void \mbox{\hyperlink{class_actor_ae389ea75bcd7f286e0a7a6b391490776}{Set\+World\+Position}} (const glm\+::vec3 \&position)
+\item 
+void \mbox{\hyperlink{class_actor_a8c264c272336df6af0ba0595c4801dc6}{Set\+World\+Rotation}} (const glm\+::quat \&rotation)
+\item 
+void \mbox{\hyperlink{class_actor_a5b81664367c82e0e368ce47d340920c2}{Set\+World\+Scale}} (const glm\+::vec3 \&scale)
+\item 
+const glm\+::vec3 \& \mbox{\hyperlink{class_actor_aea7454e0e5aa7fb3b506ad5956c17512}{Get\+Local\+Position}} () const
+\item 
+glm\+::vec3 \mbox{\hyperlink{class_actor_ab467606d89630ec572bde60eaa65c429}{Get\+World\+Position}} () const
+\item 
+const glm\+::quat \& \mbox{\hyperlink{class_actor_a570bc92098db2a06aefc39aeac6a495a}{Get\+Local\+Rotation}} () const
+\item 
+glm\+::quat \mbox{\hyperlink{class_actor_a0891342bea87cfda13affb2b86e83969}{Get\+World\+Rotation}} () const
+\item 
+const glm\+::vec3 \& \mbox{\hyperlink{class_actor_a4c5bf4802d01b48fd119befe009c9c78}{Get\+Local\+Scale}} () const
+\item 
+glm\+::vec3 \mbox{\hyperlink{class_actor_a1cc20ebb360e80b8d9f0333285be4e13}{Get\+World\+Scale}} () const
+\item 
+const glm\+::mat4 \mbox{\hyperlink{class_actor_a6b976599c0e904770041f87c46cbb7e0}{Get\+Local\+Transform\+Matrix}} () const
+\item 
+glm\+::mat4 \mbox{\hyperlink{class_actor_a9d34bbafa35664f520ce27b79472f13a}{Get\+World\+Transform\+Matrix}} () const
+\item 
+const \mbox{\hyperlink{struct_transform}{Transform}} \& \mbox{\hyperlink{class_actor_a041d72ef804951ba63c8159222ec41f5}{Get\+Local\+Transform}} () const
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{class_actor_a067c9709390f5185e5a8535785dc2ff8}{Get\+Children}} ()
+\item 
+glm\+::vec3 \mbox{\hyperlink{class_actor_ac00f6f9e954f08653c5506eaf8d860b0}{Get\+Right}} () const
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_actor_a3e6480c40842863595b388a3be2c1533}{Query}} (std\+::vector$<$ \mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*} $>$ \&actors)
+\begin{DoxyCompactList}\small\item\em Adds actors of type T to a vector if they match the current object type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{struct_light}{Light}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{struct_light_ae3e3209d4b97d0bbbd614ded5e1213d9}{\texorpdfstring{$\sim$}{\string~}\+Light}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_point_light}{Point\+Light}}}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_point_light_a965104c9c660615ba35721c7aac7c262}{constant}} = 1.f
+\item 
+float \mbox{\hyperlink{class_point_light_a491f53e12fd4f689550ea8bfb6d68d19}{linear}} = 0.\+009f
+\item 
+float \mbox{\hyperlink{class_point_light_a3dba0bf3332f30b9a5925fc16774dcc0}{quadratic}} = 0.\+0032f
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{struct_light}{Light}}}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::vec3 \mbox{\hyperlink{struct_light_af3d47a5dc1be1855ffca8731c2458874}{m\+Ambient}} \{0.\+4f, 0.\+4f, 0.\+4f\}
+\item 
+glm\+::vec3 \mbox{\hyperlink{struct_light_a7d74b1637c4f371fafa639469d77fff4}{m\+Color}} \{1.f, 1.f, 1.f\}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_actor}{Actor}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_actor_a2e23b38fa11b43c4e5cf57d65b8349a4}{m\+Parent}} \{nullptr\}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_actor_ad59a8d1d6e8407c01883d325884b25ec}{m\+Children}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_component}{Component}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_actor_a69af522a7017c89865f8e0fa3c0cec74}{m\+Components}}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 A concrete actor class representing a point light source in a 3D scene. 
 
-Inherits from both \mbox{\hyperlink{class_actor}{Actor}} and \mbox{\hyperlink{class_point_light}{Point\+Light}} to implement a point light that can be positioned and moved within the scene. It provides the implementation of Get\+Position to return the global position of the light actor. 
+Inherits from both \doxylink{class_actor}{Actor} and \doxylink{class_point_light}{Point\+Light} to implement a point light that can be positioned and moved within the scene. It provides the implementation of Get\+Position to return the global position of the light actor. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_point_light_actor_aea6dc6a72a8b7bd103187b36f221f3f8}\label{class_point_light_actor_aea6dc6a72a8b7bd103187b36f221f3f8}} 
+\Hypertarget{class_point_light_actor_aea6dc6a72a8b7bd103187b36f221f3f8}\label{class_point_light_actor_aea6dc6a72a8b7bd103187b36f221f3f8} 
 \index{PointLightActor@{PointLightActor}!PointLightActor@{PointLightActor}}
 \index{PointLightActor@{PointLightActor}!PointLightActor@{PointLightActor}}
 \doxysubsubsection{\texorpdfstring{PointLightActor()}{PointLightActor()}}
@@ -40,7 +137,7 @@ Inherits from both \mbox{\hyperlink{class_actor}{Actor}} and \mbox{\hyperlink{cl
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_point_light_actor_a04a8e253cd3f66d555b31f31f9fe98dd}\label{class_point_light_actor_a04a8e253cd3f66d555b31f31f9fe98dd}} 
+\Hypertarget{class_point_light_actor_a04a8e253cd3f66d555b31f31f9fe98dd}\label{class_point_light_actor_a04a8e253cd3f66d555b31f31f9fe98dd} 
 \index{PointLightActor@{PointLightActor}!GetPosition@{GetPosition}}
 \index{GetPosition@{GetPosition}!PointLightActor@{PointLightActor}}
 \doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}}

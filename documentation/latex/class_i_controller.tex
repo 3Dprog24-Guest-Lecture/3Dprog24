@@ -1,5 +1,5 @@
-\hypertarget{class_i_controller}{}\doxysection{I\+Controller Class Reference}
-\label{class_i_controller}\index{IController@{IController}}
+\doxysection{IController Class Reference}
+\hypertarget{class_i_controller}{}\label{class_i_controller}\index{IController@{IController}}
 
 
 Interface for input controllers.  
@@ -9,93 +9,93 @@ Interface for input controllers.
 
 {\ttfamily \#include $<$Controller.\+h$>$}
 
-Inheritance diagram for I\+Controller\+:\begin{figure}[H]
+Inheritance diagram for IController\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=2.000000cm]{class_i_controller}
 \end{center}
 \end{figure}
-\doxysubsection*{Public Member Functions}
+\doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual \mbox{\hyperlink{class_i_controller_adbe8a8556fee242cfdb0cc251ebd1a81}{$\sim$\+I\+Controller}} ()=default
+virtual \mbox{\hyperlink{class_i_controller_adbe8a8556fee242cfdb0cc251ebd1a81}{\texorpdfstring{$\sim$}{\string~}\+IController}} ()=default
 \item 
 virtual void \mbox{\hyperlink{class_i_controller_ab696be83337ae63d66e67a43d3e8f39c}{Update}} (float dt)
 \item 
-virtual void \mbox{\hyperlink{class_i_controller_ae76b08d1f4d5cdf2b367aa112f28b3c5}{Handle\+Mouse\+Move}} (class \mbox{\hyperlink{class_window}{Window}} $\ast$window, double xpos, double ypos)=0
+virtual void \mbox{\hyperlink{class_i_controller_ae76b08d1f4d5cdf2b367aa112f28b3c5}{Handle\+Mouse\+Move}} (class \mbox{\hyperlink{class_window}{Window}} \texorpdfstring{$\ast$}{*}window, double xpos, double ypos)=0
 \item 
-virtual void \mbox{\hyperlink{class_i_controller_ac785c7bf69fbb9723890590e7d48553b}{Handle\+Mouse\+Scroll}} (class \mbox{\hyperlink{class_window}{Window}} $\ast$window, double xoffset, double yoffset)=0
+virtual void \mbox{\hyperlink{class_i_controller_ac785c7bf69fbb9723890590e7d48553b}{Handle\+Mouse\+Scroll}} (class \mbox{\hyperlink{class_window}{Window}} \texorpdfstring{$\ast$}{*}window, double xoffset, double yoffset)=0
 \item 
-virtual void \mbox{\hyperlink{class_i_controller_a7ede469072bd089eb9d123991167be90}{Handle\+Mouse\+Button}} (class \mbox{\hyperlink{class_window}{Window}} $\ast$window, int button, int action, int mods)=0
+virtual void \mbox{\hyperlink{class_i_controller_a7ede469072bd089eb9d123991167be90}{Handle\+Mouse\+Button}} (class \mbox{\hyperlink{class_window}{Window}} \texorpdfstring{$\ast$}{*}window, int button, int action, int mods)=0
 \item 
-virtual void \mbox{\hyperlink{class_i_controller_a2d13c6a5c8ed679f5609d32112cb52b8}{Handle\+Keyboard}} (class \mbox{\hyperlink{class_window}{Window}} $\ast$window, int key, int scancode, int action, int mods)=0
+virtual void \mbox{\hyperlink{class_i_controller_a2d13c6a5c8ed679f5609d32112cb52b8}{Handle\+Keyboard}} (class \mbox{\hyperlink{class_window}{Window}} \texorpdfstring{$\ast$}{*}window, int key, int scancode, int action, int mods)=0
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Interface for input controllers. 
 
-The \mbox{\hyperlink{class_i_controller}{I\+Controller}} interface defines the structure for input handling in the application. It includes methods for processing mouse movement, mouse scrolling, mouse button actions, and keyboard actions. A controllable object can inherit from this, only one active controller will proccess the inputs. This can be used for camera, player or whatever object that needs to be controlled. 
+The \doxylink{class_i_controller}{IController} interface defines the structure for input handling in the application. It includes methods for processing mouse movement, mouse scrolling, mouse button actions, and keyboard actions. A controllable object can inherit from this, only one active controller will proccess the inputs. This can be used for camera, player or whatever object that needs to be controlled. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_i_controller_adbe8a8556fee242cfdb0cc251ebd1a81}\label{class_i_controller_adbe8a8556fee242cfdb0cc251ebd1a81}} 
-\index{IController@{IController}!````~IController@{$\sim$IController}}
-\index{````~IController@{$\sim$IController}!IController@{IController}}
-\doxysubsubsection{\texorpdfstring{$\sim$IController()}{~IController()}}
-{\footnotesize\ttfamily virtual I\+Controller\+::$\sim$\+I\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+\Hypertarget{class_i_controller_adbe8a8556fee242cfdb0cc251ebd1a81}\label{class_i_controller_adbe8a8556fee242cfdb0cc251ebd1a81} 
+\index{IController@{IController}!````~IController@{\texorpdfstring{$\sim$}{\string~}IController}}
+\index{````~IController@{\texorpdfstring{$\sim$}{\string~}IController}!IController@{IController}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IController()}{\string~IController()}}
+{\footnotesize\ttfamily virtual IController\+::\texorpdfstring{$\sim$}{\string~}\+IController (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
 
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_i_controller_a2d13c6a5c8ed679f5609d32112cb52b8}\label{class_i_controller_a2d13c6a5c8ed679f5609d32112cb52b8}} 
+\Hypertarget{class_i_controller_a2d13c6a5c8ed679f5609d32112cb52b8}\label{class_i_controller_a2d13c6a5c8ed679f5609d32112cb52b8} 
 \index{IController@{IController}!HandleKeyboard@{HandleKeyboard}}
 \index{HandleKeyboard@{HandleKeyboard}!IController@{IController}}
 \doxysubsubsection{\texorpdfstring{HandleKeyboard()}{HandleKeyboard()}}
-{\footnotesize\ttfamily virtual void I\+Controller\+::\+Handle\+Keyboard (\begin{DoxyParamCaption}\item[{class \mbox{\hyperlink{class_window}{Window}} $\ast$}]{window,  }\item[{int}]{key,  }\item[{int}]{scancode,  }\item[{int}]{action,  }\item[{int}]{mods }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual void IController\+::\+Handle\+Keyboard (\begin{DoxyParamCaption}\item[{class \mbox{\hyperlink{class_window}{Window}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{int}]{key,  }\item[{int}]{scancode,  }\item[{int}]{action,  }\item[{int}]{mods }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 
 
-Implemented in \mbox{\hyperlink{class_camera_controller_a895b6f4f26366f0db14c24e7db422294}{Camera\+Controller}}, and \mbox{\hyperlink{class_actor_controller_a4ecaf4d7dc77574e2a4c960a96688aef}{Actor\+Controller}}.
+Implemented in \mbox{\hyperlink{class_actor_controller_a4ecaf4d7dc77574e2a4c960a96688aef}{Actor\+Controller}}, and \mbox{\hyperlink{class_camera_controller_a895b6f4f26366f0db14c24e7db422294}{Camera\+Controller}}.
 
-\mbox{\Hypertarget{class_i_controller_a7ede469072bd089eb9d123991167be90}\label{class_i_controller_a7ede469072bd089eb9d123991167be90}} 
+\Hypertarget{class_i_controller_a7ede469072bd089eb9d123991167be90}\label{class_i_controller_a7ede469072bd089eb9d123991167be90} 
 \index{IController@{IController}!HandleMouseButton@{HandleMouseButton}}
 \index{HandleMouseButton@{HandleMouseButton}!IController@{IController}}
 \doxysubsubsection{\texorpdfstring{HandleMouseButton()}{HandleMouseButton()}}
-{\footnotesize\ttfamily virtual void I\+Controller\+::\+Handle\+Mouse\+Button (\begin{DoxyParamCaption}\item[{class \mbox{\hyperlink{class_window}{Window}} $\ast$}]{window,  }\item[{int}]{button,  }\item[{int}]{action,  }\item[{int}]{mods }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual void IController\+::\+Handle\+Mouse\+Button (\begin{DoxyParamCaption}\item[{class \mbox{\hyperlink{class_window}{Window}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{int}]{button,  }\item[{int}]{action,  }\item[{int}]{mods }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 
 
-Implemented in \mbox{\hyperlink{class_camera_controller_a3ba05e0e09c3bcae043da4027fe6d5e2}{Camera\+Controller}}, and \mbox{\hyperlink{class_actor_controller_aa0b52b2ef395526a1534d0389501d03e}{Actor\+Controller}}.
+Implemented in \mbox{\hyperlink{class_actor_controller_aa0b52b2ef395526a1534d0389501d03e}{Actor\+Controller}}, and \mbox{\hyperlink{class_camera_controller_a3ba05e0e09c3bcae043da4027fe6d5e2}{Camera\+Controller}}.
 
-\mbox{\Hypertarget{class_i_controller_ae76b08d1f4d5cdf2b367aa112f28b3c5}\label{class_i_controller_ae76b08d1f4d5cdf2b367aa112f28b3c5}} 
+\Hypertarget{class_i_controller_ae76b08d1f4d5cdf2b367aa112f28b3c5}\label{class_i_controller_ae76b08d1f4d5cdf2b367aa112f28b3c5} 
 \index{IController@{IController}!HandleMouseMove@{HandleMouseMove}}
 \index{HandleMouseMove@{HandleMouseMove}!IController@{IController}}
 \doxysubsubsection{\texorpdfstring{HandleMouseMove()}{HandleMouseMove()}}
-{\footnotesize\ttfamily virtual void I\+Controller\+::\+Handle\+Mouse\+Move (\begin{DoxyParamCaption}\item[{class \mbox{\hyperlink{class_window}{Window}} $\ast$}]{window,  }\item[{double}]{xpos,  }\item[{double}]{ypos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual void IController\+::\+Handle\+Mouse\+Move (\begin{DoxyParamCaption}\item[{class \mbox{\hyperlink{class_window}{Window}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{double}]{xpos,  }\item[{double}]{ypos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 
 
-Implemented in \mbox{\hyperlink{class_camera_controller_a14ceeccd1d7391b7ffff420b5097304c}{Camera\+Controller}}, and \mbox{\hyperlink{class_actor_controller_ae3db31a6f8ad9f471f88d803b702bdb4}{Actor\+Controller}}.
+Implemented in \mbox{\hyperlink{class_actor_controller_ae3db31a6f8ad9f471f88d803b702bdb4}{Actor\+Controller}}, and \mbox{\hyperlink{class_camera_controller_a14ceeccd1d7391b7ffff420b5097304c}{Camera\+Controller}}.
 
-\mbox{\Hypertarget{class_i_controller_ac785c7bf69fbb9723890590e7d48553b}\label{class_i_controller_ac785c7bf69fbb9723890590e7d48553b}} 
+\Hypertarget{class_i_controller_ac785c7bf69fbb9723890590e7d48553b}\label{class_i_controller_ac785c7bf69fbb9723890590e7d48553b} 
 \index{IController@{IController}!HandleMouseScroll@{HandleMouseScroll}}
 \index{HandleMouseScroll@{HandleMouseScroll}!IController@{IController}}
 \doxysubsubsection{\texorpdfstring{HandleMouseScroll()}{HandleMouseScroll()}}
-{\footnotesize\ttfamily virtual void I\+Controller\+::\+Handle\+Mouse\+Scroll (\begin{DoxyParamCaption}\item[{class \mbox{\hyperlink{class_window}{Window}} $\ast$}]{window,  }\item[{double}]{xoffset,  }\item[{double}]{yoffset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual void IController\+::\+Handle\+Mouse\+Scroll (\begin{DoxyParamCaption}\item[{class \mbox{\hyperlink{class_window}{Window}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{double}]{xoffset,  }\item[{double}]{yoffset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 
 
-Implemented in \mbox{\hyperlink{class_camera_controller_aa96f49807dc9549b6d22a80f62c0d7d4}{Camera\+Controller}}, and \mbox{\hyperlink{class_actor_controller_a88a46c791b6dd7d80a6a01606693e6fa}{Actor\+Controller}}.
+Implemented in \mbox{\hyperlink{class_actor_controller_a88a46c791b6dd7d80a6a01606693e6fa}{Actor\+Controller}}, and \mbox{\hyperlink{class_camera_controller_aa96f49807dc9549b6d22a80f62c0d7d4}{Camera\+Controller}}.
 
-\mbox{\Hypertarget{class_i_controller_ab696be83337ae63d66e67a43d3e8f39c}\label{class_i_controller_ab696be83337ae63d66e67a43d3e8f39c}} 
+\Hypertarget{class_i_controller_ab696be83337ae63d66e67a43d3e8f39c}\label{class_i_controller_ab696be83337ae63d66e67a43d3e8f39c} 
 \index{IController@{IController}!Update@{Update}}
 \index{Update@{Update}!IController@{IController}}
 \doxysubsubsection{\texorpdfstring{Update()}{Update()}}
-{\footnotesize\ttfamily virtual void I\+Controller\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily virtual void IController\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 
-Reimplemented in \mbox{\hyperlink{class_camera_controller_a44cca73b3ef323ec6486b88de854272a}{Camera\+Controller}}, and \mbox{\hyperlink{class_actor_controller_a3b9d7951c65d798c9f993a9e876eb181}{Actor\+Controller}}.
+Reimplemented in \mbox{\hyperlink{class_actor_controller_a3b9d7951c65d798c9f993a9e876eb181}{Actor\+Controller}}, and \mbox{\hyperlink{class_camera_controller_a44cca73b3ef323ec6486b88de854272a}{Camera\+Controller}}.
 
 
 

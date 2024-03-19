@@ -1,0 +1,33 @@
+\doxysection{Point\+Light.\+h}
+\hypertarget{_point_light_8h_source}{}\label{_point_light_8h_source}\index{core/Lights/PointLight.h@{core/Lights/PointLight.h}}
+\mbox{\hyperlink{_point_light_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_lights_8h}{Lights/Lights.h}}>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_actor_8h}{Actor.h}}>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ Change\ this\ variable\ in\ the\ shader\ too}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ MAX\_POINT\_LIGHTS\ 64}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_point_light}{PointLight}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{struct_light}{Light}}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{virtual}\ glm::vec3\ \mbox{\hyperlink{class_point_light_a21fcfd697fcb4aa7c0473f71a8ef176a}{GetPosition}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_point_light_a965104c9c660615ba35721c7aac7c262}{constant}}\ =\ 1.f;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_point_light_a491f53e12fd4f689550ea8bfb6d68d19}{linear}}\ =\ 0.009f;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_point_light_a3dba0bf3332f30b9a5925fc16774dcc0}{quadratic}}\ =\ 0.0032f;}
+\DoxyCodeLine{00019\ \};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_point_light_actor}{PointLightActor}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_actor}{Actor}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_point_light}{PointLight}}}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{class_point_light_actor_aea6dc6a72a8b7bd103187b36f221f3f8}{PointLightActor}}(\textcolor{keyword}{const}\ std::string\&\ name)\ :\mbox{\hyperlink{class_actor}{Actor}}(name)\ \{\};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{virtual}\ glm::vec3\ \mbox{\hyperlink{class_point_light_actor_a04a8e253cd3f66d555b31f31f9fe98dd}{GetPosition}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00034\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_actor_ab467606d89630ec572bde60eaa65c429}{GetWorldPosition}}();}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \};}
+
+\end{DoxyCode}

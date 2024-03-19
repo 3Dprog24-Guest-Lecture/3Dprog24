@@ -1,23 +1,46 @@
-\hypertarget{class_assimp_loader}{}\doxysection{Assimp\+Loader Class Reference}
-\label{class_assimp_loader}\index{AssimpLoader@{AssimpLoader}}
+\doxysection{Assimp\+Loader Class Reference}
+\hypertarget{class_assimp_loader}{}\label{class_assimp_loader}\index{AssimpLoader@{AssimpLoader}}
+
+
+class for loading models using Assimp.  
+
+
 
 
 {\ttfamily \#include $<$Assimp\+Loader.\+h$>$}
 
-\doxysubsection*{Static Public Member Functions}
+\doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static void \mbox{\hyperlink{class_assimp_loader_ab267c78e51e861459abfc53d2166b8a0}{Load}} (const std\+::string \&path, class \mbox{\hyperlink{class_actor}{Actor}} $\ast$static\+Mesh\+Actor, unsigned flags=ai\+Process\+Preset\+\_\+\+Target\+Realtime\+\_\+\+Max\+Quality$\vert$ai\+Process\+\_\+\+Triangulate$\vert$ai\+Process\+\_\+\+Gen\+Smooth\+Normals$\vert$ai\+Process\+\_\+\+Gen\+U\+V\+Coords)
-\end{DoxyCompactItemize}
+static void \mbox{\hyperlink{class_assimp_loader_ab267c78e51e861459abfc53d2166b8a0}{Load}} (const std\+::string \&path, class \mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*}static\+Mesh\+Actor, unsigned flags=ai\+Process\+Preset\+\_\+\+Target\+Realtime\+\_\+\+Max\+Quality\texorpdfstring{$\vert$}{|}ai\+Process\+\_\+\+Triangulate\texorpdfstring{$\vert$}{|}ai\+Process\+\_\+\+Gen\+Smooth\+Normals\texorpdfstring{$\vert$}{|}ai\+Process\+\_\+\+Gen\+UVCoords)
+\begin{DoxyCompactList}\small\item\em Loads a model from a file and attaches it to a given actor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+class for loading models using Assimp. 
+
+This class provides static methods for loading models from a file, processing the Assimp scene, nodes, meshes, materials, and generating collision bounding boxes. 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_assimp_loader_ab267c78e51e861459abfc53d2166b8a0}\label{class_assimp_loader_ab267c78e51e861459abfc53d2166b8a0}} 
+\Hypertarget{class_assimp_loader_ab267c78e51e861459abfc53d2166b8a0}\label{class_assimp_loader_ab267c78e51e861459abfc53d2166b8a0} 
 \index{AssimpLoader@{AssimpLoader}!Load@{Load}}
 \index{Load@{Load}!AssimpLoader@{AssimpLoader}}
 \doxysubsubsection{\texorpdfstring{Load()}{Load()}}
-{\footnotesize\ttfamily void Assimp\+Loader\+::\+Load (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path,  }\item[{class \mbox{\hyperlink{class_actor}{Actor}} $\ast$}]{static\+Mesh\+Actor,  }\item[{unsigned}]{flags = {\ttfamily aiProcessPreset\+\_\+TargetRealtime\+\_\+MaxQuality~$\vert$~aiProcess\+\_\+Triangulate~$\vert$~aiProcess\+\_\+GenSmoothNormals~$\vert$~aiProcess\+\_\+GenUVCoords} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily void Assimp\+Loader\+::\+Load (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path,  }\item[{class \mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*}}]{static\+Mesh\+Actor,  }\item[{unsigned}]{flags = {\ttfamily aiProcessPreset\+\_\+TargetRealtime\+\_\+MaxQuality~\texorpdfstring{$\vert$}{|}~aiProcess\+\_\+Triangulate~\texorpdfstring{$\vert$}{|}~aiProcess\+\_\+GenSmoothNormals~\texorpdfstring{$\vert$}{|}~aiProcess\+\_\+GenUVCoords} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Loads a model from a file and attaches it to a given actor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to the model file. \\
+\hline
+{\em static\+Mesh\+Actor} & The root of the scene graph. \\
+\hline
+{\em flags} & Import flags (default is aimed at realtime max quality). \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

@@ -1,0 +1,109 @@
+\doxysection{AABB.\+h}
+\hypertarget{_a_a_b_b_8h_source}{}\label{_a_a_b_b_8h_source}\index{core/Collision/AABB.h@{core/Collision/AABB.h}}
+\mbox{\hyperlink{_a_a_b_b_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <glm/vec3.hpp>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <glm/glm.hpp>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_collision_8h}{Collision/Collision.h}}>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_actor_8h}{Actor.h}}>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_logger_8h}{Logger.h}}>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_a_a_b_b}{AABB}};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_bounded}{IBounded}}\ }
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{struct_a_a_b_b}{AABB}}\ \mbox{\hyperlink{class_i_bounded_aae126add8e86bad4879aa8939574535d}{GetAABB}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{struct_collision_properties}{CollisionProperties}}\ \mbox{\hyperlink{class_i_bounded_a26e4ef5eea73144675125b10dc51a1fd}{GetCollisionProperties}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00021\ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_a_a_b_b}{AABB}}\ }
+\DoxyCodeLine{00030\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ glm::vec3\ \mbox{\hyperlink{struct_a_a_b_b_a9aefc26a29fedcb12bfe12100edc07c3}{center}}\{0.f,\ 0.f\ ,0.f\};}
+\DoxyCodeLine{00032\ \ \ \ \ glm::vec3\ \mbox{\hyperlink{struct_a_a_b_b_ac927b387a68b1b3feba5cc9c7ee8d9f8}{extent}}\{0.5f,\ 0.5f,\ 0.5f\};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{struct_a_a_b_b_aaa4045350d38f8f4f5395c22a86eb00a}{AABB}}(\textcolor{keyword}{const}\ glm::vec3\&\ \mbox{\hyperlink{struct_a_a_b_b_a9aefc26a29fedcb12bfe12100edc07c3}{center}},\ \textcolor{keyword}{const}\ glm::vec3\&\ \mbox{\hyperlink{struct_a_a_b_b_ac927b387a68b1b3feba5cc9c7ee8d9f8}{extent}})\ :\ \mbox{\hyperlink{struct_a_a_b_b_a9aefc26a29fedcb12bfe12100edc07c3}{center}}(\mbox{\hyperlink{struct_a_a_b_b_a9aefc26a29fedcb12bfe12100edc07c3}{center}}),\ \mbox{\hyperlink{struct_a_a_b_b_ac927b387a68b1b3feba5cc9c7ee8d9f8}{extent}}(\mbox{\hyperlink{struct_a_a_b_b_ac927b387a68b1b3feba5cc9c7ee8d9f8}{extent}})\ \{\}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_a_a_b_b_ae7ac829d966e46a8bea136b0c4ccb9c0}{Intersect}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_a_a_b_b}{AABB}}\&\ other,\ glm::vec3*\ mtv)\textcolor{keyword}{\ const\ }}
+\DoxyCodeLine{00049\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ glm::vec3\ diff\ =\ other.\mbox{\hyperlink{struct_a_a_b_b_a9aefc26a29fedcb12bfe12100edc07c3}{center}}\ -\/\ this-\/>\mbox{\hyperlink{struct_a_a_b_b_a9aefc26a29fedcb12bfe12100edc07c3}{center}};}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ glm::vec3\ sumExtent\ =\ this-\/>\mbox{\hyperlink{struct_a_a_b_b_ac927b387a68b1b3feba5cc9c7ee8d9f8}{extent}}\ +\ other.\mbox{\hyperlink{struct_a_a_b_b_ac927b387a68b1b3feba5cc9c7ee8d9f8}{extent}};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ For\ each\ axis,\ check\ if\ there's\ overlap}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ ++i)\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (abs(diff[i])\ >=\ sumExtent[i])}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ No\ intersection\ on\ this\ axis}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mtv)\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Calculate\ MTV}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec3\ mtvValues;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ ++i)\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mtvValues[i]\ =\ sumExtent[i]\ -\/\ abs(diff[i]);}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Find\ the\ minimum\ non-\/zero\ translation\ vector}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ minMTV\ =\ FLT\_MAX;}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ minAxis\ =\ -\/1;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ ++i)\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mtvValues[i]\ <\ minMTV\ \&\&\ mtvValues[i]\ >\ 0)}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ minMTV\ =\ mtvValues[i];}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ minAxis\ =\ i;}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (minAxis\ !=\ -\/1)\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ glm::vec3\ direction\ =\ glm::vec3(0);}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ direction[minAxis]\ =\ diff[minAxis]\ >\ 0.f\ ?\ 1.f\ :\ -\/1.f;}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *mtv\ =\ direction\ *\ minMTV;}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \textcolor{comment}{//\ Intersection\ exists}}
+\DoxyCodeLine{00092\ \ \ \ \ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_a_a_b_b_a5f8b76665ff1f56aeda65b3f10ec8f86}{Expand}}(\textcolor{keyword}{const}\ glm::vec3\&\ p)}
+\DoxyCodeLine{00095\ \ \ \ \ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ relativeP\ =\ p\ -\/\ \mbox{\hyperlink{struct_a_a_b_b_a9aefc26a29fedcb12bfe12100edc07c3}{center}};}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_a_a_b_b_ac927b387a68b1b3feba5cc9c7ee8d9f8}{extent}}\ =\ glm::max(abs(relativeP),\ \mbox{\hyperlink{struct_a_a_b_b_ac927b387a68b1b3feba5cc9c7ee8d9f8}{extent}});}
+\DoxyCodeLine{00098\ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_a_a_b_b_actor}{AABBActor}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_actor}{Actor}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_bounded}{IBounded}}}
+\DoxyCodeLine{00102\ \{}
+\DoxyCodeLine{00103\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{class_a_a_b_b_actor_a1e0a8df17df8b877e10a47159adfbc3c}{AABBActor}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \mbox{\hyperlink{struct_a_a_b_b}{AABB}}\ aabb\ =\ \mbox{\hyperlink{struct_a_a_b_b}{AABB}}(\{0.f,\ 0.f,\ 0.f\},\ \{0.1f,\ 0.1f,\ 0.1f\}))}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ :\mbox{\hyperlink{class_actor}{Actor}}(name),\ \mbox{\hyperlink{class_a_a_b_b_actor_afcf7d788cb28bfec5cee08d4aeed39e1}{mAABB}}(aabb)\ \{\}}
+\DoxyCodeLine{00106\ \ \ \ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{struct_a_a_b_b}{AABB}}\ \mbox{\hyperlink{class_a_a_b_b_actor_a31f3dea3b8f1b8aaa802958f12eaa462}{GetAABB}}()\textcolor{keyword}{\ const\ override}}
+\DoxyCodeLine{00108\ \textcolor{keyword}{\ \ \ \ }\{\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ aabb\ =\ \mbox{\hyperlink{struct_a_a_b_b}{AABB}}(\mbox{\hyperlink{class_a_a_b_b_actor_afcf7d788cb28bfec5cee08d4aeed39e1}{mAABB}}.\mbox{\hyperlink{struct_a_a_b_b_a9aefc26a29fedcb12bfe12100edc07c3}{center}}\ ,\mbox{\hyperlink{class_a_a_b_b_actor_afcf7d788cb28bfec5cee08d4aeed39e1}{mAABB}}.\mbox{\hyperlink{struct_a_a_b_b_ac927b387a68b1b3feba5cc9c7ee8d9f8}{extent}});}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ aabb.center\ +=\ \mbox{\hyperlink{class_actor_ab467606d89630ec572bde60eaa65c429}{GetWorldPosition}}();}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ aabb.extent\ *=\ \mbox{\hyperlink{class_actor_a1cc20ebb360e80b8d9f0333285be4e13}{GetWorldScale}}();}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ AABBs\ should\ not\ really\ be\ able\ to\ rotate,\ but\ this\ is\ okay\ as\ long\ as\ they\ rotate\ to\ a\ new\ aligned\ axis}}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ aabb.extent\ =\ abs(\mbox{\hyperlink{class_actor_a0891342bea87cfda13affb2b86e83969}{GetWorldRotation}}()\ *\ aabb.extent);}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ aabb;}
+\DoxyCodeLine{00115\ \ \ \ \ \}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{struct_collision_properties}{CollisionProperties}}\ \mbox{\hyperlink{class_a_a_b_b_actor_a56f265d81da198d3e3daa4989e4099d1}{GetCollisionProperties}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00118\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_a_a_b_b_actor_a3f7a8068932131431fdf102cbe3ff6f1}{mCollisionProperties}};}
+\DoxyCodeLine{00120\ \ \ \ \ \}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \mbox{\hyperlink{struct_a_a_b_b}{AABB}}\ \mbox{\hyperlink{class_a_a_b_b_actor_afcf7d788cb28bfec5cee08d4aeed39e1}{mAABB}}\{\ \{0.f,\ 0.f,\ 0.f\},\ \{0.5f,\ 0.5f,\ 0.5f\}\ \};}
+\DoxyCodeLine{00123\ \ \ \ \ \mbox{\hyperlink{struct_collision_properties}{CollisionProperties}}\ \mbox{\hyperlink{class_a_a_b_b_actor_a3f7a8068932131431fdf102cbe3ff6f1}{mCollisionProperties}}\{\ \mbox{\hyperlink{_collision_8h_aa884075f403706dceea29a61771a0d44afe6f99ef1ec99efbdc19a9786cf1facc}{CollisionType::STATIC}},\ \mbox{\hyperlink{_collision_8h_a97e8562c7f43f19f908003d638ff930fa4d34f53389ed7f28ca91fc31ea360a66}{CollisionResponse::BLOCK}}\ \};}
+\DoxyCodeLine{00124\ \};}
+
+\end{DoxyCode}

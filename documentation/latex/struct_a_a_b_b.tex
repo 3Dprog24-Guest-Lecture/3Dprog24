@@ -1,24 +1,24 @@
-\hypertarget{struct_a_a_b_b}{}\doxysection{A\+A\+BB Struct Reference}
-\label{struct_a_a_b_b}\index{AABB@{AABB}}
+\doxysection{AABB Struct Reference}
+\hypertarget{struct_a_a_b_b}{}\label{struct_a_a_b_b}\index{AABB@{AABB}}
 
 
-Represents an Axis-\/\+Aligned Bounding Box (\mbox{\hyperlink{struct_a_a_b_b}{A\+A\+BB}}) used for collision detection.  
+Represents an Axis-\/\+Aligned Bounding Box (\doxylink{struct_a_a_b_b}{AABB}) used for collision detection.  
 
 
 
 
-{\ttfamily \#include $<$A\+A\+B\+B.\+h$>$}
+{\ttfamily \#include $<$AABB.\+h$>$}
 
-\doxysubsection*{Public Member Functions}
+\doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{struct_a_a_b_b_aaa4045350d38f8f4f5395c22a86eb00a}{A\+A\+BB}} (const glm\+::vec3 \&\mbox{\hyperlink{struct_a_a_b_b_a9aefc26a29fedcb12bfe12100edc07c3}{center}}, const glm\+::vec3 \&\mbox{\hyperlink{struct_a_a_b_b_ac927b387a68b1b3feba5cc9c7ee8d9f8}{extent}})
+\mbox{\hyperlink{struct_a_a_b_b_aaa4045350d38f8f4f5395c22a86eb00a}{AABB}} (const glm\+::vec3 \&\mbox{\hyperlink{struct_a_a_b_b_a9aefc26a29fedcb12bfe12100edc07c3}{center}}, const glm\+::vec3 \&\mbox{\hyperlink{struct_a_a_b_b_ac927b387a68b1b3feba5cc9c7ee8d9f8}{extent}})
 \item 
-bool \mbox{\hyperlink{struct_a_a_b_b_ae7ac829d966e46a8bea136b0c4ccb9c0}{Intersect}} (const \mbox{\hyperlink{struct_a_a_b_b}{A\+A\+BB}} \&other, glm\+::vec3 $\ast$mtv) const
-\begin{DoxyCompactList}\small\item\em Calculates the intersection between this Axis-\/\+Aligned Bounding Box (\mbox{\hyperlink{struct_a_a_b_b}{A\+A\+BB}}) and another \mbox{\hyperlink{struct_a_a_b_b}{A\+A\+BB}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_a_a_b_b_ae7ac829d966e46a8bea136b0c4ccb9c0}{Intersect}} (const \mbox{\hyperlink{struct_a_a_b_b}{AABB}} \&other, glm\+::vec3 \texorpdfstring{$\ast$}{*}mtv) const
+\begin{DoxyCompactList}\small\item\em Calculates the intersection between this Axis-\/\+Aligned Bounding Box (\doxylink{struct_a_a_b_b}{AABB}) and another \doxylink{struct_a_a_b_b}{AABB}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{struct_a_a_b_b_a5f8b76665ff1f56aeda65b3f10ec8f86}{Expand}} (const glm\+::vec3 \&p)
 \end{DoxyCompactItemize}
-\doxysubsection*{Public Attributes}
+\doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 glm\+::vec3 \mbox{\hyperlink{struct_a_a_b_b_a9aefc26a29fedcb12bfe12100edc07c3}{center}} \{0.f, 0.f ,0.f\}
@@ -28,65 +28,65 @@ glm\+::vec3 \mbox{\hyperlink{struct_a_a_b_b_ac927b387a68b1b3feba5cc9c7ee8d9f8}{e
 
 
 \doxysubsection{Detailed Description}
-Represents an Axis-\/\+Aligned Bounding Box (\mbox{\hyperlink{struct_a_a_b_b}{A\+A\+BB}}) used for collision detection. 
+Represents an Axis-\/\+Aligned Bounding Box (\doxylink{struct_a_a_b_b}{AABB}) used for collision detection. 
 
-The \mbox{\hyperlink{struct_a_a_b_b}{A\+A\+BB}} is defined by a center point and an extent (half-\/size in each dimension), allowing for efficient intersection tests and spatial partitioning. 
+The \doxylink{struct_a_a_b_b}{AABB} is defined by a center point and an extent (half-\/size in each dimension), allowing for efficient intersection tests and spatial partitioning. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{struct_a_a_b_b_aaa4045350d38f8f4f5395c22a86eb00a}\label{struct_a_a_b_b_aaa4045350d38f8f4f5395c22a86eb00a}} 
+\Hypertarget{struct_a_a_b_b_aaa4045350d38f8f4f5395c22a86eb00a}\label{struct_a_a_b_b_aaa4045350d38f8f4f5395c22a86eb00a} 
 \index{AABB@{AABB}!AABB@{AABB}}
 \index{AABB@{AABB}!AABB@{AABB}}
 \doxysubsubsection{\texorpdfstring{AABB()}{AABB()}}
-{\footnotesize\ttfamily A\+A\+B\+B\+::\+A\+A\+BB (\begin{DoxyParamCaption}\item[{const glm\+::vec3 \&}]{center,  }\item[{const glm\+::vec3 \&}]{extent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily AABB\+::\+AABB (\begin{DoxyParamCaption}\item[{const glm\+::vec3 \&}]{center,  }\item[{const glm\+::vec3 \&}]{extent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{struct_a_a_b_b_a5f8b76665ff1f56aeda65b3f10ec8f86}\label{struct_a_a_b_b_a5f8b76665ff1f56aeda65b3f10ec8f86}} 
+\Hypertarget{struct_a_a_b_b_a5f8b76665ff1f56aeda65b3f10ec8f86}\label{struct_a_a_b_b_a5f8b76665ff1f56aeda65b3f10ec8f86} 
 \index{AABB@{AABB}!Expand@{Expand}}
 \index{Expand@{Expand}!AABB@{AABB}}
 \doxysubsubsection{\texorpdfstring{Expand()}{Expand()}}
-{\footnotesize\ttfamily void A\+A\+B\+B\+::\+Expand (\begin{DoxyParamCaption}\item[{const glm\+::vec3 \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void AABB\+::\+Expand (\begin{DoxyParamCaption}\item[{const glm\+::vec3 \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{struct_a_a_b_b_ae7ac829d966e46a8bea136b0c4ccb9c0}\label{struct_a_a_b_b_ae7ac829d966e46a8bea136b0c4ccb9c0}} 
+\Hypertarget{struct_a_a_b_b_ae7ac829d966e46a8bea136b0c4ccb9c0}\label{struct_a_a_b_b_ae7ac829d966e46a8bea136b0c4ccb9c0} 
 \index{AABB@{AABB}!Intersect@{Intersect}}
 \index{Intersect@{Intersect}!AABB@{AABB}}
 \doxysubsubsection{\texorpdfstring{Intersect()}{Intersect()}}
-{\footnotesize\ttfamily bool A\+A\+B\+B\+::\+Intersect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_a_a_b_b}{A\+A\+BB}} \&}]{other,  }\item[{glm\+::vec3 $\ast$}]{mtv }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily bool AABB\+::\+Intersect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_a_a_b_b}{AABB}} \&}]{other,  }\item[{glm\+::vec3 \texorpdfstring{$\ast$}{*}}]{mtv }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Calculates the intersection between this Axis-\/\+Aligned Bounding Box (\mbox{\hyperlink{struct_a_a_b_b}{A\+A\+BB}}) and another \mbox{\hyperlink{struct_a_a_b_b}{A\+A\+BB}}. 
+Calculates the intersection between this Axis-\/\+Aligned Bounding Box (\doxylink{struct_a_a_b_b}{AABB}) and another \doxylink{struct_a_a_b_b}{AABB}. 
 
-This function checks for an intersection between the current \mbox{\hyperlink{struct_a_a_b_b}{A\+A\+BB}} object and another \mbox{\hyperlink{struct_a_a_b_b}{A\+A\+BB}} provided as a parameter. If an intersection exists, the function returns true. Additionally, if the {\ttfamily mtv} parameter is not a nullptr and there is an intersection, this function calculates and stores the Minimum Translation Vector (M\+TV) in {\ttfamily mtv}. The M\+TV represents the smallest vector by which one can move this \mbox{\hyperlink{struct_a_a_b_b}{A\+A\+BB}} to resolve the collision with the other \mbox{\hyperlink{struct_a_a_b_b}{A\+A\+BB}}.
+This function checks for an intersection between the current \doxylink{struct_a_a_b_b}{AABB} object and another \doxylink{struct_a_a_b_b}{AABB} provided as a parameter. If an intersection exists, the function returns true. Additionally, if the {\ttfamily mtv} parameter is not a nullptr and there is an intersection, this function calculates and stores the Minimum Translation Vector (MTV) in {\ttfamily mtv}. The MTV represents the smallest vector by which one can move this \doxylink{struct_a_a_b_b}{AABB} to resolve the collision with the other \doxylink{struct_a_a_b_b}{AABB}.
 
 
 \begin{DoxyParams}{Parameters}
-{\em other} & The other \mbox{\hyperlink{struct_a_a_b_b}{A\+A\+BB}} with which to check for an intersection. \\
+{\em other} & The other \doxylink{struct_a_a_b_b}{AABB} with which to check for an intersection. \\
 \hline
 {\em mtv} & A pointer to a glm\+::vec3 object where the Minimum Translation Vector will be stored if there is an intersection and {\ttfamily mtv} is not nullptr. This parameter is optional. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-bool Returns true if there is an intersection between the two A\+A\+B\+Bs, false otherwise. 
+bool Returns true if there is an intersection between the two AABBs, false otherwise. 
 \end{DoxyReturn}
 
 
 \doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{struct_a_a_b_b_a9aefc26a29fedcb12bfe12100edc07c3}\label{struct_a_a_b_b_a9aefc26a29fedcb12bfe12100edc07c3}} 
+\Hypertarget{struct_a_a_b_b_a9aefc26a29fedcb12bfe12100edc07c3}\label{struct_a_a_b_b_a9aefc26a29fedcb12bfe12100edc07c3} 
 \index{AABB@{AABB}!center@{center}}
 \index{center@{center}!AABB@{AABB}}
 \doxysubsubsection{\texorpdfstring{center}{center}}
-{\footnotesize\ttfamily glm\+::vec3 A\+A\+B\+B\+::center \{0.f, 0.f ,0.f\}}
+{\footnotesize\ttfamily glm\+::vec3 AABB\+::center \{0.f, 0.f ,0.f\}}
 
-\mbox{\Hypertarget{struct_a_a_b_b_ac927b387a68b1b3feba5cc9c7ee8d9f8}\label{struct_a_a_b_b_ac927b387a68b1b3feba5cc9c7ee8d9f8}} 
+\Hypertarget{struct_a_a_b_b_ac927b387a68b1b3feba5cc9c7ee8d9f8}\label{struct_a_a_b_b_ac927b387a68b1b3feba5cc9c7ee8d9f8} 
 \index{AABB@{AABB}!extent@{extent}}
 \index{extent@{extent}!AABB@{AABB}}
 \doxysubsubsection{\texorpdfstring{extent}{extent}}
-{\footnotesize\ttfamily glm\+::vec3 A\+A\+B\+B\+::extent \{0.\+5f, 0.\+5f, 0.\+5f\}}
+{\footnotesize\ttfamily glm\+::vec3 AABB\+::extent \{0.\+5f, 0.\+5f, 0.\+5f\}}
 
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-core/\mbox{\hyperlink{_a_a_b_b_8h}{A\+A\+B\+B.\+h}}\end{DoxyCompactItemize}
+core/\+Collision/\mbox{\hyperlink{_a_a_b_b_8h}{AABB.\+h}}\end{DoxyCompactItemize}

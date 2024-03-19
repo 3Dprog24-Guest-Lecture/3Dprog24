@@ -1,18 +1,32 @@
-\hypertarget{_scene_8cpp}{}\doxysection{core/\+Scene.cpp File Reference}
-\label{_scene_8cpp}\index{core/Scene.cpp@{core/Scene.cpp}}
+\doxysection{core/\+Scene.cpp File Reference}
+\hypertarget{_scene_8cpp}{}\label{_scene_8cpp}\index{core/Scene.cpp@{core/Scene.cpp}}
 {\ttfamily \#include $<$Scene.\+h$>$}\newline
 {\ttfamily \#include $<$Logger.\+h$>$}\newline
 {\ttfamily \#include $<$Mesh.\+h$>$}\newline
 {\ttfamily \#include $<$Material.\+h$>$}\newline
 {\ttfamily \#include $<$Shader.\+h$>$}\newline
-{\ttfamily \#include $<$Camera.\+h$>$}\newline
+{\ttfamily \#include $<$Camera/\+Camera.\+h$>$}\newline
 {\ttfamily \#include $<$Actor.\+h$>$}\newline
 {\ttfamily \#include $<$Defines.\+h$>$}\newline
-{\ttfamily \#include $<$Camera\+Controller.\+h$>$}\newline
+{\ttfamily \#include $<$Camera/\+Camera\+Controller.\+h$>$}\newline
 {\ttfamily \#include $<$Actor\+Controller.\+h$>$}\newline
 {\ttfamily \#include $<$Renderer.\+h$>$}\newline
 {\ttfamily \#include $<$imgui.\+h$>$}\newline
-{\ttfamily \#include $<$G\+L\+F\+W/glfw3.\+h$>$}\newline
-{\ttfamily \#include $<$Physics\+Component.\+h$>$}\newline
-{\ttfamily \#include $<$Skybox.\+h$>$}\newline
+{\ttfamily \#include $<$GLFW/glfw3.\+h$>$}\newline
+{\ttfamily \#include $<$Physics/\+Physics\+Component.\+h$>$}\newline
+{\ttfamily \#include $<$Skybox/\+Skybox.\+h$>$}\newline
 {\ttfamily \#include $<$Model\+Loader/\+Assimp\+Loader.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_scene_8cpp_a8df405bfe0f72a0aff81ba5904c55db9}{SOURCE\+\_\+\+DIRECTORY}}(relative\+Path)~std\+::string("{}../../../"{} + std\+::string(relative\+Path))
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_scene_8cpp_a8df405bfe0f72a0aff81ba5904c55db9}\label{_scene_8cpp_a8df405bfe0f72a0aff81ba5904c55db9} 
+\index{Scene.cpp@{Scene.cpp}!SOURCE\_DIRECTORY@{SOURCE\_DIRECTORY}}
+\index{SOURCE\_DIRECTORY@{SOURCE\_DIRECTORY}!Scene.cpp@{Scene.cpp}}
+\doxysubsubsection{\texorpdfstring{SOURCE\_DIRECTORY}{SOURCE\_DIRECTORY}}
+{\footnotesize\ttfamily \#define SOURCE\+\_\+\+DIRECTORY(\begin{DoxyParamCaption}\item[{}]{relative\+Path }\end{DoxyParamCaption})~std\+::string("{}../../../"{} + std\+::string(relative\+Path))}
+

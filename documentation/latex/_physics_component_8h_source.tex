@@ -1,0 +1,33 @@
+\doxysection{Physics\+Component.\+h}
+\hypertarget{_physics_component_8h_source}{}\label{_physics_component_8h_source}\index{core/Physics/PhysicsComponent.h@{core/Physics/PhysicsComponent.h}}
+\mbox{\hyperlink{_physics_component_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_component_8h}{Component.h}}>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <glm/glm.hpp>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_physics_component}{PhysicsComponent}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_component}{Component}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_actor}{Actor}};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_physics_component}{PhysicsComponent}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{class}\ \mbox{\hyperlink{class_actor}{Actor}}*\ owner)}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_component}{Component}}(name,\ owner)\ \{\};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ UpdateForces();}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ UpdateVelocity(\textcolor{keywordtype}{float}\ dt);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ UpdatePosition(\textcolor{keywordtype}{float}\ dt);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ ResetValues();}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Update(\textcolor{keywordtype}{float}\ dt)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ glm::vec3\ mVelocity\{0.f\};}
+\DoxyCodeLine{00059\ \ \ \ \ glm::vec3\ mAcceleration\{0.f\};}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{float}\ mMaxSpeed\ =\ 4.f;}
+\DoxyCodeLine{00061\ \};}
+
+\end{DoxyCode}

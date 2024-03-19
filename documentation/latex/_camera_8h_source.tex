@@ -1,5 +1,5 @@
 \doxysection{Camera.\+h}
-\hypertarget{_camera_8h_source}{}\label{_camera_8h_source}\index{core/Camera.h@{core/Camera.h}}
+\hypertarget{_camera_8h_source}{}\label{_camera_8h_source}\index{core/Camera/Camera.h@{core/Camera/Camera.h}}
 \mbox{\hyperlink{_camera_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
@@ -11,64 +11,96 @@
 \DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_camera_actor}{CameraActor}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_actor}{Actor}}}
 \DoxyCodeLine{00014\ \{}
 \DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_camera_actor_a81b9e52e8a9c4d9ffa0b9509480bf8dc}{CameraActor}}(\textcolor{keyword}{const}\ std::string\&\ name,}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_camera_actor_a187b8f6b9951ef1ae18339c138cb64b7}{CameraActor}}(\textcolor{keyword}{const}\ std::string\&\ name,}
 \DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ glm::vec3\ position\ =\ glm::vec3(0.0f,\ 0.0f,\ 0.0f),}
 \DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ glm::quat\ rotation\ =\ glm::quat(glm::identity<glm::quat>()),}
 \DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ aspectRatio\ =\ 1280.f\ /\ 720.f,}
 \DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ nearPlane\ =\ 0.1f,}
 \DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ farPlane\ =\ 100.0f,}
 \DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ fieldOfView\ =\ 45.0f,}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ maxMovementSeed\ =\ 40.f,}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ accelerationSpeed\ =\ 20.0f,}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ maxMovementSeed\ =\ 100.f,}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ accelerationSpeed\ =\ 50.0f,}
 \DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ dampingFactor\ =\ 5.0f);}
 \DoxyCodeLine{00026\ }
 \DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_camera_actor_acb220645451694729f06eb1b5033b7b1}{Update}}(\textcolor{keywordtype}{float}\ dt)\ \textcolor{keyword}{override};}
 \DoxyCodeLine{00028\ }
 \DoxyCodeLine{00029\ \ \ \ \ \textcolor{comment}{//\ Adders}}
 \DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_camera_actor_af2e29718b9e702f76e492561b175748f}{AddVelocity}}(\textcolor{keyword}{const}\ glm::vec3\&\ velocity);}
-\DoxyCodeLine{00031\ }
-\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{//\ Setters}}
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_camera_actor_a61a0dff1ac3a9c7347ec0d98056f3c95}{SetAspectRatio}}(\textcolor{keywordtype}{float}\ aspectRatio);}
-\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_camera_actor_a61378e1a5d95e49775ae967bff647acb}{SetVelocity}}(\textcolor{keyword}{const}\ glm::vec3\&\ velocity);}
-\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_camera_actor_a8c075f97521629fa9832b468faed4737}{SetAccelerationSpeed}}(\textcolor{keywordtype}{float}\ accelerationSpeed);}
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_camera_actor_aaa48221ddfc7d73c39fc71b1d610e408}{SetAcceleration}}(\textcolor{keyword}{const}\ glm::vec3\&\ acceleration);}
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_camera_actor_a52f760bc92a5946256e4aed2f1426b22}{SetMaxMovementSpeed}}(\textcolor{keywordtype}{float}\ movementSpeed);}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//\ Getters}}
-\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_camera_actor_a6f172d291430872fe83dd8c6180962f9}{GetMaxMovementSpeed}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_camera_actor_afe697e4908a970bea94edfea1143c460}{GetAspectRatio}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_camera_actor_a725748058bf6184ee57d6167fe6797a6}{GetNearPlane}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_camera_actor_a15b153c8340173028fc3ea3504a0ae4d}{GetFarPlane}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_camera_actor_ab7d5d74ffbb018303284608933d03647}{GetFieldOfView}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_camera_actor_a7d464b99a99ba15ad0b72dcd141ffc27}{GetAccelerationSpeed}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{const}\ glm::vec3\&\ \mbox{\hyperlink{class_camera_actor_a84ab4c9130d3daa5579e1ff2f1a6b070}{GetAcceleration}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00048\ \ \ \ \ glm::vec3\ \mbox{\hyperlink{class_camera_actor_aa70312a59975bc8e54387cc9ef04adb7}{GetFront}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00049\ \ \ \ \ glm::vec3\ \mbox{\hyperlink{class_camera_actor_a05b3828cf88c2990f6d42ec3d94b2d7e}{GetUp}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{const}\ glm::vec3\&\ \mbox{\hyperlink{class_camera_actor_a438150f3cd51a0b6369b8c4bd9a85834}{GetVelocity}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00051\ \ \ \ \ glm::mat4\ \mbox{\hyperlink{class_camera_actor_a880648cf74fd35e76050d9197b9f2201}{GetViewMatrix}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{const}\ glm::mat4\&\ \mbox{\hyperlink{class_camera_actor_abafb11260bb1e6fa9a9b67d263f3b94e}{GetProjectionMatrix}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00053\ \ \ \ \ glm::mat4\ \mbox{\hyperlink{class_camera_actor_a85a6a142812ec0518484e78f75ec1f2d}{GetVPMatrix}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00054\ }
-\DoxyCodeLine{00055\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ UpdateVelocity(\textcolor{keywordtype}{float}\ dt);\ \ \ \ }
-\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ UpdatePosition(\textcolor{keywordtype}{float}\ dt);}
-\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ UpdateDamping(\textcolor{keywordtype}{float}\ dt);}
-\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ UpdateProjectionMatrix();}
-\DoxyCodeLine{00060\ }
-\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{float}\ mMaxMovementSpeed;}
-\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{float}\ mAccelerationSpeed;}
-\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{float}\ mDampingFactor;}
-\DoxyCodeLine{00064\ \ \ \ \ glm::vec3\ mVelocity\{0.f,\ 0.f,\ 0.f\};}
-\DoxyCodeLine{00065\ \ \ \ \ glm::vec3\ mAcceleration\{0.f,\ 0.f,\ 0.f\};}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_camera_actor_aebd7bd9fea185a18196a861ec7c6b0f4}{AddYaw}}(\textcolor{keywordtype}{float}\ angleDegrees);}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_camera_actor_a5c0169ff861d6e540a8d7b0a5727fe69}{AddPitch}}(\textcolor{keywordtype}{float}\ angleDegrees);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_camera_actor_a17b310af8bc45a7ae0feccffc5fb6b0b}{AddAngularVelocity}}(\textcolor{keyword}{const}\ glm::vec2\&\ angularVelocityDelta);}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_camera_actor_a1fc731ff1e66b00bfda28789957fab10}{AddAngularAcceleration}}(\textcolor{keyword}{const}\ glm::vec2\&\ angularAccelerationDelta);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{comment}{//\ Setters}}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_camera_actor_a61a0dff1ac3a9c7347ec0d98056f3c95}{SetAspectRatio}}(\textcolor{keywordtype}{float}\ aspectRatio);}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_camera_actor_a61378e1a5d95e49775ae967bff647acb}{SetVelocity}}(\textcolor{keyword}{const}\ glm::vec3\&\ velocity);}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_camera_actor_a8c075f97521629fa9832b468faed4737}{SetAccelerationSpeed}}(\textcolor{keywordtype}{float}\ accelerationSpeed);}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_camera_actor_aaa48221ddfc7d73c39fc71b1d610e408}{SetAcceleration}}(\textcolor{keyword}{const}\ glm::vec3\&\ acceleration);}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_camera_actor_a52f760bc92a5946256e4aed2f1426b22}{SetMaxMovementSpeed}}(\textcolor{keywordtype}{float}\ movementSpeed);}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_camera_actor_a92b6e9a6c24929b1865fdff114c58d3f}{SetAngularVelocity}}(\textcolor{keyword}{const}\ glm::vec2\&\ angularVelocity);}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_camera_actor_aade53bff233e640ce84a26325723eaf3}{SetAngularAcceleration}}(\textcolor{keyword}{const}\ glm::vec2\&\ angularAcceleration);\ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_camera_actor_a9b66b374dcbd60a4412a1a683d9fa36c}{SetAngularDampingFactor}}(\textcolor{keywordtype}{float}\ dampingFactor);}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_camera_actor_aca10ab985fd6206c9056cf2788fa941f}{SetPitch}}(\textcolor{keywordtype}{float}\ pitchDegrees);}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_camera_actor_a962d576d742d60b99a0b64fd14e95ef1}{SetYaw}}(\textcolor{keywordtype}{float}\ yawDegrees);}
+\DoxyCodeLine{00047\ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{//\ Getters}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_camera_actor_a6f172d291430872fe83dd8c6180962f9}{GetMaxMovementSpeed}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_camera_actor_afe697e4908a970bea94edfea1143c460}{GetAspectRatio}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_camera_actor_a725748058bf6184ee57d6167fe6797a6}{GetNearPlane}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_camera_actor_a15b153c8340173028fc3ea3504a0ae4d}{GetFarPlane}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_camera_actor_ab7d5d74ffbb018303284608933d03647}{GetFieldOfView}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_camera_actor_a7d464b99a99ba15ad0b72dcd141ffc27}{GetAccelerationSpeed}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{const}\ glm::vec3\&\ \mbox{\hyperlink{class_camera_actor_a84ab4c9130d3daa5579e1ff2f1a6b070}{GetAcceleration}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{const}\ glm::vec2\&\ \mbox{\hyperlink{class_camera_actor_ade3eaf42013850d48ad8dc2820ce1c50}{GetAngularVelocity}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{const}\ glm::vec2\&\ \mbox{\hyperlink{class_camera_actor_accf2454ef59435649982d31090b6409a}{GetAngularAcceleration}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_camera_actor_a11e3218bb8bfa189e9b15455f0c4aafa}{GetAngularDampingFactor}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00059\ \ \ \ \ glm::vec3\ \mbox{\hyperlink{class_camera_actor_aa70312a59975bc8e54387cc9ef04adb7}{GetFront}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00060\ \ \ \ \ glm::vec3\ \mbox{\hyperlink{class_camera_actor_a05b3828cf88c2990f6d42ec3d94b2d7e}{GetUp}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{const}\ glm::vec3\&\ \mbox{\hyperlink{class_camera_actor_a438150f3cd51a0b6369b8c4bd9a85834}{GetVelocity}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00062\ \ \ \ \ glm::mat4\ \mbox{\hyperlink{class_camera_actor_a880648cf74fd35e76050d9197b9f2201}{GetViewMatrix}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{const}\ glm::mat4\&\ \mbox{\hyperlink{class_camera_actor_abafb11260bb1e6fa9a9b67d263f3b94e}{GetProjectionMatrix}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00064\ \ \ \ \ glm::mat4\ \mbox{\hyperlink{class_camera_actor_a85a6a142812ec0518484e78f75ec1f2d}{GetVPMatrix}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_camera_actor_a620c8d337f7b8c3ef5651d45dee492a4}{GetAngularAccelerationSpeed}}()\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00066\ }
-\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{float}\ mAspectRatio;}
-\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{float}\ mNearPlane;}
-\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{float}\ mFarPlane;}
-\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{float}\ mFieldOfView;}
-\DoxyCodeLine{00071\ }
-\DoxyCodeLine{00072\ \ \ \ \ glm::mat4\ mProjectionMatrix;}
-\DoxyCodeLine{00073\ \};}
-\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00067\ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{comment}{//\ Update}}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ UpdateVelocity(\textcolor{keywordtype}{float}\ dt);\ \ \ \ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ UpdatePosition(\textcolor{keywordtype}{float}\ dt);}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ UpdateRotation(\textcolor{keywordtype}{float}\ dt);}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ UpdateAngularVelocity(\textcolor{keywordtype}{float}\ dt);}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ UpdateAngularDamping(\textcolor{keywordtype}{float}\ dt);}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ UpdateDamping(\textcolor{keywordtype}{float}\ dt);}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ UpdateProjectionMatrix();}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ UpdateRotationFromYawPitch();}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{comment}{//\ Speed}}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{float}\ mMaxMovementSpeed;}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{float}\ mAccelerationSpeed;}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{float}\ mAngularAccelerationSpeed\{\ 1000.f\ \};}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{float}\ mMaxAngularSpeed\{\ 500.f\ \};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{comment}{//\ Damping}}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{float}\ mDampingFactor;}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{float}\ mAngularDampingFactor\{\ 20.0f\ \};}
+\DoxyCodeLine{00087\ \ \ \ \ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{comment}{//\ Velocity\ and\ acceleration}}
+\DoxyCodeLine{00089\ \ \ \ \ glm::vec3\ mVelocity\{0.f,\ 0.f,\ 0.f\};}
+\DoxyCodeLine{00090\ \ \ \ \ glm::vec3\ mAcceleration\{0.f,\ 0.f,\ 0.f\};}
+\DoxyCodeLine{00091\ \ \ \ \ glm::vec2\ mAngularVelocity\{0.f,\ 0.f\};\ \textcolor{comment}{//\ x\ for\ yaw,\ y\ for\ pitch}}
+\DoxyCodeLine{00092\ \ \ \ \ glm::vec2\ mAngularAcceleration\{0.f,\ 0.f\};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{comment}{//\ Perspecitve}}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{float}\ mAspectRatio;}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{float}\ mNearPlane;}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{float}\ mFarPlane;}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{float}\ mFieldOfView;}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{comment}{//\ Todo:\ Update\ these\ values\ on\ other\ rotation\ operations}}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{float}\ mYaw\ =\ 0.0f;\ \textcolor{comment}{//\ Yaw\ angle\ in\ degrees}}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{float}\ mPitch\ =\ 0.0f;\ \textcolor{comment}{//\ Pitch\ angle\ in\ degrees}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ glm::mat4\ mProjectionMatrix;}
+\DoxyCodeLine{00105\ \};}
+\DoxyCodeLine{00106\ }
 
 \end{DoxyCode}

@@ -1,0 +1,91 @@
+\doxysection{Shared.\+h}
+\hypertarget{_shared_8h_source}{}\label{_shared_8h_source}\index{core/ModelLoader/Shared.h@{core/ModelLoader/Shared.h}}
+\mbox{\hyperlink{_shared_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }fs\ =\ std::filesystem;}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{inline}\ std::string\ \mbox{\hyperlink{_shared_8h_af44847a11d082b8e86738f2b1e866c9b}{ToRelativePath}}(\textcolor{keyword}{const}\ std::string\&\ basePath,\ \textcolor{keyword}{const}\ std::string\&\ absolutePath)\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ fs::path\ base(basePath);}
+\DoxyCodeLine{00009\ \ \ \ \ fs::path\ absolute(absolutePath);}
+\DoxyCodeLine{00010\ \ \ \ \ fs::path\ relative\ =\ fs::relative(absolute,\ base);}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordflow}{return}\ relative.string();}
+\DoxyCodeLine{00012\ \}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{inline}\ std::string\ \mbox{\hyperlink{_shared_8h_ab24b66dce6024393a3b775b5e5325d38}{GetFileNameFromPath}}(\textcolor{keyword}{const}\ std::string\&\ filePath)}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ pos\ =\ filePath.find\_last\_of(\textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)/"{}});}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordflow}{if}\ (pos\ !=\ std::string::npos)}
+\DoxyCodeLine{00018\ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ filePath.substr(pos\ +\ 1);}
+\DoxyCodeLine{00020\ \ \ \ \ \}}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordflow}{return}\ filePath;}
+\DoxyCodeLine{00022\ \}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{inline}\ std::string\ \mbox{\hyperlink{_shared_8h_af252ff1df365d9c524663defcf1a4425}{GetDirectoryPath}}(\textcolor{keyword}{const}\ std::string\&\ filePath)}
+\DoxyCodeLine{00025\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ pos\ =\ filePath.find\_last\_of(\textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)/"{}});}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordflow}{if}\ (pos\ !=\ std::string::npos)}
+\DoxyCodeLine{00028\ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ filePath.substr(0,\ pos\ +\ 1);}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00032\ \}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{inline}\ std::string\ \mbox{\hyperlink{_shared_8h_a0cb382ca9e5a052ee326a9dd44d72214}{GetFileExtension}}(\textcolor{keyword}{const}\ std::string\&\ filePath)\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ pos\ =\ filePath.find\_last\_of(\textcolor{charliteral}{'.'});}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{if}\ (pos\ !=\ std::string::npos)}
+\DoxyCodeLine{00037\ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ filePath.substr(pos);}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00041\ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{inline}\ std::string\ \mbox{\hyperlink{_shared_8h_a32f36289bacc1391d5edd75cbc467862}{RemoveFileExtension}}(\textcolor{keyword}{const}\ std::string\&\ filePath)}
+\DoxyCodeLine{00044\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ pos\ =\ filePath.find\_last\_of(\textcolor{charliteral}{'.'});}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{if}\ (pos\ !=\ std::string::npos)}
+\DoxyCodeLine{00047\ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ filePath.substr(0,\ pos);}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{return}\ filePath;}
+\DoxyCodeLine{00051\ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_shared_8h_ae50d70cb2bbb995cb3c7b25fee31193d}{HasCollisionPrefix}}(\textcolor{keyword}{const}\ std::string\&\ fileName,\ std::string\&\ outPrefix)}
+\DoxyCodeLine{00054\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordflow}{if}\ (fileName[0]\ !=\ \textcolor{charliteral}{'\_'})}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ pos\ =\ std::string(fileName.begin()\ +\ 1,\ fileName.end()).find\_first\_of(\textcolor{charliteral}{'\_'});}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordflow}{if}\ (pos\ ==\ std::string::npos)}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordflow}{if}\ (std::string(fileName.begin(),\ fileName.begin()\ +\ pos\ +\ 2)\ !=\ \textcolor{stringliteral}{"{}\_Collision\_"{}})}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ outPrefix\ =\ std::string(fileName.begin()\ +\ pos\ +\ 2,\ fileName.end());}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00068\ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_shared_8h_a6b29a99e3ba59d1c7e84bc9fa90cf7a1}{HasLightPrefix}}(\textcolor{keyword}{const}\ std::string\&\ fileName,\ std::string\&\ outPrefix)}
+\DoxyCodeLine{00071\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordflow}{if}\ (fileName[0]\ !=\ \textcolor{charliteral}{'\_'})}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ pos\ =\ std::string(fileName.begin()\ +\ 1,\ fileName.end()).find\_first\_of(\textcolor{charliteral}{'\_'});}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordflow}{if}\ (pos\ ==\ std::string::npos)}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordflow}{if}\ (std::string(fileName.begin(),\ fileName.begin()\ +\ pos\ +\ 2)\ !=\ \textcolor{stringliteral}{"{}\_Light\_"{}})}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ outPrefix\ =\ std::string(fileName.begin()\ +\ pos\ +\ 2,\ fileName.end());}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00085\ \}}
+
+\end{DoxyCode}

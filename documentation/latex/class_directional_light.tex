@@ -1,5 +1,5 @@
-\hypertarget{class_directional_light}{}\doxysection{Directional\+Light Class Reference}
-\label{class_directional_light}\index{DirectionalLight@{DirectionalLight}}
+\doxysection{Directional\+Light Class Reference}
+\hypertarget{class_directional_light}{}\label{class_directional_light}\index{DirectionalLight@{DirectionalLight}}
 
 
 {\ttfamily \#include $<$Directional\+Light.\+h$>$}
@@ -10,16 +10,28 @@ Inheritance diagram for Directional\+Light\+:\begin{figure}[H]
 \includegraphics[height=3.000000cm]{class_directional_light}
 \end{center}
 \end{figure}
-\doxysubsection*{Public Member Functions}
+\doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 virtual glm\+::vec3 \mbox{\hyperlink{class_directional_light_a5f8d1a0f46bfc77333a559adcbdc51d5}{Get\+Direction}} () const =0
 \end{DoxyCompactItemize}
-\doxysubsection*{Additional Inherited Members}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{struct_light}{Light}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{struct_light_ae3e3209d4b97d0bbbd614ded5e1213d9}{\texorpdfstring{$\sim$}{\string~}\+Light}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{struct_light}{Light}}}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::vec3 \mbox{\hyperlink{struct_light_af3d47a5dc1be1855ffca8731c2458874}{m\+Ambient}} \{0.\+4f, 0.\+4f, 0.\+4f\}
+\item 
+glm\+::vec3 \mbox{\hyperlink{struct_light_a7d74b1637c4f371fafa639469d77fff4}{m\+Color}} \{1.f, 1.f, 1.f\}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_directional_light_a5f8d1a0f46bfc77333a559adcbdc51d5}\label{class_directional_light_a5f8d1a0f46bfc77333a559adcbdc51d5}} 
+\Hypertarget{class_directional_light_a5f8d1a0f46bfc77333a559adcbdc51d5}\label{class_directional_light_a5f8d1a0f46bfc77333a559adcbdc51d5} 
 \index{DirectionalLight@{DirectionalLight}!GetDirection@{GetDirection}}
 \index{GetDirection@{GetDirection}!DirectionalLight@{DirectionalLight}}
 \doxysubsubsection{\texorpdfstring{GetDirection()}{GetDirection()}}

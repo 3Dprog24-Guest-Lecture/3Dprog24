@@ -1,5 +1,5 @@
-\hypertarget{class_actor}{}\doxysection{Actor Class Reference}
-\label{class_actor}\index{Actor@{Actor}}
+\doxysection{Actor Class Reference}
+\hypertarget{class_actor}{}\label{class_actor}\index{Actor@{Actor}}
 
 
 {\ttfamily \#include $<$Actor.\+h$>$}
@@ -7,35 +7,35 @@
 Inheritance diagram for Actor\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.014389cm]{class_actor}
+\includegraphics[height=1.151079cm]{class_actor}
 \end{center}
 \end{figure}
-\doxysubsection*{Public Member Functions}
+\doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_actor_af17d22383fdbe2edb46d07cd26c01754}{Actor}} (const std\+::string \&name)
 \item 
 \mbox{\hyperlink{class_actor_a22f32e3ce430a9f5c6dc9eab2ed7224c}{Actor}} (const \mbox{\hyperlink{class_actor}{Actor}} \&)=delete
 \item 
-\mbox{\hyperlink{class_actor}{Actor}} \& \mbox{\hyperlink{class_actor_a62a71e552c0f51ca443093c604963900}{operator=}} (const \mbox{\hyperlink{class_actor}{Actor}} \&)=delete
+\mbox{\hyperlink{class_actor}{Actor}} \& \mbox{\hyperlink{class_actor_a2694d37daf78fdd5c472bbced3f411b5}{operator=}} (const \mbox{\hyperlink{class_actor}{Actor}} \&)=delete
 \item 
 \mbox{\hyperlink{class_actor_aa3a169246ab4b9293e238732700fba4d}{Actor}} (\mbox{\hyperlink{class_actor}{Actor}} \&\&)=default
 \item 
-\mbox{\hyperlink{class_actor}{Actor}} \& \mbox{\hyperlink{class_actor_a9baaac3fad9a9d31820b0c92bef86957}{operator=}} (\mbox{\hyperlink{class_actor}{Actor}} \&\&)=default
+\mbox{\hyperlink{class_actor}{Actor}} \& \mbox{\hyperlink{class_actor_a9be3746bee0b124b6ca67bbaa838288f}{operator=}} (\mbox{\hyperlink{class_actor}{Actor}} \&\&)=default
 \item 
-\mbox{\hyperlink{class_actor_ad807fe8f85e72ab263a0c05e3231cb39}{$\sim$\+Actor}} ()
+\mbox{\hyperlink{class_actor_ad807fe8f85e72ab263a0c05e3231cb39}{\texorpdfstring{$\sim$}{\string~}\+Actor}} ()
 \item 
 virtual void \mbox{\hyperlink{class_actor_a651fecef34d686452750bc165fcc76ce}{Update}} (float dt)
 \item 
 void \mbox{\hyperlink{class_actor_a21715071792ab98d56eb7719fe70899a}{Update\+Components}} (float dt)
 \item 
-void \mbox{\hyperlink{class_actor_aba5cc96b0d0097ef4fd67aa155810e2c}{Set\+Parent}} (\mbox{\hyperlink{class_actor}{Actor}} $\ast$parent)
+void \mbox{\hyperlink{class_actor_aba5cc96b0d0097ef4fd67aa155810e2c}{Set\+Parent}} (\mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*}parent)
 \item 
-void \mbox{\hyperlink{class_actor_a52786836e705c29df948c268da4b42e2}{Add\+Child}} (\mbox{\hyperlink{class_actor}{Actor}} $\ast$child)
+void \mbox{\hyperlink{class_actor_a52786836e705c29df948c268da4b42e2}{Add\+Child}} (\mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*}child)
+\item 
+void \mbox{\hyperlink{class_actor_ae244e4ffa7005b14970d64616b1b717c}{Remove\+Child}} (\mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*}child)
 \item 
 {\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_actor_a5d3321bea75500dd676a2c37c5f09479}{Add\+Component}} (const std\+::string \&component\+Name)
-\item 
-void \mbox{\hyperlink{class_actor_ae244e4ffa7005b14970d64616b1b717c}{Remove\+Child}} (\mbox{\hyperlink{class_actor}{Actor}} $\ast$child)
 \item 
 void \mbox{\hyperlink{class_actor_ace4af4f181e7f1f19d46b57b2f1cb2c6}{Set\+Transform}} (const \mbox{\hyperlink{struct_transform}{Transform}} \&transform)
 \item 
@@ -71,221 +71,221 @@ glm\+::mat4 \mbox{\hyperlink{class_actor_a9d34bbafa35664f520ce27b79472f13a}{Get\
 \item 
 const \mbox{\hyperlink{struct_transform}{Transform}} \& \mbox{\hyperlink{class_actor_a041d72ef804951ba63c8159222ec41f5}{Get\+Local\+Transform}} () const
 \item 
-std\+::vector$<$ \mbox{\hyperlink{class_actor}{Actor}} $\ast$ $>$ \& \mbox{\hyperlink{class_actor_a067c9709390f5185e5a8535785dc2ff8}{Get\+Children}} ()
+std\+::vector$<$ \mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{class_actor_a067c9709390f5185e5a8535785dc2ff8}{Get\+Children}} ()
 \item 
 glm\+::vec3 \mbox{\hyperlink{class_actor_ac00f6f9e954f08653c5506eaf8d860b0}{Get\+Right}} () const
 \item 
-{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_actor_a3e6480c40842863595b388a3be2c1533}{Query}} (std\+::vector$<$ \mbox{\hyperlink{class_actor}{Actor}} $\ast$ $>$ \&actors)
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_actor_a3e6480c40842863595b388a3be2c1533}{Query}} (std\+::vector$<$ \mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*} $>$ \&actors)
 \begin{DoxyCompactList}\small\item\em Adds actors of type T to a vector if they match the current object type. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Protected Attributes}
+\doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_actor}{Actor}} $\ast$ \mbox{\hyperlink{class_actor_a2e23b38fa11b43c4e5cf57d65b8349a4}{m\+Parent}} \{nullptr\}
+\mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_actor_a2e23b38fa11b43c4e5cf57d65b8349a4}{m\+Parent}} \{nullptr\}
 \item 
-std\+::vector$<$ \mbox{\hyperlink{class_actor}{Actor}} $\ast$ $>$ \mbox{\hyperlink{class_actor_ad59a8d1d6e8407c01883d325884b25ec}{m\+Children}}
+std\+::vector$<$ \mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_actor_ad59a8d1d6e8407c01883d325884b25ec}{m\+Children}}
 \item 
-std\+::vector$<$ \mbox{\hyperlink{class_component}{Component}} $\ast$ $>$ \mbox{\hyperlink{class_actor_a69af522a7017c89865f8e0fa3c0cec74}{m\+Components}}
+std\+::vector$<$ \mbox{\hyperlink{class_component}{Component}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_actor_a69af522a7017c89865f8e0fa3c0cec74}{m\+Components}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_actor_af17d22383fdbe2edb46d07cd26c01754}\label{class_actor_af17d22383fdbe2edb46d07cd26c01754}} 
+\Hypertarget{class_actor_af17d22383fdbe2edb46d07cd26c01754}\label{class_actor_af17d22383fdbe2edb46d07cd26c01754} 
 \index{Actor@{Actor}!Actor@{Actor}}
 \index{Actor@{Actor}!Actor@{Actor}}
 \doxysubsubsection{\texorpdfstring{Actor()}{Actor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
 {\footnotesize\ttfamily Actor\+::\+Actor (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{class_actor_a22f32e3ce430a9f5c6dc9eab2ed7224c}\label{class_actor_a22f32e3ce430a9f5c6dc9eab2ed7224c}} 
+\Hypertarget{class_actor_a22f32e3ce430a9f5c6dc9eab2ed7224c}\label{class_actor_a22f32e3ce430a9f5c6dc9eab2ed7224c} 
 \index{Actor@{Actor}!Actor@{Actor}}
 \index{Actor@{Actor}!Actor@{Actor}}
 \doxysubsubsection{\texorpdfstring{Actor()}{Actor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
 {\footnotesize\ttfamily Actor\+::\+Actor (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_actor}{Actor}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
 
-\mbox{\Hypertarget{class_actor_aa3a169246ab4b9293e238732700fba4d}\label{class_actor_aa3a169246ab4b9293e238732700fba4d}} 
+\Hypertarget{class_actor_aa3a169246ab4b9293e238732700fba4d}\label{class_actor_aa3a169246ab4b9293e238732700fba4d} 
 \index{Actor@{Actor}!Actor@{Actor}}
 \index{Actor@{Actor}!Actor@{Actor}}
 \doxysubsubsection{\texorpdfstring{Actor()}{Actor()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
 {\footnotesize\ttfamily Actor\+::\+Actor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_actor}{Actor}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
 
-\mbox{\Hypertarget{class_actor_ad807fe8f85e72ab263a0c05e3231cb39}\label{class_actor_ad807fe8f85e72ab263a0c05e3231cb39}} 
-\index{Actor@{Actor}!````~Actor@{$\sim$Actor}}
-\index{````~Actor@{$\sim$Actor}!Actor@{Actor}}
-\doxysubsubsection{\texorpdfstring{$\sim$Actor()}{~Actor()}}
-{\footnotesize\ttfamily Actor\+::$\sim$\+Actor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\Hypertarget{class_actor_ad807fe8f85e72ab263a0c05e3231cb39}\label{class_actor_ad807fe8f85e72ab263a0c05e3231cb39} 
+\index{Actor@{Actor}!````~Actor@{\texorpdfstring{$\sim$}{\string~}Actor}}
+\index{````~Actor@{\texorpdfstring{$\sim$}{\string~}Actor}!Actor@{Actor}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Actor()}{\string~Actor()}}
+{\footnotesize\ttfamily Actor\+::\texorpdfstring{$\sim$}{\string~}\+Actor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_actor_a52786836e705c29df948c268da4b42e2}\label{class_actor_a52786836e705c29df948c268da4b42e2}} 
+\Hypertarget{class_actor_a52786836e705c29df948c268da4b42e2}\label{class_actor_a52786836e705c29df948c268da4b42e2} 
 \index{Actor@{Actor}!AddChild@{AddChild}}
 \index{AddChild@{AddChild}!Actor@{Actor}}
 \doxysubsubsection{\texorpdfstring{AddChild()}{AddChild()}}
-{\footnotesize\ttfamily void Actor\+::\+Add\+Child (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_actor}{Actor}} $\ast$}]{child }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Actor\+::\+Add\+Child (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*}}]{child }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_actor_a5d3321bea75500dd676a2c37c5f09479}\label{class_actor_a5d3321bea75500dd676a2c37c5f09479}} 
+\Hypertarget{class_actor_a5d3321bea75500dd676a2c37c5f09479}\label{class_actor_a5d3321bea75500dd676a2c37c5f09479} 
 \index{Actor@{Actor}!AddComponent@{AddComponent}}
 \index{AddComponent@{AddComponent}!Actor@{Actor}}
 \doxysubsubsection{\texorpdfstring{AddComponent()}{AddComponent()}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
 void Actor\+::\+Add\+Component (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{component\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{class_actor_a067c9709390f5185e5a8535785dc2ff8}\label{class_actor_a067c9709390f5185e5a8535785dc2ff8}} 
+\Hypertarget{class_actor_a067c9709390f5185e5a8535785dc2ff8}\label{class_actor_a067c9709390f5185e5a8535785dc2ff8} 
 \index{Actor@{Actor}!GetChildren@{GetChildren}}
 \index{GetChildren@{GetChildren}!Actor@{Actor}}
 \doxysubsubsection{\texorpdfstring{GetChildren()}{GetChildren()}}
-{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_actor}{Actor}} $\ast$ $>$ \& Actor\+::\+Get\+Children (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*} $>$ \& Actor\+::\+Get\+Children (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_actor_aea7454e0e5aa7fb3b506ad5956c17512}\label{class_actor_aea7454e0e5aa7fb3b506ad5956c17512}} 
+\Hypertarget{class_actor_aea7454e0e5aa7fb3b506ad5956c17512}\label{class_actor_aea7454e0e5aa7fb3b506ad5956c17512} 
 \index{Actor@{Actor}!GetLocalPosition@{GetLocalPosition}}
 \index{GetLocalPosition@{GetLocalPosition}!Actor@{Actor}}
 \doxysubsubsection{\texorpdfstring{GetLocalPosition()}{GetLocalPosition()}}
 {\footnotesize\ttfamily const glm\+::vec3 \& Actor\+::\+Get\+Local\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\mbox{\Hypertarget{class_actor_a570bc92098db2a06aefc39aeac6a495a}\label{class_actor_a570bc92098db2a06aefc39aeac6a495a}} 
+\Hypertarget{class_actor_a570bc92098db2a06aefc39aeac6a495a}\label{class_actor_a570bc92098db2a06aefc39aeac6a495a} 
 \index{Actor@{Actor}!GetLocalRotation@{GetLocalRotation}}
 \index{GetLocalRotation@{GetLocalRotation}!Actor@{Actor}}
 \doxysubsubsection{\texorpdfstring{GetLocalRotation()}{GetLocalRotation()}}
 {\footnotesize\ttfamily const glm\+::quat \& Actor\+::\+Get\+Local\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\mbox{\Hypertarget{class_actor_a4c5bf4802d01b48fd119befe009c9c78}\label{class_actor_a4c5bf4802d01b48fd119befe009c9c78}} 
+\Hypertarget{class_actor_a4c5bf4802d01b48fd119befe009c9c78}\label{class_actor_a4c5bf4802d01b48fd119befe009c9c78} 
 \index{Actor@{Actor}!GetLocalScale@{GetLocalScale}}
 \index{GetLocalScale@{GetLocalScale}!Actor@{Actor}}
 \doxysubsubsection{\texorpdfstring{GetLocalScale()}{GetLocalScale()}}
 {\footnotesize\ttfamily const glm\+::vec3 \& Actor\+::\+Get\+Local\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\mbox{\Hypertarget{class_actor_a041d72ef804951ba63c8159222ec41f5}\label{class_actor_a041d72ef804951ba63c8159222ec41f5}} 
+\Hypertarget{class_actor_a041d72ef804951ba63c8159222ec41f5}\label{class_actor_a041d72ef804951ba63c8159222ec41f5} 
 \index{Actor@{Actor}!GetLocalTransform@{GetLocalTransform}}
 \index{GetLocalTransform@{GetLocalTransform}!Actor@{Actor}}
 \doxysubsubsection{\texorpdfstring{GetLocalTransform()}{GetLocalTransform()}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{struct_transform}{Transform}} \& Actor\+::\+Get\+Local\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\mbox{\Hypertarget{class_actor_a6b976599c0e904770041f87c46cbb7e0}\label{class_actor_a6b976599c0e904770041f87c46cbb7e0}} 
+\Hypertarget{class_actor_a6b976599c0e904770041f87c46cbb7e0}\label{class_actor_a6b976599c0e904770041f87c46cbb7e0} 
 \index{Actor@{Actor}!GetLocalTransformMatrix@{GetLocalTransformMatrix}}
 \index{GetLocalTransformMatrix@{GetLocalTransformMatrix}!Actor@{Actor}}
 \doxysubsubsection{\texorpdfstring{GetLocalTransformMatrix()}{GetLocalTransformMatrix()}}
 {\footnotesize\ttfamily const glm\+::mat4 Actor\+::\+Get\+Local\+Transform\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\mbox{\Hypertarget{class_actor_ac00f6f9e954f08653c5506eaf8d860b0}\label{class_actor_ac00f6f9e954f08653c5506eaf8d860b0}} 
+\Hypertarget{class_actor_ac00f6f9e954f08653c5506eaf8d860b0}\label{class_actor_ac00f6f9e954f08653c5506eaf8d860b0} 
 \index{Actor@{Actor}!GetRight@{GetRight}}
 \index{GetRight@{GetRight}!Actor@{Actor}}
 \doxysubsubsection{\texorpdfstring{GetRight()}{GetRight()}}
 {\footnotesize\ttfamily glm\+::vec3 Actor\+::\+Get\+Right (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\mbox{\Hypertarget{class_actor_ab467606d89630ec572bde60eaa65c429}\label{class_actor_ab467606d89630ec572bde60eaa65c429}} 
+\Hypertarget{class_actor_ab467606d89630ec572bde60eaa65c429}\label{class_actor_ab467606d89630ec572bde60eaa65c429} 
 \index{Actor@{Actor}!GetWorldPosition@{GetWorldPosition}}
 \index{GetWorldPosition@{GetWorldPosition}!Actor@{Actor}}
 \doxysubsubsection{\texorpdfstring{GetWorldPosition()}{GetWorldPosition()}}
 {\footnotesize\ttfamily glm\+::vec3 Actor\+::\+Get\+World\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\mbox{\Hypertarget{class_actor_a0891342bea87cfda13affb2b86e83969}\label{class_actor_a0891342bea87cfda13affb2b86e83969}} 
+\Hypertarget{class_actor_a0891342bea87cfda13affb2b86e83969}\label{class_actor_a0891342bea87cfda13affb2b86e83969} 
 \index{Actor@{Actor}!GetWorldRotation@{GetWorldRotation}}
 \index{GetWorldRotation@{GetWorldRotation}!Actor@{Actor}}
 \doxysubsubsection{\texorpdfstring{GetWorldRotation()}{GetWorldRotation()}}
 {\footnotesize\ttfamily glm\+::quat Actor\+::\+Get\+World\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\mbox{\Hypertarget{class_actor_a1cc20ebb360e80b8d9f0333285be4e13}\label{class_actor_a1cc20ebb360e80b8d9f0333285be4e13}} 
+\Hypertarget{class_actor_a1cc20ebb360e80b8d9f0333285be4e13}\label{class_actor_a1cc20ebb360e80b8d9f0333285be4e13} 
 \index{Actor@{Actor}!GetWorldScale@{GetWorldScale}}
 \index{GetWorldScale@{GetWorldScale}!Actor@{Actor}}
 \doxysubsubsection{\texorpdfstring{GetWorldScale()}{GetWorldScale()}}
 {\footnotesize\ttfamily glm\+::vec3 Actor\+::\+Get\+World\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\mbox{\Hypertarget{class_actor_a9d34bbafa35664f520ce27b79472f13a}\label{class_actor_a9d34bbafa35664f520ce27b79472f13a}} 
+\Hypertarget{class_actor_a9d34bbafa35664f520ce27b79472f13a}\label{class_actor_a9d34bbafa35664f520ce27b79472f13a} 
 \index{Actor@{Actor}!GetWorldTransformMatrix@{GetWorldTransformMatrix}}
 \index{GetWorldTransformMatrix@{GetWorldTransformMatrix}!Actor@{Actor}}
 \doxysubsubsection{\texorpdfstring{GetWorldTransformMatrix()}{GetWorldTransformMatrix()}}
 {\footnotesize\ttfamily glm\+::mat4 Actor\+::\+Get\+World\+Transform\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\mbox{\Hypertarget{class_actor_a9baaac3fad9a9d31820b0c92bef86957}\label{class_actor_a9baaac3fad9a9d31820b0c92bef86957}} 
+\Hypertarget{class_actor_a9be3746bee0b124b6ca67bbaa838288f}\label{class_actor_a9be3746bee0b124b6ca67bbaa838288f} 
 \index{Actor@{Actor}!operator=@{operator=}}
 \index{operator=@{operator=}!Actor@{Actor}}
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_actor}{Actor}}\& Actor\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_actor}{Actor}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_actor}{Actor}} \& Actor\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_actor}{Actor}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
 
-\mbox{\Hypertarget{class_actor_a62a71e552c0f51ca443093c604963900}\label{class_actor_a62a71e552c0f51ca443093c604963900}} 
+\Hypertarget{class_actor_a2694d37daf78fdd5c472bbced3f411b5}\label{class_actor_a2694d37daf78fdd5c472bbced3f411b5} 
 \index{Actor@{Actor}!operator=@{operator=}}
 \index{operator=@{operator=}!Actor@{Actor}}
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_actor}{Actor}}\& Actor\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_actor}{Actor}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_actor}{Actor}} \& Actor\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_actor}{Actor}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
 
-\mbox{\Hypertarget{class_actor_a3e6480c40842863595b388a3be2c1533}\label{class_actor_a3e6480c40842863595b388a3be2c1533}} 
+\Hypertarget{class_actor_a3e6480c40842863595b388a3be2c1533}\label{class_actor_a3e6480c40842863595b388a3be2c1533} 
 \index{Actor@{Actor}!Query@{Query}}
 \index{Query@{Query}!Actor@{Actor}}
 \doxysubsubsection{\texorpdfstring{Query()}{Query()}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-void Actor\+::\+Query (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_actor}{Actor}} $\ast$ $>$ \&}]{actors }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+void Actor\+::\+Query (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*} $>$ \&}]{actors }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Adds actors of type T to a vector if they match the current object type. 
 
-This function recursively checks the current object and its children for type T. If the object is of type T, it is added to the provided vector of \mbox{\hyperlink{class_actor}{Actor}} pointers. This allows for collecting all actors of a specific type within a hierarchy.
+This function recursively checks the current object and its children for type T. If the object is of type T, it is added to the provided vector of \doxylink{class_actor}{Actor} pointers. This allows for collecting all actors of a specific type within a hierarchy.
 
 
 \begin{DoxyParams}{Parameters}
-{\em actors} & A reference to a vector of \mbox{\hyperlink{class_actor}{Actor}} pointers to be filled with actors of type T. \\
+{\em actors} & A reference to a vector of \doxylink{class_actor}{Actor} pointers to be filled with actors of type T. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_actor_ae244e4ffa7005b14970d64616b1b717c}\label{class_actor_ae244e4ffa7005b14970d64616b1b717c}} 
+\Hypertarget{class_actor_ae244e4ffa7005b14970d64616b1b717c}\label{class_actor_ae244e4ffa7005b14970d64616b1b717c} 
 \index{Actor@{Actor}!RemoveChild@{RemoveChild}}
 \index{RemoveChild@{RemoveChild}!Actor@{Actor}}
 \doxysubsubsection{\texorpdfstring{RemoveChild()}{RemoveChild()}}
-{\footnotesize\ttfamily void Actor\+::\+Remove\+Child (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_actor}{Actor}} $\ast$}]{child }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Actor\+::\+Remove\+Child (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*}}]{child }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_actor_a002c4572cb3c3b9005c20b59c9b35de9}\label{class_actor_a002c4572cb3c3b9005c20b59c9b35de9}} 
+\Hypertarget{class_actor_a002c4572cb3c3b9005c20b59c9b35de9}\label{class_actor_a002c4572cb3c3b9005c20b59c9b35de9} 
 \index{Actor@{Actor}!SetLocalPosition@{SetLocalPosition}}
 \index{SetLocalPosition@{SetLocalPosition}!Actor@{Actor}}
 \doxysubsubsection{\texorpdfstring{SetLocalPosition()}{SetLocalPosition()}}
 {\footnotesize\ttfamily void Actor\+::\+Set\+Local\+Position (\begin{DoxyParamCaption}\item[{const glm\+::vec3 \&}]{position }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_actor_a8a6a7db905146d5feb1c49a5c39035cb}\label{class_actor_a8a6a7db905146d5feb1c49a5c39035cb}} 
+\Hypertarget{class_actor_a8a6a7db905146d5feb1c49a5c39035cb}\label{class_actor_a8a6a7db905146d5feb1c49a5c39035cb} 
 \index{Actor@{Actor}!SetLocalRotation@{SetLocalRotation}}
 \index{SetLocalRotation@{SetLocalRotation}!Actor@{Actor}}
 \doxysubsubsection{\texorpdfstring{SetLocalRotation()}{SetLocalRotation()}}
 {\footnotesize\ttfamily void Actor\+::\+Set\+Local\+Rotation (\begin{DoxyParamCaption}\item[{const glm\+::quat \&}]{rotation }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_actor_ab23b23c60baea62fd53564bf3ebf4946}\label{class_actor_ab23b23c60baea62fd53564bf3ebf4946}} 
+\Hypertarget{class_actor_ab23b23c60baea62fd53564bf3ebf4946}\label{class_actor_ab23b23c60baea62fd53564bf3ebf4946} 
 \index{Actor@{Actor}!SetLocalScale@{SetLocalScale}}
 \index{SetLocalScale@{SetLocalScale}!Actor@{Actor}}
 \doxysubsubsection{\texorpdfstring{SetLocalScale()}{SetLocalScale()}}
 {\footnotesize\ttfamily void Actor\+::\+Set\+Local\+Scale (\begin{DoxyParamCaption}\item[{const glm\+::vec3 \&}]{scale }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_actor_a0498a4255bdf126e5663572027a9dde3}\label{class_actor_a0498a4255bdf126e5663572027a9dde3}} 
+\Hypertarget{class_actor_a0498a4255bdf126e5663572027a9dde3}\label{class_actor_a0498a4255bdf126e5663572027a9dde3} 
 \index{Actor@{Actor}!SetLocalTransformMatrix@{SetLocalTransformMatrix}}
 \index{SetLocalTransformMatrix@{SetLocalTransformMatrix}!Actor@{Actor}}
 \doxysubsubsection{\texorpdfstring{SetLocalTransformMatrix()}{SetLocalTransformMatrix()}}
 {\footnotesize\ttfamily void Actor\+::\+Set\+Local\+Transform\+Matrix (\begin{DoxyParamCaption}\item[{const glm\+::mat4 \&}]{transform\+Matrix }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_actor_aba5cc96b0d0097ef4fd67aa155810e2c}\label{class_actor_aba5cc96b0d0097ef4fd67aa155810e2c}} 
+\Hypertarget{class_actor_aba5cc96b0d0097ef4fd67aa155810e2c}\label{class_actor_aba5cc96b0d0097ef4fd67aa155810e2c} 
 \index{Actor@{Actor}!SetParent@{SetParent}}
 \index{SetParent@{SetParent}!Actor@{Actor}}
 \doxysubsubsection{\texorpdfstring{SetParent()}{SetParent()}}
-{\footnotesize\ttfamily void Actor\+::\+Set\+Parent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_actor}{Actor}} $\ast$}]{parent }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Actor\+::\+Set\+Parent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*}}]{parent }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_actor_ace4af4f181e7f1f19d46b57b2f1cb2c6}\label{class_actor_ace4af4f181e7f1f19d46b57b2f1cb2c6}} 
+\Hypertarget{class_actor_ace4af4f181e7f1f19d46b57b2f1cb2c6}\label{class_actor_ace4af4f181e7f1f19d46b57b2f1cb2c6} 
 \index{Actor@{Actor}!SetTransform@{SetTransform}}
 \index{SetTransform@{SetTransform}!Actor@{Actor}}
 \doxysubsubsection{\texorpdfstring{SetTransform()}{SetTransform()}}
 {\footnotesize\ttfamily void Actor\+::\+Set\+Transform (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_transform}{Transform}} \&}]{transform }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_actor_ae389ea75bcd7f286e0a7a6b391490776}\label{class_actor_ae389ea75bcd7f286e0a7a6b391490776}} 
+\Hypertarget{class_actor_ae389ea75bcd7f286e0a7a6b391490776}\label{class_actor_ae389ea75bcd7f286e0a7a6b391490776} 
 \index{Actor@{Actor}!SetWorldPosition@{SetWorldPosition}}
 \index{SetWorldPosition@{SetWorldPosition}!Actor@{Actor}}
 \doxysubsubsection{\texorpdfstring{SetWorldPosition()}{SetWorldPosition()}}
 {\footnotesize\ttfamily void Actor\+::\+Set\+World\+Position (\begin{DoxyParamCaption}\item[{const glm\+::vec3 \&}]{position }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_actor_a8c264c272336df6af0ba0595c4801dc6}\label{class_actor_a8c264c272336df6af0ba0595c4801dc6}} 
+\Hypertarget{class_actor_a8c264c272336df6af0ba0595c4801dc6}\label{class_actor_a8c264c272336df6af0ba0595c4801dc6} 
 \index{Actor@{Actor}!SetWorldRotation@{SetWorldRotation}}
 \index{SetWorldRotation@{SetWorldRotation}!Actor@{Actor}}
 \doxysubsubsection{\texorpdfstring{SetWorldRotation()}{SetWorldRotation()}}
 {\footnotesize\ttfamily void Actor\+::\+Set\+World\+Rotation (\begin{DoxyParamCaption}\item[{const glm\+::quat \&}]{rotation }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_actor_a5b81664367c82e0e368ce47d340920c2}\label{class_actor_a5b81664367c82e0e368ce47d340920c2}} 
+\Hypertarget{class_actor_a5b81664367c82e0e368ce47d340920c2}\label{class_actor_a5b81664367c82e0e368ce47d340920c2} 
 \index{Actor@{Actor}!SetWorldScale@{SetWorldScale}}
 \index{SetWorldScale@{SetWorldScale}!Actor@{Actor}}
 \doxysubsubsection{\texorpdfstring{SetWorldScale()}{SetWorldScale()}}
 {\footnotesize\ttfamily void Actor\+::\+Set\+World\+Scale (\begin{DoxyParamCaption}\item[{const glm\+::vec3 \&}]{scale }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_actor_a651fecef34d686452750bc165fcc76ce}\label{class_actor_a651fecef34d686452750bc165fcc76ce}} 
+\Hypertarget{class_actor_a651fecef34d686452750bc165fcc76ce}\label{class_actor_a651fecef34d686452750bc165fcc76ce} 
 \index{Actor@{Actor}!Update@{Update}}
 \index{Update@{Update}!Actor@{Actor}}
 \doxysubsubsection{\texorpdfstring{Update()}{Update()}}
@@ -295,7 +295,7 @@ This function recursively checks the current object and its children for type T.
 
 Reimplemented in \mbox{\hyperlink{class_camera_actor_acb220645451694729f06eb1b5033b7b1}{Camera\+Actor}}.
 
-\mbox{\Hypertarget{class_actor_a21715071792ab98d56eb7719fe70899a}\label{class_actor_a21715071792ab98d56eb7719fe70899a}} 
+\Hypertarget{class_actor_a21715071792ab98d56eb7719fe70899a}\label{class_actor_a21715071792ab98d56eb7719fe70899a} 
 \index{Actor@{Actor}!UpdateComponents@{UpdateComponents}}
 \index{UpdateComponents@{UpdateComponents}!Actor@{Actor}}
 \doxysubsubsection{\texorpdfstring{UpdateComponents()}{UpdateComponents()}}
@@ -304,23 +304,23 @@ Reimplemented in \mbox{\hyperlink{class_camera_actor_acb220645451694729f06eb1b50
 
 
 \doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{class_actor_ad59a8d1d6e8407c01883d325884b25ec}\label{class_actor_ad59a8d1d6e8407c01883d325884b25ec}} 
+\Hypertarget{class_actor_ad59a8d1d6e8407c01883d325884b25ec}\label{class_actor_ad59a8d1d6e8407c01883d325884b25ec} 
 \index{Actor@{Actor}!mChildren@{mChildren}}
 \index{mChildren@{mChildren}!Actor@{Actor}}
 \doxysubsubsection{\texorpdfstring{mChildren}{mChildren}}
-{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_actor}{Actor}}$\ast$$>$ Actor\+::m\+Children\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_actor}{Actor}}\texorpdfstring{$\ast$}{*}$>$ Actor\+::m\+Children\hspace{0.3cm}{\ttfamily [protected]}}
 
-\mbox{\Hypertarget{class_actor_a69af522a7017c89865f8e0fa3c0cec74}\label{class_actor_a69af522a7017c89865f8e0fa3c0cec74}} 
+\Hypertarget{class_actor_a69af522a7017c89865f8e0fa3c0cec74}\label{class_actor_a69af522a7017c89865f8e0fa3c0cec74} 
 \index{Actor@{Actor}!mComponents@{mComponents}}
 \index{mComponents@{mComponents}!Actor@{Actor}}
 \doxysubsubsection{\texorpdfstring{mComponents}{mComponents}}
-{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_component}{Component}}$\ast$$>$ Actor\+::m\+Components\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_component}{Component}}\texorpdfstring{$\ast$}{*}$>$ Actor\+::m\+Components\hspace{0.3cm}{\ttfamily [protected]}}
 
-\mbox{\Hypertarget{class_actor_a2e23b38fa11b43c4e5cf57d65b8349a4}\label{class_actor_a2e23b38fa11b43c4e5cf57d65b8349a4}} 
+\Hypertarget{class_actor_a2e23b38fa11b43c4e5cf57d65b8349a4}\label{class_actor_a2e23b38fa11b43c4e5cf57d65b8349a4} 
 \index{Actor@{Actor}!mParent@{mParent}}
 \index{mParent@{mParent}!Actor@{Actor}}
 \doxysubsubsection{\texorpdfstring{mParent}{mParent}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_actor}{Actor}}$\ast$ Actor\+::m\+Parent \{nullptr\}\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_actor}{Actor}}\texorpdfstring{$\ast$}{*} Actor\+::m\+Parent \{nullptr\}\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 

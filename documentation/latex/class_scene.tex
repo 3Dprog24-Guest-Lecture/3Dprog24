@@ -1,106 +1,115 @@
-\hypertarget{class_scene}{}\doxysection{Scene Class Reference}
-\label{class_scene}\index{Scene@{Scene}}
+\doxysection{Scene Class Reference}
+\hypertarget{class_scene}{}\label{class_scene}\index{Scene@{Scene}}
 
 
-Manages the lifecycle and rendering of a scene.  
+Represents a scene containing actors, lights, and a camera.  
 
 
 
 
 {\ttfamily \#include $<$Scene.\+h$>$}
 
-\doxysubsection*{Public Member Functions}
+\doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_scene_aa8f88e4c6ad29a3f30b0c3f8a8fdace3}{Scene}} (const std\+::string \&name)
-\item 
-virtual \mbox{\hyperlink{class_scene_af6e09d91ebd10ae9cc7c12c39d06386c}{$\sim$\+Scene}} ()=default
+\begin{DoxyCompactList}\small\item\em Constructs a scene with a specified name. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_scene_af6e09d91ebd10ae9cc7c12c39d06386c}{\texorpdfstring{$\sim$}{\string~}\+Scene}} ()=default
 \item 
 \mbox{\hyperlink{class_scene_a817e38149ed312f00941b7fbb28a4fcb}{Scene}} (const \mbox{\hyperlink{class_scene}{Scene}} \&)=delete
 \item 
-\mbox{\hyperlink{class_scene}{Scene}} \& \mbox{\hyperlink{class_scene_a9e8d2978197a3cd67a4203ab6c7425e7}{operator=}} (const \mbox{\hyperlink{class_scene}{Scene}} \&)=delete
+\mbox{\hyperlink{class_scene}{Scene}} \& \mbox{\hyperlink{class_scene_abe04ae93a28174a72f0066fc32cd2eb0}{operator=}} (const \mbox{\hyperlink{class_scene}{Scene}} \&)=delete
 \item 
 \mbox{\hyperlink{class_scene_ac8da64e4c17db10489db6112c584532c}{Scene}} (\mbox{\hyperlink{class_scene}{Scene}} \&\&)=delete
 \item 
-\mbox{\hyperlink{class_scene}{Scene}} \& \mbox{\hyperlink{class_scene_a26be22455b24b64733f67485d61a0cfe}{operator=}} (\mbox{\hyperlink{class_scene}{Scene}} \&\&)=delete
+\mbox{\hyperlink{class_scene}{Scene}} \& \mbox{\hyperlink{class_scene_aae8fe193a2eea4a1b868377d59023b4a}{operator=}} (\mbox{\hyperlink{class_scene}{Scene}} \&\&)=delete
 \item 
 virtual void \mbox{\hyperlink{class_scene_a73837497f01ae040fa96428ee4dd7c76}{Load\+Content}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Loads content associated for the scene. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_scene_a8a38bb48e079d56fed4949564dcf1d20}{Unload\+Content}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Unloads content associated with the scene. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_scene_a6af3cea6e9d283840d170e80d6e3395e}{Update\+Input\+Controller}} (float dt)
-\item 
-void \mbox{\hyperlink{class_scene_a5a0aa910170ea1750579504283cb4406}{Update\+Scene\+Graph}} (\mbox{\hyperlink{class_actor}{Actor}} $\ast$actor, float dt, \mbox{\hyperlink{struct_transform}{Transform}} global\+Transform=\mbox{\hyperlink{struct_transform}{Transform}}\{\})
-\item 
+\begin{DoxyCompactList}\small\item\em Updates the active controller based on input. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene_a0987fd21cbd5407483177dca6d7dafb2}{Update\+Scene\+Graph}} (\mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*}actor, float dt, \mbox{\hyperlink{struct_transform}{Transform}} global\+Parent\+Transform=\mbox{\hyperlink{struct_transform}{Transform}}\{\})
+\begin{DoxyCompactList}\small\item\em Recursively updates actors within the scene graph. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_scene_ac48b4f744fee99a5b7c5a84e28b76334}{Update}} (float dt)
-\item 
+\begin{DoxyCompactList}\small\item\em Updates the scene, including input, scene graph and handling collisions. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_scene_aeaec806a935fc388b921fc803f1caa4d}{Handle\+Collision}} ()
-\item 
-void \mbox{\hyperlink{class_scene_aaabe5f4be250a6752542925fa3ba0d54}{Render\+Scene\+Graph}} (\mbox{\hyperlink{class_actor}{Actor}} $\ast$actor, float dt, \mbox{\hyperlink{struct_transform}{Transform}} global\+Transform=\mbox{\hyperlink{struct_transform}{Transform}}\{\})
-\item 
+\begin{DoxyCompactList}\small\item\em Handles collision detection and response within the scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene_ad4737b605b999d78524630834cb9bb9d}{Render\+Scene\+Graph}} (\mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*}actor, float dt, \mbox{\hyperlink{struct_transform}{Transform}} global\+Parent\+Transform=\mbox{\hyperlink{struct_transform}{Transform}}\{\})
+\begin{DoxyCompactList}\small\item\em Renders actors within the scene graph. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_scene_af57fc38591c0d980205e2b1e71a04573}{Bind\+Directional\+Light}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Binds and sets up the directional light for rendering. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_scene_aa4494e370b0180588eed791ea31ce897}{Bind\+Point\+Lights}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Binds and sets up point lights for rendering. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_scene_a05b040b5a9e551337a72e61f706d2186}{Bind\+Camera}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Binds the camera to the renderer. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_scene_a6631f5cb9b269f0f0acd01a7996e790a}{Render\+UI}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Renders the UI elements of the scene. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_scene_a1ba6595d2800589ca50868b1b9ce0e56}{Render}} (float dt)
+\begin{DoxyCompactList}\small\item\em Renders the scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene_aa88204fea8e32a31ac8465892d5ed3d3}{Framebuffer\+Size\+Callback}} (class \mbox{\hyperlink{class_window}{Window}} \texorpdfstring{$\ast$}{*}window, int width, int height)
 \item 
-void \mbox{\hyperlink{class_scene_aa88204fea8e32a31ac8465892d5ed3d3}{Framebuffer\+Size\+Callback}} (class \mbox{\hyperlink{class_window}{Window}} $\ast$window, int width, int height)
+void \mbox{\hyperlink{class_scene_a651db2e079e412d2bf3e90053b7d388d}{Mouse\+Move\+Callback}} (class \mbox{\hyperlink{class_window}{Window}} \texorpdfstring{$\ast$}{*}window, double xpos, double ypos)
 \item 
-void \mbox{\hyperlink{class_scene_a651db2e079e412d2bf3e90053b7d388d}{Mouse\+Move\+Callback}} (class \mbox{\hyperlink{class_window}{Window}} $\ast$window, double xpos, double ypos)
+void \mbox{\hyperlink{class_scene_a908928361751263dd6bb2e08b8b4a3ba}{Mouse\+Button\+Callback}} (class \mbox{\hyperlink{class_window}{Window}} \texorpdfstring{$\ast$}{*}window, int button, int action, int mods)
 \item 
-void \mbox{\hyperlink{class_scene_a908928361751263dd6bb2e08b8b4a3ba}{Mouse\+Button\+Callback}} (class \mbox{\hyperlink{class_window}{Window}} $\ast$window, int button, int action, int mods)
+void \mbox{\hyperlink{class_scene_a607110ecbe26130863acae1281ffead5}{Mouse\+Scroll\+Callback}} (class \mbox{\hyperlink{class_window}{Window}} \texorpdfstring{$\ast$}{*}window, double xoffset, double yoffset)
 \item 
-void \mbox{\hyperlink{class_scene_a607110ecbe26130863acae1281ffead5}{Mouse\+Scroll\+Callback}} (class \mbox{\hyperlink{class_window}{Window}} $\ast$window, double xoffset, double yoffset)
+void \mbox{\hyperlink{class_scene_aab2eaec8ce590a64f3d1e998565a00ae}{Key\+Callback}} (class \mbox{\hyperlink{class_window}{Window}} \texorpdfstring{$\ast$}{*}window, int key, int scancode, int action, int mods)
 \item 
-void \mbox{\hyperlink{class_scene_aab2eaec8ce590a64f3d1e998565a00ae}{Key\+Callback}} (class \mbox{\hyperlink{class_window}{Window}} $\ast$window, int key, int scancode, int action, int mods)
-\item 
-void \mbox{\hyperlink{class_scene_aa73dd067a1a038b7e7533a28fb6ef9ad}{Set\+Controller}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_controller}{I\+Controller}} $>$ \&controller)
-\item 
-std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_controller}{I\+Controller}} $>$ \mbox{\hyperlink{class_scene_ac364b3580c7fb4f516319b9f4fda22f8}{Get\+Controller}} () const
-\end{DoxyCompactItemize}
-\doxysubsection*{Public Attributes}
+void \mbox{\hyperlink{class_scene_aa73dd067a1a038b7e7533a28fb6ef9ad}{Set\+Controller}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_controller}{IController}} $>$ \&controller)
+\begin{DoxyCompactList}\small\item\em Sets the active controller for the scene. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_controller}{IController}} $>$ \mbox{\hyperlink{class_scene_a43cfe1be2a653b2c70ec711d6a75ebd3}{Get\+Controller}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the active controller of the scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_scene_graph}{Scene\+Graph}} \mbox{\hyperlink{class_scene_ac0844f31d54cad2a8c4cdc25202ed21c}{m\+Scene\+Graph}}
-\item 
-\mbox{\hyperlink{class_camera_actor}{Camera\+Actor}} \mbox{\hyperlink{class_scene_af9cbdc85720f3fa313d38745bd75a719}{m\+Scene\+Camera}} \{ \char`\"{}Scene\+Camera\char`\"{} \}
-\end{DoxyCompactItemize}
-\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactList}\small\item\em The scene graph managing hierarchical relationships of actors. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_camera_actor}{Camera\+Actor}} \mbox{\hyperlink{class_scene_af9cbdc85720f3fa313d38745bd75a719}{m\+Scene\+Camera}} \{ "{}Scene\+Camera"{} \}
+\begin{DoxyCompactList}\small\item\em The camera used to view the scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_controller}{I\+Controller}} $>$ \mbox{\hyperlink{class_scene_adc051738b32e4c78dc190d84b88927be}{m\+Active\+Controller}} \{ nullptr \}
-\end{DoxyCompactItemize}
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_controller}{IController}} $>$ \mbox{\hyperlink{class_scene_adc051738b32e4c78dc190d84b88927be}{m\+Active\+Controller}} \{ nullptr \}
+\begin{DoxyCompactList}\small\item\em The active controller to update. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Manages the lifecycle and rendering of a scene. 
+Represents a scene containing actors, lights, and a camera. 
 
-The \mbox{\hyperlink{class_scene}{Scene}} class is responsible for managing all the objects within a particular scene, including their loading, updating, and rendering. It supports scene graph management for hierarchical object relationships and handles user input through an associated controller. This class cannot be copied or moved to ensure unique instances of each scene. 
+Manages the lifecycle, rendering, and interactions of all components within the scene. It orchestrates updating the scene graph, handling user input, managing lights, and rendering the scene and UI. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_scene_aa8f88e4c6ad29a3f30b0c3f8a8fdace3}\label{class_scene_aa8f88e4c6ad29a3f30b0c3f8a8fdace3}} 
+\Hypertarget{class_scene_aa8f88e4c6ad29a3f30b0c3f8a8fdace3}\label{class_scene_aa8f88e4c6ad29a3f30b0c3f8a8fdace3} 
 \index{Scene@{Scene}!Scene@{Scene}}
 \index{Scene@{Scene}!Scene@{Scene}}
 \doxysubsubsection{\texorpdfstring{Scene()}{Scene()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily Scene\+::\+Scene (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+{\footnotesize\ttfamily Scene\+::\+Scene (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_scene_af6e09d91ebd10ae9cc7c12c39d06386c}\label{class_scene_af6e09d91ebd10ae9cc7c12c39d06386c}} 
-\index{Scene@{Scene}!````~Scene@{$\sim$Scene}}
-\index{````~Scene@{$\sim$Scene}!Scene@{Scene}}
-\doxysubsubsection{\texorpdfstring{$\sim$Scene()}{~Scene()}}
-{\footnotesize\ttfamily virtual Scene\+::$\sim$\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
 
-\mbox{\Hypertarget{class_scene_a817e38149ed312f00941b7fbb28a4fcb}\label{class_scene_a817e38149ed312f00941b7fbb28a4fcb}} 
+
+Constructs a scene with a specified name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the scene. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_scene_af6e09d91ebd10ae9cc7c12c39d06386c}\label{class_scene_af6e09d91ebd10ae9cc7c12c39d06386c} 
+\index{Scene@{Scene}!````~Scene@{\texorpdfstring{$\sim$}{\string~}Scene}}
+\index{````~Scene@{\texorpdfstring{$\sim$}{\string~}Scene}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Scene()}{\string~Scene()}}
+{\footnotesize\ttfamily virtual Scene\+::\texorpdfstring{$\sim$}{\string~}\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+\Hypertarget{class_scene_a817e38149ed312f00941b7fbb28a4fcb}\label{class_scene_a817e38149ed312f00941b7fbb28a4fcb} 
 \index{Scene@{Scene}!Scene@{Scene}}
 \index{Scene@{Scene}!Scene@{Scene}}
 \doxysubsubsection{\texorpdfstring{Scene()}{Scene()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
 {\footnotesize\ttfamily Scene\+::\+Scene (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_scene}{Scene}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
 
-\mbox{\Hypertarget{class_scene_ac8da64e4c17db10489db6112c584532c}\label{class_scene_ac8da64e4c17db10489db6112c584532c}} 
+\Hypertarget{class_scene_ac8da64e4c17db10489db6112c584532c}\label{class_scene_ac8da64e4c17db10489db6112c584532c} 
 \index{Scene@{Scene}!Scene@{Scene}}
 \index{Scene@{Scene}!Scene@{Scene}}
 \doxysubsubsection{\texorpdfstring{Scene()}{Scene()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
@@ -109,152 +118,261 @@ The \mbox{\hyperlink{class_scene}{Scene}} class is responsible for managing all 
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_scene_a05b040b5a9e551337a72e61f706d2186}\label{class_scene_a05b040b5a9e551337a72e61f706d2186}} 
+\Hypertarget{class_scene_a05b040b5a9e551337a72e61f706d2186}\label{class_scene_a05b040b5a9e551337a72e61f706d2186} 
 \index{Scene@{Scene}!BindCamera@{BindCamera}}
 \index{BindCamera@{BindCamera}!Scene@{Scene}}
 \doxysubsubsection{\texorpdfstring{BindCamera()}{BindCamera()}}
 {\footnotesize\ttfamily void Scene\+::\+Bind\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_scene_af57fc38591c0d980205e2b1e71a04573}\label{class_scene_af57fc38591c0d980205e2b1e71a04573}} 
+
+
+Binds the camera to the renderer. 
+
+\Hypertarget{class_scene_af57fc38591c0d980205e2b1e71a04573}\label{class_scene_af57fc38591c0d980205e2b1e71a04573} 
 \index{Scene@{Scene}!BindDirectionalLight@{BindDirectionalLight}}
 \index{BindDirectionalLight@{BindDirectionalLight}!Scene@{Scene}}
 \doxysubsubsection{\texorpdfstring{BindDirectionalLight()}{BindDirectionalLight()}}
 {\footnotesize\ttfamily void Scene\+::\+Bind\+Directional\+Light (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_scene_aa4494e370b0180588eed791ea31ce897}\label{class_scene_aa4494e370b0180588eed791ea31ce897}} 
+
+
+Binds and sets up the directional light for rendering. 
+
+\Hypertarget{class_scene_aa4494e370b0180588eed791ea31ce897}\label{class_scene_aa4494e370b0180588eed791ea31ce897} 
 \index{Scene@{Scene}!BindPointLights@{BindPointLights}}
 \index{BindPointLights@{BindPointLights}!Scene@{Scene}}
 \doxysubsubsection{\texorpdfstring{BindPointLights()}{BindPointLights()}}
 {\footnotesize\ttfamily void Scene\+::\+Bind\+Point\+Lights (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_scene_aa88204fea8e32a31ac8465892d5ed3d3}\label{class_scene_aa88204fea8e32a31ac8465892d5ed3d3}} 
+
+
+Binds and sets up point lights for rendering. 
+
+\Hypertarget{class_scene_aa88204fea8e32a31ac8465892d5ed3d3}\label{class_scene_aa88204fea8e32a31ac8465892d5ed3d3} 
 \index{Scene@{Scene}!FramebufferSizeCallback@{FramebufferSizeCallback}}
 \index{FramebufferSizeCallback@{FramebufferSizeCallback}!Scene@{Scene}}
 \doxysubsubsection{\texorpdfstring{FramebufferSizeCallback()}{FramebufferSizeCallback()}}
-{\footnotesize\ttfamily void Scene\+::\+Framebuffer\+Size\+Callback (\begin{DoxyParamCaption}\item[{class \mbox{\hyperlink{class_window}{Window}} $\ast$}]{window,  }\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Scene\+::\+Framebuffer\+Size\+Callback (\begin{DoxyParamCaption}\item[{class \mbox{\hyperlink{class_window}{Window}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_scene_ac364b3580c7fb4f516319b9f4fda22f8}\label{class_scene_ac364b3580c7fb4f516319b9f4fda22f8}} 
+\Hypertarget{class_scene_a43cfe1be2a653b2c70ec711d6a75ebd3}\label{class_scene_a43cfe1be2a653b2c70ec711d6a75ebd3} 
 \index{Scene@{Scene}!GetController@{GetController}}
 \index{GetController@{GetController}!Scene@{Scene}}
 \doxysubsubsection{\texorpdfstring{GetController()}{GetController()}}
-{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_i_controller}{I\+Controller}}$>$ Scene\+::\+Get\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_controller}{IController}} $>$ Scene\+::\+Get\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{class_scene_aeaec806a935fc388b921fc803f1caa4d}\label{class_scene_aeaec806a935fc388b921fc803f1caa4d}} 
+
+
+Retrieves the active controller of the scene. 
+
+\begin{DoxyReturn}{Returns}
+The active controller. 
+\end{DoxyReturn}
+\Hypertarget{class_scene_aeaec806a935fc388b921fc803f1caa4d}\label{class_scene_aeaec806a935fc388b921fc803f1caa4d} 
 \index{Scene@{Scene}!HandleCollision@{HandleCollision}}
 \index{HandleCollision@{HandleCollision}!Scene@{Scene}}
 \doxysubsubsection{\texorpdfstring{HandleCollision()}{HandleCollision()}}
 {\footnotesize\ttfamily void Scene\+::\+Handle\+Collision (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_scene_aab2eaec8ce590a64f3d1e998565a00ae}\label{class_scene_aab2eaec8ce590a64f3d1e998565a00ae}} 
+
+
+Handles collision detection and response within the scene. 
+
+\Hypertarget{class_scene_aab2eaec8ce590a64f3d1e998565a00ae}\label{class_scene_aab2eaec8ce590a64f3d1e998565a00ae} 
 \index{Scene@{Scene}!KeyCallback@{KeyCallback}}
 \index{KeyCallback@{KeyCallback}!Scene@{Scene}}
 \doxysubsubsection{\texorpdfstring{KeyCallback()}{KeyCallback()}}
-{\footnotesize\ttfamily void Scene\+::\+Key\+Callback (\begin{DoxyParamCaption}\item[{class \mbox{\hyperlink{class_window}{Window}} $\ast$}]{window,  }\item[{int}]{key,  }\item[{int}]{scancode,  }\item[{int}]{action,  }\item[{int}]{mods }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Scene\+::\+Key\+Callback (\begin{DoxyParamCaption}\item[{class \mbox{\hyperlink{class_window}{Window}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{int}]{key,  }\item[{int}]{scancode,  }\item[{int}]{action,  }\item[{int}]{mods }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_scene_a73837497f01ae040fa96428ee4dd7c76}\label{class_scene_a73837497f01ae040fa96428ee4dd7c76}} 
+\Hypertarget{class_scene_a73837497f01ae040fa96428ee4dd7c76}\label{class_scene_a73837497f01ae040fa96428ee4dd7c76} 
 \index{Scene@{Scene}!LoadContent@{LoadContent}}
 \index{LoadContent@{LoadContent}!Scene@{Scene}}
 \doxysubsubsection{\texorpdfstring{LoadContent()}{LoadContent()}}
 {\footnotesize\ttfamily void Scene\+::\+Load\+Content (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-\mbox{\Hypertarget{class_scene_a908928361751263dd6bb2e08b8b4a3ba}\label{class_scene_a908928361751263dd6bb2e08b8b4a3ba}} 
+
+
+Loads content associated for the scene. 
+
+\Hypertarget{class_scene_a908928361751263dd6bb2e08b8b4a3ba}\label{class_scene_a908928361751263dd6bb2e08b8b4a3ba} 
 \index{Scene@{Scene}!MouseButtonCallback@{MouseButtonCallback}}
 \index{MouseButtonCallback@{MouseButtonCallback}!Scene@{Scene}}
 \doxysubsubsection{\texorpdfstring{MouseButtonCallback()}{MouseButtonCallback()}}
-{\footnotesize\ttfamily void Scene\+::\+Mouse\+Button\+Callback (\begin{DoxyParamCaption}\item[{class \mbox{\hyperlink{class_window}{Window}} $\ast$}]{window,  }\item[{int}]{button,  }\item[{int}]{action,  }\item[{int}]{mods }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Scene\+::\+Mouse\+Button\+Callback (\begin{DoxyParamCaption}\item[{class \mbox{\hyperlink{class_window}{Window}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{int}]{button,  }\item[{int}]{action,  }\item[{int}]{mods }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_scene_a651db2e079e412d2bf3e90053b7d388d}\label{class_scene_a651db2e079e412d2bf3e90053b7d388d}} 
+\Hypertarget{class_scene_a651db2e079e412d2bf3e90053b7d388d}\label{class_scene_a651db2e079e412d2bf3e90053b7d388d} 
 \index{Scene@{Scene}!MouseMoveCallback@{MouseMoveCallback}}
 \index{MouseMoveCallback@{MouseMoveCallback}!Scene@{Scene}}
 \doxysubsubsection{\texorpdfstring{MouseMoveCallback()}{MouseMoveCallback()}}
-{\footnotesize\ttfamily void Scene\+::\+Mouse\+Move\+Callback (\begin{DoxyParamCaption}\item[{class \mbox{\hyperlink{class_window}{Window}} $\ast$}]{window,  }\item[{double}]{xpos,  }\item[{double}]{ypos }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Scene\+::\+Mouse\+Move\+Callback (\begin{DoxyParamCaption}\item[{class \mbox{\hyperlink{class_window}{Window}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{double}]{xpos,  }\item[{double}]{ypos }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_scene_a607110ecbe26130863acae1281ffead5}\label{class_scene_a607110ecbe26130863acae1281ffead5}} 
+\Hypertarget{class_scene_a607110ecbe26130863acae1281ffead5}\label{class_scene_a607110ecbe26130863acae1281ffead5} 
 \index{Scene@{Scene}!MouseScrollCallback@{MouseScrollCallback}}
 \index{MouseScrollCallback@{MouseScrollCallback}!Scene@{Scene}}
 \doxysubsubsection{\texorpdfstring{MouseScrollCallback()}{MouseScrollCallback()}}
-{\footnotesize\ttfamily void Scene\+::\+Mouse\+Scroll\+Callback (\begin{DoxyParamCaption}\item[{class \mbox{\hyperlink{class_window}{Window}} $\ast$}]{window,  }\item[{double}]{xoffset,  }\item[{double}]{yoffset }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Scene\+::\+Mouse\+Scroll\+Callback (\begin{DoxyParamCaption}\item[{class \mbox{\hyperlink{class_window}{Window}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{double}]{xoffset,  }\item[{double}]{yoffset }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_scene_a9e8d2978197a3cd67a4203ab6c7425e7}\label{class_scene_a9e8d2978197a3cd67a4203ab6c7425e7}} 
+\Hypertarget{class_scene_abe04ae93a28174a72f0066fc32cd2eb0}\label{class_scene_abe04ae93a28174a72f0066fc32cd2eb0} 
 \index{Scene@{Scene}!operator=@{operator=}}
 \index{operator=@{operator=}!Scene@{Scene}}
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_scene}{Scene}}\& Scene\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_scene}{Scene}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_scene}{Scene}} \& Scene\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_scene}{Scene}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
 
-\mbox{\Hypertarget{class_scene_a26be22455b24b64733f67485d61a0cfe}\label{class_scene_a26be22455b24b64733f67485d61a0cfe}} 
+\Hypertarget{class_scene_aae8fe193a2eea4a1b868377d59023b4a}\label{class_scene_aae8fe193a2eea4a1b868377d59023b4a} 
 \index{Scene@{Scene}!operator=@{operator=}}
 \index{operator=@{operator=}!Scene@{Scene}}
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_scene}{Scene}}\& Scene\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_scene}{Scene}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_scene}{Scene}} \& Scene\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_scene}{Scene}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
 
-\mbox{\Hypertarget{class_scene_a1ba6595d2800589ca50868b1b9ce0e56}\label{class_scene_a1ba6595d2800589ca50868b1b9ce0e56}} 
+\Hypertarget{class_scene_a1ba6595d2800589ca50868b1b9ce0e56}\label{class_scene_a1ba6595d2800589ca50868b1b9ce0e56} 
 \index{Scene@{Scene}!Render@{Render}}
 \index{Render@{Render}!Scene@{Scene}}
 \doxysubsubsection{\texorpdfstring{Render()}{Render()}}
 {\footnotesize\ttfamily void Scene\+::\+Render (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_scene_aaabe5f4be250a6752542925fa3ba0d54}\label{class_scene_aaabe5f4be250a6752542925fa3ba0d54}} 
+
+
+Renders the scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & Delta time for the rendering. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_scene_ad4737b605b999d78524630834cb9bb9d}\label{class_scene_ad4737b605b999d78524630834cb9bb9d} 
 \index{Scene@{Scene}!RenderSceneGraph@{RenderSceneGraph}}
 \index{RenderSceneGraph@{RenderSceneGraph}!Scene@{Scene}}
 \doxysubsubsection{\texorpdfstring{RenderSceneGraph()}{RenderSceneGraph()}}
-{\footnotesize\ttfamily void Scene\+::\+Render\+Scene\+Graph (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_actor}{Actor}} $\ast$}]{actor,  }\item[{float}]{dt,  }\item[{\mbox{\hyperlink{struct_transform}{Transform}}}]{global\+Transform = {\ttfamily \mbox{\hyperlink{struct_transform}{Transform}}\{\}} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Scene\+::\+Render\+Scene\+Graph (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*}}]{actor,  }\item[{float}]{dt,  }\item[{\mbox{\hyperlink{struct_transform}{Transform}}}]{global\+Parent\+Transform = {\ttfamily \mbox{\hyperlink{struct_transform}{Transform}}\{\}} }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_scene_a6631f5cb9b269f0f0acd01a7996e790a}\label{class_scene_a6631f5cb9b269f0f0acd01a7996e790a}} 
+
+
+Renders actors within the scene graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em actor} & The current actor to render. \\
+\hline
+{\em dt} & Delta time for the rendering. \\
+\hline
+{\em global\+Transform} & The global transform for the actor. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_scene_a6631f5cb9b269f0f0acd01a7996e790a}\label{class_scene_a6631f5cb9b269f0f0acd01a7996e790a} 
 \index{Scene@{Scene}!RenderUI@{RenderUI}}
 \index{RenderUI@{RenderUI}!Scene@{Scene}}
 \doxysubsubsection{\texorpdfstring{RenderUI()}{RenderUI()}}
 {\footnotesize\ttfamily void Scene\+::\+Render\+UI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_scene_aa73dd067a1a038b7e7533a28fb6ef9ad}\label{class_scene_aa73dd067a1a038b7e7533a28fb6ef9ad}} 
+
+
+Renders the UI elements of the scene. 
+
+\Hypertarget{class_scene_aa73dd067a1a038b7e7533a28fb6ef9ad}\label{class_scene_aa73dd067a1a038b7e7533a28fb6ef9ad} 
 \index{Scene@{Scene}!SetController@{SetController}}
 \index{SetController@{SetController}!Scene@{Scene}}
 \doxysubsubsection{\texorpdfstring{SetController()}{SetController()}}
-{\footnotesize\ttfamily void Scene\+::\+Set\+Controller (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_controller}{I\+Controller}} $>$ \&}]{controller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void Scene\+::\+Set\+Controller (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_controller}{IController}} $>$ \&}]{controller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{class_scene_a8a38bb48e079d56fed4949564dcf1d20}\label{class_scene_a8a38bb48e079d56fed4949564dcf1d20}} 
+
+
+Sets the active controller for the scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em controller} & The controller to activate. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_scene_a8a38bb48e079d56fed4949564dcf1d20}\label{class_scene_a8a38bb48e079d56fed4949564dcf1d20} 
 \index{Scene@{Scene}!UnloadContent@{UnloadContent}}
 \index{UnloadContent@{UnloadContent}!Scene@{Scene}}
 \doxysubsubsection{\texorpdfstring{UnloadContent()}{UnloadContent()}}
 {\footnotesize\ttfamily void Scene\+::\+Unload\+Content (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-\mbox{\Hypertarget{class_scene_ac48b4f744fee99a5b7c5a84e28b76334}\label{class_scene_ac48b4f744fee99a5b7c5a84e28b76334}} 
+
+
+Unloads content associated with the scene. 
+
+\Hypertarget{class_scene_ac48b4f744fee99a5b7c5a84e28b76334}\label{class_scene_ac48b4f744fee99a5b7c5a84e28b76334} 
 \index{Scene@{Scene}!Update@{Update}}
 \index{Update@{Update}!Scene@{Scene}}
 \doxysubsubsection{\texorpdfstring{Update()}{Update()}}
 {\footnotesize\ttfamily void Scene\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_scene_a6af3cea6e9d283840d170e80d6e3395e}\label{class_scene_a6af3cea6e9d283840d170e80d6e3395e}} 
+
+
+Updates the scene, including input, scene graph and handling collisions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & Delta time for the update. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_scene_a6af3cea6e9d283840d170e80d6e3395e}\label{class_scene_a6af3cea6e9d283840d170e80d6e3395e} 
 \index{Scene@{Scene}!UpdateInputController@{UpdateInputController}}
 \index{UpdateInputController@{UpdateInputController}!Scene@{Scene}}
 \doxysubsubsection{\texorpdfstring{UpdateInputController()}{UpdateInputController()}}
 {\footnotesize\ttfamily void Scene\+::\+Update\+Input\+Controller (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_scene_a5a0aa910170ea1750579504283cb4406}\label{class_scene_a5a0aa910170ea1750579504283cb4406}} 
+
+
+Updates the active controller based on input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & Delta time for the update. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_scene_a0987fd21cbd5407483177dca6d7dafb2}\label{class_scene_a0987fd21cbd5407483177dca6d7dafb2} 
 \index{Scene@{Scene}!UpdateSceneGraph@{UpdateSceneGraph}}
 \index{UpdateSceneGraph@{UpdateSceneGraph}!Scene@{Scene}}
 \doxysubsubsection{\texorpdfstring{UpdateSceneGraph()}{UpdateSceneGraph()}}
-{\footnotesize\ttfamily void Scene\+::\+Update\+Scene\+Graph (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_actor}{Actor}} $\ast$}]{actor,  }\item[{float}]{dt,  }\item[{\mbox{\hyperlink{struct_transform}{Transform}}}]{global\+Transform = {\ttfamily \mbox{\hyperlink{struct_transform}{Transform}}\{\}} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Scene\+::\+Update\+Scene\+Graph (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_actor}{Actor}} \texorpdfstring{$\ast$}{*}}]{actor,  }\item[{float}]{dt,  }\item[{\mbox{\hyperlink{struct_transform}{Transform}}}]{global\+Parent\+Transform = {\ttfamily \mbox{\hyperlink{struct_transform}{Transform}}\{\}} }\end{DoxyParamCaption})}
 
+
+
+Recursively updates actors within the scene graph. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em actor} & The current actor to update. \\
+\hline
+ & {\em dt} & Delta time for the update. \\
+\hline
+ & {\em global\+Parent\+Transform} & The global parent transform for the actor. \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{class_scene_adc051738b32e4c78dc190d84b88927be}\label{class_scene_adc051738b32e4c78dc190d84b88927be}} 
+\Hypertarget{class_scene_adc051738b32e4c78dc190d84b88927be}\label{class_scene_adc051738b32e4c78dc190d84b88927be} 
 \index{Scene@{Scene}!mActiveController@{mActiveController}}
 \index{mActiveController@{mActiveController}!Scene@{Scene}}
 \doxysubsubsection{\texorpdfstring{mActiveController}{mActiveController}}
-{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_i_controller}{I\+Controller}}$>$ Scene\+::m\+Active\+Controller \{ nullptr \}\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_i_controller}{IController}}$>$ Scene\+::m\+Active\+Controller \{ nullptr \}\hspace{0.3cm}{\ttfamily [protected]}}
 
-\mbox{\Hypertarget{class_scene_af9cbdc85720f3fa313d38745bd75a719}\label{class_scene_af9cbdc85720f3fa313d38745bd75a719}} 
+
+
+The active controller to update. 
+
+\Hypertarget{class_scene_af9cbdc85720f3fa313d38745bd75a719}\label{class_scene_af9cbdc85720f3fa313d38745bd75a719} 
 \index{Scene@{Scene}!mSceneCamera@{mSceneCamera}}
 \index{mSceneCamera@{mSceneCamera}!Scene@{Scene}}
 \doxysubsubsection{\texorpdfstring{mSceneCamera}{mSceneCamera}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_camera_actor}{Camera\+Actor}} Scene\+::m\+Scene\+Camera \{ \char`\"{}Scene\+Camera\char`\"{} \}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_camera_actor}{Camera\+Actor}} Scene\+::m\+Scene\+Camera \{ "{}Scene\+Camera"{} \}}
 
-\mbox{\Hypertarget{class_scene_ac0844f31d54cad2a8c4cdc25202ed21c}\label{class_scene_ac0844f31d54cad2a8c4cdc25202ed21c}} 
+
+
+The camera used to view the scene. 
+
+\Hypertarget{class_scene_ac0844f31d54cad2a8c4cdc25202ed21c}\label{class_scene_ac0844f31d54cad2a8c4cdc25202ed21c} 
 \index{Scene@{Scene}!mSceneGraph@{mSceneGraph}}
 \index{mSceneGraph@{mSceneGraph}!Scene@{Scene}}
 \doxysubsubsection{\texorpdfstring{mSceneGraph}{mSceneGraph}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_scene_graph}{Scene\+Graph}} Scene\+::m\+Scene\+Graph}
+
+
+
+The scene graph managing hierarchical relationships of actors. 
 
 
 

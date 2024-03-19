@@ -1,5 +1,5 @@
-\hypertarget{class_mesh}{}\doxysection{Mesh Class Reference}
-\label{class_mesh}\index{Mesh@{Mesh}}
+\doxysection{Mesh Class Reference}
+\hypertarget{class_mesh}{}\label{class_mesh}\index{Mesh@{Mesh}}
 
 
 Represents a 3D mesh.  
@@ -9,34 +9,34 @@ Represents a 3D mesh.
 
 {\ttfamily \#include $<$Mesh.\+h$>$}
 
-\doxysubsection*{Public Member Functions}
+\doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_mesh_a9c5c38e06f3a061736ba23b43225e0cc}{Mesh}} (const std\+::string \&name, std\+::vector$<$ \mbox{\hyperlink{struct_vertex}{Vertex}} $>$ \&\&vertices, std\+::vector$<$ \mbox{\hyperlink{_types_8h_ad14e71f33f433ffbac893270cddde704}{Index}} $>$ \&\&indices, \mbox{\hyperlink{class_material}{Material}} $\ast$material)
+\mbox{\hyperlink{class_mesh_a9c5c38e06f3a061736ba23b43225e0cc}{Mesh}} (const std\+::string \&name, std\+::vector$<$ \mbox{\hyperlink{struct_vertex}{Vertex}} $>$ \&\&vertices, std\+::vector$<$ \mbox{\hyperlink{_types_8h_ad14e71f33f433ffbac893270cddde704}{Index}} $>$ \&\&indices, \mbox{\hyperlink{class_material}{Material}} \texorpdfstring{$\ast$}{*}material)
 \item 
-virtual \mbox{\hyperlink{class_mesh_a5efe4da1a4c0971cfb037bd70304c303}{$\sim$\+Mesh}} ()
+virtual \mbox{\hyperlink{class_mesh_a5efe4da1a4c0971cfb037bd70304c303}{\texorpdfstring{$\sim$}{\string~}\+Mesh}} ()
 \item 
-void \mbox{\hyperlink{class_mesh_abc306ce1c1ead0b16e75b9fe6f2b460c}{Draw}} (const \mbox{\hyperlink{class_shader}{Shader}} $\ast$shader) const
+void \mbox{\hyperlink{class_mesh_abc306ce1c1ead0b16e75b9fe6f2b460c}{Draw}} (const \mbox{\hyperlink{class_shader}{Shader}} \texorpdfstring{$\ast$}{*}shader) const
 \item 
-void \mbox{\hyperlink{class_mesh_ab39e7a959c18b604f1987da164640cb2}{Set\+Material}} (\mbox{\hyperlink{class_material}{Material}} $\ast$material)
+void \mbox{\hyperlink{class_mesh_ab39e7a959c18b604f1987da164640cb2}{Set\+Material}} (\mbox{\hyperlink{class_material}{Material}} \texorpdfstring{$\ast$}{*}material)
 \item 
-const \mbox{\hyperlink{class_material}{Material}} $\ast$ \mbox{\hyperlink{class_mesh_aee9aa43eb29e7afa9e1330ea4bc0279d}{Get\+Material}} () const
+const \mbox{\hyperlink{class_material}{Material}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_mesh_a8529bb5172422e3e527da9bfe88f7c20}{Get\+Material}} () const
 \end{DoxyCompactItemize}
-\doxysubsection*{Static Public Member Functions}
+\doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static \mbox{\hyperlink{class_mesh}{Mesh}} $\ast$ \mbox{\hyperlink{class_mesh_a6540cb292f07a02fd6583501e58d670a}{Load\+Cube}} (\mbox{\hyperlink{class_material}{Material}} $\ast$material)
+static \mbox{\hyperlink{class_mesh}{Mesh}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_mesh_a6540cb292f07a02fd6583501e58d670a}{Load\+Cube}} (\mbox{\hyperlink{class_material}{Material}} \texorpdfstring{$\ast$}{*}material)
 \item 
-static \mbox{\hyperlink{class_mesh}{Mesh}} $\ast$ \mbox{\hyperlink{class_mesh_a2f7d6de50f0a174f6b9f39a862bc6bc4}{Load}} (const std\+::string \&path)
+static \mbox{\hyperlink{class_mesh}{Mesh}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_mesh_a2f7d6de50f0a174f6b9f39a862bc6bc4}{Load}} (const std\+::string \&path)
 \item 
 static void \mbox{\hyperlink{class_mesh_aa7b8c5a7a9735577d77de78cd9b96890}{Unload}} (const std\+::string \&path)
 \item 
 static void \mbox{\hyperlink{class_mesh_a72722bfa00f6f6e538e900c4bf9de3ac}{Clear\+Cache}} ()
 \end{DoxyCompactItemize}
-\doxysubsection*{Static Public Attributes}
+\doxysubsubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-static std\+::unordered\+\_\+map$<$ std\+::string, \mbox{\hyperlink{class_mesh}{Mesh}} $\ast$ $>$ \mbox{\hyperlink{class_mesh_ae811882278f157a4f6e24595a6567cad}{s\+Cache}}
+static std\+::unordered\+\_\+map$<$ std\+::string, \mbox{\hyperlink{class_mesh}{Mesh}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_mesh_a630ac3d1c4740ff8abdb11a1b638aad7}{ms\+Cache}}
 \end{DoxyCompactItemize}
 
 
@@ -46,58 +46,58 @@ Represents a 3D mesh.
 Has the necessary data to render a 3D object, including vertices, indices, and material information, but not a transform. Uses the lightweight pattern, copies and move operations are deleted. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_mesh_a9c5c38e06f3a061736ba23b43225e0cc}\label{class_mesh_a9c5c38e06f3a061736ba23b43225e0cc}} 
+\Hypertarget{class_mesh_a9c5c38e06f3a061736ba23b43225e0cc}\label{class_mesh_a9c5c38e06f3a061736ba23b43225e0cc} 
 \index{Mesh@{Mesh}!Mesh@{Mesh}}
 \index{Mesh@{Mesh}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{Mesh()}{Mesh()}}
-{\footnotesize\ttfamily Mesh\+::\+Mesh (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{std\+::vector$<$ \mbox{\hyperlink{struct_vertex}{Vertex}} $>$ \&\&}]{vertices,  }\item[{std\+::vector$<$ \mbox{\hyperlink{_types_8h_ad14e71f33f433ffbac893270cddde704}{Index}} $>$ \&\&}]{indices,  }\item[{\mbox{\hyperlink{class_material}{Material}} $\ast$}]{material }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+{\footnotesize\ttfamily Mesh\+::\+Mesh (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{std\+::vector$<$ \mbox{\hyperlink{struct_vertex}{Vertex}} $>$ \&\&}]{vertices,  }\item[{std\+::vector$<$ \mbox{\hyperlink{_types_8h_ad14e71f33f433ffbac893270cddde704}{Index}} $>$ \&\&}]{indices,  }\item[{\mbox{\hyperlink{class_material}{Material}} \texorpdfstring{$\ast$}{*}}]{material }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
-\mbox{\Hypertarget{class_mesh_a5efe4da1a4c0971cfb037bd70304c303}\label{class_mesh_a5efe4da1a4c0971cfb037bd70304c303}} 
-\index{Mesh@{Mesh}!````~Mesh@{$\sim$Mesh}}
-\index{````~Mesh@{$\sim$Mesh}!Mesh@{Mesh}}
-\doxysubsubsection{\texorpdfstring{$\sim$Mesh()}{~Mesh()}}
-{\footnotesize\ttfamily Mesh\+::$\sim$\+Mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+\Hypertarget{class_mesh_a5efe4da1a4c0971cfb037bd70304c303}\label{class_mesh_a5efe4da1a4c0971cfb037bd70304c303} 
+\index{Mesh@{Mesh}!````~Mesh@{\texorpdfstring{$\sim$}{\string~}Mesh}}
+\index{````~Mesh@{\texorpdfstring{$\sim$}{\string~}Mesh}!Mesh@{Mesh}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Mesh()}{\string~Mesh()}}
+{\footnotesize\ttfamily Mesh\+::\texorpdfstring{$\sim$}{\string~}\+Mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_mesh_a72722bfa00f6f6e538e900c4bf9de3ac}\label{class_mesh_a72722bfa00f6f6e538e900c4bf9de3ac}} 
+\Hypertarget{class_mesh_a72722bfa00f6f6e538e900c4bf9de3ac}\label{class_mesh_a72722bfa00f6f6e538e900c4bf9de3ac} 
 \index{Mesh@{Mesh}!ClearCache@{ClearCache}}
 \index{ClearCache@{ClearCache}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{ClearCache()}{ClearCache()}}
 {\footnotesize\ttfamily void Mesh\+::\+Clear\+Cache (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-\mbox{\Hypertarget{class_mesh_abc306ce1c1ead0b16e75b9fe6f2b460c}\label{class_mesh_abc306ce1c1ead0b16e75b9fe6f2b460c}} 
+\Hypertarget{class_mesh_abc306ce1c1ead0b16e75b9fe6f2b460c}\label{class_mesh_abc306ce1c1ead0b16e75b9fe6f2b460c} 
 \index{Mesh@{Mesh}!Draw@{Draw}}
 \index{Draw@{Draw}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
-{\footnotesize\ttfamily void Mesh\+::\+Draw (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_shader}{Shader}} $\ast$}]{shader }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily void Mesh\+::\+Draw (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_shader}{Shader}} \texorpdfstring{$\ast$}{*}}]{shader }\end{DoxyParamCaption}) const}
 
-\mbox{\Hypertarget{class_mesh_aee9aa43eb29e7afa9e1330ea4bc0279d}\label{class_mesh_aee9aa43eb29e7afa9e1330ea4bc0279d}} 
+\Hypertarget{class_mesh_a8529bb5172422e3e527da9bfe88f7c20}\label{class_mesh_a8529bb5172422e3e527da9bfe88f7c20} 
 \index{Mesh@{Mesh}!GetMaterial@{GetMaterial}}
 \index{GetMaterial@{GetMaterial}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{GetMaterial()}{GetMaterial()}}
-{\footnotesize\ttfamily const \mbox{\hyperlink{class_material}{Material}}$\ast$ Mesh\+::\+Get\+Material (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_material}{Material}} \texorpdfstring{$\ast$}{*} Mesh\+::\+Get\+Material (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{class_mesh_a2f7d6de50f0a174f6b9f39a862bc6bc4}\label{class_mesh_a2f7d6de50f0a174f6b9f39a862bc6bc4}} 
+\Hypertarget{class_mesh_a2f7d6de50f0a174f6b9f39a862bc6bc4}\label{class_mesh_a2f7d6de50f0a174f6b9f39a862bc6bc4} 
 \index{Mesh@{Mesh}!Load@{Load}}
 \index{Load@{Load}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{Load()}{Load()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_mesh}{Mesh}} $\ast$ Mesh\+::\+Load (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_mesh}{Mesh}} \texorpdfstring{$\ast$}{*} Mesh\+::\+Load (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-\mbox{\Hypertarget{class_mesh_a6540cb292f07a02fd6583501e58d670a}\label{class_mesh_a6540cb292f07a02fd6583501e58d670a}} 
+\Hypertarget{class_mesh_a6540cb292f07a02fd6583501e58d670a}\label{class_mesh_a6540cb292f07a02fd6583501e58d670a} 
 \index{Mesh@{Mesh}!LoadCube@{LoadCube}}
 \index{LoadCube@{LoadCube}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{LoadCube()}{LoadCube()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_mesh}{Mesh}} $\ast$ Mesh\+::\+Load\+Cube (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_material}{Material}} $\ast$}]{material }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_mesh}{Mesh}} \texorpdfstring{$\ast$}{*} Mesh\+::\+Load\+Cube (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_material}{Material}} \texorpdfstring{$\ast$}{*}}]{material }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-\mbox{\Hypertarget{class_mesh_ab39e7a959c18b604f1987da164640cb2}\label{class_mesh_ab39e7a959c18b604f1987da164640cb2}} 
+\Hypertarget{class_mesh_ab39e7a959c18b604f1987da164640cb2}\label{class_mesh_ab39e7a959c18b604f1987da164640cb2} 
 \index{Mesh@{Mesh}!SetMaterial@{SetMaterial}}
 \index{SetMaterial@{SetMaterial}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{SetMaterial()}{SetMaterial()}}
-{\footnotesize\ttfamily void Mesh\+::\+Set\+Material (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_material}{Material}} $\ast$}]{material }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void Mesh\+::\+Set\+Material (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_material}{Material}} \texorpdfstring{$\ast$}{*}}]{material }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{class_mesh_aa7b8c5a7a9735577d77de78cd9b96890}\label{class_mesh_aa7b8c5a7a9735577d77de78cd9b96890}} 
+\Hypertarget{class_mesh_aa7b8c5a7a9735577d77de78cd9b96890}\label{class_mesh_aa7b8c5a7a9735577d77de78cd9b96890} 
 \index{Mesh@{Mesh}!Unload@{Unload}}
 \index{Unload@{Unload}!Mesh@{Mesh}}
 \doxysubsubsection{\texorpdfstring{Unload()}{Unload()}}
@@ -106,11 +106,11 @@ Has the necessary data to render a 3D object, including vertices, indices, and m
 
 
 \doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{class_mesh_ae811882278f157a4f6e24595a6567cad}\label{class_mesh_ae811882278f157a4f6e24595a6567cad}} 
-\index{Mesh@{Mesh}!sCache@{sCache}}
-\index{sCache@{sCache}!Mesh@{Mesh}}
-\doxysubsubsection{\texorpdfstring{sCache}{sCache}}
-{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$ std\+::string, \mbox{\hyperlink{class_mesh}{Mesh}} $\ast$ $>$ Mesh\+::s\+Cache\hspace{0.3cm}{\ttfamily [static]}}
+\Hypertarget{class_mesh_a630ac3d1c4740ff8abdb11a1b638aad7}\label{class_mesh_a630ac3d1c4740ff8abdb11a1b638aad7} 
+\index{Mesh@{Mesh}!msCache@{msCache}}
+\index{msCache@{msCache}!Mesh@{Mesh}}
+\doxysubsubsection{\texorpdfstring{msCache}{msCache}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$ std\+::string, \mbox{\hyperlink{class_mesh}{Mesh}} \texorpdfstring{$\ast$}{*} $>$ Mesh\+::ms\+Cache\hspace{0.3cm}{\ttfamily [static]}}
 
 
 

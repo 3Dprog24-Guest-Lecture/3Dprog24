@@ -11,30 +11,32 @@
 \DoxyCodeLine{00007\ }
 \DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_texture}{Texture}}}
 \DoxyCodeLine{00017\ \{}
-\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{_types_8h_a7d50c2c31a1c84abc985b39bfa05eea8}{TextureID}}\ mId\{\ 0U\ \};}
-\DoxyCodeLine{00019\ \ \ \ \ std::string\ mPath;}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_texture}{Texture}}(\textcolor{keyword}{const}\ std::string\&\ path);}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_texture}{\string~Texture}}();}
 \DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_texture}{Texture}}*\ \mbox{\hyperlink{class_texture_a61a2233e0b8b6ca38cb130184a526ecf}{Load}}(\textcolor{keyword}{const}\ std::string\&\ path);}
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_texture_a3b1eedfb18dfff069ec2bd54fa775b1c}{Unload}}(\textcolor{keyword}{const}\ std::string\&\ path);}
-\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_texture_a166fe3e1390b6e2eb474c5239c4e5387}{ClearCache}}()\ \{\ mCache.clear();\ \};}
-\DoxyCodeLine{00025\ \ \ \ \ }
-\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{_types_8h_a7d50c2c31a1c84abc985b39bfa05eea8}{TextureID}}\ \mbox{\hyperlink{class_texture_a0730c6fe2f07bd8e1eca1255a8ac168a}{GetTextureID}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ mId;\ \};}
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_texture_a9ce2ebd76a71e91f329c5ed041370422}{IsValid}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ mId\ ==\ 0;\ \};}
-\DoxyCodeLine{00028\ }
-\DoxyCodeLine{00029\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_texture}{Texture}}(\textcolor{keyword}{const}\ std::string\&\ path);}
-\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{class_texture}{\string~Texture}}();}
-\DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ LoadTexture();}
-\DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{static}\ std::unordered\_map<std::string,\ Texture*>\ mCache;}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_texture}{Texture}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_texture}{Texture}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_texture}{Texture}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_texture}{Texture}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_texture}{Texture}}(\mbox{\hyperlink{class_texture}{Texture}}\&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_texture}{Texture}}\&\ operator=(\mbox{\hyperlink{class_texture}{Texture}}\&\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_texture}{Texture}}*\ \mbox{\hyperlink{class_texture_a61a2233e0b8b6ca38cb130184a526ecf}{Load}}(\textcolor{keyword}{const}\ std::string\&\ path);}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_texture}{Texture}}*\ \mbox{\hyperlink{class_texture_abfdcd32b397a0be2d9c17ea08cb98665}{LoadWhiteTexture}}();}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_texture}{Texture}}*\ \mbox{\hyperlink{class_texture_a131fbea0d105bd82b1ba96e3867d9f8c}{LoadBlackTexture}}();}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_texture_a3b1eedfb18dfff069ec2bd54fa775b1c}{Unload}}(\textcolor{keyword}{const}\ std::string\&\ path);}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_texture_a1e6feccba5f845114d80fff7dfa8463e}{ClearCache}}();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_texture_a9ce2ebd76a71e91f329c5ed041370422}{IsValid}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ mId\ !=\ 0;\ \};}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{_types_8h_a7d50c2c31a1c84abc985b39bfa05eea8}{TextureID}}\ \mbox{\hyperlink{class_texture_a0730c6fe2f07bd8e1eca1255a8ac168a}{GetTextureID}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ mId;\ \};}
 \DoxyCodeLine{00036\ }
-\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{class_texture}{Texture}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_texture}{Texture}}\&)\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{class_texture}{Texture}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_texture}{Texture}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00037\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ LoadTexture();}
 \DoxyCodeLine{00039\ }
-\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_texture}{Texture}}(\mbox{\hyperlink{class_texture}{Texture}}\&\&)\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{class_texture}{Texture}}\&\ operator=(\mbox{\hyperlink{class_texture}{Texture}}\&\&)\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{00042\ \};}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{_types_8h_a7d50c2c31a1c84abc985b39bfa05eea8}{TextureID}}\ mId\{\ 0U\ \};}
+\DoxyCodeLine{00041\ \ \ \ \ std::string\ mPath;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{static}\ std::unordered\_map<std::string,\ Texture*>\ msCache;}
+\DoxyCodeLine{00044\ \};}
 
 \end{DoxyCode}

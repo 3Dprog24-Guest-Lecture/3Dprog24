@@ -1,0 +1,24 @@
+\doxysection{Skybox.\+h}
+\hypertarget{_skybox_8h_source}{}\label{_skybox_8h_source}\index{core/Skybox/Skybox.h@{core/Skybox/Skybox.h}}
+\mbox{\hyperlink{_skybox_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_types_8h}{Types.h}}>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_skybox}{Skybox}}}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{class_skybox_a2595131912578d670d825c41cfa2bf22}{Skybox}}(\textcolor{keyword}{const}\ std::array<std::string,\ 6>\&\ texturePaths);}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{class_skybox_a62ad4c6b4b1965a0a6d8536a50d4c090}{\string~Skybox}}();}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_skybox_a47bae195d1dcf6d3e9f597fc2241f816}{Render}}(\textcolor{keyword}{class}\ \mbox{\hyperlink{class_camera_actor}{CameraActor}}*\ renderCamera);}
+\DoxyCodeLine{00013\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{_types_8h_a7d50c2c31a1c84abc985b39bfa05eea8}{TextureID}}\ mTextureId\{0\};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_mesh}{Mesh}}*\ mMesh\{\ \textcolor{keyword}{nullptr}\ \};}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_shader}{Shader}}*\ mSkyboxShader\{\ \textcolor{keyword}{nullptr}\ \};}
+\DoxyCodeLine{00018\ \};}
+
+\end{DoxyCode}

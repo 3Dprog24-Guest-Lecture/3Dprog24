@@ -10,48 +10,47 @@
 \DoxyCodeLine{00006\ }
 \DoxyCodeLine{00016\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_tag_unique}{TagUnique}}}
 \DoxyCodeLine{00017\ \{}
-\DoxyCodeLine{00018\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{static}\ std::unordered\_set<std::string>\ mExistingTags;}
-\DoxyCodeLine{00020\ \ \ \ \ std::string\ mValue;}
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{struct_tag_unique_a4bee97a97904fe7ac30f45c28e5a41eb}{TagUnique}}(\textcolor{keyword}{const}\ std::string\&\ val)}
-\DoxyCodeLine{00024\ \ \ \ \ \{}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mExistingTags.find(val)\ !=\ mExistingTags.end())}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Tag\ already\ exists:\ "{}}\ +\ val);}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ mValue\ =\ val;}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ mExistingTags.insert(val);}
-\DoxyCodeLine{00031\ \ \ \ \ \}}
-\DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{struct_tag_unique_a6756c2b685c0272c2dfe569cdc66d9b8}{TagUnique}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_tag_unique}{TagUnique}}\&)\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{struct_tag_unique}{TagUnique}}\&\ \mbox{\hyperlink{struct_tag_unique_a85298f7013b272531ac3b2c51ffae747}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_tag_unique}{TagUnique}}\&)\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{00035\ }
-\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{struct_tag_unique_a23204561a07593b4162478e58f0946e1}{TagUnique}}(\mbox{\hyperlink{struct_tag_unique}{TagUnique}}\&\&)\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{struct_tag_unique}{TagUnique}}\&\ \mbox{\hyperlink{struct_tag_unique_a08e9be22314aabf30eee35595591eb8f}{operator=}}(\mbox{\hyperlink{struct_tag_unique}{TagUnique}}\&\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{struct_tag_unique_a4bee97a97904fe7ac30f45c28e5a41eb}{TagUnique}}(\textcolor{keyword}{const}\ std::string\&\ val)}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (msExistingTags.find(val)\ !=\ msExistingTags.end())}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Tag\ already\ exists:\ "{}}\ +\ val);}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ mValue\ =\ val;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ msExistingTags.insert(val);}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{struct_tag_unique_a6756c2b685c0272c2dfe569cdc66d9b8}{TagUnique}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_tag_unique}{TagUnique}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{struct_tag_unique}{TagUnique}}\&\ \mbox{\hyperlink{struct_tag_unique_a85298f7013b272531ac3b2c51ffae747}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_tag_unique}{TagUnique}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{struct_tag_unique_a23204561a07593b4162478e58f0946e1}{TagUnique}}(\mbox{\hyperlink{struct_tag_unique}{TagUnique}}\&\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{struct_tag_unique}{TagUnique}}\&\ \mbox{\hyperlink{struct_tag_unique_a08e9be22314aabf30eee35595591eb8f}{operator=}}(\mbox{\hyperlink{struct_tag_unique}{TagUnique}}\&\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{struct_tag_unique_a85b84caadc722212df3f837879902e06}{\string~TagUnique}}()}
+\DoxyCodeLine{00035\ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ msExistingTags.erase(mValue);}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
 \DoxyCodeLine{00038\ }
-\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{struct_tag_unique_a85b84caadc722212df3f837879902e06}{\string~TagUnique}}()}
-\DoxyCodeLine{00040\ \ \ \ \ \{}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ mExistingTags.erase(mValue);}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{struct_tag_unique_a96f34b8029a8e4246d41cebeb873326e}{GetValue}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00040\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ mValue;}
 \DoxyCodeLine{00042\ \ \ \ \ \}}
 \DoxyCodeLine{00043\ }
-\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{struct_tag_unique_a96f34b8029a8e4246d41cebeb873326e}{GetValue}}()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00045\ \textcolor{keyword}{\ \ \ \ }\{}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ mValue;}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_tag_unique_a6a4b02f40297c52972c20c7c1760548b}{TagExists}}(\textcolor{keyword}{const}\ std::string\&\ tag)}
+\DoxyCodeLine{00045\ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ msExistingTags.find(tag)\ !=\ msExistingTags.end();}
 \DoxyCodeLine{00047\ \ \ \ \ \}}
 \DoxyCodeLine{00048\ }
-\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_tag_unique_a6a4b02f40297c52972c20c7c1760548b}{TagExists}}(\textcolor{keyword}{const}\ std::string\&\ tag)}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_tag_unique_a7a8a4ce5a4e45398348de387d9a2b1e1}{ClearCache}}()}
 \DoxyCodeLine{00050\ \ \ \ \ \{}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ mExistingTags.find(tag)\ !=\ mExistingTags.end();}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ msExistingTags.clear();}
 \DoxyCodeLine{00052\ \ \ \ \ \}}
 \DoxyCodeLine{00053\ }
-\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_tag_unique_a7a8a4ce5a4e45398348de387d9a2b1e1}{ClearCache}}()}
-\DoxyCodeLine{00055\ \ \ \ \ \{}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ mExistingTags.clear();}
-\DoxyCodeLine{00057\ \ \ \ \ \}}
-\DoxyCodeLine{00058\ \};}
-\DoxyCodeLine{00059\ }
-\DoxyCodeLine{00060\ \textcolor{keyword}{inline}\ std::unordered\_set<std::string>\ TagUnique::mExistingTags\{\};}
+\DoxyCodeLine{00054\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{static}\ std::unordered\_set<std::string>\ msExistingTags;}
+\DoxyCodeLine{00056\ \ \ \ \ std::string\ mValue;}
+\DoxyCodeLine{00057\ \};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{inline}\ std::unordered\_set<std::string>\ TagUnique::msExistingTags\{\};}
 
 \end{DoxyCode}

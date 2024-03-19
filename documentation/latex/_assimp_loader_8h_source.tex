@@ -1,0 +1,35 @@
+\doxysection{Assimp\+Loader.\+h}
+\hypertarget{_assimp_loader_8h_source}{}\label{_assimp_loader_8h_source}\index{core/ModelLoader/AssimpLoader.h@{core/ModelLoader/AssimpLoader.h}}
+\mbox{\hyperlink{_assimp_loader_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <assimp/Importer.hpp>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <assimp/scene.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <assimp/postprocess.h>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_assimp_loader}{AssimpLoader}}}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_assimp_loader_ab267c78e51e861459abfc53d2166b8a0}{Load}}(\textcolor{keyword}{const}\ std::string\&\ path,\ \textcolor{keyword}{class}\ \mbox{\hyperlink{class_actor}{Actor}}*\ staticMeshActor,\ \textcolor{keywordtype}{unsigned}\ flags\ =\ aiProcessPreset\_TargetRealtime\_MaxQuality\ |\ aiProcess\_Triangulate\ |\ aiProcess\_GenSmoothNormals\ |\ aiProcess\_GenUVCoords);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ ProcessLights(\textcolor{keyword}{const}\ \textcolor{keyword}{class}\ aiScene*\ scene,\ \textcolor{keyword}{class}\ \mbox{\hyperlink{class_actor}{Actor}}*\ rootActor);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ ProcessNode(\textcolor{keyword}{const}\ \textcolor{keyword}{class}\ aiScene*\ scene,\ \textcolor{keyword}{class}\ aiNode*\ node,\ \textcolor{keyword}{class}\ \mbox{\hyperlink{class_actor}{Actor}}*\ parentActor);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_mesh}{Mesh}}*\ ProcessMesh(\textcolor{keyword}{class}\ aiMesh*\ mesh);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_material}{Material}}*\ ProcessMaterial(\textcolor{keyword}{class}\ aiMaterial*\ material);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{struct_a_a_b_b}{AABB}}\ ProcessCollisionAABB(class\ aiMesh*\ mesh);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ msBasePath;}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ msNameIndex;}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ msFlags;}
+\DoxyCodeLine{00083\ \};}
+
+\end{DoxyCode}

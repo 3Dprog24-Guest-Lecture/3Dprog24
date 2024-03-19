@@ -10,7 +10,7 @@ It focuses on three core areas: code structure, scene management, and scene load
 ## Showcase
 Below are some highlights from the project.
 
-## Loading Sponza with light and collision
+## Loading Sponza with lights and collision
 <div style='float: center'>
   <img style='width: 1024px' src="/images/Sponza.jpg"></img>
 </div>

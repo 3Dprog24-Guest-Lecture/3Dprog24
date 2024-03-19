@@ -1,0 +1,29 @@
+\doxysection{Directional\+Light.\+h}
+\hypertarget{_directional_light_8h_source}{}\label{_directional_light_8h_source}\index{core/Lights/DirectionalLight.h@{core/Lights/DirectionalLight.h}}
+\mbox{\hyperlink{_directional_light_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_lights_8h}{Lights/Lights.h}}>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <glm/glm.hpp>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_actor_8h}{Actor.h}}>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_directional_light}{DirectionalLight}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{struct_light}{Light}}}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{virtual}\ glm::vec3\ \mbox{\hyperlink{class_directional_light_a5f8d1a0f46bfc77333a559adcbdc51d5}{GetDirection}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00011\ \};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_directional_light_actor}{DirectionalLightActor}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_directional_light}{DirectionalLight}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_actor}{Actor}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_directional_light_actor_a1713a6369ea8eb4f5a6aa65f4188361e}{DirectionalLightActor}}(\textcolor{keyword}{const}\ std::string\&\ name)}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_actor}{Actor}}(name)\ \{\};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{virtual}\ glm::vec3\ \mbox{\hyperlink{class_directional_light_actor_a3b691a6d6d11678f80dd1bb3dbb570d9}{GetDirection}}()\textcolor{keyword}{\ const\ override}}
+\DoxyCodeLine{00020\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_actor_a0891342bea87cfda13affb2b86e83969}{GetWorldRotation}}()\ *\ glm::vec3(0.f,\ 0.f,\ -\/1.f);}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+\DoxyCodeLine{00023\ \};}
+
+\end{DoxyCode}
