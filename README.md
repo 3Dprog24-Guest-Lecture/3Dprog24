@@ -5,10 +5,10 @@ It focuses on three core areas: code structure, scene management, and scene load
 ## Key Features
 - **Code Structure:** Demonstrates object oriented code design for game engines.
 - **Scene Management:** Implements scene graph management for handling hierarchical scenes.
-- **Model Loading with Collision:** Showcases the loading of 3D models, with lights and collision meshes.
+- **Scene Loading with Collision and lights:** Showcases the loading of 3D models, with lights and collision meshes.
 
 ## Showcase
-Below are some highlights from the project, illustrating the implemented features and the project's capabilities.
+Below are some highlights from the project.
 
 ## Loading Sponza with light and collision
 <div style='float: center'>
