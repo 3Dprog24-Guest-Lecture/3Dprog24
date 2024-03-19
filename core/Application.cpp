@@ -49,6 +49,11 @@ int Application::Run()
         float deltaTime = currentFrame - lastFrame;
         lastFrame = currentFrame;
 
+        if (deltaTime > 0.2f)
+        {
+            deltaTime = 0.2f;
+        }
+
         mWindow.StartFrame();
         mWindow.Update(deltaTime); 
         mWindow.Render(deltaTime);

@@ -5,10 +5,12 @@ Actor::~Actor()
     for (auto component : mComponents)
     {
         delete component;
+        component = nullptr;
     }
     for (auto child : mChildren)
     {
         delete child;
+        child = nullptr;
     }
 }
 

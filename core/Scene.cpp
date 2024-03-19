@@ -70,11 +70,17 @@ void Scene::LoadContent()
 void Scene::UnloadContent()
 {
 	delete mShader;
+	mShader = nullptr;
 	delete mCubeActor0;
+	mCubeActor0 = nullptr;
 	delete mStaticMeshActor0;
+	mStaticMeshActor0 = nullptr;
 	delete mPointLightActor;
+	mPointLightActor = nullptr;
 	delete mDirectionalLightActor;
+	mDirectionalLightActor = nullptr;
 	delete mSkybox;
+	mSkybox = nullptr;
 	
 	Mesh::ClearCache();
 	Material::ClearCache();
@@ -249,25 +255,60 @@ void Scene::BindCamera()
 
 void Scene::RenderUI()
 {
+	ImGui::Begin("Settings"); // Create a window
+	{ // Select controller
+		// Variables for ImGui combo box
+		const char* items[] = { "Camera", "Player" };
+		static int item_current = 0; // Current item index
+
+		// Combo box
+		ImGui::Combo("Select controller", &item_current, items, IM_ARRAYSIZE(items));
+
+		if (item_current == 0)
+		{
+			mActiveController = mCameraController;
+		}
+		else if (item_current == 1)
+		{
+			mActiveController = mActorController;
+		}
+	}
+	{ // Select scene
 	// Variables for ImGui combo box
-	const char* items[] = { "Camera", "Player" };
-	static int item_current = 0; // Current item index
+		const char* items[] = { "Sponza", "CollisionTest", "Scene hierarchy test", "MegaScans test"};
+		static int item_current = 0; // Current item index
 
-	// Inside your GUI rendering function
-	ImGui::Begin("Select controller"); // Create a window
+		// Combo box
+		if (ImGui::Combo("Select scene", &item_current, items, IM_ARRAYSIZE(items)))
+		{ 
+			if (mStaticMeshActor0)
+			{
+				mSceneGraph.RemoveChild(mStaticMeshActor0);
+				delete mStaticMeshActor0;
+				mStaticMeshActor0 = new StaticMeshActor("StaticMeshActor0");
+			};
 
-	// Combo box
-	ImGui::Combo("Select Item", &item_current, items, IM_ARRAYSIZE(items));
+			if (item_current == 0)
+			{
+				AssimpLoader::Load(SOURCE_DIRECTORY("assets/models/sponza/sponza.fbx"), mStaticMeshActor0);
+			}
+			else if (item_current == 1)
+			{
+				AssimpLoader::Load(SOURCE_DIRECTORY("assets/models/collisionTest/collisionTest.fbx"), mStaticMeshActor0);
+			}
+			else if (item_current == 2)
+			{
+				AssimpLoader::Load(SOURCE_DIRECTORY("assets/models/sceneHierarchy/sceneHierarchy.fbx"), mStaticMeshActor0);
+			}
+			else if (item_current == 3)
+			{			
+				AssimpLoader::Load(SOURCE_DIRECTORY("assets/models/megascansStone/megascansStone.fbx"), mStaticMeshActor0);
+			}
 
-	if (item_current == 0)
-	{
-		mActiveController = mCameraController;
+			mCubeActor0->SetWorldPosition({ 0.f, 10.f, 0.f });
+			mSceneGraph.AddChild(mStaticMeshActor0);
+		}
 	}
-	else if (item_current == 1)
-	{
-		mActiveController = mActorController;
-	}
-
 	ImGui::End(); // End of the window
 }
 
